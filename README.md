@@ -4,7 +4,7 @@
 | -------------- | ------ |
 | Fan Nie | 366936 |
 | Yikai Zhang | 366940 |
-| | |
+| Kamila Babayeva| 342448 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
