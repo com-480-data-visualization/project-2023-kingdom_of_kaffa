@@ -19,20 +19,33 @@ Please, fill the following sections about your project.
 
 ### Dataset
 
-> Find a dataset (or multiple) that you will explore. Assess the quality of the data it contains and how much preprocessing / data-cleaning it will require before tackling visualization. We recommend using a standard dataset as this course is not about scraping nor data processing.
->
-> Hint: some good pointers for finding quality publicly available datasets ([Google dataset search](https://datasetsearch.research.google.com/), [Kaggle](https://www.kaggle.com/datasets), [OpenSwissData](https://opendata.swiss/en/), [SNAP](https://snap.stanford.edu/data/) and [FiveThirtyEight](https://data.fivethirtyeight.com/)), you could use also the DataSets proposed by the ENAC (see the Announcements section on Zulip).
+For our project we use two datasets: (1)scraped data from the website [Kofio](https://www.kofio.co/), (2) Kaggle [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset).
 
-[Kofio](https://www.kofio.co/)
-Example of attributes (https://www.kofio.co/coffee/ethiopia-jenny-s-barrel-coffee-maturing-in-whiskey-barrels-the-naughty-dog/5601)
-ww
+####  Kofio Dataset
 
-[Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset)
+We scraped the necessary data from [Kofio](https://www.kofio.co/) because we couldn't find a suitable dataset that met our requirements regarding coffee flavors, brewing methods, and brands. Kofio offers a wide range of coffee products from various European brands. All of the coffee products on Kofio have the same set of information, as an example:
 
-About: Coffee economic indicators from the International Coffee Organization dataset
-Related work: 
-https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda
-https://www.kaggle.com/code/sabinorsp/simple-eda-for-this-dataset 
+<!-- TODO: add price and rating? -->
+
+| Key | Value |
+| --- | --- |
+| Roast Date: | 27.03.2023 (8 days) |
+| Roastery: | Square Mile |
+| Coffee Origin: | Kenya specialty coffee Kenya, Peru specialty coffee Peru |
+| Region: | Kirinyaga |
+| Variety: | Caturra |
+| Roast Type: | Filter |
+| Process: | Washed |
+| Flavour Profile: | Apple blossom, Cherry pie |
+| Roast Level: | Light to Medium Light |
+| Brewing Method: | French Press, Hario V60, Vacuum Pot |
+
+Since each coffe product has exactly the same keys, no other preprocessing nor cleaning is required.
+
+#### Coffee dataset
+
+We use the [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset) to display the global import and export of coffee. This dataset provides information on the amount of coffee exported and imported by countries from 1990 to 2022. No preprocessing nor cleaning is required since the data is clean.
+
 
 ### Problematic
 Originating from the mysterious land of the Kingdom of Kaffa in Eutopia, coffee has evolved into much more than a tasty and healthy beverage. It has transcended into a cultural symbol, a social ritual, a source of comfort, and a muse for inspiration. Across the globe, coffee shops have transformed into meeting places for friends, colleagues, and neighbors, fostering a sense of community. Additionally, coffee production is a significant economic driver in numerous societies, offering income and employment opportunities to small-scale farmers and large-scale plantations. 
