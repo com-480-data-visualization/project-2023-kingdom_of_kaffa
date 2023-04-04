@@ -43,11 +43,11 @@ if __name__ == "__main__":
                         if values:
                             coffee_data[name] = ",".join(val for val in values if val).strip()
 
+                    full_body = get_nodes(path[0], headers, "/html")[0]
                     div_body = get_nodes(path[0], headers, "//*[@id=\"p_tab_1\"]/div/div/div[1]/div/div")
-                    coffee_data['Item Name'] = get_nodes(
-                        path[0], headers, "//*[@id=\"front_temp\"]/div[1]/div[2]/div/div[1]/h1/text()")[0]
-                    coffee_data['Price'] = get_nodes(
-                        path[0], headers, "///*[@id=\"addToCart\"]/div[2]/strong/text()")[0].strip()[:-2]
+                    coffee_data['Item Name'] = full_body.xpath("//*[@id=\"front_temp\"]/div[1]/div[2]/div/div[1]/h1/text()")[0]
+                    price = full_body.xpath("///*[@id=\"addToCart\"]/div[2]/strong/text()")
+                    coffee_data['Price'] = price[0].strip()[:-2] if price else None
                     coffee_data['Rating'] = div_body[0].xpath('./div[2]/text()')[0].strip() if len(div_body)==2 else None
                     coffee_data['Recommended'] = div_body[1].xpath('./div[2]/text()')[0].strip() if len(div_body)==2 else None
                     print(f'Coffe data: {coffee_data}')
