@@ -29,6 +29,7 @@ We scraped the necessary data from [Kofio](https://www.kofio.co/) because we cou
 
 | Key | Value |
 | --- | --- |
+| Item Name: | EASTER FILTER blend - Easter limited edition |
 | Roast Date: | 27.03.2023 (8 days) |
 | Roastery: | Square Mile |
 | Coffee Origin: | Kenya specialty coffee Kenya, Peru specialty coffee Peru |
@@ -39,8 +40,11 @@ We scraped the necessary data from [Kofio](https://www.kofio.co/) because we cou
 | Flavour Profile: | Apple blossom, Cherry pie |
 | Roast Level: | Light to Medium Light |
 | Brewing Method: | French Press, Hario V60, Vacuum Pot |
+| Rating: | 4.4 |
+| Recommended: | 93% |
+| Price: | 19,99 |
 
-Since each coffe product has exactly the same keys, no other preprocessing nor cleaning is required.
+Since each coffee product has exactly the same keys, no other preprocessing nor cleaning is required.
 
 #### Coffee dataset
 
