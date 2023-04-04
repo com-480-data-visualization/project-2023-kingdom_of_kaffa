@@ -83,10 +83,14 @@ To meet the goals describe above, our website will roughly (might change sligthl
 > - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
 > - In case you are using a dataset that you have already explored in another context (ML or ADA course, semester project...), you are required to share the report of that work to outline the differences with the submission for this class.
 
-Several works have conducted data analysis and visualization on the coffee dataset.
+Since the Kofio Dataset is scraped by us, nobody has done with this dataset. However, several works have conducted data analysis and visualization on the coffee dataset.
 * [Coffee Economic EDA](https://www.kaggle.com/code/ayaabdalsalam/coffee-economic-eda) tabulates the total coffee consumption for 55 countries and subsequently displays the resulting data in a histogram format. The histogram portrays the consumption of each country in a descending order. Besides, it analyzes the mean, median and total consumption from 1990 to 2020 and the coffee type of each country.
 * [Simple EDA](https://www.kaggle.com/code/sabinorsp/simple-eda-for-this-dataset/notebook) presents the visualizations of the top 10 coffee exporting and importing countries, along with the leading coffee producers and domestic consumers. Furthermore, it assesses the yearly coffee production of the key countries and employs a line chart to depict the trend.
 * [Data Visualization of the Coffee Dataset](https://www.kaggle.com/code/aaronjones32/data-visualisation-of-the-coffee-dataset) delved into the top countries concerning coffee export, import, domestic consumption, and production, along with the coffee consumption trends of the importing nations. The resultant data was subsequently represented using line charts, spanning the timeline from 1990 to 2020.
+
+Also, several great visualizations from other topics have inspired us to come up with our ideas.
+* [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/) The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
+* [Wine101](https://com-480-data-visualization.github.io/com-480-project-onvagagner/website/index.html) The cluster visualization inspired us to show clusters based on flavor, brewing method, and roast level.
 
 ## Milestone 2 (7th May, 5pm)
 
