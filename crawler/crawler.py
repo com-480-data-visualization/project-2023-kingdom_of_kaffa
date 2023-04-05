@@ -20,7 +20,7 @@ if __name__ == "__main__":
     unique_attributes = ['Item Name', 'Roastery', 'Roast Level', 'Region', 'Flavour Profile',
                          'Roast Type', 'Process', 'Variety', 'Brewing Method', 'Coffee Origin', 'Rating', 'Recommended', 'Price']
 
-    with open('./dataset.csv', 'w') as tsvfile:
+    with open('./data/kofio_dataset.csv', 'w') as tsvfile:
         tsv_writer = csv.DictWriter(tsvfile, delimiter='\t', fieldnames=unique_attributes)
         tsv_writer.writeheader()
 
