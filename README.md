@@ -77,6 +77,11 @@ The figure below provides a closer look at the top 10 coffee-producing countries
 ![Global production top10](dataset_analysis/images/production_top10.jpg "Global production top10")
 
 Note: This last visualisation was taken from [Coffee - Extensive EDA](https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda).
+
+#### Kofio dataset analysis
+We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the [jupyter notebook](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
+<!-- To be continued -->
+
 ### Related work
 
 
