@@ -97,6 +97,7 @@ We analyze the pairing dataset using [jupyter notebook](https://github.com/com-4
 There're 83 different entries in the dataset. Among them, total numbers of coffee origins, foods and flavor types are 25,23 and 8. The coffee origins can be seen as coffee types. And we group the data by origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
 
 The figure below presents a clear look at the origin-flavor pairings.
+
 <img src="/dataset_analysis/images/pairing.png" alt="alt text" width="50%" height="50%" />
 <!-- To be continued -->
 
@@ -123,6 +124,7 @@ Our approach is original due to the following aspects:
 Also, several great visualizations from other topics have inspired us to come up with our ideas.
 * [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/). The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
 * [Wine101](https://com-480-data-visualization.github.io/com-480-project-onvagagner/website/index.html). The cluster visualization inspired us to show clusters based on flavor, brewing method, and roast level.
+* [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
 
 ## Milestone 2 (7th May, 5pm)
 
