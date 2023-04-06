@@ -118,8 +118,10 @@ Since the Kofio Dataset is scraped by us, nobody has done with this dataset. How
 * [Data Visualization of the Coffee Dataset](https://www.kaggle.com/code/aaronjones32/data-visualisation-of-the-coffee-dataset) delved into the top countries concerning coffee export, import, domestic consumption, and production, along with the coffee consumption trends of the importing nations. The resultant data was subsequently represented using line charts, spanning the timeline from 1990 to 2020. -->
 
 Our approach is original due to the following aspects:
+* We present coffee consumption and import/export volume trends across regions and their temporal evolution. This enables the display of increasing coffee popularity by year, and also helps identify the regions with the highest affinity for coffee.
 * We analyze the existing coffee brands and consider the rich coffee flavours.
-* Our visualisation can help visitors to buy an existing coffee they love.
+* Our visualisation can help visitors to buy an existing coffee they love using the filtering function.
+* We shows clearly how to pair coffee to food and to flavor.
 
 Also, several great visualizations from other topics have inspired us to come up with our ideas.
 * [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/). The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
