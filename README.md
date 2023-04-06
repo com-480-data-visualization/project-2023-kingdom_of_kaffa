@@ -67,6 +67,7 @@ To meet the goals describe above, our website will roughly (might change sligthl
 **Figure 4:** This pairing visulaization shows which types of food are recommended to be consumed with specific types of coffee, based on the origin/flavour of the coffee. The figure is structured in three columns, each of which corresponds to 'coffee origin', 'food', and 'flavor type'. The graph is interactive, allowing users to click on any bubble to establish connections with other relevant bubbles, represented by lines of the same color. Non-activating lines will be displayed in gray. Additionally, detailed and well-designed contents related to each bubble will be available upon clicking, offering users relevant information.
 
 ### Exploratory Data Analysis
+In the section [Conda enviroment for EDA](#installation) you can find instructions to install conda environment to run our python notebooks with EDA.
 #### Kofio dataset analysis
 
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
@@ -136,6 +137,15 @@ Also, several great visualizations from other topics have inspired us to come up
 - [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/). The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
 - [Wine101](https://com-480-data-visualization.github.io/com-480-project-onvagagner/website/index.html). The cluster visualization inspired us to show clusters based on flavor, brewing method, and roast level.
 - [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
+
+### Conda enviroment for EDA <a id="installation"></a>
+1. Create conda environment from the provided yml file. It might take a couple minutes.
+```
+conda env create --file=com480-kaffa.yml 
+```
+2. Activate conda environment in your Code Editor. In VS code, choose **com480-kaffa** kernel in the python notebook. If it does not appear in the list of kernels after step 1, restart VS.
+
+
 
 ## Milestone 2 (7th May, 5pm)
 
