@@ -8,7 +8,7 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Milestone 1 (23rd April, 5pm)
+## Milestone 1 (Friday 3rd April, 5pm)
 
 **10% of the final grade**
 
