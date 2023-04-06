@@ -91,7 +91,7 @@ Note: This last visualisation was taken from [Coffee - Extensive EDA](https://ww
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the [jupyter notebook](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
 
 #### Pairing dataset analysis
-![Coffee Food Pairing](dataset_analysis/images/pairing.png "Pairing")
+<img src="dataset_analysis/images/pairing.png" alt="pairing" style="zoom:50%;" />
 <!-- To be continued -->
 
 ### Related work
