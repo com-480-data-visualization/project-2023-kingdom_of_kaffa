@@ -92,6 +92,11 @@ We will be using the Kofio dataset we scraped to create visualizations (Figure 2
 <!-- To be continued -->
 
 #### Pairing dataset analysis
+We analyze the pairing dataset using [jupyter notebook](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/pairing_da.ipynb).
+
+There're 83 different entries in the dataset. Among them, total numbers of coffee origins, foods and flavor types are 25,23 and 8. The coffee origins can be seen as coffee types. And we group the data by origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
+
+The figure below presents a clear look at the origin-flavor pairings.
 <img src="/dataset_analysis/images/pairing.png" alt="alt text" width="50%" height="50%" />
 <!-- To be continued -->
 
