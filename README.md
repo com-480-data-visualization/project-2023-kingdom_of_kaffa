@@ -68,10 +68,9 @@ To meet the goals describe above, our website will roughly (might change sligthl
 ### Exploratory Data Analysis
 
 #### Kofio dataset analysis
-We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
-<!-- To be continued -->
+We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb).
 
-In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see thatthe price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
+In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see that the price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
 <img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text"/>
 
 #### Pairing dataset analysis
