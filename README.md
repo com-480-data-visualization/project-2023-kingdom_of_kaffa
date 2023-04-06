@@ -72,7 +72,7 @@ We will be using the Kofio dataset we scraped to create visualizations (Figure 2
 <!-- To be continued -->
 
 In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see thatthe price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
-<img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text" width="50%" height="50%" />
+<img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text"/>
 
 #### Pairing dataset analysis
 We analyze the pairing dataset using jupyter notebook [pairing_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/pairing_da.ipynb).
