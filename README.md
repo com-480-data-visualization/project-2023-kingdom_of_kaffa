@@ -69,9 +69,11 @@ To meet the goals describe above, our website will roughly (might change sligthl
 
 ### Exploratory Data Analysis
 #### Coffee dataset analysis
-We created a world map visualization (Figure 1) of global coffee consumption and production using the Coffee dataset. The Coffee dataset includes seven files about coffee import and export, but we focused on the following two files:
-> - Coffee_total_consumption.csv - combination of Coffee_domestic_consumption.csv and Coffee_import_consumption.csv
-> - Coffee_production.csv  
+We analyze the Coffee dataset using jupyter notebook [coffee_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/coffee_da.ipynb).
+
+We use Coffee dataset to visualize a world map of coffee consumption and produstion (Figure 1). The dataset includes seven files about coffee import and export, but we focused on the following two files:
+* Coffee_total_consumption.csv - combination of Coffee_domestic_consumption.csv and Coffee_import_consumption.csv
+* Coffee_production.csv  
 
 We used the [geopandas](https://geopandas.org/en/stable/) library to create the map, but had to rename some country names in our dataset to match the library's names.
 
@@ -90,7 +92,7 @@ We will be using the Kofio dataset we scraped to create visualizations (Figure 2
 #### Pairing dataset analysis
 We analyze the pairing dataset using jupyter notebook [pairing_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/pairing_da.ipynb).
 
-There're 83 different entries in the dataset. Among them, total numbers of coffee origins, foods and flavor types are 25,23 and 8. The coffee origins can be seen as coffee types. And we group the data by origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
+The dataset contains 83 entries and includes information on 25 different coffee origins, 23 different foods, and 8 different flavor types. We group the data by coffee origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
 
 The figure below presents a clear look at the origin-flavor pairings.
 
