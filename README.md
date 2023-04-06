@@ -70,6 +70,7 @@ To meet the goals describe above, our website will roughly (might change sligthl
 
 #### Coffee dataset analysis
 
+<<<<<<< HEAD
 We analyze the Coffee dataset using jupyter notebook [coffee_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/coffee_da.ipynb).
 
 We use Coffee dataset to visualize a world map of coffee consumption and produstion (Figure 1). The dataset includes seven files about coffee import and export, but we focused on the following two files:
@@ -92,6 +93,19 @@ The figure below suggests that coffee consumption is becoming increasingly popul
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
 
 <!-- To be continued -->
+=======
+Kofio dataset contains 322 coffee products from 35+ brands. Each coffee product can be classified by Roast Level, Roast type, Brewing method and Flavour. In total, we gathered the following stats about each category:
+
+```
+There're 194 unique flavours: ['Flower honey', 'Black tea with lemon', 'Coke']...
+There're 8 unique brewing methods: ['Vacuum Pot', 'Hario V60', 'Clever dripper', 'Espresso', 'Chemex', 'Moka pot', 'Aeropress', 'French Press']
+There're 3 unique Roast Levels: ['Light to Medium Light', 'Medium to medium dark', 'Omni']
+There're 3 unique Roast Types: ['Filter', 'Espresso', 'Omni']
+```
+
+In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see that the price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
+<img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text"/>
+>>>>>>> 894dd5e (Add some stats about kofio)
 
 #### Pairing dataset analysis
 
