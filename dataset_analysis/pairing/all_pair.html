@@ -1,0 +1,117 @@
+<!-- Haven't been finished yet -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Coffee and Flavor Pairing</title>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<style>
+		.circle {
+			fill: #fbbfe3;
+			stroke: #fff;
+			stroke-width: 2px;
+		}
+
+		.line {
+			stroke: #999;
+			stroke-opacity: 0.6;
+			stroke-width: 1.5px;
+		}
+	</style>
+</head>
+<body>
+	<script>
+		// Load the data from the csv file
+		d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/master/kofio_dataset/coffee_food_pairing.csv?v=1").then(function(data) {
+
+			// Extract the relevant columns from the data
+			var origin = data.map(function(d) { return d["Coffee origin"]; });
+            var food = data.map(function(d) { return d["Food"];})
+			var flavor = data.map(function(d) { return d["Flavor type"]; });
+
+			// Remove duplicates from the arrays
+			origin = Array.from(new Set(origin));
+            food = Array.from(new Set(food));
+			flavor = Array.from(new Set(flavor));
+
+			// Calculate the dimensions of the visualization
+			var margin = {top: 20, right: 20, bottom: 20, left: 20},
+			    width = 1000 + margin.left + margin.right,
+			    height = (origin.length * 50) + margin.top + margin.bottom;
+
+			// Create the SVG element and set its size
+			var svg = d3.select("body").append("svg")
+			    .attr("width", width)
+			    .attr("height", height);
+
+			// Create the circles for the origins
+			var originCircles = svg.selectAll(".origin")
+			    .data(origin)
+			    .enter().append("circle")
+			    .attr("class", "circle origin")
+			    .attr("cx", 150)
+			    .attr("cy", function(d, i) { return 25 + (i * 25); })
+			    .attr("r", 10);
+
+            // Create the circles for the food
+            var foodCircles = svg.selectALL(".food")
+                .data(food)
+                .enter().append("circle")
+                .attr("class", "circle food")
+                .attr("cx", 450)
+                .attr("cy", function(d,i) {return 30 + (i * 25); })
+                .attr("r", 10);
+
+			// Create the circles for the flavors
+			var flavorCircles = svg.selectAll(".flavor")
+			    .data(flavor)
+			    .enter().append("circle")
+			    .attr("class", "circle flavor")
+                .attr("cx", 775)
+                .attr("cy", function(d, i) { return 90 + (i * 60); })
+			    // .attr("cx", function(d, i) { return width - 25 - ((flavor.length - i - 1) * 50); })
+			    // .attr("cy", 25)
+			    .attr("r", 20);
+
+			// Create the lines between the origin and flavor circles
+			// var lines = svg.selectAll(".line")
+			//     .data(data)
+			//     .enter().append("line")
+			//     .attr("class", "line")
+			//     .attr("x1", function(d) {
+			//     	return 150;
+			//     })
+			//     .attr("y1", function(d) {
+			//     	return 25 + (origin.indexOf(d["Coffee origin"]) * 25);
+			//     })
+			//     .attr("x2", function(d) {
+			//     	return 475;
+			//     })
+			//     .attr("y2", function(d) {
+            //         return 90 + (flavor.indexOf(d["Flavor type"]) * 60);
+			//     })
+			//     .style("stroke", function(d) {
+			//     	return d3.schemeCategory10[flavor.indexOf(d["Flavor type"]) % 10];
+			//     });
+
+			// Add text labels to the origin circles
+			var originLabels = svg.selectAll(".origin-label")
+				.data(origin)
+				.enter().append("text")
+				.attr("class", "origin-label")
+				.attr("x", 130) // move the label to the right
+				.attr("y", function(d, i) { return 30 + (i * 25); })
+				.attr("text-anchor", "end") // set the text anchor to end
+				.text(function(d) { return d; });
+
+			// var originLabels = svg.selectAll(".flavor-label")
+			// 	.data(flavor)
+			// 	.enter().append("text")
+			// 	.attr("class", "flavor-label")
+			// 	.attr("x", 510) // move the label to the right
+			// 	.attr("y", function(d, i) { return 95 + (i * 60); })
+			// 	.text(function(d) { return d; });
+		});
+	</script>
+</body>
+</html>
