@@ -1,54 +1,202 @@
 Item Name,Roastery,Roast Level,Region,Flavour Profile,Roast Type,Process,Variety,Brewing Method,Coffee Origin
 Ethiopia Jenny's BARREL COFFEE - maturing in whiskey barrels,The naughty dog,Omni,Agaro - Jimma,"Chocolate,Caramel,Forest fruit,Whiskey",Omni,Washed,"74110,74112,Heirloom","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Ethiopia
 Rwanda KIRAMBO,The naughty dog,Omni,Nyamasheke District,"Milk chocolate,Blueberries,Mulled wine,Lemon marmalade",Omni,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Rwanda
+Ethiopia SUKE QUTO - washed 1000g,The naughty dog,Light to Medium Light,Guji,"Bergamot,Peach ice tea,Black tea,Flowers",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Ethiopia Jenny's BARREL COFFEE - 1000g,The naughty dog,Omni,Agaro - Jimma,"Chocolate,Caramel,Forest fruit,Whiskey",Omni,Washed,"74110,74112,Heirloom","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Ethiopia
+Ethiopia GORAA,The naughty dog,Light to Medium Light,Guji,"Peach tea,Květinový med,Milk chocolate",Filter,Natural,"74110,74112,Heirloom","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Ethiopia MALAWO - black honey,The naughty dog,Light to Medium Light,Bensa,"Peach ice tea,Jasmine,Forest strawberries,Passion fruit",Filter,Honey,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Kenya NGANDU,The naughty dog,Light to Medium Light,Nyeri,"Redcurrant,Maple syrup,Lime",Filter,Washed,"SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
 Colombia BOLIVAR,The naughty dog,Light to Medium Light,Antioquia,"Caramel,Forest fruit,Rum",Filter,Natural,"Castillo,Caturra","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 Ethiopia GENJI CHALLA,The naughty dog,Light to Medium Light,Jimma - Oromia,"Bergamot,Black tea,Nectarines,Orange",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Brazil RANCHO GRANDE,The naughty dog,Medium to medium dark,Sul de Minas,"Dark Bitter chocolate,Hazelnuts,Demerara sugar,Walnuts",Espresso,Natural,Mundo Novo,"Espresso,Moka pot",Brazil
 Yemen BANI AL AREEF,The naughty dog,Light to Medium Light,Jemen - Haraz,"Black tea,Cotton candy,Red orange,Dried strawberries",Filter,Experimental,Jaadi,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Yemen
+Ethiopia SUKE QUTO - washed,The naughty dog,Light to Medium Light,Guji,"Black tea,Flowers,Bergamot,Peach ice tea",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Brazil RANCHO GRANDE - 1000g,The naughty dog,Medium to medium dark,Sul de Minas,"Dark Bitter chocolate,Hazelnuts,Demerara sugar,Walnuts",Espresso,Natural,Mundo Novo,"Moka pot,Espresso",Brazil
 Brazil FAZENDA SALTO - 1000g,The naughty dog,Medium to medium dark,Sul de Minas,"Sugarcane,Dark Bitter chocolate,Plum jam",Espresso,Natural,Yellow Bourbon,"Moka pot,Espresso",Brazil
 Ethiopia MALAWO - black honey - 1000g,The naughty dog,Light to Medium Light,Bensa,"Jasmine,Passion fruit,Forest strawberries,Peach ice tea",Filter,Honey,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Kenya RUNG'ETO KII AA,Candycane Coffee,Light to Medium Light,Kirinyaga,"Vanilla,Blackberry jam,Lime",Filter,Washed,"Batian,SL28,SL34,Ruiru 11","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Nicaragua PARAINEMA #2,Candycane Coffee,Medium to medium dark,Matagalpa,"Chocolate,Crème brûlée,Pear",Espresso,Natural,Parainema,"Moka pot,Espresso",Nicaragua
+Costa Rica DON ELI,Candycane Coffee,Medium to medium dark,Kostarika - La Zona de los Santos,"Cocoa,Cherries,Flower honey",Espresso,Honey,Catuai,"Espresso,Moka pot",Costa Rica
 KANCL ESPRESSO blend - 1000g,Candycane Coffee,Medium to medium dark,Brazílie - Lambari,"Dark Bitter chocolate,Honey,Hazelnuts",Espresso,Natural,Red Catuai,"Espresso,Moka pot","Indonesia,Brazil"
+Colombia PURPLE HAZE,DAK Coffee Roasters,Light to Medium Light,Huila,"Forest fruit,Gummy bears,Lískooříškový krém",Filter,Experimental,Typical,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 Ethiopia LEMON SQUEEZE,DAK Coffee Roasters,Light to Medium Light,Hamasho,"Peach,Vanilla,Ice tea,Lemon tea,Sedmikráska",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Colombia COCO BONGO - espresso,DAK Coffee Roasters,Medium to medium dark,Huila,"Pineapple drink,Banánový milkshake,Coconut",Espresso,Experimental,"Bourbon,Caturra","Moka pot,Espresso",Colombia
+Rwanda HONEYSIDE,DAK Coffee Roasters,Light to Medium Light,Gakenke,"Tangerines,Apricots,Honey,Sugarcane",Filter,Washed,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+BISCOTTI pen,DAK Coffee Roasters,Medium to medium dark,Cajamarca,"Cocoa,Cranberries,Almond,Honey",Espresso,Washed,"Caturra,Bourbon","Espresso,Moka pot",Peru
 Colombia CANDY CRUSH - filter,DAK Coffee Roasters,Light to Medium Light,Quindìo,"Caramel,Chewing gums,Marshmallow,Jahodové lízátko",Filter,Experimental,Caturra,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 Brazil PRETTY NUTS,DAK Coffee Roasters,Medium to medium dark,Alta Mogiana,"Peanut butter,Forest fruit,Liqueur Grand Marnier,Milk chocolate",Espresso,Natural,Catuai,"Moka pot,Espresso",Brazil
+Peru PINEAPPLE EXPRESS - geisha,DAK Coffee Roasters,Light to Medium Light,Santa Teresa,"Pineapple,Lemons,Cocoa,Kiwi",Filter,Natural,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Peru
+Kenya BERRY BLISS,DAK Coffee Roasters,Medium to medium dark,Kirinyaga,"Cocoa,Forest fruit,White chocolate",Espresso,Washed,"SL28,SL34","Espresso,Moka pot",Kenya
+Ethiopia PAMPLEMOUSSE,DAK Coffee Roasters,Medium to medium dark,Guji,"Grapefruit,Strawberries,Kumquat",Espresso,Natural,Heirloom,"Moka pot,Espresso",Ethiopia
+Colombia VELVET PEACH,DAK Coffee Roasters,Light to Medium Light,Quindìo,"Peach,Flowers,Lemon ice cream",Filter,Experimental,Caturra,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 Rwanda RUSHASHI - OWOC,HAYB Speciality Coffee,Light to Medium Light,Gakenke,"Apple,Forest fruit",Filter,Washed,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Ethiopia ACACIA - KWIAT,HAYB Speciality Coffee,Light to Medium Light,Guji,"Honey,Black tea,Flowers,Citrus",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Colombia LA PRADERA,HAYB Speciality Coffee,Light to Medium Light,Santander,"Apricots,Apple,Watermelon",Filter,Natural,"Castillo,Tabi","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Kenya KIANGOMBE AA,HAYB Speciality Coffee,Light to Medium Light,Keňa - Gichugu,"Cranberries,Blackberry,Rhubarb",Filter,Washed,"SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Ethiopia CHELEKTU,HAYB Speciality Coffee,Light to Medium Light,Yirgacheffe,"White tea,Lemon peel,Orange flower",Filter,Natural,"Dega,Kurume,Wolisho","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Rwanda HORIZON - natural,Father's Coffee Roastery,Light to Medium Light,Huye,"Strawberries,Cream,Citronáda",Filter,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
 Ethiopia BOMBE - espresso,Father's Coffee Roastery,Medium to medium dark,Sidamo,"Apricots,Black tea,Jasmine,Gingerbread,Bergamot",Espresso,Washed,Heirloom,"Espresso,Moka pot",Ethiopia
+Rwanda HORIZON - washed,Father's Coffee Roastery,Light to Medium Light,Kigoma,"Pineapple,Tangerines,Vanilla",Filter,Washed,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Peru LUZ MARINA WASHED,Father's Coffee Roastery,Light to Medium Light,Chirinos,"Hibiscus,Green apple,Lískooříškový krém",Filter,Washed,"Catuai,Pache,Cajarmarca","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Peru
+Ethiopia BESHASHA,Father's Coffee Roastery,Light to Medium Light,Jimma - Oromia,"Peach,Black tea,Lemons",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Colombia CAUCA - decaffeinated,Father's Coffee Roastery,Light to Medium Light,Cauca,"Lime,Tangerines,Almonds in sugar",Filter,Washed,A mixture of varieties,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 MOTHER-SHIP BLEND,Father's Coffee Roastery,Medium to medium dark,Etiopie- Chelchelie,"Milk chocolate,Flowers",Espresso,Washed,"Caturra,Bourbon","Espresso,Moka pot","Peru,Ethiopia"
 Brazil CAFEINA,Father's Coffee Roastery,Medium to medium dark,Sul de Minas,"Sweet tobacco,Hazelnut butter",Espresso,Natural,"Mundo Novo,Yellow Catuai","Espresso,Moka pot",Brazil
 Brazil CAFEINA - 1000g,Father's Coffee Roastery,Medium to medium dark,Sul de Minas,"Hazelnut butter,Sweet tobacco",Espresso,Natural,"Mundo Novo,Yellow Catuai","Moka pot,Espresso",Brazil
 Ethiopia BOMB,Father's Coffee Roastery,Light to Medium Light,Sidamo,"Bergamot,Black tea,Jasmine,Gingerbread,Apricots",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Ethiopia HALO BERITI - natural,Industra Coffee,Light to Medium Light,Yirgacheffe,"Peach,Figs,Strawberries",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Bolivia RENE MAMANI,Industra Coffee,Light to Medium Light,La Paz,"Cranberries,Hluchavka,Honey",Filter,Anaerobic,"Catuai,Caturra","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Bolivia
+Mexico SAN AGUSTIN LOXICHA,Industra Coffee,Medium to medium dark,Oaxaca,"Almond,Dark chocolate,Cherries",Espresso,Washed,Pluma Hidalgo,"Espresso,Moka pot",Mexico
+Mexico XOCHILTEPEC,Industra Coffee,Light to Medium Light,Oaxaca,"Pineapple,Black tea,Panela",Filter,Washed,Typical,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Mexico
 Guatemala ASPROCDEGUA,Industra Coffee,Medium to medium dark,Huehuetenango,"Caramel,Blackberry,Pecans",Espresso,Washed,"Caturra,Catimor,Bourbon,Pache,Maragogype","Espresso,Moka pot",Guatemala
 Indonesia RADIOPHARE,The Barn,Light to Medium Light,West Java,"Passionflower,Raisins,Cinnamon,Plums,Demerara sugar",Filter,Natural,"Catimor,Line S,Typical","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Indonesia
 Rwanda MAHEMBE,The Barn,Light to Medium Light,Western Province,"Cocoa,Nutmeg,Cherries",Filter,Washed,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
 Brazílie DATTERA RESERVE ,The Barn,Omni,Cerrado,"Nougat,Cherry jam",Omni,Natural,Aramosa,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Brazil
 Peru AROMAS DEL VALLE,The Barn,Medium to medium dark,Cajamarca,"Tangerines,Cookies",Espresso,Washed,"Catuai,Caturra","Moka pot,Espresso",Peru
+Colombia EL OBRAJE - gesha,The Barn,Light to Medium Light,Nariňo,"Jasmine,Passion fruit",Filter,Natural,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Burundi BUMBA HILL,The Barn,Omni,Kayanza,"Tangerines,Roses",Omni,Washed,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Burundi
+EASTER FILTER blend - Easter limited edition,Square Mile,Light to Medium Light,Kirinyaga,"Apple blossom,Cherry pie",Filter,Washed,Caturra,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot","Kenya,Peru"
+THE FILTER BLEND,Square Mile,Light to Medium Light,Lempira,"Nougat,Plums,Raisins",Filter,Washed,A mixture of varieties,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot","Peru,Honduras"
+Kenya UVUU,Square Mile,Light to Medium Light,Makueni,"Gooseberry,Bergamot,Baked apples",Filter,Washed,"Batian,Sl34,SL28","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
 Ethiopia TELILA HONEY YUKRO,Square Mile,Light to Medium Light,Jimma,"White peach,Apricots",Filter,Honey,"JARC 74110,JARC 74112","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 EASTER ESPRESSO blend - Easter limited edition,Square Mile,Medium to medium dark,Kirinyaga,"Chocolate,Cherries",Espresso,Washed,Caturra,"Moka pot,Espresso","Kenya,Peru"
+Peru LA BERMEJA,Square Mile,Medium to medium dark,Cajamarca,"Cranberries,Caramel,Almond",Espresso,Washed,"Catimor,Catuai,Pache","Moka pot,Espresso",Peru
+Ethiopia CHALCHISSA,Square Mile,Medium to medium dark,Jimma,"Strawberries,Caramel,Cherries",Espresso,Washed,"JARC,JARC 74110","Moka pot,Espresso",Ethiopia
+China AQI BADU,Square Mile,Light to Medium Light,Yunnan,"Honey,Prunes,Cocoa nibs",Filter,Natural,Catimor,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",China
+Ethiopia TELILA HONEY GENJI CHALLA - espresso,Square Mile,Medium to medium dark,Jimma,"Tangerines,Nectarines,Syrup",Espresso,Honey,"74110,74112","Moka pot,Espresso",Ethiopia
 Ethiopia KOKEB SIWANI,Gardelli Coffee,Omni,Yirgacheffe,"Orange,Strawberries,Blueberries,Papaya,Lime",Omni,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Ethiopia
+EL MANGO pen,Gardelli Coffee,Omni,Cajamarca,"Almond,Honey,Apple,Lemonade",Omni,Washed,"Catuai,Pache","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Peru
 Ethiopia URAGA,Gardelli Coffee,Omni,Uraga,"Orange,Strawberries,Mango,Papaya",Omni,Anaerobic,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Ethiopia
 Ethiopia WUBANCHI,Gardelli Coffee,Omni,Guji,"Roses,Orange,Pear,Raspberries,Elderflower",Omni,Experimental,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Ethiopia
+Brazil FAZENDA BAIOKA,Gardelli Coffee,Omni,Cerrado Mineiro,"Chocolate,Cherries,Grapes,Yellow plums",Omni,Natural,Mundo Novo,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Brazil
+Indonesia BLUE BATAK,Gardelli Coffee,Omni,Sumatra,"Cranberries,Grapefruit,Honey,Maple syrup,Malt,Herbs",Omni,Washed,"Typical,Catimor","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Indonesia
+Kenya THIRIKU AB,Gardelli Coffee,Omni,Nyeri,"Grapefruit,Plums,Black currant,Lime",Omni,Washed,SL28,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Kenya
+Kenya KIGWANDI AB,Gardelli Coffee,Omni,Nyeri,"Grapefruit,Lemons,Tomatoes,Mulberry",Omni,Washed,"SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Kenya
 Colombia VILLAMARIA - decaffeinated,Gardelli Coffee,Omni,Caldas,"Guava,Brown sugar,Cocoa,Honey",Omni,Natural,"Castillo,Colombia","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Colombia
+Ethiopia GENJI CHALLA,Beansmith.s,Light to Medium Light,Jimma,"Strawberries,Špendlík,Yuzu,Green tea",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Brazil DIAMOND - 1000g,Beansmith.s,Medium to medium dark,Minas Gerais,"Hazelnuts,Milk chocolate",Espresso,Natural,"Bourbon,Catuai,Mundo Novo","Moka pot,Espresso",Brazil
+Kenya KAHUNYO AA,Beansmith.s,Light to Medium Light,Murang’a,"Black tea,Redcurrant,Apricots",Filter,Washed,"Ruiru 11,SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+By PEDRO GARCIA,Beansmith.s,Light to Medium Light,San Francisco,"Cola,Caramel,Orange",Filter,Washed,"Bourbon,Pache","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Peru
+Ethiopia ODACO,Beansmith.s,Light to Medium Light,Sidama,"Cranberries,Peach,Apple,Oolong",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Brazil DIAMOND,Beansmith.s,Medium to medium dark,Minas Gerais,"Milk chocolate,Hazelnuts",Espresso,Natural,A mixture of varieties,"Espresso,Moka pot",Brazil
+Rwanda KARAMBI,Beansmith.s,Medium to medium dark,Western Province,"Caramel,Blackberry,Fruit candies",Espresso,Washed,Bourbon,"Moka pot,Espresso",Rwanda
+Ethiopia CHELBESA,Beansmith.s,Medium to medium dark,Yirgacheffe,"Raspberries,Milk chocolate,Green tea",Espresso,Natural,Heirloom,"Moka pot,Espresso",Ethiopia
 Ethiopia COMMON GROUNDS - maturing in whiskey barrels,Dark Woods Coffee,Omni,Yirgacheffe,"Milk chocolate,Dried fruit,Vanilla",Omni,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Ethiopia
 Ethiopia COMMON GROUNDS - sample,Dark Woods Coffee,Omni,Yirgacheffe,"Milk chocolate,Dried fruit,Vanilla",Omni,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Ethiopia
 Ethiopia CHELCHELE,Main Lane Coffee Roasters,Light to Medium Light,Yirgacheffe,"Raspberries,Blackberry,Green tea",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Colombia NESTOR LASSO,Kmen Coffee Roasters,Light to Medium Light,Huila,"Black tea,Orange,Cherry tomatoes",Filter,Anaerobic,Pink Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Nicaragua FINCA AURORA - espresso,Kmen Coffee Roasters,Medium to medium dark,Matagalpa,"Apple,Nectarines,Dark chocolate",Espresso,Natural,Parainema,"Moka pot,Espresso",Nicaragua
+Colombia ANA GLORIA RODRIGUEZ,Kmen Coffee Roasters,Medium to medium dark,Huila,"Cranberries,Lemon grass,Chocolate bar with raisins",Espresso,Washed,"Caturra,Colombia","Moka pot,Espresso",Colombia
+Columbia SYRACUSE,Kmen Coffee Roasters,Light to Medium Light,Caldas,"Dark Bitter chocolate,Papaya,Rum",Filter,Anaerobic,Castillo,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Brazil BELA VISTA,Mima coffee roastery,Omni,Minas Gerais,"Chocolate,Grapefruit,Caramel",Omni,Anaerobic,Red Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Brazil
+Ethiopia WORKA,Mima coffee roastery,Omni,Yirgacheffe,"Cocoa,Cream,Tropical fruit",Omni,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Ethiopia
+Mexico GILDO,Mima coffee roastery,Omni,Mixteca,"Pineapple,Black tea,Nuts",Omni,Washed,"Bourbon,Typical","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Mexico
+MIMA ESPRESSO blend,Mima coffee roastery,Medium to medium dark,Matas de Minas,"Chocolate,Nuts",Espresso,Natural,A mixture of varieties,"Espresso,Moka pot",Brazil
+Rwanda RUGALI ANAEROBIC,Mima coffee roastery,Omni,Nyamasheke,"Elderberries,Strawberries,Nugátu",Omni,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Rwanda
+Honduras EL TONTOLO,Mima coffee roastery,Omni,San Marcos,"Honey,Nuts,Pear",Omni,Anaerobic,Parainema,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Honduras
+MIMA ESPRESSO blend - 1000g,Mima coffee roastery,Medium to medium dark,Mate de Minas,"Chocolate,Nuts",Espresso,Natural,A mixture of varieties,"Espresso,Moka pot",Brazil
+Kenya MURARANDIA - Valentine's limited edition,Mima coffee roastery,Omni,Muranga,"Green apple,Grapefruit,Nutmeg",Omni,Washed,"Ruiru 11,SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Kenya
+Kenya KABETE,Mima coffee roastery,Light to Medium Light,Kiambu,"Blueberries,Red wine,Strawberries",Filter,Washed,"Ruiru 11,SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Colombia CÉSAR - pink bourbon,Mima coffee roastery,Light to Medium Light,Huila,"Blueberries,Black tea,Rhubarb",Filter,Washed,Pink Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 Panama AUROMAR,Nordbeans,Light to Medium Light,Chiriqui,"Caramel,Red apple,Green tea",Filter,Natural,Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Panama
 Brazil HORIZONT,Nordbeans,Medium to medium dark,Minas Gerais,"Chocolate,Hazelnuts,Ripe fruit",Espresso,Natural,Yellow Catuai,"Espresso,Moka pot",Brazil
+Ethiopia HAPPY BIRTHDAY KOFIO - espresso,Good Beans,Medium to medium dark,Sidama,"Berry fruits,Chocolate,Tropical fruit",Espresso,Washed,Heirloom,"Moka pot,Espresso",Ethiopia
+Nicaragua NUEVA SEGOVIA,Good Beans,Omni,Nueva Segovia,"Caramel,Milk chocolate,Black currant",Omni,Washed,"Caturra,Java,Pacas","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Nicaragua
 Ethiopia HAPPY BIRTHDAY KOFIO - filter,Good Beans,Light to Medium Light,Sidama,"Berry fruits,Chocolate,Tropical fruit",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
 Peru CHIRINOS,Good Beans,Omni,Chirinos,"Honey,Chocolate",Omni,Washed,"Caturra,Typical,Pache","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Peru
 Rwanda GAKENKE,Good Beans,Medium to medium dark,Gakenke,"Candied orange,Stone fruit",Espresso,Washed,Bourbon,"Moka pot,Espresso",Rwanda
 Ethiopia SAYISA - anaerobic,Concept Coffee Roasters,Light to Medium Light,Hambella,"Blueberries,Gummy bears,Coke",Filter,Anaerobic,Dega,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+PEACE OF CAKE ESPRESSO blend,Concept Coffee Roasters,Medium to medium dark,Caldas,"Berries,Chocolate,Almond",Espresso,Natural,Castillo,"Moka pot,Espresso","Brazil,Colombia"
+Rwanda GASHARU INTEGO – anaerobic,Concept Coffee Roasters,Light to Medium Light,Nyamasheke,"Blueberries,Kakaové lupínky,Kiwi",Filter,Experimental,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Rwanda GASHARU INTEGO - natural,Concept Coffee Roasters,Light to Medium Light,Nyamasheke,"Strawberries,Milk chocolate,Stone fruit",Filter,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Costa Rica LAS LAJAS,Concept Coffee Roasters,Light to Medium Light,Sabanilla de Alajuela,"Pineapple,Nectarines,Sparkling wine",Filter,Natural,SL28,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Colombia EL VERGEL,Concept Coffee Roasters,Light to Medium Light,Tolima,"Banana,Chocolate,Strawberries",Filter,Anaerobic,"Red Caturra,Yellow Caturra","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Kenya KEGWA,Concept Coffee Roasters,Light to Medium Light,Kirinyaga,"Currant,Nectarines,Citrus",Filter,Washed,"SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Panama DAMARLI ESTATE,Concept Coffee Roasters,Medium to medium dark,Boquete,"Nougat,Apple,Black currant",Espresso,Natural,Bourbon,"Espresso,Moka pot",Panama
+Peru LAS PINAS - espresso,Concept Coffee Roasters,Medium to medium dark,Huabal,"Chocolate,Blackberry,Lime",Espresso,Natural,"Catuai,Pache,Catura","Espresso,Moka pot",Peru
+Ethiopia HALO BERITI - Easter barrel special,Concept Coffee Roasters,Medium to medium dark,Gedeb,"Ananasový řez,Chocolate,Eggnog",Espresso,Natural,Heirloom,"Moka pot,Espresso",Ethiopia
+Costa Rica MONTERO FAMILY,Morgon Coffee Roasters,Light to Medium Light,Tarazzu,"Chocolate cookies,Plums",Filter,Honey,Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Costa Rica MONTERO FAMILY - espresso,Morgon Coffee Roasters,Medium to medium dark,Tarazzu,"Peach,Chocolate,Coconut",Espresso,Honey,Catuai,"Espresso,Moka pot",Costa Rica
 Kenya GAKUYUINI,Morgon Coffee Roasters,Light to Medium Light,Kirinyaga,"Blackberry,Jam,Gooseberry",Filter,Washed,"SL28,SL34,K7","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
 Ethiopia IDIDO,BeBerry Coffee,Light to Medium Light,Yirgacheffe,"Orange flower,Bergamot,Ice tea,White peach",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+El Salvador MAURICIO SALAVERRIA - natural,BeBerry Coffee,Medium to medium dark,Apaneca,"Cherry compote,Walnuts,Mléčná tyčinka MilkyWay",Espresso,Natural,Red Bourbon,"Espresso,Moka pot",El Salvador
+Honduras LA FLORIDA,BeBerry Coffee,Medium to medium dark,El Paraiso,"Milk chocolate,Cashew,Dried cranberries",Espresso,Natural,Yellow Catuai,"Espresso,Moka pot",Honduras
+Uganda ZEBIGI,BirdSong Coffee,Light to Medium Light,Elgon,"Black tea,Pomelo,Ovesné sušenky",Filter,Washed,"SL28,SL14,Nyasaland","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Uganda
 Kenya RUBY BATIAN NX,Coffea Circulor,Light to Medium Light,Meru,"Blueberries,Apple,Mango,Yellow plums",Filter,Natural,Batian,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
 Ethiopia DUROMINA WX,Coffea Circulor,Light to Medium Light,Jimma,"Apricots,Orange,Blackberry",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Ethiopia CHACHO NX,Coffea Circulor,Light to Medium Light,Gedeb,"Apricots,Raspberries,Moruška",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Kenya OUTO SL34 AA WX,Coffea Circulor,Light to Medium Light,Meru,"Peach,Lime,Honey,Nutmeg,Rhubarb",Filter,Washed,SL34,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
 Panama AGATSBY GEISHA CCX - WCIGS Winner,Coffea Circulor,Light to Medium Light,Callejón Seco,"Peach,Pear,Lychee,Prosecco,Roses,Tropical fruit",Filter,Experimental,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Panama
+Kenya BISHOP R11 AA WHDX,Coffea Circulor,Light to Medium Light,Meru,"Strawberries,Honey,Rhubarb,Vanilla",Filter,Experimental,Ruiru 11,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Ecuador INDERA GEISHA NX,Coffea Circulor,Light to Medium Light,Chaguerpamba,"Blueberries,Peach,Jasmine,Roses",Filter,Natural,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ecuador
+Burundi BURAMBI,Colonna Coffee,Light to Medium Light,Gitaza,"Peach,Red apple,Pear,Lime,Tangerines,Cherries",Filter,Natural,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Burundi
 Brazil RAFAEL VINHAL - birthday coffee,Dos Mundos,Light to Medium Light,Minas Gerais,"Flowers,Carambola,Rambutan",Filter,Experimental,Catuaí 144,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Brazil
 Kenya KEGWA AA,Dos Mundos,Light to Medium Light,Kirinyaga,"Blackberry,White grapes,Limetkový cheesecake",Filter,Washed,"Batian,SL28,SL34,Ruiru 11","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Rwanda BWENDA - filter,Dos Mundos,Light to Medium Light,Nyamagabe,"Black currant,White chocolate,Wildflowers",Filter,Washed,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
 Colombia MARISOL NAÑEZ,Dos Mundos,Light to Medium Light,Huila,"Peach,Lime,Green apple",Filter,Washed,Pink Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Colombia BENEDICTO PUENTES,Dos Mundos,Light to Medium Light,Tolima,"Baklava,Orange flower,Růžové pomelo",Filter,Experimental,Castillo,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
 FIFTY ESPRESSO blend - 1000g,Fiftybeans,Medium to medium dark,Bálsamo - Quezaltepec,"Dark Bitter chocolate,Dutch cocoa,Cocoa nibs",Espresso,Washed,"Catuai,Castillo","Espresso,Moka pot","Colombia,Brazil"
 Colombia PURPLE FRUIT,Fiftybeans,Light to Medium Light,Quindìo,"Bonpary,Forest fruit,Lilac",Filter,Experimental,Castillo,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Ethiopia TIGIST KEBEDE,Fiftybeans,Light to Medium Light,Yirgacheffe,"Plums,Honey,Peach,Lavender",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Indonesia WILDAN MUSTOFA,Fiftybeans,Light to Medium Light,Indonésie - Kerinci,"Pineapple,Strawberries,Cocoa nibs,Flowers",Filter,Anaerobic,Sigarar Utang,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Indonesia
+Brazil RAFAEL VINHAL,Fiftybeans,Light to Medium Light,Cerrado,"Caramel,Lavender,Green tea",Filter,Experimental,Topazio,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Brazil
+Indonesia GAYO BENER MERIAH,Friedhats Coffee,Light to Medium Light,Indonésie - Kerinci,"Caramel,Flowers,Blackberry,Dried figs",Filter,Anaerobic,"Bourbon,Abyssinah","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Indonesia
+Rwanda GASHARU,Friedhats Coffee,Light to Medium Light,Macuba,"Orange peel,Candied fruit",Filter,Washed,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Ethiopia BOMB,Friedhats Coffee,Light to Medium Light,Sidama,"Milk chocolate,Strawberries,Tropical fruit",Filter,Natural,"74110,Setami,Mikicho","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Kenya THIRIKU,Friedhats Coffee,Light to Medium Light,Nyeri,Ripe fruit,Filter,Washed,SL28,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Ethiopia SUKE QUTO,Friedhats Coffee,Light to Medium Light,Guji,"Jasmine,Lemons,Elderflower",Filter,Washed,"Kurume,Welicho","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Ethiopia TEGA&TULA MICHITI NATURAL,Goat Story,Medium to medium dark,Etiopie - Gera,"Peach,Chocolate,Cookies,Dried figs",Espresso,Natural,Heirloom,"Espresso,Moka pot",Ethiopia
+Ethiopia AYLA BOMBE,Goat Story,Omni,Sidama,"Earl Grey,Strawberries,Hazelnuts,Cookies,Plums",Omni,Natural,Kurume,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Ethiopia
+Nicaragua LOS PLACERES 2021,Goat Story,Omni,Matagalpa,"Tangerines,Orange,Plums",Omni,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Nicaragua
+Brazil SUL DE MINAS - peaberry,Goat Story,Medium to medium dark,Sul de Minas,"Dark Bitter chocolate,Grapes,Hazelnuts",Espresso,Natural,Catuai,"Moka pot,Espresso",Brazil
+Ethiopia AJERE,Goat Story,Omni,Yirgacheffe,"Apricots,Honey,Jasmine,Flowers,Lavender",Omni,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Ethiopia
+Nicaragua LOS PLACERES,Goat Story,Omni,Matagalpa,"Tangerines,Plums,Orange",Omni,Natural,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Nicaragua
+GOOD VIBRATION ESPRESSO blend,Goat Story,Medium to medium dark,Caparao,"Chocolate,Caramel,Vanilla",Espresso,Natural,"Bourbon,Catuai","Moka pot,Espresso",Brazil
+Rwanda GASHARU IMPANO,Goat Story,Omni,Nyamasheke,"Tropical fruit,Cherries,Coconut",Omni,Anaerobic,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Rwanda
+Ethiopia TEGA&TULA GERA WASHED,Goat Story,Light to Medium Light,Etiopie - Gera,"Grapefruit,Almond,Jasmine,Black currant,Green tea,Bergamot",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Costa Rica FINCA LAS NUBES,Goat Story,Omni,Valle del Dota,"Caramel,Chocolate,Strawberries,Yoghurt",Omni,Honey,Caturra,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Costa Rica
+Rwanda GITWE 96,Mlsnacava,Light to Medium Light,Nyamasheke,"Peach,Kiwi,Orange jam,Vanilla",Filter,Washed,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Rwanda
+Tanzania GAIA,Mlsnacava,Light to Medium Light,Ngorongoro,"Grapefruit,Caramel,Flowers,Marzipan",Filter,Washed,Batian,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Tanzania
+Ethiopia BIRBISA,Mlsnacava,Light to Medium Light,Agaro,"Blueberries,Strawberries,Raspberries",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+By ANDY LLANOS,Mlsnacava,Light to Medium Light,Cajamarca,"Apple,Flowers,Marzipan,Špendlík",Filter,Washed,Tabi,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Peru
+Rwanda GITWE 96 - espresso,Mlsnacava,Medium to medium dark,Nyamasheke,"Peach,Kiwi,Orange jam,Vanilla",Espresso,Washed,Red Bourbon,"Moka pot,Espresso",Rwanda
+Ethiopia BIRBISA - espresso,Mlsnacava,Medium to medium dark,Agaro,"Blueberries,Strawberries,Raspberries",Espresso,Natural,Heirloom,"Moka pot,Espresso",Ethiopia
+Brazil ALLESANDRO HERVAZ,Mlsnacava,Medium to medium dark,Mantiqueira de Minas,"Almond,Marzipan,Cherries",Espresso,Natural,Catuai amarelo,"Moka pot,Espresso",Brazil
+Ethiopia NANO CHALLA,Mlsnacava,Light to Medium Light,Jimma,"Bergamot,Tea,Lemons,Forest fruit",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Costa Rica SAN FRANCISCO,Mlsnacava,Light to Medium Light,San Francisco,"Grapes,Coconut,Nougat,Cherries,Green apple",Filter,Washed,"Catuai,Caturra","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Tanzania GAIA - espresso,Mlsnacava,Medium to medium dark,Ngorongoro,"Caramel,Grapefruit,Flowers,Marzipan",Espresso,Washed,Batian,"Espresso,Moka pot",Tanzania
+Brazil FAZENDA ZAROCA,Mlsnacava,Medium to medium dark,Tres Pontas,"Dark Bitter chocolate,Cashew,Rum,Black cherries",Espresso,Natural,Yellow Bourbon,"Moka pot,Espresso",Brazil
+Guatemala LA BOLSA,Mlsnacava,Medium to medium dark,Huehuetenango,"Cocoa,Passion fruit,Raspberry jam,Dužinové ovoce",Espresso,Natural,"Caturra,Bourbon","Espresso,Moka pot",Guatemala
+Ethiopia NANO CHALLA - sample,Mlsnacava,Light to Medium Light,Jimma,"Bergamot,Tea,Lemons,Forest fruit",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Costa Rica SAN FRANCISCO - sample,Mlsnacava,Light to Medium Light,San Francisco,"Grapes,Coconut,Nougat,Cherries,Green apple",Filter,Washed,"Catuai,Caturra","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Bolivia JUAN MAMANI,Mlsnacava,Medium to medium dark,Caranavi,"Caramel,Orange,Pineapple",Espresso,Washed,Caturra,"Espresso,Moka pot",Bolivia
+Ethiopia CHELBESA,Mlsnacava,Light to Medium Light,Yirgacheffe,"Jasmine,Banana,White peaches",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Nicaragua LA ESPERANZA,Mlsnacava,Medium to medium dark,Nueva Segovia,"Dark Bitter chocolate,Mango,Salted caramel,Švestkové víno",Espresso,Natural,Parainema,"Moka pot,Espresso",Nicaragua
+Brazil RANCHO GRANDE,Pikola,Medium to medium dark,Sul de Minas,"Chocolate,Caramel,Plums",Espresso,Natural,Yellow Bourbon,"Moka pot,Espresso",Brazil
+Ethiopia DIKITU,Pikola,Light to Medium Light,Guji,"Blueberries,Dark Bitter chocolate,Jasmine",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Costa Rica LOS CIPRESES,Pikola,Light to Medium Light,West Valley,"Pineapple,Caramel,Green apple",Filter,Honey,"Caturra,Villalobos","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Nicaragua LA HUERTA,Pikola,Omni,Nikaragua - Cerro Mogoton,"Chocolate,Cherries",Omni,Washed,"Bourbon,Red Catuai","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Moka pot,Vacuum Pot,Espresso",Nicaragua
+Colombia JAIRO ARCILA - set of 2 coffees,Pikola,Light to Medium Light,Quindìo,"Caramel,Peach,Pomegranate,Orange,Tutti Frutti,Lemon grass",Filter,Honey,"Pink Bourbon,Tabi","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Colombia SIRUMA - Christmas Gesha,Pikola,Light to Medium Light,Caldas,"Mango,Christmas sweets",Filter,Natural,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Colombia
+Brazil FAZENDA SERTAO,Pikola,Medium to medium dark,Minas Gerais,"Dark Bitter chocolate,Plums",Espresso,Natural,Red Bourbon,"Moka pot,Espresso",Brazil
+Colombia PICHICA,Pikola,Medium to medium dark,El Palmichal,"Peach,Black tea with lemon",Espresso,Washed,"Caturra,Colombia,Tabi","Espresso,Moka pot",Colombia
+Ethiopia BULIYE - filter,Pikola,Light to Medium Light,Guji,"Black tea,Citrus",Filter,Natural,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Ethiopia BULIYE - espresso,Pikola,Medium to medium dark,Guji,"Black tea,Citrus",Espresso,Natural,Heirloom,"Espresso,Moka pot",Ethiopia
+Costa Rica DON ELI JACOB - filter,Pikola,Light to Medium Light,Kostarika - Tarrazu,"Pineapple,Griotka",Filter,Anaerobic,Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Costa Rica
+Brazil ALESSANDRO HERVAZ,Pikola,Medium to medium dark,Minas Gerais,"Cheesecake,Chocolate cake,Kiwi",Espresso,Natural,Yellow Bourbon,"Moka pot,Espresso",Brazil
+Peru ANAI DALILA GUEVARA,Pikola,Light to Medium Light,San Ignacio,"White grapes,Red fruits",Filter,Washed,"Catimor,Pache","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Peru
+Rwanda BWENDA,Rebelbean,Omni,Nyamagabe,"Black tea,Blackberry,Panela",Omni,Washed,Red Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot,Espresso,Moka pot",Rwanda
+Colombia ENCISO - espresso,The Coffee Collective,Medium to medium dark,Tolima,"Cocoa,Forest fruit,Honey,Apricots",Espresso,Washed,"Castillo,Caturra","Moka pot,Espresso",Colombia
+Ethiopia ECHEMO,Tim Wendelboe,Light to Medium Light,Jimma,"Flowers,Honey,Stone fruit",Filter,Washed,Heirloom,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Ethiopia FAHEM,Tim Wendelboe,Light to Medium Light,Illubabor,"Peach,Flowers,Lemons",Filter,Washed,74110,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Honduras CABALLERO - 2021,Tim Wendelboe,Light to Medium Light,La Paz,"Chocolate,Apple,Dried fruit",Filter,Washed,Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Honduras
+Kenya CAROGOTO,Tim Wendelboe,Light to Medium Light,Nyeri,"Black currant,Hibiscus,Hip",Filter,Washed,"Batian,Ruiru 11,SL28,SL34","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+El Salvador LOS PIRINEOS,Tim Wendelboe,Light to Medium Light,Usulután,"Chocolate,Roasted nuts,Dried fruit",Filter,Semi-washed,Bourbon,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",El Salvador
+Ethiopia TATMARA - 2022,Tim Wendelboe,Light to Medium Light,Dakiti,"Strawberries,Flowers,Tropical fruit",Filter,Natural,"74110,Heirloom","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Ethiopia
+Kenya KAROGOTO,Tim Wendelboe,Light to Medium Light,Nyeri,"Black currant,Hibiscus,Ripe cherries",Filter,Washed,"Batian,SL28,SL34,Ruiru 11","Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Kenya
+Honduras CABALLERO,Tim Wendelboe,Light to Medium Light,La Paz,"Dried fruit,Chocolate,Herbs,Nuts",Filter,Washed,Catuai,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Honduras
+El Salvador LOS PYRINEOS PACAMARA,Tim Wendelboe,Light to Medium Light,Usulután,"Dark Bitter chocolate,Stone fruit,Tropical fruit",Filter,Honey,Pacamara,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",El Salvador
+Ethiopia TATMARA - 2022 - espresso,Tim Wendelboe,Medium to medium dark,Dakiti,"Strawberries,Flowers,Tropical fruit",Espresso,Natural,"74110,Heirloom","Moka pot,Espresso",Ethiopia
+Honduras CABALLERO - espresso,Tim Wendelboe,Medium to medium dark,La Paz,"Dried fruit,Chocolate,Nuts",Espresso,Washed,Catuai,"Espresso,Moka pot",Honduras
+Honduras CABALLERO - geisha,Tim Wendelboe,Light to Medium Light,La Paz,"Tangerines,Honey,Jasmine",Filter,Honey,Geisha (Gesha),"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Honduras
+Honduras NACIMIENTO PACAS,Tim Wendelboe,Light to Medium Light,Santa Barbara,"Chocolate,Herbs,Red berry fruit",Filter,Washed,Pacas,"Aeropress,Chemex,Clever dripper,French Press,Hario V60,Vacuum Pot",Honduras
