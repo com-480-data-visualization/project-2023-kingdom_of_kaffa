@@ -39,9 +39,11 @@ For our project we use two datasets: (1) scraped data from the website [Kofio](h
 
 Although each coffee product has exactly the same keys, some of the values for certain keys are null, thus requiring missing value treatment. Besides, the Price variable should be of float type instead of string with comma, so we convert them to float. All of these are done in Python.
 
-**Coffee dataset.** We use the [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset) to display the global production and consumption of coffee. This dataset provides information on the amount of coffee export, import and consumption by countries from 1990 to 2019. During the analysis, we discovered that some of the values representing the number of kilograms were less than 0. This issue occurred due to an overflow error that occurred during some calculations. To resolve this issue, we used the original [Python notebooks](https://github.com/MSI17819/Coffee_data_analysis/blob/main/Coffee_codeimpro.ipynb) to fetch the data, perform the necessary calculations while taking into account the possibility of overflow, and saved the updated dataset.
+**Coffee dataset.** We use the [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset) to display the global production and consumption of coffee. This dataset provides information on the amount of coffee export, import and consumption by countries from 1990 to 2019.
 
-**Pairing dataset.** We collected the data about how to pair coffee with data from [homegrounds](https://www.homegrounds.co/coffee-food-pairing/) The dataset we collected has three columns: Coffee origin, Food and Flavor type. For example:
+<!-- During the analysis, we discovered that some of the values representing the number of kilograms were less than 0. This issue occurred due to an overflow error that occurred during some calculations. To resolve this issue, we used the original [Python notebooks](https://github.com/MSI17819/Coffee_data_analysis/blob/main/Coffee_codeimpro.ipynb) to fetch the data, perform the necessary calculations while taking into account the possibility of overflow, and saved the updated dataset. -->
+
+**Pairing dataset.** We collected the data about how to pair coffee with data from [Homegrounds](https://www.homegrounds.co/coffee-food-pairing/) website. The dataset we collected has three columns: Coffee origin, Food and Flavor type. For example:
 
 | Coffee origin | Food | Flavor type |
 | --- | --- | --- |
@@ -63,29 +65,23 @@ To meet the goals describe above, our website will roughly (might change sligthl
 
 **Figure 3:** This bubble-cluster visualization provides filtering options based on flavor, brewing method, and roast level. Users can input their preferences, and the visualization will output the coffee that best aligns with their taste.
 
+**Figure 4:** This pairing visulaization shows which types of food are recommended to be consumed with specific types of coffee, based on the origin/flavour of the coffee.
+
 ### Exploratory Data Analysis
-
-<!-- > Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data -->
-
 #### Coffee dataset analysis
-We will be using the Coffee dataset to create a visualization (Figure 1) of global coffee consumption and production on a world map. The Coffee dataset includes seven files containing data on coffee import and export, but we will be focusing on the following three files:
+We created a world map visualization (Figure 1) of global coffee consumption and production using the Coffee dataset. The Coffee dataset includes seven files about coffee import and export, but we focused on the following two files:
+> - Coffee_total_consumption.csv - combination of Coffee_domestic_consumption.csv and Coffee_import_consumption.csv
+> - Coffee_production.csv  
 
-> - Coffee_domestic_consumption.csv
-> - Coffee_import_consumption.csv
-> - Coffee_production.csv 
+We used the [geopandas](https://geopandas.org/en/stable/) library to create the map, but had to rename some country names in our dataset to match the library's names.
 
-**Global consumption.** To achieve our goal of visualizing global consumption, we combined two files - Coffee_domestic_consumption.csv and Coffee_import_consumption.csv - into one file called Coffee_total_consumption.csv. To visualize the map, we used the [geopandas](https://geopandas.org/en/stable/) library. However, the country names in our dataset had to be renamed to match the names in the geopandas library.
-
-**Global production.** To visualize global production, we used the Coffee_production.csv file. Again, we used the geopandas library to create the map, but we had to rename the country names in our dataset to match those in the geopandas library. The clean dataset is saved in Coffee_production_clean.csv.
-
-The figure below displays global coffee consumption with respect to the type of coffee and production rate. The two types of coffee - Arabica and Robusta - are produced in countries located in Central and South America, Western, Eastern, and Central Africa, and South and Southeast Asia. Some countries produce both types of coffee. Brazil is the largest producer of Arabica and Robusta, Colombia is the biggest producer of Robusta, and Côte d'Ivoire is the largest producer of Arabica.
+**Global production.**
+This figure displays global coffee production rates for Arabica and Robusta coffee. Arabica and Robusta coffee types are produced in countries across Central and South America, Africa, and Asia, with some countries producing both. Brazil is the largest producer of both types, while Colombia and Côte d'Ivoire are the largest producers of Robusta and Arabica, respectively.
 ![Global production](dataset_analysis/images/global_production.jpg "Global production")
 
-The figure below provides a closer look at the top 10 coffee-producing countries from 1990 to 2020. Brazil, Uganda, and Colombia are the biggest producers, and there has been a positive trend in their production over the years, which may indicate an increasing demand for coffee.
-![Global production top10](dataset_analysis/images/production_top10.jpg "Global production top10")
-
-Note: This last visualisation was taken from [Coffee - Extensive EDA](https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda).
+**Global consumption.** 
+The figure below suggests that coffee consumption is becoming increasingly popular around the world, but that the Americas may be the region with the highest demand for coffee.
+![Global consumption](dataset_analysis/images/global_consumption.jpg "Global consumption")
 
 #### Kofio dataset analysis
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
@@ -102,12 +98,6 @@ The figure below presents a clear look at the origin-flavor pairings.
 <!-- To be continued -->
 
 ### Related work
-
-
-> - What others have already done with the data?
-> - Why is your approach original?
-> - What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-
 Since the Kofio Dataset is scraped by us, nobody has done with this dataset. However, several works have conducted data analysis and visualization on the Coffee dataset.
 * [Coffee Economic EDA](https://www.kaggle.com/code/ayaabdalsalam/coffee-economic-eda) tabulates the total coffee consumption for 55 countries and subsequently displays the resulting data in a histogram format. The histogram portrays the consumption of each country in a descending order. Besides, it analyzes the mean, median and total consumption from 1990 to 2020 and the coffee type of each country.
 * [Coffee - Extensive EDA](https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda) examines different aspects of the Coffee dataset, such as global coffee production and consumption, the top coffee-producing countries, the different types of coffee produced, and the top coffee importers and exporters. The analysis also includes a comparison of coffee production and consumption trends over the years. The resultant data was subsequently represented using line and bar charts.
