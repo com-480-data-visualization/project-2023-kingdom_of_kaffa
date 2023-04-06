@@ -16,7 +16,7 @@ This is a preliminary milestone to let you set up goals for your final project a
 
 ### Dataset
 
-For our project we use two datasets: (1) scraped data from the website [Kofio](https://www.kofio.co/), (2) Kaggle [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset).
+For our project we use two datasets: (1) scraped data from the website [Kofio](https://www.kofio.co/), (2) Kaggle [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset), (3) collected data about [Coffee-Food-Pairing](https://www.homegrounds.co/coffee-food-pairing/).
 
 **Kofio Dataset.** We scraped the necessary data from [Kofio](https://www.kofio.co/) because we couldn't find a suitable dataset that met our requirements regarding coffee flavors, brewing methods, and brands. Kofio offers a wide range of coffee products from various European brands. All of the coffee products on Kofio have the same set of information, as an example:
 
@@ -40,6 +40,15 @@ For our project we use two datasets: (1) scraped data from the website [Kofio](h
 Although each coffee product has exactly the same keys, some of the values for certain keys are null, thus requiring missing value treatment. Besides, the Price variable should be of float type instead of string with comma, so we convert them to float. All of these are done in Python.
 
 **Coffee dataset.** We use the [Coffee Dataset](https://www.kaggle.com/datasets/michals22/coffee-dataset) to display the global production and consumption of coffee. This dataset provides information on the amount of coffee export, import and consumption by countries from 1990 to 2019. During the analysis, we discovered that some of the values representing the number of kilograms were less than 0. This issue occurred due to an overflow error that occurred during some calculations. To resolve this issue, we used the original [Python notebooks](https://github.com/MSI17819/Coffee_data_analysis/blob/main/Coffee_codeimpro.ipynb) to fetch the data, perform the necessary calculations while taking into account the possibility of overflow, and saved the updated dataset.
+
+**Pairing dataset.** We collected the data about how to pair coffee with data from [homegrounds](https://www.homegrounds.co/coffee-food-pairing/) The dataset we collected has three columns: Coffee origin, Food and Flavor type. For example:
+
+| Coffee origin | Food | Flavor type |
+| --- | --- | --- |
+| Yemen | Blueberries | Fruity |
+| Columbia | white chocolate | Chocolate |
+
+The dataset is clean and needn't to be preprocessed.
 
 ### Problematic
 Originating from the mysterious land of the Kingdom of Kaffa in Eutopia, coffee has evolved into much more than a tasty and healthy beverage. It has transcended into a cultural symbol, a social ritual, a source of comfort, and a muse for inspiration. Across the globe, coffee shops have transformed into meeting places for friends, colleagues, and neighbors, fostering a sense of community. Additionally, coffee production is a significant economic driver in numerous societies, offering income and employment opportunities to small-scale farmers and large-scale plantations. 
@@ -80,6 +89,9 @@ Note: This last visualisation was taken from [Coffee - Extensive EDA](https://ww
 
 #### Kofio dataset analysis
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the [jupyter notebook](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
+
+#### Pairing dataset analysis
+![Coffee Food Pairing](dataset_analysis/images/pairing.png "Pairing")
 <!-- To be continued -->
 
 ### Related work
