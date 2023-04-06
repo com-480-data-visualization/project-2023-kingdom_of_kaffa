@@ -140,11 +140,15 @@ Also, several great visualizations from other topics have inspired us to come up
 - [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
 
 ### Conda enviroment for EDA <a id="installation"></a>
-1. Create conda environment from the provided yml file. It might take a couple minutes.
+1. Update conda packages:
+```
+conda update --all
+```
+2. Create conda environment from the provided yml file. It might take a couple minutes.
 ```
 conda env create --file=com480-kaffa.yml 
 ```
-2. Activate conda environment in your Code Editor. In VS code, choose **com480-kaffa** kernel in the python notebook. If it does not appear in the list of kernels after step 1, restart VS.
+3. Activate conda environment in your Code Editor. In VS code, choose **com480-kaffa** kernel in the python notebook. If it does not appear in the list of kernels after step 2, restart VS.
 
 
 
