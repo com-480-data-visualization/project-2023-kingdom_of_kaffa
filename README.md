@@ -66,6 +66,24 @@ To meet the goals describe above, our website will roughly (might change sligthl
 **Figure 4:** This pairing visulaization shows which types of food are recommended to be consumed with specific types of coffee, based on the origin/flavour of the coffee.
 
 ### Exploratory Data Analysis
+
+#### Kofio dataset analysis
+We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
+<!-- To be continued -->
+
+In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see thatthe price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
+<img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text" width="50%" height="50%" />
+
+#### Pairing dataset analysis
+We analyze the pairing dataset using jupyter notebook [pairing_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/pairing_da.ipynb).
+
+The dataset contains 83 entries and includes information on 25 different coffee origins, 23 different foods, and 8 different flavor types. We group the data by coffee origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
+
+The figure below presents a clear look at the origin-flavor pairings.
+
+<img src="/dataset_analysis/images/pairing.png" alt="alt text" width="50%" height="50%" />
+<!-- To be continued -->
+
 #### Coffee dataset analysis
 We analyze the Coffee dataset using jupyter notebook [coffee_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/coffee_da.ipynb).
 
@@ -83,19 +101,6 @@ This figure displays global coffee production rates for Arabica and Robusta coff
 The figure below suggests that coffee consumption is becoming increasingly popular around the world, but that the Americas may be the region with the highest demand for coffee.
 ![Global consumption](dataset_analysis/images/global_consumption.jpg "Global consumption")
 
-#### Kofio dataset analysis
-We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb)
-<!-- To be continued -->
-
-#### Pairing dataset analysis
-We analyze the pairing dataset using jupyter notebook [pairing_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/pairing_da.ipynb).
-
-The dataset contains 83 entries and includes information on 25 different coffee origins, 23 different foods, and 8 different flavor types. We group the data by coffee origins and flavor types to see the origin-flavor, origin-food, food-flavor pairings.
-
-The figure below presents a clear look at the origin-flavor pairings.
-
-<img src="/dataset_analysis/images/pairing.png" alt="alt text" width="50%" height="50%" />
-<!-- To be continued -->
 
 ### Related work
 Since the Kofio Dataset is scraped by us, nobody has done with this dataset. However, several works have conducted data analysis and visualization on the Coffee dataset.
