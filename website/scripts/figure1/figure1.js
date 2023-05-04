@@ -1,5 +1,5 @@
 
-function setMap(width, height, dataset) {
+function setMap(width, height, datapull) {
     const margin = {top: 10, right: 30, bottom: 10, left: 30};
     width = width - margin.left - margin.right;
     height = height - margin.top - margin.bottom;
