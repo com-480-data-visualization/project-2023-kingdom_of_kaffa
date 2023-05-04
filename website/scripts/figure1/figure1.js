@@ -1,5 +1,6 @@
 
 function setMap(width, height, datapull) {
+  console.log(datapull)
     const margin = {top: 10, right: 30, bottom: 10, left: 30};
     width = width - margin.left - margin.right;
     height = height - margin.top - margin.bottom;
@@ -15,6 +16,7 @@ function setMap(width, height, datapull) {
                  .style('max-width', 1200)
                  .style('margin', 'auto')
                  .style('display', 'flex');
+
     const b = path.bounds(datapull),
     s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0]  [1]) / height),
     t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
