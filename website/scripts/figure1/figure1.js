@@ -27,3 +27,31 @@ function setMap(width, height, datapull) {
       .append('path')
       .attr('d', path)
   }
+
+
+
+
+      //   const svg = d3.select("svg"),
+      // width = +svg.attr("width"),
+      // height = +svg.attr("height");
+
+      // // Map and projection
+      // const projection = d3.geoNaturalEarth1()
+      //     .scale(width / 1.3 / Math.PI)
+      //     .translate([width / 2, height / 2])
+
+      //     const path = d3.geoPath().projection(projection);
+
+
+
+      // // Load external data and boot
+      // d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then( function(data) {
+
+      //     // Draw the map
+      //     svg.selectAll('path')
+      //       .data(data.features)
+      //       .enter()
+      //     .append('path')
+      //       .attr('d', path)
+
+      // })
