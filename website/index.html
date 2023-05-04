@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="scripts/css/style.css">
 
     <link rel="stylesheet" href="scripts/fullpage/fullpage.min.css" />
+    <script <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
+
     <script src="scripts/fullpage/fullpage.extensions.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="scripts/fullpage/fullpage.min.js"></script>
+
 </head>
 <body>
   <div id="fullpage">
@@ -27,7 +30,9 @@
     <div class="section fp-auto-height">foot</div>
   </div>
   <script>
+    
     $(document).ready(function () {
+      // d3 = require("https://d3js.org/d3.v7.min.js");
         $("#fullpage").fullpage({
         // Navigation
         navigation: false,
@@ -62,6 +67,12 @@
         cards: false,
         cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true}
         });
+    
+    
+
+      console.log('It is working');
+      d3.json("example.json").then( function(data){console.log(data);});
+
     });
   </script>
 </body>
