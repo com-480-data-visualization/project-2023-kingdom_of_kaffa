@@ -9,7 +9,7 @@ function setMap(width, height, datapull) {
                       .scale(1)
                       .translate([0, 0]);
     const path = d3.geoPath().projection(projection);
-    const svg = d3.select('.figure1')
+    const svg = d3.select('#figure1')
                  .append('svg')
                  .attr('viewBox', '0 0 1000 600')
                  .attr('preserveAspectRatio', 'xMidYMid')
