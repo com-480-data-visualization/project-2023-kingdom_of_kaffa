@@ -11,7 +11,7 @@ function setMap(width, height, datapull) {
     const path = d3.geoPath().projection(projection);
     const svg = d3.select('#figure1')
                  .append('svg')
-                 .attr('viewBox', '0 0 1000 600')
+                 .attr('viewBox', '0 0 300 300')
                  .attr('preserveAspectRatio', 'xMidYMid')
                  .style('max-width', 1200)
                  .style('margin', 'auto')
