@@ -154,7 +154,6 @@ conda env create --file=com480-kaffa.yml
 
 ## Milestone 2 (7th May, 5pm)
 
-Refer to [Milestone2.md](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/milestone2.md)
 
 **10% of the final grade**
 
