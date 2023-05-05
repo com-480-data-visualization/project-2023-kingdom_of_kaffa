@@ -1,3 +1,7 @@
+body {
+    background-color: #F2EFE9;
+}
+
 #menu {
     position: fixed;
     display: block;
