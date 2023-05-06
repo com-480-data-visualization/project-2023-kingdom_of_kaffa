@@ -8,6 +8,8 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
+View Our website at [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa)
+
 ## Milestone 1
 
 **10% of the final grade**
@@ -67,7 +69,9 @@ To meet the goals describe above, our website will roughly (might change sligthl
 **Figure 4:** This pairing visulaization shows which types of food are recommended to be consumed with specific types of coffee, based on the origin/flavour of the coffee. The figure is structured in three columns, each of which corresponds to 'coffee origin', 'food', and 'flavor type'. The graph is interactive, allowing users to click on any bubble to establish connections with other relevant bubbles, represented by lines of the same color. Non-activating lines will be displayed in gray. Additionally, detailed and well-designed contents related to each bubble will be available upon clicking, offering users relevant information.
 
 ### Exploratory Data Analysis
+
 In the section [Conda enviroment for EDA](#installation) you can find instructions to install conda environment to run our python notebooks with EDA.
+
 #### Kofio dataset analysis
 
 We will be using the Kofio dataset we scraped to create visualizations (Figure 2,3,4) about the typical coffee products. Detailed analysis can be found in the jupyter_notebook [kofio analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/kofio_da.ipynb).
@@ -81,7 +85,7 @@ There're 3 unique Roast Levels: ['Light to Medium Light', 'Medium to medium dark
 There're 3 unique Roast Types: ['Filter', 'Espresso', 'Omni']
 ```
 
-In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see that the price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.   
+In the figure below we display coffee product (each color and size depicts different brand) with respect to price/rate/recommendation. You can see that the price of a coffee brand is not always an indicator of its quality or popularity, other factors should be considered such as ratings and recommendations. Example, "yellow" brand is cheap but with a high rating while "light violet" are more expensive and average.
 
 <img src="/dataset_analysis/images/brand_price_rating.jpg" alt="alt text"/>
 
@@ -96,6 +100,7 @@ The figure below presents a clear look at the origin-flavor pairings.
 <img src="/dataset_analysis/images/pairing.png" alt="alt text" width="50%" height="50%" />
 
 #### Coffee dataset analysis
+
 We analyze the Coffee dataset using jupyter notebook [coffee_analysis](https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa/blob/master/dataset_analysis/coffee_da.ipynb).
 
 We use Coffee dataset to visualize a world map of coffee consumption and produstion (Figure 1). The dataset includes seven files about coffee import and export, but we focused on the following two files:
@@ -140,22 +145,22 @@ Also, several great visualizations from other topics have inspired us to come up
 - [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
 
 ### Conda enviroment for EDA <a id="installation"></a>
+
 1. Update conda packages:
+
 ```
 conda update --all
 ```
+
 2. Create conda environment from the provided yml file. It might take a couple minutes.
+
 ```
-conda env create --file=com480-kaffa.yml 
+conda env create --file=com480-kaffa.yml
 ```
+
 3. Activate conda environment in your Code Editor. In VS code, choose **com480-kaffa** kernel in the python notebook. If it does not appear in the list of kernels after step 2, restart VS.
 
-
-
 ## Milestone 2
-
-
-**10% of the final grade**
 
 ## Milestone 3
 
