@@ -16,7 +16,9 @@
         <link rel="stylesheet" href="scripts/css/figure3.css" />
         <link rel="stylesheet" href="scripts/css/figure4.css" />
 
-        <link rel="stylesheet" href="lib/fullpage/fullpage.min.css" />
+        <!-- Use this version cause modified slide -->
+        <link rel="stylesheet" href="lib/fullpage/fullpage.css" />   
+
         <link
             href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap"
             rel="stylesheet"
@@ -44,54 +46,45 @@
     <body>
         <nav id="menu" class="highlightTextOut">
             <a class="menu-links" id="logo"
-                ><i>KINGDOM OF KAFFA</i>
-                <img
+                >KINGDOM OF KAFFA
+                <!-- UGLY LOGO -->
+                <!-- <img
                     id="logo_img"
                     src="https://www.svgrepo.com/download/217392/coffee-bean.svg"
-                />
+                /> -->
             </a>
 
             <div class="topnav-right">
-                <a class="menu-links" href="#home">HOME</a>
-                <a class="menu-links" href="#figure1">GLOBAL</a>
-                <a class="menu-links" href="#figure2">BRAND</a>
-                <a class="menu-links" href="#figure3">COFFEE</a>
-                <a class="menu-links" href="#figure4">FOOD</a>
+                <a class="menu-links" alt="HOME" href="#home">HOME</a>
+                <a class="menu-links" alt="GLOBAL" href="#figure1">GLOBAL</a>
+                <a class="menu-links" alt="BRAND" href="#figure2">BRAND</a>
+                <a class="menu-links" alt="COFFEE" href="#figure3">COFFEE</a>
+                <a class="menu-links" alt="FOOD" href="#figure4">FOOD</a>
             </div>
         </nav>
 
         <div id="fullpage">
-            <div class="section" id="home-page">HOME</div>
-            <div class="section" id="Viz-1"></div>
-            <div class="section" id="Viz-2"></div>
-            <div class="section" id="Viz-3"></div>
-            <div class="section" id="Viz-4"></div>
-            <div class="section fp-auto-height" id="foot-page">foot</div>
+            <div class="section" id="section_home">HOME</div>
+            <div class="section" id="section_figure1"></div>
+            <div class="section" id="section_figure2"></div>
+            <div class="section" id="section_figure3"></div>
+            <div class="section" id="section_figure4"></div>
+            <div class="section fp-auto-height" id="section_footer">foot</div>
         </div>
         <script>
             $(function () {
-                $("#home-page").load("scripts/html/home-page.html");
-                $("#Viz-1").load("scripts/html/Viz-1.html");
-                $("#Viz-2").load("scripts/html/Viz-2.html");
-                $("#Viz-3").load("scripts/html/Viz-3.html");
-                $("#Viz-4").load("scripts/html/Viz-4.html");
-                $("#foot-page").load("scripts/html/foot-page.html");
+                $("#section_home").load("scripts/html/home.html");
+                $("#section_figure1").load("scripts/html/figure1.html");
+                $("#section_figure2").load("scripts/html/figure2.html");
+                $("#section_figure3").load("scripts/html/figure3.html");
+                $("#section_figure4").load("scripts/html/figure4.html");
+                $("#section_footer").load("scripts/html/footer.html");
             });
 
             $(document).ready(function () {
                 $("#fullpage").fullpage({
                     // Navigation
                     navigation: false,
-                    navigationPosition: "top",
-                    navigationTooltips: [
-                        "Introduction",
-                        "CoffeeMap",
-                        "Food",
-                        "Compare",
-                        "Choose",
-                        "About",
-                    ],
-                    showActiveTooltip: false,
                     anchors: [
                         "home",
                         "figure1",
@@ -100,59 +93,19 @@
                         "figure4",
                         "about",
                     ],
-                    slidesNavigation: false,
-                    slidesNavPosition: "bottom",
-                    // Scrolling
+                    slidesNavigation: true,
                     autoScrolling: true,
                     // Design
-                    controlArrows: true,
+                    controlArrows: false,
                     controlArrowsHTML: [
                         '<div class="fp-arrow"></div>',
                         '<div class="fp-arrow"></div>',
                     ],
                     verticalCentered: true,
                     menu: "#menu",
-                    sectionsColor: ["#ccc", "#fff"],
-                    paddingTop: "3em",
-                    paddingBottom: "10px",
+                    // paddingTop: "3em",
+                    // paddingBottom: "10px",
                     fixedElements: "#header, .footer",
-                    responsiveWidth: 0,
-                    responsiveHeight: 0,
-                    responsiveSlides: false,
-                    parallax: false,
-                    parallaxOptions: {
-                        type: "reveal",
-                        percentage: 62,
-                        property: "translate",
-                    },
-                    dropEffect: false,
-                    dropEffectOptions: {
-                        speed: 2300,
-                        color: "#F82F4D",
-                        zIndex: 9999,
-                    },
-                    waterEffect: false,
-                    waterEffectOptions: {
-                        animateContent: true,
-                        animateOnMouseMove: true,
-                    },
-                    cards: false,
-                    cardsOptions: {
-                        perspective: 100,
-                        fadeContent: true,
-                        fadeBackground: true,
-                    },
-                });
-
-                d3.json(
-                    "../dataset/coffee_dataset/countries_production.geo.json"
-                ).then(function (data) {
-                    setMap(
-                        window.innerWidth * 0.9,
-                        window.innerHeight * 0.7,
-                        data
-                    );
-                    setSlider(window.innerWidth * 0.9, 100, data);
                 });
             });
         </script>

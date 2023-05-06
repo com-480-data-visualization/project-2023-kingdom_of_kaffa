@@ -122,3 +122,17 @@ function transitionMap(data, i) {
             }
         });
 }
+
+$(document).ready(function (){
+    d3.json(
+        "../dataset/coffee_dataset/countries_production.geo.json"
+    ).then(function (data) {
+        setMap(
+            window.innerWidth * 0.9,
+            window.innerHeight * 0.7,
+            data
+        );
+        setSlider(window.innerWidth * 0.9, 100, data);
+    });
+})
+
