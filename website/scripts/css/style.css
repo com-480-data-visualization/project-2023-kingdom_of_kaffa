@@ -7,6 +7,7 @@
   
 body {
     background-color: var(--background-color);
+    font-family: Poppins;
 }
 
 #menu {
@@ -149,16 +150,6 @@ body {
     color: #FEF4EA;
 }
 
-#menu.dark a {
-    background-color: black;
-    color: black;
-  }
-  
-#menu dark .menu-links:hover,
-#menu a.dark .menu-links.active {
-    color: #ffe0a6;
-}
-
 #color {
-    color: #00B894,#55E6C1,#81Ecec, #F2F2F2, #FF6B6B, #FFEAA7, #FFC300,#74B9FF,#AED6F1, #81Ecec, #FF7675, #FFC300,#6C5CE7,#B2BEC3,#D8DEE9
+    color: #FF9B9B, #FF6B6B, #FFCA3A, #81Ecec,#F2F2F2,#00B894,#55E6C1,#81Ecec, #FF6B6B, #FFEAA7, #FFC300,#74B9FF,#AED6F1, #81Ecec, #FF7675, #FFC300
 }
