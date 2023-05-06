@@ -1,5 +1,12 @@
+:root {
+    --dark-brown-color: #3E3B38;
+    --light-brown-color: #EAC67A;
+    --medium-brown-color: #A87D5D;
+    --background-color: #F5F5F5;
+  }
+  
 body {
-    background-color: #FFFFFF;
+    background-color: var(--background-color);
 }
 
 #menu {
@@ -7,6 +14,7 @@ body {
     display: block;
     width: 100%;
     height: 50px;
+    background-color: var(--dark-brown-color);
     top: 0;
     margin: 0;
     z-index: 9;
@@ -16,7 +24,9 @@ body {
     font: 18px Poppins;
     text-decoration: none;
     /* color: #D9B48F; */
-    color: #FFFFFF;
+    font: 18px Avenir;
+    text-decoration: none;
+    color: var(--light-brown-color);
     margin-right: 10px;
 }
 
@@ -28,11 +38,11 @@ body {
 }
 
 #logo {
-    margin-left: 20px;
-    font-family: 'Pacifico', cursive;
-    font-size: 28px;
+    margin-left: 10px;
+    font-family: 'Futura';
+    font-size: 24px;
     line-height: 50px;
-    color: #FFFFFF;
+    color: var(--medium-brown-color);
     text-decoration: none;
 }
 

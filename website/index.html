@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coffee Kingdom</title>
+        <meta name="description" content="Welcome to Data Visualization" />
+        <meta name="author" content="Kingdom of Kaffa" />
 
-  <title>Coffee Kingdom</title>
-  <meta name="description" content="Welcome to Data Visualization">
-  <meta name="author" content="Kindom of Kaffa">
+        <link rel="icon" type="image/png" href="image/coffee-icon.png" />
+        <link rel="stylesheet" href="scripts/css/style.css" />
+        <link rel="stylesheet" href="scripts/css/figure1.css" />
+        <link rel="stylesheet" href="scripts/css/figure2.css" />
+        <link rel="stylesheet" href="scripts/css/figure3.css" />
+        <link rel="stylesheet" href="scripts/css/figure4.css" />
 
-  <link rel="icon" type="image/png" href="image/coffee-icon.png" />
-  <link rel="stylesheet" href="scripts/css/style.css">
+        <!-- Use this version cause modified slide -->
+        <link rel="stylesheet" href="lib/fullpage/fullpage.css" />   
 
-  <link rel="stylesheet" href="scripts/fullpage/fullpage.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/9dca4c3ff6.js" crossorigin="anonymous"></script>
-  <script <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-  <script src="scripts/fullpage/fullpage.extensions.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="scripts/fullpage/fullpage.min.js"></script>
-</head>
+        <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
 
-<body>
+        <script src="https://kit.fontawesome.com/9dca4c3ff6.js" crossorigin="anonymous"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+            type="text/javascript"
+        ></script>
 
-  <nav id="menu" class="highlightTextOut">
-    <a class="menu-links" id="logo">Kingdom of Kaffa <img id="logo_img"
-        src="https://www.svgrepo.com/download/217392/coffee-bean.svg"></a>
-    <div class="topnav-right">
-      <a class="menu-links" alt="HOME" href="#home">HOME</a>
-      <a class="menu-links" alt="GLOBAL" href="#figure1">GLOBAL</a>
-      <a class="menu-links" alt="BRAND" href="#figure2">BRAND</a>
-      <a class="menu-links" alt="COFFEE" href="#figure3">COFFEE</a>
-      <a class="menu-links" alt="FOOD" href="#figure4">FOOD</a>
-    </div>
-  </nav>
+        <script src="scripts/js/figure1.js"></script>
+        <script src="scripts/js/figure3.js"></script>
+        <script src="https://unpkg.com/d3-simple-slider"></script>
+
+        <!-- <script src="lib/d3.min.js"></script> -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="lib/fullpage/fullpage.extensions.min.js"></script>
+        <script src="lib/fullpage/fullpage.min.js"></script>
+    </head>
+
+    <body>
+        <nav id="menu" class="highlightTextOut">
+            <a class="menu-links" id="logo"
+                >KINGDOM OF KAFFA
+                <!-- UGLY LOGO -->
+                <!-- <img
+                    id="logo_img"
+                    src="https://www.svgrepo.com/download/217392/coffee-bean.svg"
+                /> -->
+            </a>
+
+            <div class="topnav-right">
+              <a class="menu-links" alt="HOME" href="#home">HOME</a>
+              <a class="menu-links" alt="GLOBAL" href="#figure1">GLOBAL</a>
+              <a class="menu-links" alt="BRAND" href="#figure2">BRAND</a>
+              <a class="menu-links" alt="COFFEE" href="#figure3">COFFEE</a>
+              <a class="menu-links" alt="FOOD" href="#figure4">FOOD</a>
+            </div>
+        </nav>
 
 
   <div id="fullpage">
@@ -48,94 +70,49 @@
         <a href="#figure2"><i class="fas fa-angle-double-down arrow"></i></a>
       </div>
     </div>
-    <div class="section">GLOBAL</div>
-    <div class="section">BRAND</div>
-    <div class="section">COFFEE</div>
-    <div class="section">FOOD</div>
-    <div class="section fp-auto-height">foot</div>
+    <div class="section" id="section_figure1">GLOBAL</div>
+    <div class="section" id="section_figure2">BRAND</div>
+    <div class="section" id="section_figure3">COFFEE</div>
+    <div class="section" id="section_figure4">FOOD</div>
+    <div class="section fp-auto-height" id="section_footer">foot</div>
   </div>
-  <script>
+        <script>
+            $(function () {
+                $("#section_home").load("scripts/html/home.html");
+                $("#section_figure1").load("scripts/html/figure1.html");
+                $("#section_figure2").load("scripts/html/figure2.html");
+                $("#section_figure3").load("scripts/html/figure3.html");
+                $("#section_figure4").load("scripts/html/figure4.html");
+                $("#section_footer").load("scripts/html/footer.html");
+            });
 
-    $(document).ready(function () {
-      $("#fullpage").fullpage({
-        // Navigation
-        navigation: false,
-        navigationPosition: 'top',
-        navigationTooltips: ["Introduction","CoffeeMap","Food", "Compare", "Choose","About"],
-        showActiveTooltip: false,
-        anchors: ["home", "figure1", "figure2", "figure3", "figure4", "about"],
-        slidesNavigation: false,
-        slidesNavPosition: 'bottom',
-        // Scrolling
-        autoScrolling: true,
-        // Design
-        controlArrows: true,
-        controlArrowsHTML: [
-          '<div class="fp-arrow"></div>',
-          '<div class="fp-arrow"></div>'
-        ],
-        verticalCentered: true,
-        menu: '#menu',
-        sectionsColor: ['#ccc', '#fff'],
-        paddingTop: '3em',
-        paddingBottom: '10px',
-        fixedElements: '#header, .footer',
-        responsiveWidth: 0,
-        responsiveHeight: 0,
-        responsiveSlides: false,
-        parallax: false,
-        parallaxOptions: { type: 'reveal', percentage: 62, property: 'translate' },
-        dropEffect: false,
-        dropEffectOptions: { speed: 2300, color: '#F82F4D', zIndex: 9999 },
-        waterEffect: false,
-        waterEffectOptions: { animateContent: true, animateOnMouseMove: true },
-        cards: false,
-        cardsOptions: { perspective: 100, fadeContent: true, fadeBackground: true }
-      });
-    });
-  </script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var navLinks = document.querySelectorAll('#menu .menu-links');
-    var sections = document.querySelectorAll('.section');
-
-    function setActiveLink(index) {
-      for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].classList.remove('active');
-      }
-      navLinks[index].classList.add('active');
-    }
-
-    function getCurrentSectionIndex() {
-      var currentSectionIndex = 0;
-      for (var i = 0; i < sections.length; i++) {
-        if (sections[i].classList.contains('active')) {
-          currentSectionIndex = i;
-          break;
-        }
-      }
-      return currentSectionIndex;
-    }
-
-    function setNavigation() {
-      var currentSectionIndex = getCurrentSectionIndex();
-      if (currentSectionIndex === 0) {
-        document.getElementById('menu').classList.remove('dark');
-      } else {
-        document.getElementById('menu').classList.add('dark');
-      }
-      setActiveLink(currentSectionIndex);
-    }
-
-    setNavigation();
-
-    window.addEventListener('scroll', function() {
-      setNavigation();
-    });
-  });
-</script>
-
-</body>
-
+            $(document).ready(function () {
+                $("#fullpage").fullpage({
+                    // Navigation
+                    navigation: false,
+                    anchors: [
+                        "home",
+                        "figure1",
+                        "figure2",
+                        "figure3",
+                        "figure4",
+                        "about",
+                    ],
+                    slidesNavigation: true,
+                    autoScrolling: true,
+                    // Design
+                    controlArrows: false,
+                    controlArrowsHTML: [
+                        '<div class="fp-arrow"></div>',
+                        '<div class="fp-arrow"></div>',
+                    ],
+                    verticalCentered: true,
+                    menu: "#menu",
+                    // paddingTop: "3em",
+                    // paddingBottom: "10px",
+                    fixedElements: "#header, .footer",
+                });
+            });
+        </script>
+    </body>
 </html>
