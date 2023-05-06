@@ -6,9 +6,9 @@
 | Yikai Zhang     | 366940 |
 | Kamila Babayeva | 342448 |
 
-[Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 1](#Milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Milestone 1 {#milestone-1} (Friday 3rd April, 5pm)
+## Milestone 1
 
 **10% of the final grade**
 
