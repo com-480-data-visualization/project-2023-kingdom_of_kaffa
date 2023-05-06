@@ -103,8 +103,8 @@ We analyze the Coffee dataset using jupyter notebook [coffee_analysis](https://g
 
 We use Coffee dataset to visualize a world map of coffee consumption and produstion (Figure 1). The dataset includes seven files about coffee import and export, but we focused on the following two files:
 
-- Coffee_total_consumption.csv - combination of Coffee_domestic_consumption.csv and Coffee_import_consumption.csv
-- Coffee_production.csv
+-   Coffee_total_consumption.csv - combination of Coffee_domestic_consumption.csv and Coffee_import_consumption.csv
+-   Coffee_production.csv
 
 We used the [geopandas](https://geopandas.org/en/stable/) library to create the map, but had to rename some country names in our dataset to match the library's names.
 
@@ -122,9 +122,9 @@ The figure below suggests that coffee consumption is becoming increasingly popul
 
 Since the Kofio Dataset is scraped by us, nobody has done with this dataset. However, several works have conducted data analysis and visualization on the Coffee dataset.
 
-- [Coffee Economic EDA](https://www.kaggle.com/code/ayaabdalsalam/coffee-economic-eda) tabulates the total coffee consumption for 55 countries and subsequently displays the resulting data in a histogram format. The histogram portrays the consumption of each country in descending order. Besides, it analyzes the mean, median, and total consumption from 1990 to 2020 and the coffee type of each country.
-- [Coffee - Extensive EDA](https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda) examines different aspects of the Coffee dataset, such as global coffee production and consumption, the top coffee-producing countries, the different types of coffee produced, and the top coffee importers and exporters. The analysis also includes a comparison of coffee production and consumption trends over the years. The resultant data was subsequently represented using line and bar charts.
-- [Simple EDA](https://www.kaggle.com/code/sabinorsp/simple-eda-for-this-dataset/notebook), [Data Visualization of the Coffee Dataset](https://www.kaggle.com/code/aaronjones32/data-visualisation-of-the-coffee-dataset) produces a similar analysis as the work above.
+-   [Coffee Economic EDA](https://www.kaggle.com/code/ayaabdalsalam/coffee-economic-eda) tabulates the total coffee consumption for 55 countries and subsequently displays the resulting data in a histogram format. The histogram portrays the consumption of each country in descending order. Besides, it analyzes the mean, median, and total consumption from 1990 to 2020 and the coffee type of each country.
+-   [Coffee - Extensive EDA](https://www.kaggle.com/code/akhiljethwa/coffee-extensive-eda) examines different aspects of the Coffee dataset, such as global coffee production and consumption, the top coffee-producing countries, the different types of coffee produced, and the top coffee importers and exporters. The analysis also includes a comparison of coffee production and consumption trends over the years. The resultant data was subsequently represented using line and bar charts.
+-   [Simple EDA](https://www.kaggle.com/code/sabinorsp/simple-eda-for-this-dataset/notebook), [Data Visualization of the Coffee Dataset](https://www.kaggle.com/code/aaronjones32/data-visualisation-of-the-coffee-dataset) produces a similar analysis as the work above.
 
 <!-- * [Simple EDA](https://www.kaggle.com/code/sabinorsp/simple-eda-for-this-dataset/notebook) presents the visualizations of the top 10 coffee exporting and importing countries, along with the leading coffee producers and domestic consumers. Furthermore, it assesses the yearly coffee production of the key countries and employs a line chart to depict the trend.
 
@@ -132,16 +132,16 @@ Since the Kofio Dataset is scraped by us, nobody has done with this dataset. How
 
 Our approach is original due to the following aspects:
 
-- We present coffee consumption and import/export volume trends across regions and their temporal evolution. This enables the display of increasing coffee popularity by year and helps identify the regions with the highest affinity for coffee.
-- We analyze the existing coffee brands and consider the rich coffee flavors.
-- Our visualization can help visitors to buy an existing coffee they love using the filtering function.
-- We show clearly how to pair coffee to food and to flavor.
+-   We present coffee consumption and import/export volume trends across regions and their temporal evolution. This enables the display of increasing coffee popularity by year and helps identify the regions with the highest affinity for coffee.
+-   We analyze the existing coffee brands and consider the rich coffee flavors.
+-   Our visualization can help visitors to buy an existing coffee they love using the filtering function.
+-   We show clearly how to pair coffee to food and to flavor.
 
 Also, several great visualizations from other topics have inspired us to come up with our ideas.
 
-- [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/). The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
-- [Wine101](https://com-480-data-visualization.github.io/com-480-project-onvagagner/website/index.html). The cluster visualization inspired us to show clusters based on flavor, brewing method, and roast level.
-- [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
+-   [Covid-19 in Switzerland](https://com-480-data-visualization.github.io/com-480-project-lcelo/website/). The SWITZERLAND MAP visualization inspired us to come up with our Figure 1. We want to visualize the change of coffee consumption, import volume and export volumn according to years and countries in a way which shows the growing popularity of coffee.
+-   [Wine101](https://com-480-data-visualization.github.io/com-480-project-onvagagner/website/index.html). The cluster visualization inspired us to show clusters based on flavor, brewing method, and roast level.
+-   [Coffee Flavor Wheel](https://www.webstaurantstore.com/blog/3824/coffee-pairings.html). This coffee flavor wheel inspired us to show the coffee-flavor, coffee-food or flavor-food pairings.
 
 ### Conda enviroment for EDA <a id="installation"></a>
 
@@ -167,33 +167,23 @@ In this section, we'll go into detail about the **design and purpose** of our 4 
 
 #### Viz 1
 
-
-
 #### Viz 2
-
-
 
 #### Viz 3
 
-
-
 #### Viz 4
-
-
 
 ### Tools Requirement
 
-**Page Structure**: For structuring our project pages, we use *[**fullpage.js**](https://alvarotrigo.com/fullPage/),* which provides smooth and pretty switches among pages.
+**Page Structure**: For structuring our project pages, we use _[**fullpage.js**](https://alvarotrigo.com/fullPage/),_ which provides smooth and pretty switches among pages.
 
-**Theme Colors:** We mainly resort to ***Lecture 6*** for choosing a group of theme colors for our website.
+**Theme Colors:** We mainly resort to **_Lecture 6_** for choosing a group of theme colors for our website.
 
-**Data Preparation**: To prepare the data to visualize in a proper format, we use ***Pandas*** library to do the data cleaning part, which includes dealing with missing fields, deserting unwanted fields, and storing in CSV files. After that, ***d3.js*** is used to load the data from CSV files to the Javascript dictionary. ***Lecture 4*** is needed for the data loading part.
+**Data Preparation**: To prepare the data to visualize in a proper format, we use **_Pandas_** library to do the data cleaning part, which includes dealing with missing fields, deserting unwanted fields, and storing in CSV files. After that, **_d3.js_** is used to load the data from CSV files to the Javascript dictionary. **_Lecture 4_** is needed for the data loading part.
 
-**Data Visualization**: We mainly use ***d3.js*** for data visualization, detailed operations include data point demonstration and interation design.  ***Lecture 4*** and ***Lecture 5*** are mainly required for ***d3.js***-related knowledge.
+**Data Visualization**: We mainly use **_d3.js_** for data visualization, detailed operations include data point demonstration and interation design. **_Lecture 4_** and **_Lecture 5_** are mainly required for **_d3.js_**-related knowledge.
 
-**Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to ***Lecture 12***.
-
-
+**Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to **_Lecture 12_**.
 
 ### Project Break Down
 
@@ -201,41 +191,37 @@ In this section, we describe the core visualization we'd love to demonstrate and
 
 #### Core Visualization
 
-
-
 #### Extra Ideas
-
-
 
 #### Project Break Down
 
-- **Website Design**
+-   **Website Design**
 
-  - Website Structuring
-    - Navigation Bar
-    - Switching among Pages
+    -   Website Structuring
 
-  - Theme Color Selection
-    - Choose the most appropriate color groups for the whole project 
+        -   Navigation Bar
+        -   Switching among Pages
 
-- **Core Visualization Implementation**
+    -   Theme Color Selection
+        -   Choose the most appropriate color groups for the whole project
 
-  - Data Preparation
-    - Data cleaning for each visualization (deserting unwanted fields and storing in CSV files)
+-   **Core Visualization Implementation**
 
-  - Basic Visualization
-    - Load the data from processed CSV files and write functions to read them to Javascript correctly
-    - Implement static visualization using d3.js
-  - Text Demonstration
-    - Design text descriptions about each visualization
-    - Organize them properly on the page
+    -   Data Preparation
 
-- **Interaction Design & Polish Storytelling**
+        -   Data cleaning for each visualization (deserting unwanted fields and storing in CSV files)
 
-  - Learn necessary libraries and d3.js syntax to enable the design of nice interactive visualizations
-  - Learn lecture 12 and try to improve storytelling for our website
+    -   Basic Visualization
+        -   Load the data from processed CSV files and write functions to read them to Javascript correctly
+        -   Implement static visualization using d3.js
+    -   Text Demonstration
+        -   Design text descriptions about each visualization
+        -   Organize them properly on the page
 
-  
+-   **Interaction Design & Polish Storytelling**
+
+    -   Learn necessary libraries and d3.js syntax to enable the design of nice interactive visualizations
+    -   Learn lecture 12 and try to improve storytelling for our website
 
 ## Milestone 3
 
@@ -243,5 +229,5 @@ In this section, we describe the core visualization we'd love to demonstrate and
 
 ## Late policy
 
-- < 24h: 80% of the grade for the milestone
-- < 48h: 70% of the grade for the milestone
+-   < 24h: 80% of the grade for the milestone
+-   < 48h: 70% of the grade for the milestone
