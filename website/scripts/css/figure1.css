@@ -23,22 +23,10 @@
     margin-left: 15px;
     /* flex-direction: row; */
 }
-/* 
-.container {
-    margin: 10px;
-} */
 
-/* .home_icon {
-    width: 40px;
-    height: 25px;
-    border: 0px;
-    margin-left: 5px;
-    margin-top: 8px;
-    background: #FFCC05 no-repeat 12px 4px;
-    -webkit-border-radius: 11px 5px 5px 11px/17px 5px 5px 17px;
-    -moz-border-radius: 11px 5px 5px 11px/17px 5px 5px 17px;
-    border-radius: 11px 5px 5px 11px/17px 5px 5px 17px;
-} */
+.title {
+    text-align: center;
+}
 .home_icon {
     position: relative;
     width: 40px;
