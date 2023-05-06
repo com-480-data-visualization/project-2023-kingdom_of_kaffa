@@ -23,10 +23,11 @@
     margin-left: 15px;
     /* flex-direction: row; */
 }
-
-.title {
-    text-align: center;
-}
+.columns {
+    display: grid;
+    grid-template-columns: 20% 20%;
+    padding: auto;
+  }
 .home_icon {
     position: relative;
     width: 40px;
