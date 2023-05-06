@@ -1,5 +1,12 @@
+:root {
+    --dark-brown-color: #3E3B38;
+    --light-brown-color: #EAC67A;
+    --medium-brown-color: #A87D5D;
+    --background-color: #F5F5F5;
+  }
+  
 body {
-    background-color: #F2EFE9;
+    background-color: var(--background-color);
 }
 
 #menu {
@@ -7,16 +14,16 @@ body {
     display: block;
     width: 100%;
     height: 50px;
-    background-color: #7E5B3B;
+    background-color: var(--dark-brown-color);
     top: 0;
     margin: 0;
     z-index: 9;
 }
 
 .menu-links {
-    font: 18px Arial;
+    font: 18px Avenir;
     text-decoration: none;
-    color: #D9B48F;
+    color: var(--light-brown-color);
     margin-right: 10px;
 }
 
@@ -28,10 +35,10 @@ body {
 
 #logo {
     margin-left: 10px;
-    font-family: 'Pacifico', cursive;
-    font-size: 28px;
+    font-family: 'Futura';
+    font-size: 24px;
     line-height: 50px;
-    color: #D9B48F;
+    color: var(--medium-brown-color);
     text-decoration: none;
 }
 
