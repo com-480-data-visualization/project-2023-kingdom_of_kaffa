@@ -8,19 +8,21 @@
 
   <title>Coffee Kingdom</title>
   <meta name="description" content="Welcome to Data Visualization">
-  <meta name="author" content="Kindom of Kaffa">
+  <meta name="author" content="Kingdom of Kaffa">
 
   <link rel="icon" type="image/png" href="image/coffee-icon.png" />
   <link rel="stylesheet" href="scripts/css/style.css">
+  <link rel="stylesheet" href="lib/fullpage/fullpage.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap"
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="scripts/fullpage/fullpage.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/9dca4c3ff6.js" crossorigin="anonymous"></script>
-  <script <script type="module" src="https://d3js.org/d3.v7.min.js"></script>
-
-  <script src="scripts/fullpage/fullpage.extensions.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="scripts/fullpage/fullpage.min.js"></script>
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/fullpage/fullpage.extensions.min.js"></script>
+  <script src="lib/fullpage/fullpage.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +55,7 @@
         // Navigation
         navigation: false,
         navigationPosition: 'top',
-        navigationTooltips: ["Introduction","CoffeeMap","Food", "Compare", "Choose","About"],
+        navigationTooltips: ["Introduction", "CoffeeMap", "Food", "Compare", "Choose", "About"],
         showActiveTooltip: false,
         anchors: ["home", "figure1", "figure2", "figure3", "figure4", "about"],
         slidesNavigation: false,
