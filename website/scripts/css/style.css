@@ -1,5 +1,5 @@
 body {
-    background-color: #F2EFE9;
+    background-color: #FFFFFF;
 }
 
 #menu {
@@ -7,16 +7,16 @@ body {
     display: block;
     width: 100%;
     height: 50px;
-    background-color: #7E5B3B;
     top: 0;
     margin: 0;
     z-index: 9;
 }
 
 .menu-links {
-    font: 18px Arial;
+    font: 18px Poppins;
     text-decoration: none;
-    color: #D9B48F;
+    /* color: #D9B48F; */
+    color: #FFFFFF;
     margin-right: 10px;
 }
 
@@ -24,16 +24,18 @@ body {
     float: right;
     padding: 15px;
     margin-right: 20px;
+    margin-top: -3px;
 }
 
 #logo {
-    margin-left: 10px;
+    margin-left: 20px;
     font-family: 'Pacifico', cursive;
     font-size: 28px;
     line-height: 50px;
-    color: #D9B48F;
+    color: #FFFFFF;
     text-decoration: none;
 }
+
 
 #logo_img {
     width: 30px;
@@ -59,4 +61,94 @@ body {
 #menu.highlightTextOut a:hover:before {
     transform: scale(1);
     opacity: 1;
+}
+
+#homepage {
+    background: linear-gradient(to bottom, #FF9B9B, #FF6B6B, #FFCA3A, #81Ecec);
+    
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#homepage h1 {
+    font-size: 5rem;
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+}
+  
+#homepage p {
+    font-size: 1rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    line-height: 1.5rem;
+}
+
+.arrows {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+  
+.arrows a {
+    display: inline-block;
+    font-size: 36px;
+    margin: 0 20px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.arrows a:hover {
+    opacity: 1;
+}
+
+.arrows a:last-child {
+    margin-right: 0;
+}
+
+.arrows a:nth-child(1) {
+    transform: translateY(-20px);
+    animation: arrow-1 1s ease-in-out infinite;
+}
+
+@keyframes arrow-1 {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+.arrow {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+
+}
+  
+.arrow:hover {
+    color: #FEF4EA;
+}
+
+#menu.dark a {
+    background-color: black;
+    color: black;
+  }
+  
+#menu dark .menu-links:hover,
+#menu a.dark .menu-links.active {
+    color: #ffe0a6;
+}
+
+#color {
+    color: #00B894,#55E6C1,#81Ecec, #F2F2F2, #FF6B6B, #FFEAA7, #FFC300,#74B9FF,#AED6F1, #81Ecec, #FF7675, #FFC300,#6C5CE7,#B2BEC3,#D8DEE9
 }
