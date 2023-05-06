@@ -157,7 +157,7 @@ conda env create --file=com480-kaffa.yml
 
 **10% of the final grade**
 
-## Milestone 3 (4th June, 5pm) {#milestone-3}
+## Milestone 3
 
 **80% of the final grade**
 
