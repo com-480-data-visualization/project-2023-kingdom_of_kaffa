@@ -47,7 +47,9 @@ You may be wondering where to know the details about you liked products, the rig
 
 ### Figure 4
 
+Coffee’s delightfully complex taste opens up a world of possibilities for great food pairings by following a few basic rules. Our Pairing figure shows how to pair coffee with food for visitors. It offers the pairing between coffee origin and coffee flavor as well as the coffee origin and food flavor. Each flavor or origin is represent by a clickable circle. When you select a circle and click it, the relevant origins or flavors will be hightlighted and the detailed information will be shown on the right. 
 
+For a food flavor, the information will include the description of this food flavor, the typical food and the coffee origins it goes well with. Similarly, for a coffee flavor, the information will include the description of this coffee flavor, the typical coffee origins and the food it may goes well with. For a coffee origin, the information will include the description of this coffee type, the flavors it may have and the food it goes well with.
 <!-- ### Project Break Down
 
 In this section, we describe the core visualization we'd love to demonstrate and extra ideas which we believe can enhance the visualization first, and then the whole project is broken down into independent pieces to make it more manageable.
