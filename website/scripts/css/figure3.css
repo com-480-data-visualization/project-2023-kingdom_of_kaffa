@@ -12,7 +12,7 @@
     padding: 10px;
 }
 
-.button {
+.fig3-button {
     display: inline-block;
     background-color: #f7f7f7;
     padding: 1px 2px;
@@ -25,7 +25,7 @@
     transition: all 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.button::before {
+.fig3-button::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -39,13 +39,13 @@
     z-index: -1;
 }
 
-.button:hover {
+.fig3-button:hover {
     color: #fff;
     background-color: #2ecc71;
     padding: 1px 15px 1px;
 }
 
-.button:hover::before {
+.fig3-button:hover::before {
     width: 300px;
     height: 300px;
 }
