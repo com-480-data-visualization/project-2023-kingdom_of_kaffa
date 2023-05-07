@@ -1,10 +1,4 @@
 function add_legend(svg) {
-    // Define the color scale
-    var colorScale = d3
-        .scaleThreshold()
-        .domain([3.5, 4, 4.5])
-        .range(["#5ac0f7", "#fdc62f", "#ea4242", "#ff8e8e"]);
-
     // Create the legend
     var legend = svg
         .append("g")
@@ -14,14 +8,7 @@ function add_legend(svg) {
     // Add a rectangle for each color and price range
     legend
         .selectAll("rect")
-        .data(
-            colorScale.range().map(function (color) {
-                var d = colorScale.invertExtent(color);
-                if (d[0] == null) d[0] = colorScale.domain()[0];
-                if (d[1] == null) d[1] = colorScale.domain()[1];
-                return d;
-            })
-        )
+        .data(["#5ac0f7", "#fdc62f", "#ea4242", "#ff8e8e"])
         .enter()
         .append("rect")
         .attr("y", function (d, i) {
@@ -31,20 +18,13 @@ function add_legend(svg) {
         .attr("width", 100)
         .attr("height", 20)
         .style("fill", function (d) {
-            return colorScale(d[0]);
+            return d;
         });
 
     // Add labels for each price range
     legend
         .selectAll("text")
-        .data(
-            colorScale.range().map(function (color) {
-                var d = colorScale.invertExtent(color);
-                if (d[0] == null) d[0] = colorScale.domain()[0];
-                if (d[1] == null) d[1] = colorScale.domain()[1];
-                return d;
-            })
-        )
+        .data([3, 3.5, 4, 4.5])
         .enter()
         .append("text")
         .attr("y", function (d, i) {
@@ -53,7 +33,7 @@ function add_legend(svg) {
         .attr("x", 40)
         // .attr("dy", ".1em")
         .text(function (d) {
-            return d[1];
+            return d;
         });
 }
 $(document).ready(function () {
@@ -65,7 +45,7 @@ $(document).ready(function () {
             // initialize the svg
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,
-                radius = 20;
+                radius = 30;
             var svg = d3
                 .select("#filtering-bubbles")
                 .append("svg")
@@ -104,7 +84,7 @@ $(document).ready(function () {
                 elem_updated
                     .append("text")
                     .attr("text-anchor", "middle")
-                    .text((d) => d.price);
+                    .text((d) => d.Rating);
 
                 var simulation = d3
                     .forceSimulation()
