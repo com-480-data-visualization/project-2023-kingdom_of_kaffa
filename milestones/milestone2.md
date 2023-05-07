@@ -42,7 +42,7 @@ But wait, there's more magic to be had! **Each circle itself is also enchanted a
 
 You may be wondering where to know the details about you liked products, the right half is reserved for it! On the right hand side, the details about each coffee product will be introduced in detail.
 
-<img src="images/fig3.png" alt="alt text" width="75%" height="50%" />
+<img src="images/fig3.jpg" alt="alt text" width="75%" height="50%" />
 
 
 ### Figure 4
@@ -60,11 +60,11 @@ In this section, we describe the core visualization we'd love to demonstrate and
 
 ### Core Visualization
 
-Since our ultimate purpose is to guide our users through a smooth journey on coffee product selection, our visualization will be revolved around **Figure 2** and **Figure 3**, which demonstrates clearly how each brand compares with each other in price, recommendation rate, and ratings. Sophisticated design and storytelling will be needed to make sure the best user experience. -->
+Since our ultimate purpose is to guide our users through a smooth journey on coffee product selection, our visualization will be revolved around **Figure 2** and **Figure 3**, which demonstrates clearly how each brand compares with each other in price, recommendation rate, and ratings. Sophisticated design and storytelling will be needed to make sure the best user experience. 
 
 ### Extra Ideas
 
-**Figure 1** is a mesmerizing map that will transport you to a world of wonder and coffee bliss. With a wave of your hand, you can explore the global rise in coffee consumption and marvel at the countless coffee aficionados scattered across the globe. But beware, for once you start playing with this enchanting **Viz**, you might never want to leave its captivating embrace.
+**Figure 1** is a mesmerizing map that will transport you to a world of wonder and coffee bliss. With a wave of your hand, you can explore the global rise in coffee consumption and marvel at the countless coffee aficionados scattered across the globe. But beware, for once you start playing with this enchanting visualization, you might never want to leave its captivating embrace.
 
 Prepare to be dazzled by **Figure 4**, the ultimate reward for your coffee quest. With your selection of the finest coffee products complete, it's time to indulge in some well-deserved magic. This dazzling figure features an interactive pairing map that will take you on a journey of flavors and foods, carefully crafted to match the coffee of your dreams. So before you even lay your hands on your precious coffee, take a moment to let your imagination soar and envision the wondrous culinary creations that await you!
 
