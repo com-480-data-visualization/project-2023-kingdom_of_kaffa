@@ -14,15 +14,14 @@
 **Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to **_Lecture 12_**.
 
 ## Project Overview
-
-In this section, we will go into detail about the **design and purpose** of our 4 visualizations. Sketches of each visualization will be displayed to give a general idea of our final result.
+As required per Milestone two, we implemented the draft version of our website which you can visit here. In this section, we will display simple sketches of our visualization, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
 
 ### Figure 1
 Coffee has evolved into more than just a beverage, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
 By playing with colors and their intensities, users can easily observe the changes in coffee production, consumption, import, and export over time. Our website currently displays a world map that highlights the countries that produce coffee:
+
 <img src="images/fig1.png" alt="alt text" width="75%" height="50%" />
 
-Extra ideas: To provide deeper insight into the coffee market, we also offer a feature that displays the top 10 countries in each section. This helps users understand the market better.
 
 ### Figure 2
 Using **price-rate-recommendation** bubble chart, the user can identify the appropriate brand based on their budget and brand rating. The overview of existing European brands and their prices will ease the user's way to choose the perfect coffee product.
@@ -30,6 +29,7 @@ Using **price-rate-recommendation** bubble chart, the user can identify the appr
 Each bubble on the plot represent a unique coffee product and its color represents the brand. With the help of dropdown buttons, the user can interactively change x-axis, y-axis and the displayed brand. When hovering/clicking on the bubble, our chart will highlight all the coffee products coming from the same coffee brand. Moreover, the detailed info about the coffee brand will be displayed on the right.
 
 Below is the already implemented structure on the figure 2:
+
 <img src="images/fig2.png" alt="alt text" width="75%" height="50%" />
 
 
@@ -50,6 +50,7 @@ You may be wondering where to know the details about you liked products, the rig
 Coffee’s delightfully complex taste opens up a world of possibilities for great food pairings by following a few basic rules. Our Pairing figure shows how to pair coffee with food for visitors. It offers the pairing between coffee origin and coffee flavor as well as the coffee origin and food flavor. Each flavor or origin is represent by a clickable circle. When you select a circle and click it, the relevant origins or flavors will be hightlighted and the detailed information will be shown on the right. 
 
 For a food flavor, the information will include the description of this food flavor, the typical food and the coffee origins it goes well with. Similarly, for a coffee flavor, the information will include the description of this coffee flavor, the typical coffee origins and the food it may goes well with. For a coffee origin, the information will include the description of this coffee type, the flavors it may have and the food it goes well with.
+
 <!-- ### Project Break Down
 
 In this section, we describe the core visualization we'd love to demonstrate and extra ideas which we believe can enhance the visualization first, and then the whole project is broken down into independent pieces to make it more manageable.
@@ -66,7 +67,13 @@ Prepare to be dazzled by **Viz 4**, the ultimate reward for your coffee quest. W
 
 Again, we would try our best to implement the fanciest interactive effects and write the most charming stories! These would be both extra ideas. -->
 
-#### Project Break Down
+## Extra ideas:
+???
+<!-- ### Figure 1: 
+
+To provide deeper insight into the coffee market, we can add a feature that displays the top 10 countries in each section. This helps users understand the market better. -->
+
+<!-- #### Project Break Down
 
 -   **Website Design**
 
@@ -93,4 +100,4 @@ Again, we would try our best to implement the fanciest interactive effects and w
 
 -   **Interaction Design & Polish Storytelling**
     -   Learn necessary libraries and d3.js syntax to enable the design of nice interactive visualizations
-    -   Learn lecture 12 and try to improve storytelling for our website
+    -   Learn lecture 12 and try to improve storytelling for our website -->
