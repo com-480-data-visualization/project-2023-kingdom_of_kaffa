@@ -94,16 +94,17 @@ body {
 }
 
 #homepage h1 {
-    font-size: 5rem;
-    font-family: 'Abril Fatface', cursive;
-    /* font-family: 'Pacifico', cursive; */
+    font-size: 6rem;
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: 'Pacifico', cursive;
     margin: 0;
 }
   
 #homepage p {
     font-size: 1rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin-top: 2rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
     line-height: 1.5rem;
 }
 
