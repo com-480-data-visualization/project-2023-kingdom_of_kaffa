@@ -128,11 +128,11 @@ $(document).ready(function (){
         "../dataset/coffee_dataset/countries_production.geo.json"
     ).then(function (data) {
         setMap(
-            window.innerWidth * 0.9,
+            window.innerWidth * 0.85,
             window.innerHeight * 0.7,
             data
         );
-        setSlider(window.innerWidth * 0.9, 100, data);
+        setSlider(window.innerWidth * 0.6, 100, data);
     });
 })
 
