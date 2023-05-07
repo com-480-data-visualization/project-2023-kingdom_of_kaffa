@@ -4,8 +4,7 @@
 
 #section_figure3 h2 {
     font-size: 3rem;
-    /* font-family: 'Abril Fatface', cursive; */
-    font-family: "Playfair Display";
+    font-family: "Darumadrop One", cursive;
     margin: 50px 0 20px 0;
 }
 
@@ -31,12 +30,12 @@
     padding: 1px 2px;
     margin: 4px;
     color: #333;
-    border-radius: 1rem;
+    border-radius: 2rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
-    font-family:'Darumadrop One', cursive;
+    font-family: "Darumadrop One", cursive;
 }
 
 .fig3-button::before {
@@ -47,15 +46,13 @@
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
-    border-radius: 50%;
+    border-radius: 20%;
     background-color: rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-out;
     z-index: -1;
 }
 
 .fig3-button:hover {
-    color: #fff;
-    background-color: #2ecc71;
     padding: 1px 15px 1px;
 }
 
@@ -65,12 +62,12 @@
 }
 
 #fig3-show-all {
-    color:#3E3B38;
+    color: #3e3b38;
 }
 
 #fig3-show-all:hover {
     color: #fff;
-    background-color:#3E3B38;
+    background-color: #3e3b38;
 }
 
 #fig3-price {
@@ -79,7 +76,7 @@
 
 #fig3-price:hover {
     color: #fff;
-    background-color:#ea4242;
+    background-color: #ea4242;
 }
 
 #fig3-flavor {
@@ -88,7 +85,7 @@
 
 #fig3-flavor:hover {
     color: #fff;
-    background-color:#ff8e8e;
+    background-color: #ff8e8e;
 }
 
 #fig3-roast-type {
@@ -97,7 +94,7 @@
 
 #fig3-roast-type:hover {
     color: #fff;
-    background-color:#fdc62f;
+    background-color: #fdc62f;
 }
 
 #fig3-brewing-method {
@@ -106,5 +103,5 @@
 
 #fig3-brewing-method:hover {
     color: #fff;
-    background-color:#5ac0f7;
+    background-color: #5ac0f7;
 }
