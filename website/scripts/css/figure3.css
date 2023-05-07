@@ -1,3 +1,7 @@
+#section_figure3 {
+    font-family: 'Poppins', sans-serif;
+}
+
 #viz3-container {
     display: flex;
     flex-direction: row;
