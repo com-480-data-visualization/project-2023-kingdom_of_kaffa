@@ -14,7 +14,7 @@
 **Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to **_Lecture 12_**.
 
 ## Project overview:
-As required per Milestone two, we implemented the draft version of our website which you can visit here [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa). In this section, we will display simple sketches of our core visualizations, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
+As required per Milestone two, we implemented the draft version of our website which you can visit here [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa). In this section, we will display simple sketches of our visualizations, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
 
 ### Figure 1
 Coffee has evolved into more than just a drink, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
