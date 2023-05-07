@@ -51,6 +51,8 @@ Coffee’s delightfully complex taste opens up a world of possibilities for grea
 
 For a food flavor, the information will include the description of this food flavor, the typical food and the coffee origins it goes well with. Similarly, for a coffee flavor, the information will include the description of this coffee flavor, the typical coffee origins and the food it may goes well with. For a coffee origin, the information will include the description of this coffee type, the flavors it may have and the food it goes well with.
 
+<img src="images/fig4.png" alt="alt text" width="75%" height="50%" />
+
 <!-- ### Project Break Down
 
 In this section, we describe the core visualization we'd love to demonstrate and extra ideas which we believe can enhance the visualization first, and then the whole project is broken down into independent pieces to make it more manageable.
