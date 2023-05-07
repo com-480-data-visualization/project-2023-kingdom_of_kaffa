@@ -1,0 +1,59 @@
+Coffee origin,Flavor,Number
+Brazil,sweet,30
+Brazil,fruity,15
+Brazil,chocolate,22
+Brazil,nutty,17
+Brazil,floral,4
+Costa Rica,sweet,9
+Costa Rica,fruity,11
+Costa Rica,chocolate,7
+Costa Rica,nutty,3
+Costa Rica,floral,2
+El Salvador,sweet,7
+El Salvador,fruity,6
+El Salvador,chocolate,2
+Ethiopia,sweet,38
+Ethiopia,fruity,42
+Ethiopia,chocolate,13
+Ethiopia,floral,13
+Guatemala,sweet,2
+Guatemala,fruity,1
+Guatemala,chocolate,2
+Guatemala,nutty,1
+Honduras,sweet,6
+Honduras,fruity,5
+Honduras,chocolate,5
+Honduras,nutty,1
+Honduras,floral,1
+Indonesia,sweet,10
+Indonesia,fruity,11
+Indonesia,chocolate,4
+Indonesia,nutty,2
+Indonesia,floral,3
+Kenya,sweet,11
+Kenya,fruity,22
+Kenya,chocolate,3
+Kenya,floral,1
+Mexico,sweet,2
+Mexico,fruity,3
+Mexico,floral,1
+Nicaragua,sweet,4
+Nicaragua,fruity,4
+Nicaragua,chocolate,4
+Peru,sweet,11
+Peru,fruity,10
+Peru,chocolate,4
+Peru,nutty,2
+Peru,floral,1
+Tanzania,fruity,1
+Tanzania,floral,1
+Tanzania,sweet,1
+Uganda,floral,1
+Uganda,fruity,1
+Yemen,sweet,2
+Yemen,fruity,2
+Columbia,sweet,42
+Columbia,fruity,37
+Columbia,chocolate,12
+Columbia,nutty,6
+Columbia,floral,3
