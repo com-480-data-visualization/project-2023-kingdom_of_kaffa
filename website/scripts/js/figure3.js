@@ -1,3 +1,41 @@
+function add_legend(svg) {
+    // Create the legend
+    var legend = svg
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", "translate(40, 40)");
+
+    // Add a rectangle for each color and price range
+    legend
+        .selectAll("rect")
+        .data(["#5ac0f7", "#fdc62f", "#ea4242", "#ff8e8e"])
+        .enter()
+        .append("rect")
+        .attr("y", function (d, i) {
+            return i * 35;
+        })
+        .attr("x", 70)
+        .attr("width", 100)
+        .attr("height", 20)
+        .style("fill", function (d) {
+            return d;
+        });
+
+    // Add labels for each price range
+    legend
+        .selectAll("text")
+        .data([3, 3.5, 4, 4.5])
+        .enter()
+        .append("text")
+        .attr("y", function (d, i) {
+            return i * 40;
+        })
+        .attr("x", 40)
+        // .attr("dy", ".1em")
+        .text(function (d) {
+            return d;
+        });
+}
 $(document).ready(function () {
     d3.csv("../dataset/kofio_dataset/price_rating_rec_clean.csv").then(
         function (data) {
@@ -7,8 +45,7 @@ $(document).ready(function () {
             // initialize the svg
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,
-                radius = 20;
-
+                radius = 30;
             var svg = d3
                 .select("#filtering-bubbles")
                 .append("svg")
@@ -43,11 +80,11 @@ $(document).ready(function () {
                     .on("click", function (d) {
                         return 1;
                     });
-
+                add_legend(svg);
                 elem_updated
                     .append("text")
                     .attr("text-anchor", "middle")
-                    .text((d) => d.price);
+                    .text((d) => d.Rating);
 
                 var simulation = d3
                     .forceSimulation()
