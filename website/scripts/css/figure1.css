@@ -1,9 +1,58 @@
 #svg_map_figure1 {
-    display:block;
+    display: block;
     margin: 0 auto;
 }
 
 #map_slider_figure1 {
-    display:block;
+    display: block;
     margin: 0 auto;
 }
+
+.rounded-border {
+    border: 1.5px solid var(--light-brown-color);
+    border-radius: 25px;
+    padding-top: 7px;
+    padding-left: 0px;
+    padding-right: 12px;
+    /* width: fit-content; */
+    width: min-content;
+}
+
+.right-div {
+    float: left;
+    margin-left: 15px;
+    /* flex-direction: row; */
+}
+.columns {
+    display: grid;
+    grid-template-columns: 20% 20%;
+    padding: auto;
+  }
+.home_icon {
+    position: relative;
+    width: 40px;
+    height: 25px;
+    border: 0;
+    margin-left: 5px;
+    margin-top: 8px;
+    background: #FFCC05 no-repeat 12px 4px;
+    outline: none; /* remove the default focus border */
+  }
+
+  
+  .home_icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px; /* adjust the position of the triangle */
+    border-top: 12.5px solid transparent;
+    border-right: 10px solid #FFCC05; /* adjust the color of the triangle */
+    border-bottom: 12.5px solid transparent;
+  }
+
+.home_icon:hover::before {
+    border-right-color: #000; /* change the color of the right triangle on hover */
+  }
+  .home_icon:hover {
+    background: green no-repeat 12px 4px;
+  }
