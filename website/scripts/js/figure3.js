@@ -5,9 +5,9 @@ $(document).ready(function () {
             const record = JSON.parse(JSON.stringify(data));
 
             // initialize the svg
-            let width = window.innerWidth * 0.56,
-                height = window.innerWidth * 0.42;
-            let node_size = 55;
+            let width = window.innerWidth * 0.58,
+                height = window.innerHeight * 0.85,
+                radius = 20;
 
             var svg = d3
                 .select("#filtering-bubbles")
@@ -17,11 +17,12 @@ $(document).ready(function () {
 
             // implement the filtering function
             function impl_filter(indicator) {
+                // remove all the viz first.
                 svg.selectAll(".circleContainer").remove();
                 svg.selectAll("circle").remove();
                 svg.selectAll("text").remove();
 
-                var elem_updated = svg
+                let elem_updated = svg
                     .selectAll("g")
                     .data(data)
                     .enter()
@@ -30,8 +31,8 @@ $(document).ready(function () {
 
                 elem_updated
                     .append("circle")
-                    .style("cursor", (d) => (d.level < 3 ? "pointer" : "auto"))
-                    .attr("r", 30)
+                    .style("cursor", "pointer")
+                    .attr("r", radius)
                     .on("click", function (d) {
                         return 1;
                     });
@@ -39,13 +40,13 @@ $(document).ready(function () {
                 elem_updated
                     .append("text")
                     .attr("text-anchor", "middle")
-                    .text(() => "100");
+                    .text((d) => d.price);
 
                 var simulation = d3
                     .forceSimulation()
                     .force("x", d3.forceX(width / 2))
                     .force("y", d3.forceY(height / 2))
-                    .force("collision", d3.forceCollide().radius(node_size))
+                    .force("collision", d3.forceCollide().radius(radius + 0.5))
                     .on("tick", function (d) {
                         elem_updated.attr("transform", function (d) {
                             return "translate(" + d.x + "," + d.y + ")";
