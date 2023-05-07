@@ -13,17 +13,10 @@
 
 **Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to **_Lecture 12_**.
 
-## Project Overview
-As required per Milestone two, we implemented the draft version of our website which you can visit here [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa). In this section, we will display simple sketches of our visualization, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
+## Project overview:
+As required per Milestone two, we implemented the draft version of our website which you can visit here [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa). In this section, we will display simple sketches of our core visualizations, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
 
 ### Figure 1
-Coffee has evolved into more than just a drink, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
-By playing with colors and their intensities, users can easily observe the changes in coffee production, consumption, import, and export in the chosen period of time. With the interactivity our map offers, the user can hover on different countries and retrieve detailed information such as country information, coffee type (Arabica/Robusta) and ranking among other producers/consumptors. Our website currently displays a world map that highlights the countries that produce coffee:
-
-<img src="images/fig1.png" alt="alt text" width="75%" height="50%" />
-
-
-### Figure 2
 Using **price-rate-recommendation** bubble chart, the user can identify the appropriate brand based on their budget and brand rating. The chart provides an overview of existing European brands and their prices, making it easier for users to choose the perfect coffee product.
 
 Each bubble on the plot represents a unique coffee product and its color represents the brand. With the help of dropdown buttons, the user can interactively change x-axis, y-axis and the displayed brand. Users can interactively change the x-axis, y-axis, and displayed brand using the dropdown buttons. Hovering/clicking on a bubble highlights all the coffee products from the same brand, and detailed information about the brand is displayed on the right.
@@ -33,7 +26,7 @@ Below is the already implemented structure on the figure 2:
 <img src="images/fig2.png" alt="alt text" width="75%" height="50%" />
 
 
-### Figure 3
+### Figure 2
 
 Our bubble figure offers a magical filtering experience based on four distinct indicators: **Price**, **Flavor**, **Brewing Method**, and **Roast Method**. These mystical indicators were chosen not only because they are highly separable, but also because they are key factors that matter when selecting the perfect coffee product.
 
@@ -45,13 +38,7 @@ You may be wondering where to know the details about you liked products, the rig
 
 <img src="images/fig3.png" alt="alt text" width="75%" height="50%" />
 
-### Figure 4
 
-Coffee’s delightfully complex taste opens up a world of possibilities for great food pairings by following a few basic rules. Our Pairing figure shows **how to pair coffee with food** for visitors. It offers the pairing between **coffee origin** and **coffee flavor** as well as the **food flavor**. Each origin or flavor is represented by a clickable circle, and selecting a circle highlights relevant origins or flavors and displays detailed information on the right.
-
-For a food flavor, information includes a description, the typical food and the coffee origins it goes well with. Similarly, for a coffee flavor, information includes a description, the typical coffee origins and the food it may goes well with. For coffee origins, information includes a description, possible flavors, and recommended food pairings.
-
-<img src="images/fig4.png" alt="alt text" width="75%" height="50%" />
 
 <!-- ### Project Break Down
 
@@ -70,6 +57,21 @@ Prepare to be dazzled by **Viz 4**, the ultimate reward for your coffee quest. W
 Again, we would try our best to implement the fanciest interactive effects and write the most charming stories! These would be both extra ideas. -->
 
 ## Extra ideas:
+If time allows, we would like to add two extra figures that help the user to understand coffee market around the globe and food selection based on the coffee flavor. Below are the details of extra figures:
+### Figure 1
+Coffee has evolved into more than just a drink, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
+By playing with colors and their intensities, users can easily observe the changes in coffee production, consumption, import, and export in the chosen period of time. With the interactivity our map offers, the user can hover on different countries and retrieve detailed information such as country information, coffee type (Arabica/Robusta) and ranking among other producers/consumptors. Our website currently displays a world map that highlights the countries that produce coffee:
+
+<img src="images/fig1.png" alt="alt text" width="75%" height="50%" />
+
+### Figure 2
+
+Coffee’s delightfully complex taste opens up a world of possibilities for great food pairings by following a few basic rules. Our Pairing figure shows **how to pair coffee with food** for visitors. It offers the pairing between **coffee origin** and **coffee flavor** as well as the **food flavor**. Each origin or flavor is represented by a clickable circle, and selecting a circle highlights relevant origins or flavors and displays detailed information on the right.
+
+For a food flavor, information includes a description, the typical food and the coffee origins it goes well with. Similarly, for a coffee flavor, information includes a description, the typical coffee origins and the food it may goes well with. For coffee origins, information includes a description, possible flavors, and recommended food pairings.
+
+<img src="images/fig4.png" alt="alt text" width="75%" height="50%" />
+
 ???
 <!-- ### Figure 1: 
 
