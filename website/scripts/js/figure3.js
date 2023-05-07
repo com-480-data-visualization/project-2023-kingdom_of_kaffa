@@ -3,7 +3,7 @@ $(document).ready(function () {
         function (data) {
             // make a copy of the original data points
             const record = JSON.parse(JSON.stringify(data));
-
+            console.log(record);
             // initialize the svg
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,
@@ -30,10 +30,16 @@ $(document).ready(function () {
                     .attr("class", "circleContainer");
 
                 elem_updated
+                    .data(data)
                     .append("circle")
                     .style("cursor", "pointer")
                     .attr("r", radius)
-                    .style("fill", "#ff8e8e")
+                    .style("fill", (d) => {
+                        if (d.Rating >= 4.5) return "#ff8e8e";
+                        else if (d.Rating >= 4) return "#ea4242";
+                        else if (d.Rating >= 3.5) return "#fdc62f";
+                        else return "#5ac0f7";
+                    })
                     .on("click", function (d) {
                         return 1;
                     });
