@@ -5,7 +5,7 @@
 #section_figure3 h2 {
     font-size: 3rem;
     font-family: "Darumadrop One", cursive;
-    margin: 50px 0 20px 0;
+    margin: 0 0 20px 0;
 }
 
 #viz3-container {
@@ -21,7 +21,6 @@
 
 #viz3-descrip {
     width: 40%;
-    padding: 10px;
 }
 
 .fig3-button {
