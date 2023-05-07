@@ -1,3 +1,61 @@
+function add_legend(svg) {
+    // Define the color scale
+    var colorScale = d3
+        .scaleThreshold()
+        .domain([3.5, 4, 4.5])
+        .range(["#5ac0f7", "#fdc62f", "#ea4242", "#ff8e8e"]);
+
+    // Create the legend
+    var legend = svg
+        .append("g")
+        .attr("class", "legend")
+        .attr("transform", "translate(40, 40)");
+
+    // Add a rectangle for each color and price range
+    legend
+        .selectAll("rect")
+        .data(
+            colorScale.range().map(function (color) {
+                var d = colorScale.invertExtent(color);
+                if (d[0] == null) d[0] = colorScale.domain()[0];
+                if (d[1] == null) d[1] = colorScale.domain()[1];
+                return d;
+            })
+        )
+        .enter()
+        .append("rect")
+        .attr("y", function (d, i) {
+            return i * 35;
+        })
+        .attr("x", 70)
+        .attr("width", 100)
+        .attr("height", 20)
+        .style("fill", function (d) {
+            return colorScale(d[0]);
+        });
+
+    // Add labels for each price range
+    legend
+        .selectAll("text")
+        .data(
+            colorScale.range().map(function (color) {
+                var d = colorScale.invertExtent(color);
+                if (d[0] == null) d[0] = colorScale.domain()[0];
+                if (d[1] == null) d[1] = colorScale.domain()[1];
+                return d;
+            })
+        )
+        .enter()
+        .append("text")
+        .attr("y", function (d, i) {
+            return i * 40;
+        })
+        .attr("x", 40)
+        // .attr("dy", ".1em")
+        .text(function (d) {
+            return d[1];
+        });
+}
 $(document).ready(function () {
     d3.csv("../dataset/kofio_dataset/price_rating_rec_clean.csv").then(
         function (data) {
@@ -8,7 +66,6 @@ $(document).ready(function () {
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,
                 radius = 20;
-
             var svg = d3
                 .select("#filtering-bubbles")
                 .append("svg")
@@ -43,7 +100,7 @@ $(document).ready(function () {
                     .on("click", function (d) {
                         return 1;
                     });
-
+                add_legend(svg);
                 elem_updated
                     .append("text")
                     .attr("text-anchor", "middle")
