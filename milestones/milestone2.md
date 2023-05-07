@@ -56,7 +56,7 @@ For a food flavor, information includes a description, the typical food and the 
 
 ## Project Breakdown
 
-In this section, we describe the core visualization we'd love to demonstrate and extra ideas which we believe can enhance the visualization first, and then the whole project is broken down into independent pieces to make it more manageable.
+In this section, we describe the core visualization we'd love to demonstrate and extra ideas which can enhance the visualization first. Thus, the whole project is broken down into independent pieces to make it more manageable.
 
 ### Core Visualization
 
@@ -64,9 +64,8 @@ Since our ultimate purpose is to guide our users through a smooth journey on cof
 
 ### Extra Ideas
 
-**Figure 1** is a mesmerizing map that will transport you to a world of wonder and coffee bliss. With a wave of your hand, you can explore the global rise in coffee consumption and marvel at the countless coffee aficionados scattered across the globe. But beware, for once you start playing with this enchanting visualization, you might never want to leave its captivating embrace.
+**Figure 1** is a mesmerizing map that will transport you to a world of wonder and coffee bliss. With a wave of your hand, you can explore the global rise in coffee consumption and marvel at the countless coffee enthusiasts scattered across the globe. But beware, for once you start playing with this stunning visualization, you might want to stay in its captivating embrace.
 
 Prepare to be dazzled by **Figure 4**, the ultimate reward for your coffee quest. With your selection of the finest coffee products complete, it's time to indulge in some well-deserved magic. This dazzling figure features an interactive pairing map that will take you on a journey of flavors and foods, carefully crafted to match the coffee of your dreams. So before you even lay your hands on your precious coffee, take a moment to let your imagination soar and envision the wondrous culinary creations that await you!
 
 Again, we would try our best to implement the fanciest interactive effects and write the most charming stories! These would be both extra ideas.
-
