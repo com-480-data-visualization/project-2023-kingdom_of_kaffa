@@ -69,23 +69,3 @@ Since our ultimate purpose is to guide our users through a smooth journey on cof
 Prepare to be dazzled by **Figure 4**, the ultimate reward for your coffee quest. With your selection of the finest coffee products complete, it's time to indulge in some well-deserved magic. This dazzling figure features an interactive pairing map that will take you on a journey of flavors and foods, carefully crafted to match the coffee of your dreams. So before you even lay your hands on your precious coffee, take a moment to let your imagination soar and envision the wondrous culinary creations that await you!
 
 Again, we would try our best to implement the fanciest interactive effects and write the most charming stories! These would be both extra ideas.
-
-### Break Down
-
- -   **Website Design**
-    -   Website Structuring
-        -   Navigation Bar
-        -   Switching among Pages
-    -   Theme Color Selection
-        -   Choose the most appropriate color groups for the whole project
--   **Core Visualization Implementation**
-    -   Data Preparation
-        -   Data cleaning for each visualization (deserting unwanted fields and storing in CSV files)
-    -   Basic Visualization
-        -   Load the data from processed CSV files and write functions to read them to Javascript correctly
-        -   Implement static visualization using d3.js
-    -   Text Demonstration
-        -   Design text descriptions about each visualization
-         -   Organize them properly on the page
-
- -   **Interaction Design & Polish Storytelling**
