@@ -36,6 +36,7 @@
     position: relative;
     overflow: hidden;
     transition: all 0.55s cubic-bezier(0.25, 0.1, 0.25, 1);
+    font-family:'Darumadrop One', cursive;
 }
 
 .fig3-button::before {
@@ -61,4 +62,49 @@
 .fig3-button:hover::before {
     width: 300px;
     height: 300px;
+}
+
+#fig3-show-all {
+    color:#3E3B38;
+}
+
+#fig3-show-all:hover {
+    color: #fff;
+    background-color:#3E3B38;
+}
+
+#fig3-price {
+    color: #ea4242;
+}
+
+#fig3-price:hover {
+    color: #fff;
+    background-color:#ea4242;
+}
+
+#fig3-flavor {
+    color: #ff8e8e;
+}
+
+#fig3-flavor:hover {
+    color: #fff;
+    background-color:#ff8e8e;
+}
+
+#fig3-roast-type {
+    color: #fdc62f;
+}
+
+#fig3-roast-type:hover {
+    color: #fff;
+    background-color:#fdc62f;
+}
+
+#fig3-brewing-method {
+    color: #5ac0f7;
+}
+
+#fig3-brewing-method:hover {
+    color: #fff;
+    background-color:#5ac0f7;
 }
