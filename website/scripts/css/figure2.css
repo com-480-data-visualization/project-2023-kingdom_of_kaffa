@@ -1,4 +1,17 @@
 
+#section_figure2 {
+    font-family: "Poppins", sans-serif;
+}
+#section_figure2 h2 {
+    margin: 50px 0 20px 0;
+}
+#section_figure2 .title {
+  font-family: "Darumadrop One", cursive;
+}
+#fig2-brand-dropdown-content {
+  max-height: 13em;
+  overflow: auto;
+}
 .bubbles {
   stroke-width: 2px;
   stroke: white;
@@ -9,4 +22,35 @@
 #fig2-brands {
     height: 400px;
     overflow: scroll;
+}
+
+.side-panel {
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #ccc;
+  padding: 10px;
+}
+
+.container-brand  {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-side {
+  /* padding: 10px; */
+  width: 128px;
+}
+
+.right-side {
+  padding-left: 25px;
+  /* padding-top: 10px; */
+  /* padding-bottom: 0px; */
+  width: calc(100vw - 128px);
+}
+
+.container-brand-description{
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+  /* margin: 5px; */
 }
