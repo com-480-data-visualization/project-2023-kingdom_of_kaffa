@@ -17,16 +17,16 @@
 As required per Milestone two, we implemented the draft version of our website which you can visit here [Kingdom_of_kaffa](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa). In this section, we will display simple sketches of our visualization, their purpose and desired animation. Those sketches only display the idea of final result and will be improved towards the milestone 3.
 
 ### Figure 1
-Coffee has evolved into more than just a beverage, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
-By playing with colors and their intensities, users can easily observe the changes in coffee production, consumption, import, and export over time. Our website currently displays a world map that highlights the countries that produce coffee:
+Coffee has evolved into more than just a drink, it's a representation of culture and tradition from around the world. Over the past few decades, the coffee market has seen significant changes due to the evolving coffee culture. Our interactive map visualization offers a unique way to display how the coffee market has changed over the years.
+By playing with colors and their intensities, users can easily observe the changes in coffee production, consumption, import, and export in the chosen period of time. With the interactivity our map offers, the user can hover on different countries and retrieve detailed information such as country information, coffee type (Arabica/Robusta) and ranking among other producers/consumptors. Our website currently displays a world map that highlights the countries that produce coffee:
 
 <img src="images/fig1.png" alt="alt text" width="75%" height="50%" />
 
 
 ### Figure 2
-Using **price-rate-recommendation** bubble chart, the user can identify the appropriate brand based on their budget and brand rating. The overview of existing European brands and their prices will ease the user's way to choose the perfect coffee product.
+Using **price-rate-recommendation** bubble chart, the user can identify the appropriate brand based on their budget and brand rating. The chart provides an overview of existing European brands and their prices, making it easier for users to choose the perfect coffee product.
 
-Each bubble on the plot represent a unique coffee product and its color represents the brand. With the help of dropdown buttons, the user can interactively change x-axis, y-axis and the displayed brand. When hovering/clicking on the bubble, our chart will highlight all the coffee products coming from the same coffee brand. Moreover, the detailed info about the coffee brand will be displayed on the right.
+Each bubble on the plot represents a unique coffee product and its color represents the brand. With the help of dropdown buttons, the user can interactively change x-axis, y-axis and the displayed brand. Users can interactively change the x-axis, y-axis, and displayed brand using the dropdown buttons. Hovering/clicking on a bubble highlights all the coffee products from the same brand, and detailed information about the brand is displayed on the right.
 
 Below is the already implemented structure on the figure 2:
 
