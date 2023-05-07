@@ -33,6 +33,7 @@ $(document).ready(function () {
                     .append("circle")
                     .style("cursor", "pointer")
                     .attr("r", radius)
+                    .style("fill", "#ff8e8e")
                     .on("click", function (d) {
                         return 1;
                     });
