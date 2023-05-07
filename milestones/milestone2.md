@@ -1,15 +1,15 @@
 # Milestone 2
 
-## Tools Requirement
-**Website Hosting**: We will host our website using **Github Pages**.
+## Tools
+**Website Hosting**: We will hosting our website using **Github Pages**.
 
-**Website Structure**: For structuring our project, we use _[**fullpage.js**](https://alvarotrigo.com/fullPage/),_ which provides smooth and pretty switches among sections. We also make use of Bulma plugin to make a clean layout of each section.
+**Website Structure**: To structure our project, we are using _[**fullpage.js**](https://alvarotrigo.com/fullPage/),_ which provides smooth and visually appealing transitions between sections. We are also utilizing _[**Bulma**](https://bulma.io/)_ plugin to make a clean layout of each section.
 
-**Website Visual:** For theme colors of our website, we mainly resort to **_Lecture 6_**. We also use different plugins as _[**Bulma**](https://bulma.io/)_, _[**Fontawesome**](https://fontawesome.com/)_, and different fonts found online that allows a wide range of styling our components.
+**Website Visual:** For theme colors of our website, we mainly resort to **_Lecture 6_**. We are also using different plugins such as _[**Bulma**](https://bulma.io/)_, _[**Fontawesome**](https://fontawesome.com/)_, and different fonts found online that allows a wide range of styling our components.
 
-**Data Preparation**: To prepare the data to visualize in a proper format, we use **_Pandas_** library to do the data cleaning part, which includes dealing with missing fields, deserting unwanted fields, and storing in CSV files. After that, **_d3.js_** is used to load the data from CSV files to the Javascript dictionary. **_Lecture 4_** is needed for the data loading part.
+**Data Preparation**: For proper data visualization, we are using **_Pandas_** library to do the data cleaning part, which includes dealing with missing fields, deserting unwanted fields, and storing in CSV files. Afterward, we use **_d3.js_** to load the data from the CSV files into the JavaScript dictionary. **_Lecture 4_** is needed for the data loading part.
 
-**Data Visualization**: We mainly use **_d3.js_** for data visualization, detailed operations include data point demonstration and interaction design. **_Lecture 4_** and **_Lecture 5_** are mainly required for **_d3.js_**-related knowledge.
+**Data Visualization**: Our primary tool for data visualization is **_d3.js_**. We use it for detailed operations such as demonstrating data points and designing interactive features. **_Lecture 4_** and **_Lecture 5_** are mainly required for **_d3.js_**-related knowledge.
 
 **Story Telling**: To improve our storytelling for this project, we plan to polish our text information according to **_Lecture 12_**.
 
