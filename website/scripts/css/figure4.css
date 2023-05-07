@@ -11,7 +11,7 @@
 #section_figure4 h2 {
     font-size: 3rem;
     /* font-family: 'Abril Fatface', cursive; */
-    font-family: 'Playfair Display';
+    font-family: "Darumadrop One", cursive;
     margin: 20px 0 20px 0;
 }
 
@@ -110,6 +110,7 @@
 }
 
 .food-item img {
+    border-radius: 10px;
     max-height: 100%;
     width: auto;
 }
@@ -153,3 +154,14 @@
     right: 0;
 }
   
+.circle {
+    fill: #fbbfe3;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.line {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 1.5px;
+}

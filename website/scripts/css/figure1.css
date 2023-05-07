@@ -56,3 +56,8 @@
   .home_icon:hover {
     background: green no-repeat 12px 4px;
   }
+
+h2 {
+  font-size: 2rem;
+  font-family: "Darumadrop One", cursive;
+}

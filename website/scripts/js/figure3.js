@@ -36,6 +36,7 @@ function add_legend(svg) {
             return d;
         });
 }
+
 $(document).ready(function () {
     d3.csv("../dataset/kofio_dataset/price_rating_rec_clean.csv").then(
         function (data) {
