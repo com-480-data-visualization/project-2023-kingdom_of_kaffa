@@ -6,3 +6,7 @@
 .bubbles:hover {
   stroke: black;
 }
+#fig2-brands {
+    height: 400px;
+    overflow: scroll;
+}

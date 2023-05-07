@@ -8,7 +8,7 @@ const margin = {top: 10, right: 20, bottom: 30, left: 50},
 // append the svg object to the body of the page
 const svg = d3.select("#sample_viz")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
+    .attr("width", "100%")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
@@ -53,6 +53,37 @@ const svg = d3.select("#sample_viz")
 
 $(document).ready(function (){
     d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv").then( function(data) {
-sampleGraph(data)})
+    sampleGraph(data);
+    $(".dropdown .button").click(function (){
+        var dropdown = $(this).parents('.dropdown');
+        dropdown.toggleClass('is-active');
+        dropdown.focusout(function() {
+            $(this).removeClass('is-active');
+        });
+    });
+    var Svg = d3.select("#fig2-brands")
+    
+    // create a list of keys
+    var keys = ['The naughty dog', 'Candycane Coffee', 'DAK Coffee Roasters',
+    'HAYB Speciality Coffee', "Father's Coffee Roastery",
+    'Industra Coffee', 'The Barn', 'Square Mile', 'Gardelli Coffee',
+    'Beansmith.s', 'Dark Woods Coffee', 'Main Lane Coffee Roasters',
+    'Nordbeans', 'Good Beans', 'Concept Coffee Roasters',
+    'Morgon Coffee Roasters', 'BeBerry Coffee', 'Coffea Circulor',
+    'Dos Mundos', 'Doubleshot', 'Fiftybeans']
+    
+    // Usually you have a color scale in your chart already
+    var color = d3.scaleOrdinal()
+      .domain(keys)
+      .range(d3.schemeSet2);
+    
+      Svg.selectAll("mydots")
+      .data(keys)
+      .enter()
+      .append("a")
+        .attr("class", "panel-block")
+        .html(function(d) {return '<span class="panel-icon"><i class="fas fa-book" aria-hidden="true"></i></span>' + d})
+})
+
 })
 
