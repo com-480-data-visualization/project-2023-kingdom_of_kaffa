@@ -1,93 +1,140 @@
 
-function sampleGraph(innerWidth, innerheight, data){
-// set the dimensions and margins of the graph
-const margin = {top: 10, right: 20, bottom: 30, left: 50},
-    width = innerWidth - margin.left - margin.right,
-    height = innerheight - margin.top - margin.bottom;
+// All the roasteries wih recommmnedation and price take from /dataset/kofio_dataset/price_rating_rec_clean.csv
+class Figure2 {
 
-// append the svg object to the body of the page
-const svg = d3.select("#sample_viz")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
+  constructor(data, innerWidth, innerHeight) {
+    this.data = data
+    this.xaxis_value = "Rating"
+    this.yaxis_value = "Price"
+    this.brand_value = "All"
+    this.roasteries = ['The naughty dog',
+      'Candycane Coffee',
+      'DAK Coffee Roasters',
+      'HAYB Speciality Coffee',
+      "Father's Coffee Roastery",
+      'Industra Coffee',
+      'The Barn',
+      'Square Mile',
+      'Gardelli Coffee',
+      'Beansmith.s',
+      'Dark Woods Coffee',
+      'Main Lane Coffee Roasters',
+      'Nordbeans',
+      'Good Beans',
+      'Concept Coffee Roasters',
+      'Morgon Coffee Roasters',
+      'BeBerry Coffee',
+      'Coffea Circulor',
+      'Dos Mundos',
+      'Doubleshot',
+      'Fiftybeans']
 
-//Read the data
+    this.colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
+    this.roasteryToColor = this.setRoasteryToColor()
+    this.svg = d3.select("#fig2-plot")
+      .append("svg")
+      .attr("width", "100%")
+      .attr("height", innerHeight)
+  }
+
+  init() {
+    this.setMainPlot()
+    this.setDropDownListeners()
+  }
+
+  setDropDownListeners() {
+    $("#fig2-yaxis").on("change", event => {
+      this.updateYaxis($(event.target).val())
+      this.updateMainPlot()
+    });
+
+    $("#fig2-xaxis").on("change", event => {
+      this.updateXaxis($(event.target).val())
+      this.updateMainPlot()
+    });
+
+    $("#fig2-brand").on("change", function () {
+      console.log($(this).val());
+    });
+  }
 
 
-  // Add X axis
-  const x = d3.scaleLinear()
-    .domain([0, 12000])
-    .range([ 0, width]);
-  svg.append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x));
+  setRoasteryToColor() {
+    return d3.scaleOrdinal()
+      .domain(this.roasteries)
+      .range(this.colors)
+  }
 
-  // Add Y axis
-  const y = d3.scaleLinear()
-    .domain([35, 80])
-    .range([ height, 0]);
-  svg.append("g")
-    .call(d3.axisLeft(y));
+  updateXaxis(xaxis_value) {
+    this.xaxis_value = xaxis_value
+    this.x.domain([d3.min(this.data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.data, d => { return parseFloat(d[this.xaxis_value]) })])
+    this.xaxis.transition().duration(1000).call(d3.axisBottom(this.x))
+  }
 
-  // Add a scale for bubble size
-  const z = d3.scaleLinear()
-    .domain([200000, 1310000000])
-    .range([ 15, 30]);
+  updateYaxis(yaxis_value) {
+    this.yaxis_value = yaxis_value
+    this.y.domain([0, d3.max(this.data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
+    this.yaxis.transition().duration(1000).call(d3.axisLeft(this.y))
+  }
 
-    var myColor = d3.scaleOrdinal()
-    .domain(["Asia", "Europe", "Americas", "Africa", "Oceania"])
-    .range(['#fdc62f', '#ff8e8e', '#ea4242', "#5ac0f7", "#5ac0f7"]);
-  // Add dots
-  svg.append('g')
-    .selectAll("dot")
-    .data(data)
-    .join("circle")
-      .attr("cx", d => x(d.gdpPercap))
-      .attr("cy", d => y(d.lifeExp))
-      .attr("r", d => z(d.pop))
-      .style("fill", function (d) { return myColor(d.continent); } )
+  updateMainPlot() {
+    this.svg.selectAll("circle")
+      .data(this.data)
+      .transition()
+      .duration(1000)
+      .attr("cx", d => this.x(d[this.xaxis_value]))
+      .attr("cy", d => this.y(d[this.yaxis_value]))
+  }
 
+  setMainPlot() {
+
+    const margin = { top: 10, right: 20, bottom: 10, left: 10 };
+
+    const svgViewbox = this.svg.node().getBoundingClientRect();
+
+    this.svg
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    this.width = svgViewbox.width - margin.left - margin.right;
+    this.height = svgViewbox.height - margin.top - margin.bottom;
+
+    this.x = d3.scaleLinear()
+      .domain([d3.min(this.data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.data, d => { return parseFloat(d[this.xaxis_value]) })])
+      .range([0, this.width]);
+
+    this.y = d3.scaleLinear()
+      .domain([0, d3.max(this.data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
+      .range([this.height, 0]);
+
+    this.xaxis = this.svg.append("g")
+      .attr("transform", `translate(20, ${this.height})`)
+      .call(d3.axisBottom(this.x));
+
+    this.yaxis = this.svg.append("g")
+      .attr("transform", "translate(20,0)")      // This controls the vertical position of the Axis
+      .call(d3.axisLeft(this.y));
+
+    this.svg.append('g')
+      .selectAll("dot")
+      .data(this.data)
+      .join("circle")
+      .attr("cx", d => this.x(d.Rating))
+      .attr("cy", d => this.y(d.Price))
+      .attr("r", 20)
+      .style("fill", d => { return this.roasteryToColor(d.Roastery); })
       .style("opacity", "0.7")
-      .attr("stroke", function (d) { return myColor(d.continent); })
-
+      .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
+  }
 
 }
 
-$(document).ready(function (){
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/4_ThreeNum.csv").then( function(data) {
-    sampleGraph(window.innerWidth * 0.6,window.innerHeight * 0.8, data);
-    $(".dropdown .button").click(function (){
-        var dropdown = $(this).parents('.dropdown');
-        dropdown.toggleClass('is-active');
-        dropdown.focusout(function() {
-            $(this).removeClass('is-active');
-        });
-    });
-    var Svg = d3.select("#fig2-brand-dropdown-content")
-    
-    // create a list of keys
-    var keys = ['The naughty dog', 'Candycane Coffee', 'DAK Coffee Roasters',
-    'HAYB Speciality Coffee', "Father's Coffee Roastery",
-    'Industra Coffee', 'The Barn', 'Square Mile', 'Gardelli Coffee',
-    'Beansmith.s', 'Dark Woods Coffee', 'Main Lane Coffee Roasters',
-    'Nordbeans', 'Good Beans', 'Concept Coffee Roasters',
-    'Morgon Coffee Roasters', 'BeBerry Coffee', 'Coffea Circulor',
-    'Dos Mundos', 'Doubleshot', 'Fiftybeans']
-    
-    // Usually you have a color scale in your chart already
-    var color = d3.scaleOrdinal()
-      .domain(keys)
-      .range(d3.schemeSet2);
-    
-      Svg.selectAll("mydots")
-      .data(keys)
-      .enter()
-      .append("a")
-        .attr("class", "dropdown-item")
-        .text(function(d){return d})
-})
+
+$(document).ready(function () {
+  d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
+    let fig2 = new Figure2(data, window.innerWidth, window.innerHeight * 0.8)
+    fig2.init()
+  })
 
 
 })
