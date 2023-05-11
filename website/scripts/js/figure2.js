@@ -4,6 +4,8 @@ class Figure2 {
 
   constructor(data, innerWidth, innerHeight) {
     this.data = data
+    this.innerWidth = innerWidth
+    this.innerHeight = innerHeight
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
     this.brand_value = "All"
@@ -90,14 +92,14 @@ class Figure2 {
 
     const margin = { top: 10, right: 20, bottom: 10, left: 10 };
 
-    const svgViewbox = this.svg.node().getBoundingClientRect();
+    // const svgViewbox = this.svg.node().getBoundingClientRect();
 
     this.svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    this.width = svgViewbox.width - margin.left - margin.right;
-    this.height = svgViewbox.height - margin.top - margin.bottom;
+    this.width = this.innerWidth - margin.left - margin.right;
+    this.height = this.innerHeight - margin.top - margin.bottom;
 
     this.x = d3.scaleLinear()
       .domain([d3.min(this.data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.data, d => { return parseFloat(d[this.xaxis_value]) })])
