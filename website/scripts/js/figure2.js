@@ -98,7 +98,12 @@ class Figure2 {
 
   updateMainPlot() {
     // Filter all elements on the chosen brand
-    this.plot_data = this.original_data.filter(d=>{ return d.Roastery == this.brand_value })
+    if(this.brand_value === "All"){// is it correct comaprison?
+      this.plot_data = this.original_data
+    } 
+    else{ 
+      this.plot_data = this.original_data.filter(d=>{ return d.Roastery == this.brand_value }) 
+    }
 
     // Remove all the circles from the plot
     this.svg.selectAll("circle")
