@@ -3,7 +3,8 @@
 class Figure2 {
 
   constructor(data, innerWidth, innerHeight) {
-    this.data = data
+    this.plot_data = data
+    this.original_data = data
     this.innerWidth = innerWidth
     this.innerHeight = innerHeight
     this.xaxis_value = "Rating"
@@ -40,26 +41,38 @@ class Figure2 {
   }
 
   init() {
-    this.setMainPlot()
     this.setDropDownListeners()
+
+    this.setMainPlot()
+    this.setBrands()
   }
 
   setDropDownListeners() {
     $("#fig2-yaxis").on("change", event => {
-      this.updateYaxis($(event.target).val())
-      this.updateMainPlot()
+      this.updateYaxis($(event.target).val());
+      this.updateMainPlot();
     });
 
     $("#fig2-xaxis").on("change", event => {
-      this.updateXaxis($(event.target).val())
-      this.updateMainPlot()
+      this.updateXaxis($(event.target).val());
+      this.updateMainPlot();
     });
 
-    $("#fig2-brand").on("change", function () {
-      console.log($(this).val());
+    $("#fig2-brand").on("change", event => {
+      this.updateBrand($(event.target).val());
+      this.updateMainPlot();
     });
   }
 
+  setBrands(){
+      let brand_select = document.getElementById("fig2-brand");
+      this.roasteries.forEach((brand) => {
+        let option= document.createElement("option");
+        option.value= brand;
+        option.text= brand;
+        brand_select.add(option);
+      });
+  }
 
   setRoasteryToColor() {
     return d3.scaleOrdinal()
@@ -67,32 +80,60 @@ class Figure2 {
       .range(this.colors)
   }
 
+  updateBrand(brand_value){
+    this.brand_value = brand_value;
+  }
+
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
-    this.x.domain([d3.min(this.data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.data, d => { return parseFloat(d[this.xaxis_value]) })])
+    this.x.domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })])
     this.xaxis.transition().duration(1000).call(d3.axisBottom(this.x))
   }
 
   updateYaxis(yaxis_value) {
     this.yaxis_value = yaxis_value
-    this.y.domain([0, d3.max(this.data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
+    this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
     this.yaxis.transition().duration(1000).call(d3.axisLeft(this.y))
   }
 
   updateMainPlot() {
+    // Filter all elements on the chosen brand
+    this.plot_data = this.original_data.filter(d=>{ return d.Roastery == this.brand_value })
+
+    // Remove all the circles from the plot
     this.svg.selectAll("circle")
-      .data(this.data)
-      .transition()
-      .duration(1000)
-      .attr("cx", d => this.x(d[this.xaxis_value]))
-      .attr("cy", d => this.y(d[this.yaxis_value]))
+    .transition()
+    .duration(500)
+    // .ease(d3.easeBounceOut)
+    .attr("r", 0)
+    .remove()
+    .on("end", () => {
+      // Add new circles to the graph
+      this.svg.select("g")
+        .selectAll("circle")
+        .data(this.plot_data)
+        .join("circle")
+        .attr("cx", d => this.x(d.Rating))
+        .attr("cy", d => this.y(d.Price))
+        .attr("r", 0)
+        .style("fill", d => this.roasteryToColor(d.Roastery))
+        .style("opacity", "0.7")
+        .attr("stroke", d => this.roasteryToColor(d.Roastery))
+        .transition()
+        .duration(500)
+        .ease(d3.easeBounceOut)
+        .attr("r", 20)
+        // .on("end", () => {
+        //   console.log("Elements added");
+        //   console.log(this.svg);
+        // });
+    });
+
   }
 
   setMainPlot() {
 
     const margin = { top: 10, right: 20, bottom: 10, left: 10 };
-
-    // const svgViewbox = this.svg.node().getBoundingClientRect();
 
     this.svg
       .append("g")
@@ -102,11 +143,11 @@ class Figure2 {
     this.height = this.innerHeight - margin.top - margin.bottom;
 
     this.x = d3.scaleLinear()
-      .domain([d3.min(this.data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.data, d => { return parseFloat(d[this.xaxis_value]) })])
+      .domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })*1.5])
       .range([0, this.width]);
 
     this.y = d3.scaleLinear()
-      .domain([0, d3.max(this.data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
+      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
       .range([this.height, 0]);
 
     this.xaxis = this.svg.append("g")
@@ -118,8 +159,8 @@ class Figure2 {
       .call(d3.axisLeft(this.y));
 
     this.svg.append('g')
-      .selectAll("dot")
-      .data(this.data)
+      .selectAll("circle")
+      .data(this.plot_data)
       .join("circle")
       .attr("cx", d => this.x(d.Rating))
       .attr("cy", d => this.y(d.Price))
@@ -127,14 +168,15 @@ class Figure2 {
       .style("fill", d => { return this.roasteryToColor(d.Roastery); })
       .style("opacity", "0.7")
       .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
-  }
 
+}
 }
 
 
 $(document).ready(function () {
+  
   d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
-    let fig2 = new Figure2(data, window.innerWidth, window.innerHeight * 0.8)
+    let fig2 = new Figure2(data, window.innerWidth*0.7, window.innerHeight * 0.8)
     fig2.init()
   })
 
