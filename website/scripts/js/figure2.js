@@ -64,14 +64,14 @@ class Figure2 {
     });
   }
 
-  setBrands(){
-      let brand_select = document.getElementById("fig2-brand");
-      this.roasteries.forEach((brand) => {
-        let option= document.createElement("option");
-        option.value= brand;
-        option.text= brand;
-        brand_select.add(option);
-      });
+  setBrands() {
+    let brand_select = document.getElementById("fig2-brand");
+    this.roasteries.forEach((brand) => {
+      let option = document.createElement("option");
+      option.value = brand;
+      option.text = brand;
+      brand_select.add(option);
+    });
   }
 
   setRoasteryToColor() {
@@ -80,7 +80,7 @@ class Figure2 {
       .range(this.colors)
   }
 
-  updateBrand(brand_value){
+  updateBrand(brand_value) {
     this.brand_value = brand_value;
   }
 
@@ -98,41 +98,41 @@ class Figure2 {
 
   updateMainPlot() {
     // Filter all elements on the chosen brand
-    if(this.brand_value === "All"){// is it correct comaprison?
+    if (this.brand_value === "All") {// is it correct comaprison?
       this.plot_data = this.original_data
-    } 
-    else{ 
-      this.plot_data = this.original_data.filter(d=>{ return d.Roastery == this.brand_value }) 
+    }
+    else {
+      this.plot_data = this.original_data.filter(d => { return d.Roastery == this.brand_value })
     }
 
     // Remove all the circles from the plot
     this.svg.selectAll("circle")
-    .transition()
-    .duration(500)
-    // .ease(d3.easeBounceOut)
-    .attr("r", 0)
-    .remove()
-    .on("end", () => {
-      // Add new circles to the graph
-      this.svg.select("g")
-        .selectAll("circle")
-        .data(this.plot_data)
-        .join("circle")
-        .attr("cx", d => this.x(d.Rating))
-        .attr("cy", d => this.y(d.Price))
-        .attr("r", 0)
-        .style("fill", d => this.roasteryToColor(d.Roastery))
-        .style("opacity", "0.7")
-        .attr("stroke", d => this.roasteryToColor(d.Roastery))
-        .transition()
-        .duration(500)
-        .ease(d3.easeBounceOut)
-        .attr("r", 20)
+      .transition()
+      .duration(500)
+      // .ease(d3.easeBounceOut)
+      .attr("r", 0)
+      .remove()
+      .on("end", () => {
+        // Add new circles to the graph
+        this.svg.select("g")
+          .selectAll("circle")
+          .data(this.plot_data)
+          .join("circle")
+          .attr("cx", d => this.x(d.Rating))
+          .attr("cy", d => this.y(d.Price))
+          .attr("r", 0)
+          .style("fill", d => this.roasteryToColor(d.Roastery))
+          .style("opacity", "0.7")
+          .attr("stroke", d => this.roasteryToColor(d.Roastery))
+          .transition()
+          .duration(500)
+          .ease(d3.easeBounceOut)
+          .attr("r", 20)
         // .on("end", () => {
         //   console.log("Elements added");
         //   console.log(this.svg);
         // });
-    });
+      });
 
   }
 
@@ -148,7 +148,7 @@ class Figure2 {
     this.height = this.innerHeight - margin.top - margin.bottom;
 
     this.x = d3.scaleLinear()
-      .domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })*1.5])
+      .domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 1.5])
       .range([0, this.width]);
 
     this.y = d3.scaleLinear()
@@ -174,14 +174,14 @@ class Figure2 {
       .style("opacity", "0.7")
       .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
 
-}
+  }
 }
 
 
 $(document).ready(function () {
-  
+
   d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
-    let fig2 = new Figure2(data, window.innerWidth*0.7, window.innerHeight * 0.8)
+    let fig2 = new Figure2(data, window.innerWidth * 0.7, window.innerHeight * 0.8)
     fig2.init()
   })
 
