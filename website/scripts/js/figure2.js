@@ -10,6 +10,7 @@ class Figure2 {
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
     this.brand_value = "All"
+    this.circle_radius = 20
     this.roasteries = ['The naughty dog',
       'Candycane Coffee',
       'DAK Coffee Roasters',
@@ -40,14 +41,21 @@ class Figure2 {
       .attr("height", innerHeight)
   }
 
-  init() {
-    this.setDropDownListeners()
+  hoverCircle = (data) => {
+    this.updateCoffeeInfo(data.target.__data__);
+    console.log(data)
+    d3.select(data.this)
+    .style("stroke", "black")
+    .style("stroke-width", 10);
+  }
 
+  init(){
+    this.setDropDownListeners()
     this.setMainPlot()
     this.setBrands()
   }
 
-  setDropDownListeners() {
+  setDropDownListeners(){
     $("#fig2-yaxis").on("change", event => {
       this.updateYaxis($(event.target).val());
       this.updateMainPlot();
@@ -86,17 +94,18 @@ class Figure2 {
 
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
-    this.x.domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })])
-    this.xaxis.transition().duration(1000).call(d3.axisBottom(this.x))
+    this.x.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})])
+    this.svg.select("#xaxis").transition().duration(1000).call(d3.axisBottom(this.x))
   }
 
   updateYaxis(yaxis_value) {
     this.yaxis_value = yaxis_value
-    this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
-    this.yaxis.transition().duration(1000).call(d3.axisLeft(this.y))
+    this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
+    this.svg.selectAll("#yaxis").transition().duration(1000).call(d3.axisLeft(this.y))
   }
 
   updateMainPlot() {
+
     // Filter all elements on the chosen brand
     if (this.brand_value === "All") {// is it correct comaprison?
       this.plot_data = this.original_data
@@ -109,7 +118,6 @@ class Figure2 {
     this.svg.selectAll("circle")
       .transition()
       .duration(500)
-      // .ease(d3.easeBounceOut)
       .attr("r", 0)
       .remove()
       .on("end", () => {
@@ -118,51 +126,67 @@ class Figure2 {
           .selectAll("circle")
           .data(this.plot_data)
           .join("circle")
-          .attr("cx", d => this.x(d.Rating))
-          .attr("cy", d => this.y(d.Price))
+          .attr("cx", d => this.x(d[this.xaxis_value]))
+          .attr("cy", d => this.y(d[this.yaxis_value]))
           .attr("r", 0)
           .style("fill", d => this.roasteryToColor(d.Roastery))
           .style("opacity", "0.7")
           .attr("stroke", d => this.roasteryToColor(d.Roastery))
+          .on("mouseover", function(data) {
+            Figure2.updateCoffeeInfo(data.target.__data__)
+            d3.select(this)
+            .style("stroke", "black")
+            .style("stroke-width", 10);
+          })
+          .on("mouseout", function() {
+            d3.select(this)
+            .style("stroke-width", 0);
+          })
           .transition()
           .duration(500)
           .ease(d3.easeBounceOut)
           .attr("r", 20)
-        // .on("end", () => {
-        //   console.log("Elements added");
-        //   console.log(this.svg);
-        // });
       });
 
+  }
+  static updateCoffeeInfo(hovered_circle){
+    document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
+    document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"]
+    document.getElementById('fig2_recommended').querySelector("text").textContent = hovered_circle["Recommended"]
   }
 
   setMainPlot() {
 
-    const margin = { top: 10, right: 20, bottom: 10, left: 10 };
+    const margin = { top: 10, right: 20, bottom: 10, left: 20 };
 
     this.svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    this.width = this.innerWidth - margin.left - margin.right;
-    this.height = this.innerHeight - margin.top - margin.bottom;
+    const svgViewbox = this.svg.node().getBoundingClientRect();
+    this.width = svgViewbox.width - margin.left - margin.right;
+    this.height = svgViewbox.height - margin.top - margin.bottom;
 
+    // const xaxis_/right = 
     this.x = d3.scaleLinear()
-      .domain([d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 0.8, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) * 1.5])
+      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})])
       .range([0, this.width]);
 
+
     this.y = d3.scaleLinear()
-      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) }) * 1.1])
+      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
       .range([this.height, 0]);
 
-    this.xaxis = this.svg.append("g")
-      .attr("transform", `translate(20, ${this.height})`)
+    this.svg.append("g")
+      .attr("id","xaxis")
+      .attr("transform", `translate(0, ${this.height})`)
       .call(d3.axisBottom(this.x));
 
-    this.yaxis = this.svg.append("g")
-      .attr("transform", "translate(20,0)")      // This controls the vertical position of the Axis
+    this.svg.append("g")
+      .attr("id","yaxis")
+      .attr("transform", `translate(20,0)`)      // This controls the vertical position of the Axis
       .call(d3.axisLeft(this.y));
-
+    // 
     this.svg.append('g')
       .selectAll("circle")
       .data(this.plot_data)
@@ -173,6 +197,16 @@ class Figure2 {
       .style("fill", d => { return this.roasteryToColor(d.Roastery); })
       .style("opacity", "0.7")
       .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
+      .on("mouseover", function(data, idx) {
+        Figure2.updateCoffeeInfo(data.target.__data__)
+        d3.select(this)
+        .style("stroke", "black")
+        .style("stroke-width", 10);
+      })
+      .on("mouseout", function() {
+        d3.select(this)
+        .style("stroke-width", 0);
+      });
 
   }
 }

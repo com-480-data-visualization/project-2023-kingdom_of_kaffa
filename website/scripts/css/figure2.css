@@ -47,17 +47,3 @@
   /* padding-bottom: 0px; */
   width: calc(100vw - 128px);
 }
-
-.container-brand-description{
-  display: flex;
-  flex-direction: row;
-  padding-top: 5px;
-  /* margin: 5px; */
-}
-#container-brand-description {
-  display: flex;
-}
-
-.section {
-  flex-basis: 33.33%; /* Each section takes up one-third of the container */
-}
