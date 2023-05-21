@@ -95,13 +95,28 @@ class Figure2 {
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
     this.x.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})])
-    this.svg.select("#xaxis").transition().duration(1000).call(d3.axisBottom(this.x))
+    this.svg.select("#xaxis").transition().duration(500).call(d3.axisBottom(this.x))
+    .call(g => g.select(".domain")
+    .remove());
   }
 
   updateYaxis(yaxis_value) {
     this.yaxis_value = yaxis_value
     this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
-    this.svg.selectAll("#yaxis").transition().duration(1000).call(d3.axisLeft(this.y))
+    this.svg.selectAll("#yaxis").transition().duration(500)
+
+    .call(d3.axisRight(this.y)
+
+    .tickSize(this.width))
+    // .tickFormat(formatTick))
+    .call(g => g.select(".domain")
+    .remove())
+    .call(g => g.selectAll(".tick:not(:first-of-type) line")
+        .attr("stroke-opacity", 0.5)
+        .attr("stroke-dasharray", "2,2"))
+    .call(g => g.selectAll(".tick text")
+        .attr("x", 4)
+        .attr("dy", -4))
   }
 
   updateMainPlot() {
@@ -150,6 +165,10 @@ class Figure2 {
 
   }
   static updateCoffeeInfo(hovered_circle){
+    document.getElementById('fig2_brand_name').querySelector("text").textContent = hovered_circle["Roastery"]
+    document.getElementById('fig2_coffee_name').querySelector("text").textContent = hovered_circle["Item Name"]
+    document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g,"_").replace('.',"_") + '_thumb.png'
+    
     document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
     document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"]
     document.getElementById('fig2_recommended').querySelector("text").textContent = hovered_circle["Recommended"]
@@ -179,14 +198,31 @@ class Figure2 {
 
     this.svg.append("g")
       .attr("id","xaxis")
-      .attr("transform", `translate(0, ${this.height})`)
-      .call(d3.axisBottom(this.x));
+      .attr("transform", `translate(${margin.left}, ${this.height})`)
+      .call(d3.axisBottom(this.x))
+      .call(g => g.select(".domain")
+        .remove());
 
-    this.svg.append("g")
-      .attr("id","yaxis")
-      .attr("transform", `translate(20,0)`)      // This controls the vertical position of the Axis
-      .call(d3.axisLeft(this.y));
-    // 
+    // this.svg.append("g")
+    //   .attr("id","yaxis")
+    //   .attr("transform", `translate(20,0)`)      // This controls the vertical position of the Axis
+    //   .call(d3.axisLeft(this.y));
+
+    this.svg.append('g')
+    .attr("id","yaxis")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisRight(this.y)
+        .tickSize(this.width))
+        // .tickFormat(formatTick))
+    .call(g => g.select(".domain")
+        .remove())
+    .call(g => g.selectAll(".tick:not(:first-of-type) line")
+        .attr("stroke-opacity", 0.5)
+        .attr("stroke-dasharray", "2,2"))
+    .call(g => g.selectAll(".tick text")
+        .attr("x", 4)
+        .attr("dy", -4))
+
     this.svg.append('g')
       .selectAll("circle")
       .data(this.plot_data)
