@@ -1,5 +1,71 @@
 
 // All the brands wih recommmnedation and price take from /dataset/kofio_dataset/price_rating_rec_clean.csv
+const toTitleCase = (phrase) => {
+  return phrase
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
+const code_to_country = {
+  'cz':"Czech Republic",
+  'no': "Norway",
+  'de': "Germany",
+  'gb': "Great Britain",
+  'it': "Italy",
+  'se': "Sweden",
+  'pl': "Poland",
+  'sv': "Slovenia",
+  'nl': "Netherlands"
+}
+
+const brands = ['The naughty dog',
+'Candycane Coffee',
+'DAK Coffee Roasters',
+'HAYB Speciality Coffee',
+"Father's Coffee Roastery",
+'Industra Coffee',
+'The Barn',
+'Square Mile',
+'Gardelli Coffee',
+'Beansmith.s',
+'Dark Woods Coffee',
+'Main Lane Coffee Roasters',
+'Nordbeans',
+'Good Beans',
+'Concept Coffee Roasters',
+'Morgon Coffee Roasters',
+'BeBerry Coffee',
+'Coffea Circulor',
+'Dos Mundos',
+'Doubleshot',
+'Fiftybeans']
+
+const brands_country = ['cz',
+'cz',
+'nl',
+'pl',
+'cz',
+'cz',
+'de',
+'gb',
+'it',
+'cz',
+'gb',
+'de',
+'cz',
+'nl',
+'sk',
+'se',
+'cz',
+'no',
+'cz',
+'cz',
+'cz']
+
+const  colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
+
 class Figure2 {
 
   constructor(data, innerHeight) {
@@ -31,6 +97,28 @@ class Figure2 {
       'Dos Mundos',
       'Doubleshot',
       'Fiftybeans']
+    
+    this.brands_country = ['cz',
+      'cz',
+      'nl',
+      'pl',
+      'cz',
+      'cz',
+      'de',
+      'gb',
+      'it',
+      'cz',
+      'gb',
+      'de',
+      'cz',
+      'nl',
+      'sk',
+      'se',
+      'cz',
+      'no',
+      'cz',
+      'cz',
+      'cz']
 
     this.colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
     this.roasteryToColor = this.setRoasteryToColor()
@@ -104,7 +192,7 @@ class Figure2 {
     this.brands.forEach((brand) => {
       let option = document.createElement("option");
       option.value = brand;
-      option.text = brand;
+      option.setAttribute('data-content', `<span style='color:${colors[brands.indexOf(brand)]}'><i class='fa fa-circle'></i></span> `+brand);
       brand_select.add(option);
     });
   }
@@ -126,10 +214,9 @@ class Figure2 {
 
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
-    this.x.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})])
+    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})/this.circle_radius
+    this.x.domain([-1*x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])}) + x_buf*2])
     this.svg.select("#xaxis").transition().duration(500).call(d3.axisBottom(this.x))
-    .call(g => g.select(".domain")
-    .remove());
   }
 
   updateYaxis(yaxis_value) {
@@ -193,9 +280,12 @@ class Figure2 {
 
   }
   static updateCoffeeInfo(hovered_circle){
-    document.getElementById('fig2_brand_name').querySelector("text").textContent = hovered_circle["Roastery"]
-    document.getElementById('fig2_coffee_name').querySelector("text").textContent = hovered_circle["Item Name"]
+    document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> `+ hovered_circle["Roastery"]
+    document.getElementById('fig2_coffee_name').querySelector("text").textContent = toTitleCase(hovered_circle["Item Name"].split('-')[0])
     document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g,"_").replace('.',"_") + '_thumb.png'
+    let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
+    document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
+    document.getElementById('fig2_brand_country_name').textContent = code_to_country[country_code]
 
     document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
     document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"]
@@ -210,37 +300,28 @@ class Figure2 {
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
 
-    // const xaxis_/right = 
+    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})/this.circle_radius
     this.x = d3.scaleLinear()
-      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})])
+      .domain([-1*x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])}) + x_buf*2])
       .range([0, this.width]);
-
 
     this.y = d3.scaleLinear()
       .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
-      .range([this.height, 0]);
+      .range([this.height - this.circle_radius*2, this.circle_radius]);
 
     this.svg.append("g")
       .attr("id","xaxis")
       .attr("transform", `translate(${margin.left}, ${this.height})`)
-      .call(d3.axisBottom(this.x))
-      .call(g => g.select(".domain")
-        .remove());
-
-    // this.svg.append("g")
-    //   .attr("id","yaxis")
-    //   .attr("transform", `translate(20,0)`)      // This controls the vertical position of the Axis
-    //   .call(d3.axisLeft(this.y));
+      .call(d3.axisBottom(this.x));
 
     this.svg.append('g')
     .attr("id","yaxis")
-    .attr("transform", `translate(${margin.left},0)`)
+    .attr("transform", `translate(${margin.left}, 0)`)
     .call(d3.axisRight(this.y)
-        .tickSize(this.width))
-        // .tickFormat(formatTick))
+    .tickSize(this.width))
     .call(g => g.select(".domain")
         .remove())
-    .call(g => g.selectAll(".tick:not(:first-of-type) line")
+    .call(g => g.selectAll(".tick line")
         .attr("stroke-opacity", 0.5)
         .attr("stroke-dasharray", "2,2"))
     .call(g => g.selectAll(".tick text")
