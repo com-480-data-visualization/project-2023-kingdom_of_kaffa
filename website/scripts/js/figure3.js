@@ -42,7 +42,6 @@ $(document).ready(function () {
         function (data) {
             // make a copy of the original data points
             const record = JSON.parse(JSON.stringify(data));
-            console.log(record);
             // initialize the svg
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,

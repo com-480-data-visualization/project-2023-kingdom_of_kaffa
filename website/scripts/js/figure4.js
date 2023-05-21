@@ -100,8 +100,6 @@ $(document).ready(function () {
         flavor = data.map(function(d) { return d["Flavor"]; });
         uniqueFlavor = Array.from(new Set(flavor));
         
-        console.log(svg);
-
         let originCircles = svg.selectAll(".origin_left")
           .data(uniqueOrigin)
           .enter().append("circle")
