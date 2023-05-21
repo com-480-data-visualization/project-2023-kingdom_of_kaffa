@@ -1,5 +1,6 @@
 <div class="slide">
-    <div class="columns is-vcentered">
+    <div class="columns is-vcentered ">
+
         <div class="column is-two-thirds" style="padding-left: 30px;">
             <div class="block">
                 <select id="fig2-yaxis">
@@ -14,8 +15,7 @@
                     <option>Price</option>
                 </select>
 
-                <select id="fig2-brand">
-                    <option>All</option>
+                <select id="fig2-brand" multiple data-size="5" data-actions-box="true">
                 </select>
             </div>
 
@@ -23,79 +23,85 @@
                 <div id="fig2-plot"></div>
             </div>
         </div>
-        <div class="column  is-one-third" style="padding-right: 30px;">
-            <div class="block">
 
-                <h2 class="title is-2">Brews and Bucks</h2>
-                <p>
-                    Imagine savoring freshly roasted coffee before the whirlwind of the day begins. It is a captivating
-                    dream, isn't it? Let's transform this dream into a reality as we explore the realm of European
-                    roasteries. Dive into this world and find the perfect, affordable coffee for your delightful
-                    morning!
-            </div>
-            <div class="block">
-                <div class="side-panel">
-                    <div class="block">
-                        <div class="container-brand">
+        <div class="column" style="display: inline-grid; justify-items: center;">
+            <div style="width:70%;">
+                <div class="block">
 
-                            <div class="column is-one-third">
-                                <figure class="image is-96x96">
-                                    <img class="is-rounded" id="fig2_brand_image" src="image/candycane.png">
-                                </figure>
+                    <h2 class="title is-2">Brews and Bucks</h2>
+                    <p>
+                        Imagine savoring freshly roasted coffee before the whirlwind of the day begins. It is a
+                        captivating
+                        dream, isn't it? Let's transform this dream into a reality as we explore the realm of European
+                        roasteries. Dive into this world and find the perfect, affordable coffee for your delightful
+                        morning!
+                </div>
+                <div class="block">
+                    <div class="side-panel">
+                        <div class="block">
+                            <div class="container-brand">
+
+                                <div class="column is-one-third">
+                                    <figure class="image is-96x96">
+                                        <img class="is-rounded" id="fig2_brand_image" src="image/candycane.png">
+                                    </figure>
+                                </div>
+
+                                <div class="column is-two-thirds ">
+                                    <p class="title is-4" id="fig2_brand_name"><text>Candycane Coffee</text></p>
+                                    <p class="subtitle is-6">
+                                    <p id="fig2_coffee_name">
+                                        <text>Coffe Name</text>
+                                    </p>
+                                    <p id="fig2_brand_country">
+                                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
+                                        <img src="image/star3.png">
+                                    </figure>
+                                    <text>Czech Republic</text>
+                                    </p>
+                                    </p>
+
+
+                                </div>
+                            </div>
+                            <!-- </div> -->
+
+                            <!-- <div class="block"> -->
+                            <div class="container-brand-description columns is-vcentered">
+                                <div class="column is-one-third" id="fig2_price" style="text-align: center;">
+                                    <text>Rating</text>
+                                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
+                                        <img src="image/dollar-symbol.png">
+                                    </figure>
+                                </div>
+
+                                <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
+                                    <text>Rating</text>
+                                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
+                                        <img src="image/star3.png">
+                                    </figure>
+                                </div>
+
+                                <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
+                                    <text>Rating</text>
+                                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
+                                        <img src="image/love.png">
+                                    </figure>
+                                </div>
+
                             </div>
 
-                            <div class="column is-two-thirds ">
-                                <p class="title is-4" id="fig2_brand_name"><text>Candycane Coffee</text></p>
-                                <p class="subtitle is-6">
-                                <p id="fig2_coffee_name">
-                                    <text>Coffe Name</text>
-                                </p>
-                                <p id="fig2_brand_country">
-                                <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                    <img src="image/star3.png">
-                                </figure>
-                                <text>Czech Republic</text>
-                                </p>
-                                </p>
-
-
-                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                incididunt ut
+                                labore
+                                et
+                            </p>
                         </div>
-                        <!-- </div> -->
-
-                        <!-- <div class="block"> -->
-                        <div class="container-brand-description columns is-vcentered">
-                            <div class="column is-one-third" id="fig2_price" style="text-align: center;">
-                                <text>Rating</text>
-                                <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                    <img src="image/dollar-symbol.png">
-                                </figure>
-                            </div>
-
-                            <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
-                                <text>Rating</text>
-                                <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                    <img src="image/star3.png">
-                                </figure>
-                            </div>
-
-                            <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
-                                <text>Rating</text>
-                                <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                    <img src="image/love.png">
-                                </figure>
-                            </div>
-
-                        </div>
-
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>

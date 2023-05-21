@@ -1,17 +1,16 @@
 
-// All the roasteries wih recommmnedation and price take from /dataset/kofio_dataset/price_rating_rec_clean.csv
+// All the brands wih recommmnedation and price take from /dataset/kofio_dataset/price_rating_rec_clean.csv
 class Figure2 {
 
-  constructor(data, innerWidth, innerHeight) {
+  constructor(data, innerHeight) {
     this.plot_data = data
     this.original_data = data
-    this.innerWidth = innerWidth
-    this.innerHeight = innerHeight
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
     this.brand_value = "All"
+    this.selected_brands = []
     this.circle_radius = 20
-    this.roasteries = ['The naughty dog',
+    this.brands = ['The naughty dog',
       'Candycane Coffee',
       'DAK Coffee Roasters',
       'HAYB Speciality Coffee',
@@ -39,11 +38,15 @@ class Figure2 {
       .append("svg")
       .attr("width", "100%")
       .attr("height", innerHeight)
+
+      const margin = { top: 10, right: 20, bottom: 10, left: 20 };
+      const svgViewbox = this.svg.node().getBoundingClientRect();
+      this.width = svgViewbox.width - margin.left - margin.right;
+      this.height = svgViewbox.height - margin.top - margin.bottom;
   }
 
   hoverCircle = (data) => {
     this.updateCoffeeInfo(data.target.__data__);
-    console.log(data)
     d3.select(data.this)
     .style("stroke", "black")
     .style("stroke-width", 10);
@@ -53,6 +56,7 @@ class Figure2 {
     this.setDropDownListeners()
     this.setMainPlot()
     this.setBrands()
+    this.setSelectors()
   }
 
   setDropDownListeners(){
@@ -66,15 +70,38 @@ class Figure2 {
       this.updateMainPlot();
     });
 
-    $("#fig2-brand").on("change", event => {
-      this.updateBrand($(event.target).val());
+    $('#fig2-brand').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue)=> {
+      this.setSelectedBrands(event, clickedIndex, isSelected);
       this.updateMainPlot();
     });
   }
 
+  setSelectedBrands(event, clickedIndex, isSelected){
+    let selectedOptionsLength = $('#fig2-brand option:selected').length
+    if(selectedOptionsLength == 0){
+      // remove all points
+      this.selected_brands = []
+    }
+    else if(selectedOptionsLength == this.brands.length){
+      // add all points
+      this.selected_brands = [...this.brands]
+    }
+    else{
+      let optionValue = $(event.target).find('option').eq(clickedIndex).val(); 
+      if (isSelected) {
+        // Add value to the list
+        this.selected_brands.push(optionValue)
+      } else {
+        // Remove value from the list
+        this.selected_brands.splice(this.selected_brands.indexOf(optionValue), 1)
+      }
+    }
+  }
+
   setBrands() {
     let brand_select = document.getElementById("fig2-brand");
-    this.roasteries.forEach((brand) => {
+
+    this.brands.forEach((brand) => {
       let option = document.createElement("option");
       option.value = brand;
       option.text = brand;
@@ -82,9 +109,14 @@ class Figure2 {
     });
   }
 
+  setSelectors(){
+    $('select').selectpicker(); // not the clean way, should do it somewhere else
+    $('#fig2-brand').selectpicker('selectAll');
+  }
+
   setRoasteryToColor() {
     return d3.scaleOrdinal()
-      .domain(this.roasteries)
+      .domain(this.brands)
       .range(this.colors)
   }
 
@@ -122,20 +154,16 @@ class Figure2 {
   updateMainPlot() {
 
     // Filter all elements on the chosen brand
-    if (this.brand_value === "All") {// is it correct comaprison?
-      this.plot_data = this.original_data
-    }
-    else {
-      this.plot_data = this.original_data.filter(d => { return d.Roastery == this.brand_value })
-    }
-
+    this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
+    
     // Remove all the circles from the plot
     this.svg.selectAll("circle")
       .transition()
       .duration(500)
       .attr("r", 0)
       .remove()
-      .on("end", () => {
+      .end()
+      .then(() => {
         // Add new circles to the graph
         this.svg.select("g")
           .selectAll("circle")
@@ -168,23 +196,19 @@ class Figure2 {
     document.getElementById('fig2_brand_name').querySelector("text").textContent = hovered_circle["Roastery"]
     document.getElementById('fig2_coffee_name').querySelector("text").textContent = hovered_circle["Item Name"]
     document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g,"_").replace('.',"_") + '_thumb.png'
-    
+
     document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
     document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"]
     document.getElementById('fig2_recommended').querySelector("text").textContent = hovered_circle["Recommended"]
   }
 
   setMainPlot() {
-
     const margin = { top: 10, right: 20, bottom: 10, left: 20 };
 
     this.svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const svgViewbox = this.svg.node().getBoundingClientRect();
-    this.width = svgViewbox.width - margin.left - margin.right;
-    this.height = svgViewbox.height - margin.top - margin.bottom;
 
     // const xaxis_/right = 
     this.x = d3.scaleLinear()
@@ -251,7 +275,7 @@ class Figure2 {
 $(document).ready(function () {
 
   d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
-    let fig2 = new Figure2(data, window.innerWidth * 0.7, window.innerHeight * 0.8)
+    let fig2 = new Figure2(data, window.innerHeight * 0.8)
     fig2.init()
   })
 
