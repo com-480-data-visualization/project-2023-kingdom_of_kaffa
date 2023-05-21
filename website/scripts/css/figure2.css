@@ -35,15 +35,3 @@
   display: flex;
   flex-direction: row;
 }
-
-.left-side {
-  /* padding: 10px; */
-  width: 128px;
-}
-
-.right-side {
-  padding-left: 25px;
-  /* padding-top: 10px; */
-  /* padding-bottom: 0px; */
-  width: calc(100vw - 128px);
-}
