@@ -9,7 +9,7 @@ const toTitleCase = (phrase) => {
 };
 
 const code_to_country = {
-  'cz':"Czech Republic",
+  'cz': "Czech Republic",
   'no': "Norway",
   'de': "Germany",
   'gb': "Great Britain",
@@ -18,53 +18,13 @@ const code_to_country = {
   'pl': "Poland",
   'sv': "Slovenia",
   'nl': "Netherlands"
-}
+};
 
-const brands = ['The naughty dog',
-'Candycane Coffee',
-'DAK Coffee Roasters',
-'HAYB Speciality Coffee',
-"Father's Coffee Roastery",
-'Industra Coffee',
-'The Barn',
-'Square Mile',
-'Gardelli Coffee',
-'Beansmith.s',
-'Dark Woods Coffee',
-'Main Lane Coffee Roasters',
-'Nordbeans',
-'Good Beans',
-'Concept Coffee Roasters',
-'Morgon Coffee Roasters',
-'BeBerry Coffee',
-'Coffea Circulor',
-'Dos Mundos',
-'Doubleshot',
-'Fiftybeans']
+const brands = ['The naughty dog', 'Candycane Coffee', 'DAK Coffee Roasters', 'HAYB Speciality Coffee', "Father's Coffee Roastery", 'Industra Coffee', 'The Barn', 'Square Mile', 'Gardelli Coffee', 'Beansmith.s', 'Dark Woods Coffee', 'Main Lane Coffee Roasters', 'Nordbeans', 'Good Beans', 'Concept Coffee Roasters', 'Morgon Coffee Roasters', 'BeBerry Coffee', 'Coffea Circulor', 'Dos Mundos', 'Doubleshot', 'Fiftybeans'];
 
-const brands_country = ['cz',
-'cz',
-'nl',
-'pl',
-'cz',
-'cz',
-'de',
-'gb',
-'it',
-'cz',
-'gb',
-'de',
-'cz',
-'nl',
-'sk',
-'se',
-'cz',
-'no',
-'cz',
-'cz',
-'cz']
+const brands_country = ['cz', 'cz', 'nl', 'pl', 'cz', 'cz', 'de', 'gb', 'it', 'cz', 'gb', 'de', 'cz', 'nl', 'sk', 'se', 'cz', 'no', 'cz', 'cz', 'cz'];
 
-const  colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
+const colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
 
 class Figure2 {
 
@@ -73,81 +33,36 @@ class Figure2 {
     this.original_data = data
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
-    this.brand_value = "All"
     this.selected_brands = []
     this.circle_radius = 20
-    this.brands = ['The naughty dog',
-      'Candycane Coffee',
-      'DAK Coffee Roasters',
-      'HAYB Speciality Coffee',
-      "Father's Coffee Roastery",
-      'Industra Coffee',
-      'The Barn',
-      'Square Mile',
-      'Gardelli Coffee',
-      'Beansmith.s',
-      'Dark Woods Coffee',
-      'Main Lane Coffee Roasters',
-      'Nordbeans',
-      'Good Beans',
-      'Concept Coffee Roasters',
-      'Morgon Coffee Roasters',
-      'BeBerry Coffee',
-      'Coffea Circulor',
-      'Dos Mundos',
-      'Doubleshot',
-      'Fiftybeans']
-    
-    this.brands_country = ['cz',
-      'cz',
-      'nl',
-      'pl',
-      'cz',
-      'cz',
-      'de',
-      'gb',
-      'it',
-      'cz',
-      'gb',
-      'de',
-      'cz',
-      'nl',
-      'sk',
-      'se',
-      'cz',
-      'no',
-      'cz',
-      'cz',
-      'cz']
 
-    this.colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
     this.roasteryToColor = this.setRoasteryToColor()
     this.svg = d3.select("#fig2-plot")
       .append("svg")
       .attr("width", "100%")
       .attr("height", innerHeight)
 
-      const margin = { top: 10, right: 20, bottom: 10, left: 20 };
-      const svgViewbox = this.svg.node().getBoundingClientRect();
-      this.width = svgViewbox.width - margin.left - margin.right;
-      this.height = svgViewbox.height - margin.top - margin.bottom;
+    const margin = { top: 10, right: 20, bottom: 10, left: 20 };
+    const svgViewbox = this.svg.node().getBoundingClientRect();
+    this.width = svgViewbox.width - margin.left - margin.right;
+    this.height = svgViewbox.height - margin.top - margin.bottom;
   }
 
   hoverCircle = (data) => {
     this.updateCoffeeInfo(data.target.__data__);
     d3.select(data.this)
-    .style("stroke", "black")
-    .style("stroke-width", 10);
+      .style("stroke", "black")
+      .style("stroke-width", 10);
   }
 
-  init(){
+  init() {
     this.setDropDownListeners()
     this.setMainPlot()
     this.setBrands()
     this.setSelectors()
   }
 
-  setDropDownListeners(){
+  setDropDownListeners() {
     $("#fig2-yaxis").on("change", event => {
       this.updateYaxis($(event.target).val());
       this.updateMainPlot();
@@ -158,24 +73,24 @@ class Figure2 {
       this.updateMainPlot();
     });
 
-    $('#fig2-brand').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue)=> {
+    $('#fig2-brand').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue) => {
       this.setSelectedBrands(event, clickedIndex, isSelected);
       this.updateMainPlot();
     });
   }
 
-  setSelectedBrands(event, clickedIndex, isSelected){
+  setSelectedBrands(event, clickedIndex, isSelected) {
     let selectedOptionsLength = $('#fig2-brand option:selected').length
-    if(selectedOptionsLength == 0){
+    if (selectedOptionsLength == 0) {
       // remove all points
       this.selected_brands = []
     }
-    else if(selectedOptionsLength == this.brands.length){
+    else if (selectedOptionsLength == brands.length) {
       // add all points
-      this.selected_brands = [...this.brands]
+      this.selected_brands = [...brands]
     }
-    else{
-      let optionValue = $(event.target).find('option').eq(clickedIndex).val(); 
+    else {
+      let optionValue = $(event.target).find('option').eq(clickedIndex).val();
       if (isSelected) {
         // Add value to the list
         this.selected_brands.push(optionValue)
@@ -189,33 +104,29 @@ class Figure2 {
   setBrands() {
     let brand_select = document.getElementById("fig2-brand");
 
-    this.brands.forEach((brand) => {
+    brands.forEach((brand) => {
       let option = document.createElement("option");
       option.value = brand;
-      option.setAttribute('data-content', `<span style='color:${colors[brands.indexOf(brand)]}'><i class='fa fa-circle'></i></span> `+brand);
+      option.setAttribute('data-content', `<span style='color:${colors[brands.indexOf(brand)]}'><i class='fa fa-circle'></i></span> ` + brand);
       brand_select.add(option);
     });
   }
 
-  setSelectors(){
+  setSelectors() {
     $('select').selectpicker(); // not the clean way, should do it somewhere else
     $('#fig2-brand').selectpicker('selectAll');
   }
 
   setRoasteryToColor() {
     return d3.scaleOrdinal()
-      .domain(this.brands)
-      .range(this.colors)
-  }
-
-  updateBrand(brand_value) {
-    this.brand_value = brand_value;
+      .domain(brands)
+      .range(colors)
   }
 
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
-    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})/this.circle_radius
-    this.x.domain([-1*x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])}) + x_buf*2])
+    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) / this.circle_radius
+    this.x.domain([-1 * x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) + x_buf * 2])
     this.svg.select("#xaxis").transition().duration(500).call(d3.axisBottom(this.x))
   }
 
@@ -223,17 +134,15 @@ class Figure2 {
     this.yaxis_value = yaxis_value
     this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
     this.svg.selectAll("#yaxis").transition().duration(500)
-
-    .call(d3.axisRight(this.y)
-
-    .tickSize(this.width))
-    // .tickFormat(formatTick))
-    .call(g => g.select(".domain")
-    .remove())
-    .call(g => g.selectAll(".tick:not(:first-of-type) line")
+      .call(d3.axisRight(this.y)
+        .tickSize(this.width))
+      // .tickFormat(formatTick))
+      .call(g => g.select(".domain")
+        .remove())
+      .call(g => g.selectAll(".tick:not(:first-of-type) line")
         .attr("stroke-opacity", 0.5)
         .attr("stroke-dasharray", "2,2"))
-    .call(g => g.selectAll(".tick text")
+      .call(g => g.selectAll(".tick text")
         .attr("x", 4)
         .attr("dy", -4))
   }
@@ -242,7 +151,7 @@ class Figure2 {
 
     // Filter all elements on the chosen brand
     this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
-    
+
     // Remove all the circles from the plot
     this.svg.selectAll("circle")
       .transition()
@@ -262,27 +171,28 @@ class Figure2 {
           .style("fill", d => this.roasteryToColor(d.Roastery))
           .style("opacity", "0.7")
           .attr("stroke", d => this.roasteryToColor(d.Roastery))
-          .on("mouseover", function(data) {
+          .on("mouseover", function (data) {
             Figure2.updateCoffeeInfo(data.target.__data__)
             d3.select(this)
-            .style("stroke", "black")
-            .style("stroke-width", 10);
+            .attr("r", 35)
+            .style("opacity", "1")
           })
-          .on("mouseout", function() {
+          .on("mouseout", function () {
             d3.select(this)
-            .style("stroke-width", 0);
+            .attr("r", 25)
+              .style("opacity", "0.7")
           })
           .transition()
           .duration(500)
           .ease(d3.easeBounceOut)
-          .attr("r", 20)
+          .attr("r", 25)
       });
 
   }
-  static updateCoffeeInfo(hovered_circle){
-    document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> `+ hovered_circle["Roastery"]
+  static updateCoffeeInfo(hovered_circle) {
+    document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> ` + hovered_circle["Roastery"]
     document.getElementById('fig2_coffee_name').querySelector("text").textContent = toTitleCase(hovered_circle["Item Name"].split('-')[0])
-    document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g,"_").replace('.',"_") + '_thumb.png'
+    document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
     let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
     document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
     document.getElementById('fig2_brand_country_name').textContent = code_to_country[country_code]
@@ -300,31 +210,31 @@ class Figure2 {
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
 
-    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])})/this.circle_radius
+    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) / this.circle_radius
     this.x = d3.scaleLinear()
-      .domain([-1*x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value])}) + x_buf*2])
+      .domain([-1 * x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) + x_buf * 2])
       .range([0, this.width]);
 
     this.y = d3.scaleLinear()
       .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
-      .range([this.height - this.circle_radius*2, this.circle_radius]);
+      .range([this.height - this.circle_radius * 2, this.circle_radius]);
 
     this.svg.append("g")
-      .attr("id","xaxis")
+      .attr("id", "xaxis")
       .attr("transform", `translate(${margin.left}, ${this.height})`)
       .call(d3.axisBottom(this.x));
 
     this.svg.append('g')
-    .attr("id","yaxis")
-    .attr("transform", `translate(${margin.left}, 0)`)
-    .call(d3.axisRight(this.y)
-    .tickSize(this.width))
-    .call(g => g.select(".domain")
+      .attr("id", "yaxis")
+      .attr("transform", `translate(${margin.left}, 0)`)
+      .call(d3.axisRight(this.y)
+        .tickSize(this.width))
+      .call(g => g.select(".domain")
         .remove())
-    .call(g => g.selectAll(".tick line")
+      .call(g => g.selectAll(".tick line")
         .attr("stroke-opacity", 0.5)
         .attr("stroke-dasharray", "2,2"))
-    .call(g => g.selectAll(".tick text")
+      .call(g => g.selectAll(".tick text")
         .attr("x", 4)
         .attr("dy", -4))
 
@@ -338,15 +248,15 @@ class Figure2 {
       .style("fill", d => { return this.roasteryToColor(d.Roastery); })
       .style("opacity", "0.7")
       .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
-      .on("mouseover", function(data, idx) {
+      .on("mouseover", function (data, idx) {
         Figure2.updateCoffeeInfo(data.target.__data__)
         d3.select(this)
-        .style("stroke", "black")
-        .style("stroke-width", 10);
+          .style("stroke", "black")
+          .style("stroke-width", 10);
       })
-      .on("mouseout", function() {
+      .on("mouseout", function () {
         d3.select(this)
-        .style("stroke-width", 0);
+          .style("stroke-width", 0);
       });
 
   }
