@@ -3,6 +3,7 @@ $(document).ready(function () {
     d3.csv("../dataset/kofio_dataset/coffee_items_filtering.csv").then(
         function (data) {
             const record = JSON.parse(JSON.stringify(data));
+            var curData = data;
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85,
                 radius = 30;
@@ -54,7 +55,7 @@ $(document).ready(function () {
                     .enter()
                     .append("g")
                     .attr("class", "legend-item")
-                    .attr("transform", function (d, i) {
+                    .attr("transform", function (_, i) {
                         return "translate(0, " + i * 25 + ")";
                     });
 
@@ -65,6 +66,12 @@ $(document).ready(function () {
                     .attr("cy", 10)
                     .style("fill", function (d) {
                         return d.color;
+                    })
+                    .style("cursor", "pointer")
+                    .on("click", function (e, d) {
+                        console.log(d.label);
+                        color_filter(indicator, d.color);
+                        impl_filter(indicator);
                     });
 
                 legendItems
@@ -76,22 +83,95 @@ $(document).ready(function () {
                     });
             }
 
+            function color_filter(indicator, selectedColor) {
+                if (indicator === "fig3-show-all") {
+                    return;
+                } else if (indicator === "fig3-price") {
+                    curData = curData.filter(function (d) {
+                        if (selectedColor === "#ff8e8e" && d.Price <= 15)
+                            return true;
+                        else if (selectedColor === "#ea4242" && d.Price <= 25)
+                            return true;
+                        else if (selectedColor === "#5ac0f7" && d.Price > 25)
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-rating") {
+                    curData = curData.filter(function (d) {
+                        if (selectedColor === "#ff8e8e" && d.Rating >= 4.5)
+                            return true;
+                        else if (
+                            selectedColor === "#ea4242" &&
+                            d.Rating >= 4 &&
+                            d.Rating < 4.5
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#5ac0f7" &&
+                            d.Rating >= 3.5 &&
+                            d.Rating < 4
+                        )
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-roast-type") {
+                    curData = curData.filter(function (d) {
+                        if (
+                            selectedColor === "#ea4242" &&
+                            d["Roast Type"] === "Omni"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#fdc62f" &&
+                            d["Roast Type"] === "Filter"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#0000ff" &&
+                            d["Roast Type"] === "Espresso"
+                        )
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-roast-level") {
+                    curData = curData.filter(function (d) {
+                        if (
+                            selectedColor === "#ffff00" &&
+                            d["Roast Level"] === "Omni"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#fdc62f" &&
+                            d["Roast Level"] === "Light to Medium Light"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#5ac0f7" &&
+                            d["Roast Level"] === "Medium to medium dark"
+                        )
+                            return true;
+                        else return false;
+                    });
+                }
+            }
+
             function impl_filter(indicator) {
                 svg.selectAll(".circleContainer").remove();
                 svg.selectAll("circle").remove();
                 svg.selectAll("text").remove();
                 svg.selectAll(".legend").remove();
 
+                if (indicator === "fig3-show-all") curData = record;
                 createLegend(indicator);
                 let elem_updated = svg
                     .selectAll("g")
-                    .data(data)
+                    .data(curData)
                     .enter()
                     .append("g")
                     .attr("class", "circleContainer");
 
                 elem_updated
-                    .data(data)
+                    .data(curData)
                     .append("circle")
                     .style("cursor", "pointer")
                     .attr("r", radius)
@@ -156,7 +236,7 @@ $(document).ready(function () {
                         });
                     });
 
-                simulation.nodes(data);
+                simulation.nodes(curData);
             }
 
             // initialize the bubbles and add event listeners for the buttons
