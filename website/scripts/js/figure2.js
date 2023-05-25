@@ -35,8 +35,8 @@ class Figure2 {
     this.yaxis_value = "Price"
     this.selected_brands = []
     this.circle_radius = 20
-
     this.roasteryToColor = this.setRoasteryToColor()
+    this.is_about_set = false
     this.svg = d3.select("#fig2-plot")
       .append("svg")
       .attr("width", "100%")
@@ -60,22 +60,23 @@ class Figure2 {
     this.setMainPlot()
     this.setBrands()
     this.setSelectors()
+    // this.setDropDownListeners()
   }
 
   setDropDownListeners() {
     $("#fig2-yaxis").on("change", event => {
       this.updateYaxis($(event.target).val());
-      this.updateMainPlot();
+      this.setGraph();
     });
 
     $("#fig2-xaxis").on("change", event => {
       this.updateXaxis($(event.target).val());
-      this.updateMainPlot();
+      this.setGraph();
     });
 
     $('#fig2-brand').on('changed.bs.select', (event, clickedIndex, isSelected, previousValue) => {
       this.setSelectedBrands(event, clickedIndex, isSelected);
-      this.updateMainPlot();
+      this.setGraph();
     });
   }
 
@@ -136,7 +137,6 @@ class Figure2 {
     this.svg.selectAll("#yaxis").transition().duration(500)
       .call(d3.axisRight(this.y)
         .tickSize(this.width))
-      // .tickFormat(formatTick))
       .call(g => g.select(".domain")
         .remove())
       .call(g => g.selectAll(".tick:not(:first-of-type) line")
@@ -147,59 +147,25 @@ class Figure2 {
         .attr("dy", -4))
   }
 
-  updateMainPlot() {
-
-    // Filter all elements on the chosen brand
-    this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
-
-    // Remove all the circles from the plot
-    this.svg.selectAll("circle")
-      .transition()
-      .duration(500)
-      .attr("r", 0)
-      .remove()
-      .end()
-      .then(() => {
-        // Add new circles to the graph
-        this.svg.select("g")
-          .selectAll("circle")
-          .data(this.plot_data)
-          .join("circle")
-          .attr("cx", d => this.x(d[this.xaxis_value]))
-          .attr("cy", d => this.y(d[this.yaxis_value]))
-          .attr("r", 0)
-          .style("fill", d => this.roasteryToColor(d.Roastery))
-          .style("opacity", "0.7")
-          .attr("stroke", d => this.roasteryToColor(d.Roastery))
-          .on("mouseover", function (data) {
-            Figure2.updateCoffeeInfo(data.target.__data__)
-            d3.select(this)
-            .attr("r", 35)
-            .style("opacity", "1")
-          })
-          .on("mouseout", function () {
-            d3.select(this)
-            .attr("r", 25)
-              .style("opacity", "0.7")
-          })
-          .transition()
-          .duration(500)
-          .ease(d3.easeBounceOut)
-          .attr("r", 25)
-      });
-
-  }
   static updateCoffeeInfo(hovered_circle) {
-    document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> ` + hovered_circle["Roastery"]
-    document.getElementById('fig2_coffee_name').querySelector("text").textContent = toTitleCase(hovered_circle["Item Name"].split('-')[0])
-    document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
-    let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
-    document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
-    document.getElementById('fig2_brand_country_name').textContent = code_to_country[country_code]
+    function updateBrand(){
+      document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> ` + hovered_circle["Roastery"]
+      document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
+      let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
+      // document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
+      document.getElementById('fig2_brand_country_name').textContent = code_to_country[country_code]
+    }
 
-    document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
-    document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"]
-    document.getElementById('fig2_recommended').querySelector("text").textContent = hovered_circle["Recommended"]
+    function updateCoffee_product(){
+      document.getElementById('fig2_coffee_name').querySelector("text").textContent = toTitleCase(hovered_circle["Item Name"].split('-')[0])
+      document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
+      document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"] + '/5.0'
+      document.getElementById('fig2_recommended').querySelector("text").textContent = Math.round(parseFloat(hovered_circle["Recommended"])) + '%'
+      document.getElementById('fig2_origin_country_name').textContent = hovered_circle["Coffee Origin"]
+    }
+
+    updateBrand();
+    updateCoffee_product();
   }
 
   setMainPlot() {
@@ -208,7 +174,6 @@ class Figure2 {
     this.svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
-
 
     let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) / this.circle_radius
     this.x = d3.scaleLinear()
@@ -238,33 +203,57 @@ class Figure2 {
         .attr("x", 4)
         .attr("dy", -4))
 
-    this.svg.append('g')
-      .selectAll("circle")
-      .data(this.plot_data)
-      .join("circle")
-      .attr("cx", d => this.x(d.Rating))
-      .attr("cy", d => this.y(d.Price))
-      .attr("r", 20)
-      .style("fill", d => { return this.roasteryToColor(d.Roastery); })
-      .style("opacity", "0.7")
-      .attr("stroke", d => { return this.roasteryToColor(d.Roastery); })
-      .on("mouseover", function (data, idx) {
-        Figure2.updateCoffeeInfo(data.target.__data__)
-        d3.select(this)
-          .style("stroke", "black")
-          .style("stroke-width", 10);
-      })
-      .on("mouseout", function () {
-        d3.select(this)
-          .style("stroke-width", 0);
+    this.setGraph()
+  }
+ 
+  setGraph(){
+      this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
+      let is_about_set = this.is_about_set
+      // Remove all the circles from the plot
+      this.svg.selectAll("circle")
+      .transition()
+      .duration(500)
+      .attr("r", 0)
+      .remove()
+      .end()
+      .then(() => {
+        // Add new circles to the graph
+        this.svg.select("g")
+          .selectAll("circle")
+          .data(this.plot_data)
+          .join("circle")
+          .attr("cx", d => this.x(d[this.xaxis_value]))
+          .attr("cy", d => this.y(d[this.yaxis_value]))
+          .attr("r", 0)
+          .style("fill", d => this.roasteryToColor(d.Roastery))
+          .style("opacity", "0.7")
+          .attr("stroke", d => this.roasteryToColor(d.Roastery))
+          .on("mouseover", function (data) {
+            if(!is_about_set){   // TODO: there shoulf be a better way todo this
+              is_about_set = true
+              document.getElementById("fig2_coffee_brand_info").innerHTML = document.getElementById("fig2_after_circle").innerHTML
+            }
+            Figure2.updateCoffeeInfo(data.target.__data__)
+            d3.select(this)
+            .attr("r", 35)
+            .style("opacity", "1")
+          })
+          .on("mouseout", function () {
+            d3.select(this)
+            .attr("r", 25)
+              .style("opacity", "0.7")
+          })
+          .transition()
+          .duration(500)
+          .ease(d3.easeBounceOut)
+          .attr("r", 25)
       });
-
+      this.is_about_set = is_about_set
   }
 }
 
 
 $(document).ready(function () {
-
   d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
     let fig2 = new Figure2(data, window.innerHeight * 0.8)
     fig2.init()
