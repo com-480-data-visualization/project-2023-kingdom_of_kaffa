@@ -74,10 +74,16 @@ $(document).ready(function () {
 
                 var simulation = d3
                     .forceSimulation()
-                    .force("x", d3.forceX(width / 2))
-                    .force("y", d3.forceY(height / 2))
-                    .force("collision", d3.forceCollide().radius(radius + 0.5))
-                    .on("tick", function (d) {
+                    .force("x", d3.forceX(width / 2).strength(0.1))
+                    .force("y", d3.forceY(height / 2).strength(0.1))
+                    .force(
+                        "collide",
+                        d3
+                            .forceCollide()
+                            .radius(radius + 0.5)
+                            .strength(1)
+                    ) // Increase the strength of the collision force
+                    .on("tick", function () {
                         elem_updated.attr("transform", function (d) {
                             return "translate(" + d.x + "," + d.y + ")";
                         });
