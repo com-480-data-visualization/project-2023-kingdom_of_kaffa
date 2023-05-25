@@ -25,9 +25,9 @@
 
 .fig3-button {
     display: inline-block;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     padding: 1px 2px;
-    margin: 4px;
+    margin: 5px;
     color: #333;
     border-radius: 2rem;
     cursor: pointer;
@@ -78,11 +78,11 @@
     background-color: #ea4242;
 }
 
-#fig3-flavor {
+#fig3-rating {
     color: #ff8e8e;
 }
 
-#fig3-flavor:hover {
+#fig3-rating:hover {
     color: #fff;
     background-color: #ff8e8e;
 }
@@ -96,11 +96,11 @@
     background-color: #fdc62f;
 }
 
-#fig3-brewing-method {
+#fig3-roast-level {
     color: #5ac0f7;
 }
 
-#fig3-brewing-method:hover {
+#fig3-roast-level:hover {
     color: #fff;
     background-color: #5ac0f7;
 }
