@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    // Define the legend data
     d3.csv("../dataset/kofio_dataset/coffee_items_filtering.csv").then(
         function (data) {
             const record = JSON.parse(JSON.stringify(data));
@@ -11,11 +12,77 @@ $(document).ready(function () {
                 .attr("height", height)
                 .attr("width", width);
 
+            // Function to create the legend
+            function createLegend(indicator) {
+                var legendData = [];
+                if (indicator === "fig3-show-all") {
+                    legendData = [{ color: "#5ac0f7", label: "All Items" }];
+                } else if (indicator === "fig3-price") {
+                    legendData = [
+                        { color: "#ff8e8e", label: "<=15" },
+                        { color: "#ea4242", label: "<=25" },
+                        { color: "#5ac0f7", label: ">25" },
+                    ];
+                } else if (indicator === "fig3-rating") {
+                    legendData = [
+                        { color: "#ff8e8e", label: ">=4.5" },
+                        { color: "#ea4242", label: ">=4" },
+                        { color: "#5ac0f7", label: ">=3.5" },
+                    ];
+                } else if (indicator === "fig3-roast-type") {
+                    legendData = [
+                        { color: "#ea4242", label: "Omni" },
+                        { color: "#fdc62f", label: "Filter" },
+                        { color: "#0000ff", label: "Espresso" },
+                    ];
+                } else {
+                    legendData = [
+                        { color: "#ffff00", label: "Omni" },
+                        { color: "#fdc62f", label: "Light to Medium Light" },
+                        { color: "#5ac0f7", label: "Medium to medium dark" },
+                    ];
+                }
+
+                const legendContainer = svg
+                    .append("g")
+                    .attr("class", "legend")
+                    .attr("transform", "translate(20, 20)");
+
+                const legendItems = legendContainer
+                    .selectAll(".legend-item")
+                    .data(legendData)
+                    .enter()
+                    .append("g")
+                    .attr("class", "legend-item")
+                    .attr("transform", function (d, i) {
+                        return "translate(0, " + i * 25 + ")";
+                    });
+
+                legendItems
+                    .append("circle")
+                    .attr("r", 10)
+                    .attr("cx", 10)
+                    .attr("cy", 10)
+                    .style("fill", function (d) {
+                        return d.color;
+                    });
+
+                legendItems
+                    .append("text")
+                    .attr("x", 28)
+                    .attr("y", 19)
+                    .text(function (d) {
+                        return d.label;
+                    });
+            }
+
             function impl_filter(indicator) {
                 svg.selectAll(".circleContainer").remove();
                 svg.selectAll("circle").remove();
                 svg.selectAll("text").remove();
+                svg.selectAll(".legend").remove();
 
+                createLegend(indicator);
                 let elem_updated = svg
                     .selectAll("g")
                     .data(data)
