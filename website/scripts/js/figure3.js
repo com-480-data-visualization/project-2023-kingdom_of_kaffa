@@ -5,8 +5,7 @@ $(document).ready(function () {
             const record = JSON.parse(JSON.stringify(data));
             var curData = data;
             let width = window.innerWidth * 0.58,
-                height = window.innerHeight * 0.85,
-                radius = 30;
+                height = window.innerHeight * 0.85;
             var svg = d3
                 .select("#filtering-bubbles")
                 .append("svg")
@@ -20,15 +19,16 @@ $(document).ready(function () {
                     legendData = [{ color: "#5ac0f7", label: "All Items" }];
                 } else if (indicator === "fig3-price") {
                     legendData = [
-                        { color: "#ff8e8e", label: "<=15" },
-                        { color: "#ea4242", label: "<=25" },
-                        { color: "#5ac0f7", label: ">25" },
+                        { color: "#ff8e8e", label: "<=15$" },
+                        { color: "#ea4242", label: "<=25$" },
+                        { color: "#5ac0f7", label: ">25$" },
                     ];
                 } else if (indicator === "fig3-rating") {
                     legendData = [
-                        { color: "#ff8e8e", label: ">=4.5" },
-                        { color: "#ea4242", label: ">=4" },
-                        { color: "#5ac0f7", label: ">=3.5" },
+                        { color: "#ff8e8e", label: ">=4.5❤" },
+                        { color: "#ea4242", label: ">=4❤" },
+                        { color: "#fdc62f", label: ">=3.5❤" },
+                        { color: "#5ac0f7", label: "<3.5❤" },
                     ];
                 } else if (indicator === "fig3-roast-type") {
                     legendData = [
@@ -69,7 +69,6 @@ $(document).ready(function () {
                     })
                     .style("cursor", "pointer")
                     .on("click", function (e, d) {
-                        console.log(d.label);
                         color_filter(indicator, d.color);
                         impl_filter(indicator);
                     });
@@ -90,7 +89,11 @@ $(document).ready(function () {
                     curData = curData.filter(function (d) {
                         if (selectedColor === "#ff8e8e" && d.Price <= 15)
                             return true;
-                        else if (selectedColor === "#ea4242" && d.Price <= 25)
+                        else if (
+                            selectedColor === "#ea4242" &&
+                            d.Price <= 25 &&
+                            d.Price > 15
+                        )
                             return true;
                         else if (selectedColor === "#5ac0f7" && d.Price > 25)
                             return true;
@@ -107,10 +110,12 @@ $(document).ready(function () {
                         )
                             return true;
                         else if (
-                            selectedColor === "#5ac0f7" &&
+                            selectedColor === "#fdc62f" &&
                             d.Rating >= 3.5 &&
                             d.Rating < 4
                         )
+                            return true;
+                        else if (selectedColor === "#5ac0f7" && d.Rating < 3.5)
                             return true;
                         else return false;
                     });
@@ -156,13 +161,21 @@ $(document).ready(function () {
             }
 
             function impl_filter(indicator) {
-                svg.selectAll(".circleContainer").remove();
-                svg.selectAll("circle").remove();
-                svg.selectAll("text").remove();
-                svg.selectAll(".legend").remove();
+                // Remove existing elements except for the legend
+                svg.selectAll(".circleContainer, circle, text").remove();
+
+                // Remove existing groups
+                svg.selectAll("g").remove();
+
+                let radius = 30;
+                if (curData.length <= 10) {
+                    radius = 40;
+                }
 
                 if (indicator === "fig3-show-all") curData = record;
                 createLegend(indicator);
+
+                console.log(curData);
                 let elem_updated = svg
                     .selectAll("g")
                     .data(curData)
@@ -170,6 +183,7 @@ $(document).ready(function () {
                     .append("g")
                     .attr("class", "circleContainer");
 
+                console.log(curData);
                 elem_updated
                     .data(curData)
                     .append("circle")
@@ -177,15 +191,13 @@ $(document).ready(function () {
                     .attr("r", radius)
                     .style("fill", (d) => {
                         if (indicator === "fig3-show-all") {
-                            // Display bubbles using the existing color scheme
                             return "#5ac0f7";
                         } else if (indicator === "fig3-price") {
                             if (d.Price <= 15) return "#ff8e8e";
                             else if (d.Price <= 25) return "#ea4242";
                             else return "#5ac0f7";
                         } else if (indicator === "fig3-rating") {
-                            // Display bubbles based on flavor
-                            // Replace the following code with your custom logic
+                            console.log(d.Rating);
                             if (d.Rating >= 4.5) return "#ff8e8e";
                             else if (d.Rating >= 4) return "#ea4242";
                             else if (d.Rating >= 3.5) return "#fdc62f";
@@ -194,10 +206,9 @@ $(document).ready(function () {
                             if (d["Roast Type"] === "Omni") return "#ea4242";
                             else if (d["Roast Type"] === "Filter")
                                 return "#fdc62f";
-                            return "#0000ff"; // Blue color for roast type indicator
+                            return "#0000ff";
                         } else if (indicator === "fig3-roast-level") {
-                            if (d["Roast Level"] === "Omni")
-                                return "#ffff00"; // Yellow color for brewing method indicator
+                            if (d["Roast Level"] === "Omni") return "#ffff00";
                             else if (
                                 d["Roast Level"] === "Light to Medium Light"
                             )
@@ -221,15 +232,15 @@ $(document).ready(function () {
 
                 var simulation = d3
                     .forceSimulation()
-                    .force("x", d3.forceX(width / 2).strength(0.1))
-                    .force("y", d3.forceY(height / 2).strength(0.1))
+                    .force("x", d3.forceX(width / 2).strength(0.1)) // Decrease the strength of the x-axis force
+                    .force("y", d3.forceY(height / 2).strength(0.1)) // Decrease the strength of the y-axis force
                     .force(
                         "collide",
                         d3
                             .forceCollide()
                             .radius(radius + 0.5)
-                            .strength(1)
-                    ) // Increase the strength of the collision force
+                            .strength(0.7) // Adjust the strength of the collision force as needed
+                    )
                     .on("tick", function () {
                         elem_updated.attr("transform", function (d) {
                             return "translate(" + d.x + "," + d.y + ")";
@@ -239,21 +250,38 @@ $(document).ready(function () {
                 simulation.nodes(curData);
             }
 
+            // Function to toggle button animation
+            function toggleButtonAnimation(button) {
+                // Remove animation class from all buttons
+                d3.selectAll(".fig3-button").classed(
+                    "flicker-animation",
+                    false
+                );
+
+                // Add animation class to the clicked button
+                d3.select(button).classed("flicker-animation", true);
+            }
+
             // initialize the bubbles and add event listeners for the buttons
             impl_filter("fig3-show-all");
             d3.select("#fig3-show-all").on("click", function () {
+                toggleButtonAnimation("#fig3-show-all");
                 impl_filter("fig3-show-all");
             });
             d3.select("#fig3-price").on("click", function () {
+                toggleButtonAnimation("#fig3-price");
                 impl_filter("fig3-price");
             });
             d3.select("#fig3-rating").on("click", function () {
+                toggleButtonAnimation("#fig3-rating");
                 impl_filter("fig3-rating");
             });
             d3.select("#fig3-roast-type").on("click", function () {
+                toggleButtonAnimation("#fig3-roast-type");
                 impl_filter("fig3-roast-type");
             });
             d3.select("#fig3-roast-level").on("click", function () {
+                toggleButtonAnimation("#fig3-roast-level");
                 impl_filter("fig3-roast-level");
             });
         }

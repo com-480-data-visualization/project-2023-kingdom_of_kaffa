@@ -104,3 +104,19 @@
     color: #fff;
     background-color: #5ac0f7;
 }
+
+.flicker-animation {
+    background: linear-gradient(45deg, #bd3737, #e67474);
+    color: #fff !important;
+    padding: 1px 15px 1px;
+    animation: color-change 4s infinite alternate;
+}
+
+@keyframes color-change {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
