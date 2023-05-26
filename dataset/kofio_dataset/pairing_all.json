@@ -1,0 +1,310 @@
+{
+    "coffee_flavors": [
+        {
+            "id": 0,
+            "name": "sweet",
+            "color": "#fdc62f",
+            "description": "",
+            "varieties": [
+                "Honey",
+                "Vanilla",
+                "Brown sugar",
+                "Jahodový jogurt",
+                "Fruits"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "fruity",
+            "color": "#ff8e8e",
+            "description": "",
+            "varieties": [
+                "Blueberries",
+                "Strawberries",
+                "Raspberries",
+                "Guava",
+                "Mango"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "chocolate",
+            "color": "#ea4242",
+            "description": "",
+            "varieties": [
+                "White Chocolate",
+                "Chocolate",
+                "Milk Chocolate",
+                "Dark Chocolate"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "nutty",
+            "color": "#fdc62f",
+            "description": "#5ac0f7",
+            "varieties": [
+                "Almond",
+                "Hazelnuts",
+                "Nuts",
+                "Hazelnut"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "floral",
+            "color": "#5ac0f7",
+            "description": "",
+            "varieties": [
+                "White Flowers",
+                "Jasmine",
+                "Roses",
+                "Lavender",
+                "Květ broskve"
+            ]
+        }
+    ],
+    "food_flavors": [
+        {
+            "id": 0,
+            "name": "fruity",
+            "color": "#ff8e8e",
+            "description": "",
+            "varieties": [
+                "Most Berries",
+                "Bueberries",
+                "Peaches"
+            ],
+            "coffee": [
+                "image/pairing-coffee/kenya.jpg",
+                "image/pairing-coffee/ethiopia.jpg",
+                "image/pairing-coffee/uganda.jpg"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "chocolate",
+            "color": "#ea4242",
+            "description": "",
+            "varieties": [
+                "Chocolate",
+                "Milk Chocolate",
+                "Dark Chocolate"
+            ],
+            "coffee": [
+                "image/pairing-coffee/yemen.jpg",
+                "image/pairing-coffee/brazil.jpg",
+                "image/pairing-coffee/mexico.jpg"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "neutral",
+            "color": "#3bb273",
+            "description": "",
+            "varieties": [
+                "Wheat Bread"
+            ],
+            "coffee": [
+                "image/pairing-coffee/brazil.jpg",
+                "image/pairing-coffee/columbia.jpg",
+                "image/pairing-coffee/peru.jpg"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "sweet",
+            "color": "#fdc62f",
+            "description": "",
+            "varieties": [
+                "Sweet Bread",
+                "Doughuts",
+                "Caramel-based Cakes"
+            ],
+            "coffee": [
+                "image/pairing-coffee/guatemala.jpg",
+                "image/pairing-coffee/tanzania.jpg",
+                "image/pairing-coffee/costa_rica.jpg"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "spicy",
+            "color": "#f27c07",
+            "description": "",
+            "varieties": [
+                "Spicy Food"
+            ],
+            "coffee": [
+                "image/pairing-coffee/nicaragua.jpg",
+                "image/pairing-coffee/honduras.jpg",
+                "image/pairing-coffee/costa_rica.jpg"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "savory",
+            "color": "#6c80e8",
+            "description": "",
+            "varieties": [
+                "Meat",
+                "Savory Crepes",
+                "Omelets"
+            ],
+            "coffee": [
+                "image/pairing-coffee/indonesia.jpg",
+                "image/pairing-coffee/costa_rica.jpg"
+            ]
+        }
+    ],
+    "coffee": [
+        {
+            "id": 0,
+            "name": "Kenya",
+            "description": "Coffee from Kenya are known for their bright, bold flavour and wine-like acidity.",
+            "flavor": ["Sweet","Fruity","Chocolate","Floral"],
+            "food": {"Berries":"image/pairing-food/berries.jpg",
+                    "Sweet Bread":"image/pairing-food/sweet_bread.jpg",
+                    "Milk Chocolate":"image/pairing-food/milk_chocolate.jpg",
+                    "Fruity Crepes":"image/pairing-food/fruity_crepes.jpg"}
+        },
+        {
+            "id": 1,
+            "name": "Ethiopia",
+            "description": "The world's sweetest",
+            "flavor": ["Sweet","Fruity","Chocolate","Floral"],
+            "food": {"Berries":"image/pairing-food/berries.jpg",
+                    "Doughuts":"image/pairing-food/doughuts.jpg",
+                    "Milk Chocolate":"image/pairing-food/milk_chocolate.jpg"}
+        },
+        {
+            "id": 2,
+            "name": "Uganda",
+            "description": "The flavour profile of Uganda coffee has a smooth and pleasant taste with hints of berries and stone-fruit",
+            "flavor": ["Floral","Fruity"],
+            "food": {"Berries":"image/pairing-food/berries.jpg",
+                    "Doughuts":"image/pairing-food/doughuts.jpg"}
+        },
+        {
+            "id": 3,
+            "name": "Yemen",
+            "description": "Yemen coffee highlights a deep but balanced tone",
+            "flavor": ["Sweet","Fruity"],
+            "food": {"Blueberries":"image/pairing-food/blueberries.jpg",
+                    "White Chocolate":"image/pairing-food/white_chocolate.jpg",
+                    "Milk Chocolate":"image/pairing-food/milk_chocolate.jpg",
+                    "Fruit Scones":"image/pairing-food/fruit_scones.jpg"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Tanzania",
+            "description": "Tanzanian coffee exhibits a bright and vibrant or even winey acidity. ",
+            "flavor": ["Sweet","Fruity","Floral"],
+            "food": {
+                "Peaches, Plums, Apricots":"image/pairing-food/peaches.jpg",
+                "Doughuts":"image/pairing-food/doughuts.jpg"
+            }
+        },
+        {
+            "id": 5,
+            "name": "Brazil",
+            "description": "Boasting a low acidity, which is widely enjoyed, and notes of caramel and chocolate, Brazilian coffee offers an intense and pleasant flavour that’s perfect for sipping throughout the day.",
+            "flavor": ["Sweet","Fruity","Chocolate","Nutty","Floral"],
+            "food": {
+                "Fruit Tart":"image/pairing-food/fruit_tart.jpg",
+                "Chocolate":"image/pairing-food/chocolate.jpg",
+                "Dark Chocolate":"image/pairing-food/dark_chocolate.jpg",
+                "Wheat Bread":"image/pairing-food/wheat_bread.jpg"
+            }
+        },
+        {
+            "id": 6,
+            "name": "Costa Rica",
+            "description": "Costa Rican coffee is considered to be liquid gold.",
+            "flavor": ["Sweet","Fruity","Chocolate","Nutty","Floral"],
+            "food": {
+                "Fruit Tart":"image/pairing-food/fruit_tart.jpg",
+                "White Chocolate":"image/pairing-food/white_chocolate.jpg",
+                "Sweet Bread":"image/pairing-food/sweet_bread.jpg",
+                "Spicy Food":"image/pairing-food/spicy_food.jpg",
+                "Savory Breakfast":"image/pairing-food/savory_breakfast.jpg"
+            }
+        },
+        {
+            "id": 7,
+            "name": "Colombia",
+            "description": "",
+            "flavor": ["Sweet","Fruity","Chocolate","Nutty","Floral"],
+            "food": {
+                "Chocolate":"image/pairing-food/chocolate.jpg",
+                "White Chocolate":"image/pairing-food/white_chocolate.jpg",
+                "Wheat Bread":"image/pairing-food/wheat_bread.jpg",
+                "Sweet Bread":"image/pairing-food/sweet_bread.jpg"
+            }
+        },
+        {
+            "id": 8,
+            "name": "El Salvador",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 9,
+            "name": "Guatemala",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 10,
+            "name": "Mexico",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 11,
+            "name": "Peru",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 12,
+            "name": "Nicaragua",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 13,
+            "name": "Honduras",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        },
+        {
+            "id": 14,
+            "name": "Indonesia",
+            "description": "",
+            "flavor": [],
+            "food": {
+
+            }
+        }
+    ]
+}
