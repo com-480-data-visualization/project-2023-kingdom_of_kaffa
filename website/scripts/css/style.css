@@ -80,9 +80,8 @@ body {
     opacity: 1;
 }
 
-#homepage {
-    background: linear-gradient(to bottom, #FF9B9B, #FF6B6B, #FFCA3A, #81ECEC);
-    
+/* #homepage {
+    background-color: #f1c40f;
     font-family: 'Poppins', sans-serif;
     color: #fff;
     height: 100vh;
@@ -91,7 +90,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
+} */
 
 #homepage h1 {
     font-size: 6rem;
@@ -148,6 +147,9 @@ body {
 }
 
 .arrow {
+    position: absolute;
+    top: 50%;
+	left: 50%;
     color: #FFFFFF;
     transition: color 0.3s ease;
 
