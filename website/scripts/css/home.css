@@ -13,7 +13,7 @@
 }
 #homepage .draw-box .typewriter-effect {
   overflow: hidden;
-  animation: typingEffect 1.6s steps(22) forwards, blinkTextCursor 1s infinite;
+  animation: typingEffect 2.9s steps(30) forwards, blinkTextCursor 1s infinite;
   margin-bottom: -100px;
   width: 0;
   color: #fff;

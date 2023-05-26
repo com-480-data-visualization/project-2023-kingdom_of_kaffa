@@ -17,446 +17,382 @@ arrowRight.addEventListener("click", () => {
 });
 
 
-$(document).ready(function () {
-  let origin, flavor, uniqueOrigin, uniqueFlavor, svg;
-  d3.csv("../dataset/kofio_dataset/coffee_food_pairing_filtered.csv").then(
-    function(data){
-      const record = JSON.parse(JSON.stringify(data));
-      origin = data.map(function(d) { return d["Coffee origin"]; });
-      flavor = data.map(function(d) { return d["Flavor type"]; });
-      uniqueOrigin = Array.from(new Set(origin));
-      uniqueFlavor = Array.from(new Set(flavor));
-      
-      let width = window.innerWidth * 0.6,
-          height = window.innerHeight * 0.85,
-          margin = {top: 20, right: 20, bottom: 20, left: 20};
+const r0 = 250; // inner radius
+const r1 = r0 * 1.03; // outer radius
+const fade = 0.2;
+const duration = 1000;
 
-      svg = d3
-            .select("#pairing-viz")
-            .append("svg")
-            .attr('height',height)
-            .attr('width',width);
+var color = (i) => d3.interpolateRainbow(shuffled[i] / names.length);
+const arc = d3.arc().innerRadius(r0).outerRadius(r1);
+const ribbon = d3.ribbon().radius(r0);
 
-      // Create the circles for the origins
-      let originCircles = svg.selectAll(".origin_right")
-          .data(uniqueOrigin)
-          .enter().append("circle")
-          .attr("class", "circle origin")
-          .attr("cx", 475)
-          .attr("cy", function(d, i) { return 25 + (i * 35); })
-          .attr("r", 10);
-      
-      let flavorCircles = svg.selectAll(".flavor")
-			    .data(uniqueFlavor)
-			    .enter().append("circle")
-			    .attr("class", "circle flavor")
-                .attr("cx", 750)
-                .attr("cy", function(d, i) { return 130 + (i * 60); })
-			    // .attr("cx", function(d, i) { return width - 25 - ((flavor.length - i - 1) * 50); })
-			    // .attr("cy", 25)
-			    .attr("r", 10);
+var svg, container, groupsContainer, groups, names, matrix, shuffled;
 
-      let lines = svg.selectAll(".line")
-          .data(data)
-          .enter().append("line")
-          .attr("class", "line")
-          .attr("x1", function(d) {
-            return 475;
-          })
-          .attr("y1", function(d) {
-            return 25 + (uniqueOrigin.indexOf(d["Coffee origin"]) * 35);
-          })
-          .attr("x2", function(d) {
-            return 750;
-          })
-          .attr("y2", function(d) {
-            //return width - 25 - ((flavor.length - flavor.indexOf(d["Flavor type"]) - 1) * 50);
-            return 130 + (uniqueFlavor.indexOf(d["Flavor type"]) * 60);
-          })
-          .style("stroke", function(d) {
-            return d3.schemeCategory10[flavor.indexOf(d["Flavor type"]) % 10];
-          });
+function arcTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => arc(i(t));
+}
 
-        // Add text labels to the origin circles
-      let originLabels = svg.selectAll(".origin-label")
-        .data(uniqueOrigin)
-        .enter().append("text")
-        .attr("class", "origin-label")
-        .attr("x", 420) // move the label to the right
-        .attr("y", function(d, i) { return 30 + (i * 35); })
-        .attr("text-anchor", "middle") // set the text anchor to end
-        .text(function(d) { return d; });
+function ribbonTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => ribbon(i(t));
+}
 
-      let flavorLabels = svg.selectAll(".flavor-label")
-        .data(uniqueFlavor)
-        .enter().append("text")
-        .attr("class", "flavor-label")
-        .attr("x", 765) // move the label to the right
-        .attr("y", function(d, i) { return 135 + (i * 60); })
-        .text(function(d) { return d; });
-    
-    d3.csv("../dataset/kofio_dataset/coffee_flavor_pairing.csv").then(
-      function(data){
-        flavor = data.map(function(d) { return d["Flavor"]; });
-        uniqueFlavor = Array.from(new Set(flavor));
-        
-        let originCircles = svg.selectAll(".origin_left")
-          .data(uniqueOrigin)
-          .enter().append("circle")
-          .attr("class", "circle origin")
-          .attr("cx", 365)
-          .attr("cy", function(d, i) { return 25 + (i * 35); })
-          .attr("r", 10);
-      
-        let flavorCircles = svg.selectAll(".coffee-flavor")
-            .data(uniqueFlavor)
-            .enter().append("circle")
-            .attr("class", "circle flavor")
-                  .attr("cx", 100)
-                  .attr("cy", function(d, i) { return 150 + (i * 70); })
-            .attr("r", 10);
-        
-        let lines = svg.selectAll(".left-line")
-            .data(data)
-            .enter().append("line")
-            .attr("class", "left-line")
-            .attr("x1", function(d) {
-              return 100;
-            })
-            .attr("y1", function(d) {
-              return 150 + (uniqueFlavor.indexOf(d["Flavor"]) * 70);
-            })
-            .attr("x2", function(d) {
-              return 365;
-            })
-            .attr("y2", function(d) {
-              //return width - 25 - ((flavor.length - flavor.indexOf(d["Flavor type"]) - 1) * 50);
-              return 25 + (uniqueOrigin.indexOf(d["Coffee origin"]) * 35);
-            })
-            .style("stroke", function(d) {
-              return d3.schemeCategory10[flavor.indexOf(d["Flavor"]) % 10];
-            });
+function angleTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => angle(i(t));
+}
 
-        let flavorLabels = svg.selectAll(".coffee-flavor-label")
-            .data(uniqueFlavor)
-            .enter().append("text")
-            .attr("class", "coffee-flavor-label")
-            .attr("x", 85) // move the label to the right
-            .attr("y", function(d, i) { return 150 + (i * 72); })
-            .attr("text-anchor", "end")
-            .text(function(d) { return d; });
-      }
-    )
+function angle(a) {
+    return `rotate(${(a.angle * 180) / Math.PI - 90})
+                  translate(${r0 + 26})
+                  ${a.angle > Math.PI ? "rotate(180)" : ""}`;
+}
+
+function setNames(data) {
+    names = data;
+    shuffled = shuffleIndices(names.length);
+}
+
+function chordKey(data) {
+    return data.source.index < data.target.index
+        ? data.source.index + "-" + data.target.index
+        : data.target.index + "-" + data.source.index;
+}
+
+function init(data) {
+    matrix = data;
+    svg = d3
+        .select("#pairing-viz")
+        .append("svg")
+        .attr("width", 800)
+        .attr("height", 900)
+        .append("g")
+        .attr("transform", "translate(400,450)");
+
+    container = svg.append("g").attr("class", "container");
+
+    groupsContainer = container.append("g").attr("class", "groupsContainer");
+
+    var chord = d3
+        .chord()
+        .padAngle(0.0) // padding between entities (black arc)
+        .sortSubgroups(d3.descending)(matrix);
+
+    chord.groups.forEach(function (g) {
+        g.endAngle = g.startAngle;
+        g.value = 0;
+    });
+
+    var groupsUpdate = groupsContainer
+        .selectAll(".group")
+        .data(chord.groups, (x) => x.index);
+
+    groups = groupsUpdate.enter().append("g").attr("class", "group");
+
+    groups
+        .append("path")
+        .style("fill", (d) => color(d.index))
+        .style("stroke", (d) => color(d.index))
+        .style("stroke-width", 0.5)
+        .transition()
+        .duration(10)
+        .attrTween("d", arcTween);
+
+    groups
+        .on("mouseover", mouseover)
+        .on("mousemove", groupMouseMove)
+        .on("mouseout", mouseout);
+
+    groups
+        .append("text")
+        .attr("class", "label")
+        .each(function (d) {
+            d.angle = (d.startAngle + d.endAngle) / 2;
+        })
+        .attr("dy", ".3em")
+        .attr("text-anchor", function (d) {
+            return d.angle > Math.PI ? "end" : null;
+        })
+        .attr("transform", function (d) {
+            return `rotate(${(d.angle * 180) / Math.PI - 90})
+                          translate(${r0 + 26})
+                          ${d.angle > Math.PI ? "rotate(180)" : ""}`;
+        })
+        .text(function (d, i) {
+            return names[i];
+        })
+        .style("opacity", 0)
+        .transition()
+        .duration(duration)
+        .attrTween("transform", angleTween);
+
+    /*** CHORDS ***/
+    chordsContainer = container.append("g").attr("class", "chordContainer");
+
+    chord.forEach(function (c) {
+        c.source.endAngle = c.source.startAngle;
+        c.target.endAngle = c.target.startAngle;
+    });
+
+    var chordsUpdate = chordsContainer.selectAll("path").data(chord, chordKey);
+
+    chords = chordsUpdate.enter().append("path").attr("class", "chord");
+
+    chords
+        .style("fill", (d) => color(d.source.index))
+        .style("stroke-width", 0.5)
+        .transition()
+        .duration(duration)
+        .attrTween("d", ribbonTween);
+
+    chords
+        .on("mouseover", mouseover)
+        .on("mousemove", chordMouseMove)
+        .on("mouseout", mouseout);
+
+    setTimeout(() => update(matrix), 0);
+}
+
+function update(matrix) {
+
+    chord = d3.chord().padAngle(0.0).sortSubgroups(d3.descending)(matrix);
+
+    var groupUpdate = d3
+        .selectAll(".group")
+        .data(chord.groups, function (d) {
+            return d.index;
+        })
+        .style("display", function (d) {
+            return d.value ? "block" : "none";
+        });
+
+    groupUpdate
+        .select("path")
+        .transition()
+        .duration(duration)
+        .attrTween("d", arcTween);
+
+    groups
+        .select("text")
+        .each(function (d) {
+            d.angle = (d.startAngle + d.endAngle) / 2;
+        })
+        .style("opacity", function (d) {
+            return d.angle > 0 ? 1 : 0;
+        })
+        .attr("dy", ".3em")
+        .attr("text-anchor", function (d) {
+            return d.angle > Math.PI ? "end" : null;
+        })
+        .transition()
+        .duration(duration)
+        .attrTween("transform", angleTween);
+
+    var chordsUpdate = chordsContainer.selectAll("path").data(chord, chordKey);
+
+    chordsUpdate.exit().remove();
+
+    var chordEnter = chordsUpdate
+        .enter()
+        .append("path")
+        .attr("class", "chord")
+        .style("fill", (d) => color(d.source.index))
+        .style("stroke-width", 0.5);
+
+    chords = chordEnter.merge(chordsUpdate);
+
+    chordEnter.transition().duration(duration).attrTween("d", ribbonTween);
+
+    chordEnter
+        .on("mouseover", mouseover)
+        .on("mousemove", chordMouseMove)
+        .on("mouseout", mouseout);
+
+    chordsUpdate
+        .transition()
+        .duration(duration)
+        .attrTween("d", ribbonTween)
+        .style("stroke", (d) => color(d.source.index))
+        .style("fill", (d) => color(d.source.index))
+        .style("stroke-opacity", 0);
+}
+
+function groupMouseMove(event, datum) {
+    groupFocus(datum.index);
+    groupTooltip(event, datum);
+}
+
+function groupFocus(index) {
+    var highlight = [];
+
+    for (var i = 0; i < matrix.length; i++) {
+        if (i == index || matrix[index][i] > 0 || matrix[i][index] > 0) {
+            highlight.push(i);
+        }
     }
-  );
+
+    groups.style("opacity", function (d, i) {
+        return highlight.includes(i) ? 1 : fade;
+    });
+
+    chords.style("opacity", function (d, i) {
+        return index == d.source.index || index == d.target.index ? 1 : fade;
+    });
+}
+
+function groupTooltip(event, datum) {
+    var index = datum.index;
+    var name = names[index].split(" ")[0];
+    var total = 0;
+
+    for (var i = 0; i < names.length; i++) {
+        total += matrix[i][index];
+    }
+
+    var text = `${name} received ${datum.value} PR reviews and gave ${total}`;
+
+    tooltip
+        .text(text)
+        .style("left", event.pageX - 34 + "px")
+        .style("top", event.pageY - 12 + "px");
+}
+
+function unfocus() {
+    chords.style("opacity", 1);
+    groups.style("opacity", 1);
+}
+
+function chordMouseMove(event, datum) {
+    var srcIdx = datum.source.index;
+    var tgtIdx = datum.target.index;
+
+    chordFocus(srcIdx, tgtIdx);
+    chordTooltip(srcIdx, tgtIdx, event);
+}
+
+function chordTooltip(srcIdx, tgtIdx, event) {
+    var sourceName = names[srcIdx].split(" ")[0];
+    var targetName = names[tgtIdx].split(" ")[0];
+    var text1 = `${sourceName} reviewed ${matrix[tgtIdx][srcIdx]} of ${targetName}'s PRs`;
+    var text2 = `${targetName} reviewed ${matrix[srcIdx][tgtIdx]} of ${sourceName}'s PRs`;
+
+    tooltip
+        .text(`${text1}\n${text2}`)
+        .style("left", event.pageX - 34 + "px")
+        .style("top", event.pageY - 12 + "px");
+}
+
+function chordFocus(srcIdx, tgtIdx) {
+    groups.style("opacity", function (d, i) {
+        return i == srcIdx || i == tgtIdx ? 1 : fade;
+    });
+
+    chords.style("opacity", function (d, i) {
+        return srcIdx == d.source.index && tgtIdx == d.target.index ? 1 : fade;
+    });
+}
+
+var tooltip = d3
+    .select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("display", "inline");
+
+function mouseover() {
+    tooltip.style("display", "inline");
+}
+
+function mouseout() {
+    tooltip.style("display", "none");
+    unfocus();
+}
+
+function shuffleIndices(num) {
+    var j, x, i;
+    var arr = Array.from(Array(num).keys());
+
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = arr[i];
+        arr[i] = arr[j];
+        arr[j] = x;
+    }
+
+    return arr;
+}
+
+function flatToMatrix(flat) {
+    var dim = Math.sqrt(flat.length);
+    var matrix = [];
+
+    for (var i = 0; i < dim; i++) {
+        matrix.push([]);
+    }
+
+    for (var i = 0; i < flat.length; i++) {
+        matrix[Math.floor(i / dim)].push(flat[i]);
+    }
+
+    return matrix;
+}
+
+const NAMES = [
+    "Kenya",
+    "Ethiopia",
+    "Uganda",
+    "Yemen",
+    "Tanzania",
+    "Brazil",
+    "Costa Rica",
+    "Colombia",
+    "El Salvador",
+    "Guatemala",
+    "Mexico",
+    "Peru",
+    "Nicaragua",
+    "Honduras",
+    "Indonesia",
+    "Fruity",
+    "Chocolate",
+    "Neutral",
+    "Sweet",
+    "Spicy",
+    "Savory",
+    "Nutty",
+    "Floral"
+];
+
+const PULLREQUESTMATRIX = [
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,3,0,11,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,13,0,38,0,0,0,13],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,22,0,30,0,0,17,4],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,7,0,9,0,0,3,2],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,37,12,0,42,0,0,6,3],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,2,0,7,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,2,0,0,1,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,2,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,4,0,11,0,0,2,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,4,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,6,0,0,1,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,4,0,10,0,0,2,3],
+    [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [1,1,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+];
+
+$(document).ready(function () {
+  setNames(NAMES);
+  init(PULLREQUESTMATRIX);
 });
-
-
-// d3.selection.prototype.moveToFront = function () {
-//   return this.each(function () {
-//     this.parentNode.appendChild(this);
-//   });
-// };
-
-// class FoodPairingViz {
-//   constructor(data, parentDiv, panelDiv) {
-//     const margin = {top: 20, right: 20, bottom: 20, left: 20};
-//     this.data = data;
-//     this.panel = document.getElementById(panelDiv);
-//     this.panelOrigianlText = this.panel.innerHTML
-
-//     this.svg = d3.select("#" + parentDiv + " svg");
-//     const svgViewbox = this.svg.node().getBoundingClientRect();
-
-//     const g = this.svg
-//       .append("g")
-//       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-//     this.width = svgViewbox.width - margin.left - margin.right;
-//     this.height = svgViewbox.height - margin.top - margin.bottom;
-
-//     this.opacity = dark ? 0.3 : 0.1;
-//     this.strokeWidth = 7;
-//     this.strokeWidthLink = 2;
-
-//     const wineY = d3
-//       .scaleLinear()
-//       .domain([0, data.wines.length - 1])
-//       .range([0, this.height]);
-//     const foodY = d3
-//       .scaleLinear()
-//       .domain([0, data.foods.length - 1])
-//       .range([0, this.height]);
-
-//     const color = function (d) {
-//       const colors = [
-//           '#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273','#f27c07', '#6c80e8'
-//       ];
-//       return colors[d];
-//     };
-
-//     this.computePath = (d, factor) => {
-//       const start = { x: innerMargin.left, y: wineY(d.wine) },
-//         end = { x: this.width - innerMargin.right, y: foodY(d.food) },
-//         mid = {
-//           x: (start.x + end.x) / 2,
-//           y: factor * start.y + (1 - factor) * end.y,
-//         };
-
-//       return `M ${start.x} ${start.y} Q ${mid.x} ${mid.y} ${end.x} ${end.y}`;
-//     };
-
-//     // Interaction functions
-//     this.onWineSelected = (s) => {
-//       d3.event.stopPropagation();
-
-//       const relevantLinks = this.data.links.filter((l) => l.wine == s.id);
-//       const relevantFoods = relevantLinks.map((l) => l.food);
-
-//       this.svg
-//         .selectAll(".wineNode text")
-//         .transition()
-//         .attr("opacity", (w) => (w.id == s.id ? 1 : this.opacity));
-
-//       this.svg
-//         .selectAll(".wineNode circle")
-//         .transition()
-//         .duration(500)
-//         .ease(d3.easeBounceOut)
-//         .attr("r", 5)
-//         .attr("stroke-width", (w) => (w.id == s.id ? 1 : this.strokeWidth));
-
-//       this.svg
-//         .selectAll(".foodNode circle")
-//         .transition()
-//         .duration(500)
-//         .delay(300)
-//         .ease(d3.easeBounceOut)
-//         .attr("r", 5)
-//         .attr("stroke-width", (f) => relevantFoods.includes(f.id) ? 1 : this.strokeWidth);
-
-//       this.svg
-//         .selectAll(".foodNode text")
-//         .transition()
-//         .attr("opacity", (f) =>relevantFoods.includes(f.id) ? 1 : this.opacity);
-
-//       const links = this.svg.selectAll("path");
-
-//       links
-//         .filter((d) => relevantLinks.includes(d))
-//         .moveToFront()
-//         .transition()
-//         .delay((d, i) => i * 50 + 200)
-//         .attr("d", (d) => this.computePath(d, 0.1))
-//         .attr("opacity", 1)
-//         .attr("stroke-width", this.strokeWidth);
-
-//       links
-//         .filter((d) => !relevantLinks.includes(d))
-//         .transition()
-//         .attr("opacity", this.opacity)
-//         .attr("stroke-width", this.strokeWidthLink)
-//         .attr("d", (d) => this.computePath(d, 0.9));
-
-//       this.panel.innerHTML = this.formatWineInfo(s, relevantFoods);
-//       this.panel.classList.add("side-panel")
-//     };
-
-//     this.formatWineInfo = (w, foodIds) => {
-//       let title = `<div style="background-color: ${w.color + "cc"}" class="title-with-quote"><h2>${w.name}</h2><p>${w.description}</p></div>`;
-
-//       let varieties = `<h3>Typical Varieties</h3><div class="grid-container">`
-//       w.varieties.forEach((v) => (varieties += `<div>${v}</div>`))
-//       varieties += `</div>`
-
-//       let foods = `<h3>Goes well with</h3><div class="grid-container">`;
-//       this.data.foods.forEach((f) => {
-//         if (foodIds.includes(f.id))
-//           foods += `<div class="food-icon"><img src="${f.img}" /><p>${f.name}</p></div>`;
-//       });
-//       foods += `</div>`
-
-//       let bottombar = `<div style="background-color: ${w.color + "cc"}" class="bottom-bar"></div>`;
-//       return title + varieties + foods + bottombar;
-//     };
-
-//     this.onFoodSelected = (s) => {
-//       d3.event.stopPropagation();
-
-//       const relevantLinks = this.data.links.filter((l) => l.food == s.id);
-//       const relevantWines = relevantLinks.map((l) => l.wine);
-
-//       this.svg
-//         .selectAll(".foodNode text")
-//         .transition()
-//         .attr("opacity", (f) => (f.id == s.id ? 1 : this.opacity));
-
-//       this.svg
-//         .selectAll(".foodNode circle")
-//         .transition()
-//         .duration(500)
-//         .ease(d3.easeBounceOut)
-//         .attr("r", 5)
-//         .attr("stroke-width", (f) => (f.id == s.id ? 1 : this.strokeWidth));
-
-//       this.svg
-//         .selectAll(".wineNode circle")
-//         .transition()
-//         .duration(500)
-//         .delay(300)
-//         .ease(d3.easeBounceOut)
-//         .attr("r", 5)
-//         .attr("stroke-width", (w) => relevantWines.includes(w.id) ? 1 : this.strokeWidth);
-
-//       this.svg
-//         .selectAll(".wineNode text")
-//         .transition()
-//         .attr("opacity", (w) => relevantWines.includes(w.id) ? 1 : this.opacity);
-
-//       const links = this.svg.selectAll("path");
-//       links
-//         .filter((d) => relevantLinks.includes(d))
-//         .moveToFront()
-//         .transition()
-//         .delay((d, i) => i * 50 + 200)
-//         .attr("opacity", 1)
-//         .attr("stroke-width", this.strokeWidth)
-//         .attr("d", (d) => this.computePath(d, 0.9));
-//       links
-//         .filter((d) => !relevantLinks.includes(d))
-//         .transition()
-//         .attr("opacity", this.opacity)
-//         .attr("stroke-width", this.strokeWidthLink)
-//         .attr("d", (d) => this.computePath(d, 0.9));
-
-//       this.panel.innerHTML = this.formatFoodInfo(s, relevantWines)
-//       this.panel.classList.add("side-panel")
-//     };
-
-//     this.formatFoodInfo = (f, wineIds) => {
-//       let title = `<div class="title-with-quote"><h2>${f.name}</h2><p>${f.description}</p></div>`;
-
-//       let examples = `<h3>Examples</h3><div class="grid-container">`;
-//       f.examples.forEach(e => examples += `<div>${e}</div>`)
-//       examples += `</div>`;
-
-//       let wines = `<h3>Goes well with</h3><div class="grid-container">`;
-//       this.data.wines.forEach((w) => {
-//         if (wineIds.includes(w.id))
-//           wines += `<div class="food-icon">
-//                         <svg height="20" width="20">
-//                             <circle r="10" transform="translate(10,10)" fill="${color(w.id)}"></circle>
-//                         </svg>
-//                         <p>${w.name}</p>
-//                     </div>`;
-//       });
-//       wines += `</div>`
-//       let bottombar = `<div class="bottom-bar"></div>`;
-//       return title + examples + wines + bottombar;
-//     };
-
-//     this.onRemoveSelection = () => {
-//       this.svg
-//         .selectAll(".foodNode text, .wineNode text")
-//         .transition()
-//         .attr("opacity", 1);
-
-//       this.svg
-//         .selectAll(".foodNode circle, .wineNode circle")
-//         .transition()
-//         .duration(500)
-//         .ease(d3.easeBounceOut)
-//         .attr("r", 10)
-//         .attr("stroke-width", this.strokeWidth);
-
-//       this.svg
-//         .selectAll("path")
-//         .transition()
-//         .duration(500)
-//         .attr("opacity", 0.5)
-//         .attr("stroke-width", this.strokeWidth)
-//         .attr("d", (d) => this.computePath(d, 0.9));
-
-//       this.panel.innerHTML = this.panelOrigianlText
-//       this.panel.classList.remove("side-panel")
-//     };
-
-//     const innerMargin = { left: 100, right: 160 };
-
-//     // Initialize the links
-//     const lineContainer = g.append("g");
-
-//     const paths = lineContainer
-//       .selectAll("path")
-//       .data(this.data.links)
-//       .enter()
-//       .append("path")
-//       .attr("d", (d) => this.computePath(d, 0.9))
-//       .attr("stroke", (d) => color(d.wine))
-//       .attr("stroke-width", this.strokeWidth)
-//       .attr("fill", "transparent")
-//       .attr("opacity", 0.5)
-//       .style("mix-blend-mode", dark ? "screen" : "multiply")
-
-//     // Initialize the wine nodes
-//     const wineNodes = g
-//       .selectAll(".wineNode")
-//       .data(this.data.wines)
-//       .enter()
-//       .append("g")
-//       .attr("transform", (d) => "translate(" + innerMargin.left + "," + wineY(d.id) + ")"
-//       )
-//       .attr("class", "wineNode")
-//       .style("cursor", "pointer")
-//       .attr("opacity", 1)
-//       .on("click", this.onWineSelected);
-
-//     wineNodes
-//       .append("circle")
-//       .attr("r", 10)
-//       .style("fill", (d) => color(d.id))
-//       .attr("stroke", dark ? "#000" : "#fff")
-//       .attr("stroke-width", this.strokeWidth);
-
-//     wineNodes
-//       .append("text")
-//       .text((d) => d.name)
-//       .attr("x", -20)
-//       .attr("fill", dark ? "#fff" : "#000")
-//       .attr("text-anchor", "end")
-//       .attr("opacity", 1);
-
-//     // Initialize the food nodes
-//     const foodNodes = g
-//       .selectAll(".foodNode")
-//       .data(data.foods)
-//       .enter()
-//       .append("g")
-//       .attr("transform", (d) => "translate(" + (this.width - innerMargin.right) + "," + foodY(d.id) + ")"
-//       )
-//       .attr("class", "foodNode")
-//       .style("cursor", "pointer")
-//       .attr("opacity", 1)
-//       .on("click", this.onFoodSelected);
-
-//     foodNodes
-//       .append("circle")
-//       .attr("r", 10)
-//       .style("fill", dark ? "#fff" : "#4a4a4a")
-//       .attr("stroke", dark ? "#000" : "#fff")
-//       .attr("stroke-width", this.strokeWidth);
-
-//     foodNodes
-//       .append("text")
-//       .text((d) => d.name)
-//       .attr("x", 20)
-//       .attr("fill", dark ? "#fff" : "#000")
-//       .attr("text-anchor", "start")
-//       .attr("opacity", 1);
-
-//     this.svg.on("click", this.onRemoveSelection);
-//   }
-// }
-
-// d3.json("../dataset/kofio_dataset/pairing_all.csv").then((data) => {
-//   const foodPairingViz = new FoodPairingViz(data, "pairing-viz", "coffee-food-pairing-info");
-// });

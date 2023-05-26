@@ -181,6 +181,7 @@ $(document).ready(function () {
                     .data(curData)
                     .enter()
                     .append("g")
+                    .style("aaa", (d)=>{console.log(d);})
                     .attr("class", "circleContainer");
 
                 console.log(curData);
