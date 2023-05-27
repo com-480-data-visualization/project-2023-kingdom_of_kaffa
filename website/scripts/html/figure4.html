@@ -36,67 +36,25 @@
         </div>
         <div class="column is-one-third">
             <div id="coffee-food-pairing-info">
-                <!-- <p>
-              Click on a coffee origin/flavor or a food flavor,
+              <h2 class="title is-2">Coffee Flavor Pairing</h2>
+              <p>
+              Click on a coffee origin or a food flavor,
               then detailed information will be presented on the right.
-            </p> -->
-                <h3>Kenya Coffee</h3>
-                <div class="info-description">
-                    Coffee from Kenya are known for their bright, bold flavour
-                    and wine-like acidity.
-                </div>
-                <h4>Has the following flavor</h4>
-                <div class="item-container">
-                    <div class="flavor-icon">
-                        <img src="image/pairing-icon/sweet.png" />
-                        <p>Sweet</p>
-                    </div>
-                    <div class="flavor-icon">
-                        <img src="image/pairing-icon/fruity.png" />
-                        <p>Fruity</p>
-                    </div>
-                    <div class="flavor-icon">
-                        <img src="image/pairing-icon/chocolate.png" />
-                        <p>Chocolate</p>
-                    </div>
-                    <div class="flavor-icon">
-                        <img src="image/pairing-icon/floral.png" />
-                        <p>Floral</p>
-                    </div>
-                </div>
-                <h4>Goes well with</h4>
-                <div class="food-slider">
-                    <div class="food-item active">
-                        <img src="image/pairing-food/berries.jpg" />
-                        <p>Berries</p>
-                    </div>
-                    <div class="food-item">
-                        <img src="image/pairing-food/milk_chocolate.jpg" />
-                        <p>Milk Chocolate</p>
-                    </div>
-                    <div class="food-item">
-                        <img src="image/pairing-food/sweat_bread.jpg" />
-                        <p>Sweat Bread</p>
-                    </div>
-                    <div class="arrow-wrapper">
-                        <div class="arrow arrow-left">&#8249;</div>
-                        <div class="arrow arrow-right">&#8250;</div>
-                    </div>
-                </div>
+              </p>
             </div>
         </div>
     </div>
 
     <div id="fig4_after_click_coffee" style="display: none">
-        <div id="fig4_coffee" class="side-panel">
-            <div class="block">
+        <div id="fig4_coffee">
+            <div class="fig4-block">
                 <div class="container-pair">
                     <div id="fig4_coffee_title"></div>
                 </div>
                 <div class="info-description" id="fig4_coffee_des">
                     <text></text>
                 </div>
-                <h4>Has the following flavor</h4>
+                <div id="flavor-title"><h4>Has the following flavor</h4></div>
                 <div class="item-container" id="flavor-contain"></div>
                 <h4>Goes well with</h4>
                 <div class="item-container" id="food-contain"></div>
@@ -105,8 +63,8 @@
     </div>
 
     <div id="fig4_after_click_flavor" style="display: none">
-        <div id="fig4_flavor" class="side-panel">
-            <div class="block">
+        <div id="fig4_flavor">
+            <div class="fig4-block">
                 <div class="container-pair">
                     <h3 id="fig4_flavor_title"></h3>
                 </div>
@@ -114,5 +72,12 @@
             </div>
         </div>
     </div>
-</div>
+
+    <div id="fig4_refresh" style="display: none">
+      <h2 class="title is-2">Coffee Flavor Pairing</h2>
+          <p>
+          Click on a coffee origin or a food flavor,
+          then detailed information will be presented on the right.
+          </p>
+    </div>
 <script src="scripts/js/figure4.js"></script>

@@ -1,5 +1,5 @@
-const r0 = 230; // inner radius
-const r1 = r0 * 1.03; // outer radius
+const r0 = 210; // inner radius
+const r1 = r0 * 1.06; // outer radius
 const fade = 0.2;
 const duration = 1000;
 
@@ -10,7 +10,7 @@ var color = (i) => colorScale(i);
 
 // var color = (i) => d3.interpolateRainbow(shuffled[i] / names.length);
 const arc = d3.arc().innerRadius(r0).outerRadius(r1);
-const ribbon = d3.ribbon().radius(r0-10);
+const ribbon = d3.ribbon().radius(r0-15);
 
 var svg, container, groupsContainer, groups, names, matrix, shuffled;
 var isClicked = false;
@@ -87,15 +87,16 @@ function updateCoffeeInfo(data){
   document.getElementById('fig4_coffee_title').innerHTML = `<h3>${data.name} Coffee</h3>`;
   document.getElementById('fig4_coffee_des').querySelector("text").innerHTML = data.description;
 
+  document.getElementById('flavor-title').innerHTML = `<h4>${data.name} Coffee may have the following flavors:</h4>`;
   let flavors = "";
   data.flavor.forEach((f) => {
-    flavors += `<div class="food-item active"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
+    flavors += `<div class="flavor-icon"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
   });
   document.getElementById('flavor-contain').innerHTML = flavors;
 
   let foods = "";
   Object.entries(data.food).forEach(([foodName, imgSrc]) => {
-    foods += `<div class="food-item active"><img src="${imgSrc}"><p>${foodName}</p></div>`;
+    foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
   document.getElementById('food-contain').innerHTML = foods;
 }
@@ -327,6 +328,7 @@ $(document).ready(function () {
   }
   
   function groupTooltip(event, datum) {
+      console.log(datum.index);
       var index = datum.index;
       var name = names[index].split(" ")[0];
       var total = 0;
@@ -336,7 +338,7 @@ $(document).ready(function () {
       }
   
       var text = `${name} received ${datum.value} PR reviews and gave ${total}`;
-  
+      console.log(text);
       tooltip
           .text(text)
           .style("left", event.pageX - 34 + "px")
@@ -384,11 +386,11 @@ $(document).ready(function () {
       .select("body")
       .append("div")
       .attr("class", "tooltip")
-      .style("display", "inline");
+      .style("display", "inline-block");
   
   function mouseover() {
       if (!isClicked){
-        tooltip.style("display", "inline");
+        tooltip.style("display", "inline-block");
       }
   }
   
@@ -406,7 +408,11 @@ $(document).ready(function () {
       if (index < 15){
         console.log(index);
         updateCoffeeInfo(data[index.toString()]);
+        document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
       }
+    }
+    else {
+      document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_refresh").innerHTML
     }
   }
 

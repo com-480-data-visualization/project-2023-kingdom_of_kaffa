@@ -1,3 +1,5 @@
 {
-    "0": {"id": 0,"name": "Kenya","description": "Coffee from Kenya are known for their bright, bold flavour and wine-like acidity.","flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.jpg","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}}
+    "0": {"id": 0,"name": "Kenya",
+    "description": "Coffee from Kenya is of the 'Colombia mild' type, and is well known for its intense flavor, full body, and pleasant aroma with notes of cocoa and high grade coffee from Kenya is one of the most sought-after coffees in the world.",
+    "flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.png","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}, "food_flavor":["Fruity, Chocolate, Sweet"]}
 }
