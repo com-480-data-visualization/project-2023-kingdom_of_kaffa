@@ -1,0 +1,43 @@
+#intropage {
+    background-color: #F9B1B4;
+  }
+@keyframes show {
+    0% { opacity: 0; }
+    40% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  @keyframes showhideslow {
+    0% { opacity: 0; }
+    1% { opacity: 1; }
+    99% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @keyframes smoke {
+    0% { opacity: 0; }
+    100% { opacity: 0.7; }
+  }
+  #cafelong{
+    animation: showhideslow 3s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  #cafecourt{
+    animation: showhideslow 2s ease;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+  }
+  #lait{
+    animation: showhideslow 1.5s ease;
+    animation-delay: 5.5s;
+    animation-fill-mode: forwards;
+  }
+  #cafeaulait{
+    animation: show 1.5s ease;
+    animation-delay: 5.8s;
+    animation-fill-mode: forwards;
+  }
+  #fumee1, #fumee2 {
+  animation: smoke 5s ease;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+}
