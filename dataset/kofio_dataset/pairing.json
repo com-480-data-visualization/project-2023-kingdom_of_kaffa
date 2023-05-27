@@ -3,6 +3,92 @@
     "description": "Coffee from Kenya is of the 'Colombia mild' type, and is well known for its intense flavor, full body, and pleasant aroma with notes of cocoa and high grade coffee from Kenya is one of the most sought-after coffees in the world.",
     "flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.png","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}, "food_flavor":["Fruity, Chocolate, Sweet"]},
 
+    "1":{"name":"Ethiopia",
+    "description":"",
+    "flavor":["Sweet","Fruity","Chocolate","Floral"],
+    "food":{"Berries":"image/pairing-food/berries.jpg",
+    "Doughuts":"image/pairing-food/doughuts.jpg",
+    "Milk Chocolate":"image/pairing-food/milk_chocolate.jpg"}
+    },
+
+    "2":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "3":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "4":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "5":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "6":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "7":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "8":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "9":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "10":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "11":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "12":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "13":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
+    "14":{"name":"",
+    "description":"",
+    "flavor":[],
+    "food":{}
+    },
+
     "15":{"id": 15, "name": "Fruity",
     "description": "Fruity flavors are often used in coffee, food, beverages, and other products to provide a refreshing and enjoyable taste that is associated with the natural sweetness and tanginess of fruits.",
     "varieties": ["Strawberry","Apple","Orange","Pineapple","Mango","Raspberry","Cherry","Lemon"],
@@ -11,7 +97,7 @@
 
     "16":{"name":"Chocolate",
     "description": "Chocolate flavor refers to the taste and aroma characteristic of chocolate, which is derived from the cacao bean. Chocolate has a rich, sweet, and slightly bitter flavor profile that is highly popular and widely used in various food and beverage products.",
-    "varieties": ["Dark Chocolate", "Milk Chocolate", "Semi-sweet Chocolate","White Chocolate","Bittersweet Chocolate"],
+    "varieties": ["Dark Chocolate", "Milk Chocolate", "White Chocolate","Bittersweet Chocolate"],
     "food": {"Chocolate":"image/pairing-food/chocolate.png", 
             "Milk Chocolate":"image/pairing-food/milk_chocolate.png", 
             "White Chocolate":"image/pairing-food/white_chocolate.png", 
@@ -22,6 +108,21 @@
     "17":{"name":"Wheaty",
     "description":"Wheaty flavor refers to the taste and aroma associated with wheat and wheat-based products. It is characterized by a distinct, slightly sweet, and nutty flavor profile and is commonly found in various foods and beverages that contain wheat or wheat derivatives.",
     "varieties": ["Wheat"],
-    "food": {"Wheat Bread":"image/pairing-food/wheat_bread.png","Cereals":"image/pairing-food/cereals.png"}
-    }
+    "food": {"Wheat Bread":"image/pairing-food/wheat_bread.png","Cereals":"image/pairing-food/cereals.png","Baked Goods":"image/pairing-food/baked_goods.png"}
+    },
+
+    "18":{"name":"Sweet",
+    "description":"Sweet flavor refers to the taste sensation that is associated with the perception of sugars or substances that elicit a similar taste. Sweetness is often described as pleasurable and can be found in a wide range of foods and beverages.",
+    "varieties":["Sugar","Honey","Chocolate","Caramel"],
+    "food":{"Sweet Bread":"image/pairing-food/sweet_bread.png", "Caramel Cakes":"image/pairing-food/caramel_cakes.png", "Doughnuts":"image/pairing-food/doughnuts.png","Cakes":"image/pairing-food/chocolate_cakes.png"}},
+
+    "19":{"name": "Spicy",
+    "description":"Spicy flavor refers to the sensation of heat or pungency that is typically associated with certain ingredients or spices that add a fiery or hot taste to food. It is a common flavor profile found in various cuisines around the world.",
+    "varieties":["Fiery Heat", "Citrusy Spice","Sweet and Spicy"],
+    "food":{"Chill Peppers":"image/pairing-food/chill_peppers.png", "Curry":"image/pairing-food/curry.png", "Spicy Food":"image/pairing-food/spicy_food.png"}},
+
+    "20":{"name": "Savory",
+    "description":"Savory flavor, also known as umami, is a distinct taste sensation that is often described as savory, meaty, or brothy. It is one of the five basic tastes, alongside sweet, sour, bitter, and salty.",
+    "varieties":["Meaty","Smoky","Umami","Mushroom"],
+    "food":{"Savory Breakfast":"image/pairing-food/breakfast.png", "Omelets":"image/pairing-food/omelets.png", "Cheese":"image/pairing-food/cheese.png"}}
 }

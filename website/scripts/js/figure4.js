@@ -109,7 +109,7 @@ function updateFlavorInfo(data){
   let flavors = "";
   console.log(data.varieties);
   data.varieties.forEach((f) => {
-    flavors += `<div class="flavor-icon"><p>${f}</p></div>`;
+    flavors += `<div class="flavor-icon">${f}</div>`;
   });
   document.getElementById('typical-flavor').innerHTML = flavors;
 
@@ -166,7 +166,22 @@ $(document).ready(function () {
           .attr("height", 800)
           .append("g")
           .attr("transform", "translate(400,400)");
-  
+
+      //Container for the gradients
+      var defs = svg.append("defs");
+
+      //Filter for the outside glow
+      var filter = defs.append("filter")
+          .attr("id","glow");
+      filter.append("feGaussianBlur")
+          .attr("stdDeviation","3.5")
+          .attr("result","coloredBlur");
+      var feMerge = filter.append("feMerge");
+      feMerge.append("feMergeNode")
+          .attr("in","coloredBlur");
+      feMerge.append("feMergeNode")
+          .attr("in","SourceGraphic");
+
       container = svg.append("g").attr("class", "container");
   
       groupsContainer = container.append("g").attr("class", "groupsContainer");
@@ -432,7 +447,6 @@ $(document).ready(function () {
       document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_refresh").innerHTML
     }
   }
-
 
     setNames(NAMES);
     init(PULLREQUESTMATRIX);
