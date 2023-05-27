@@ -1,0 +1,220 @@
+[
+    {
+        "Brand": "The naughty dog",
+        "Coffee count": "(18x)",
+        "Review": "4.5",
+        "Recommended": "92%",
+        "About": "A small roaster that focuses on African coffees (mainly Ethiopia) and coffees from Central and South America."
+    },
+    {
+        "Brand": "Candycane Coffee",
+        "Coffee count": "(18x)",
+        "Review": "4.4",
+        "Recommended": "93%",
+        "About": "We are Candycane coffee, boys who roast coffee as sweet as candy and offer additional services for cafes and educational courses for coffee enthusiasts. "
+    },
+    {
+        "Brand": "DAK Coffee Roasters",
+        "Coffee count": "(13x)",
+        "Review": "4.7",
+        "Recommended": "95%"
+    },
+    {
+        "Brand": "HAYB Speciality Coffee",
+        "Coffee count": "(7x)",
+        "Review": "4.3",
+        "Recommended": "83%"
+    },
+    {
+        "Brand": "Father's Coffee Roastery",
+        "Coffee count": "(21x)",
+        "Review": "4.5",
+        "Recommended": "95%"
+    },
+    {
+        "Brand": "Industra Coffee",
+        "Coffee count": "(7x)",
+        "Review": "4.4",
+        "Recommended": "91%"
+    },
+    {
+        "Brand": "The Barn",
+        "Coffee count": "(4x)",
+        "Review": "4.6",
+        "Recommended": "96%"
+    },
+    {
+        "Brand": "Square Mile",
+        "Coffee count": "(7x)",
+        "Review": "4.4",
+        "Recommended": "92%"
+    },
+    {
+        "Brand": "Gardelli Coffee",
+        "Coffee count": "(12x)",
+        "Review": "4.5",
+        "Recommended": "91%"
+    },
+    {
+        "Brand": "Diamond's Roastery",
+        "Coffee count": "(4x)",
+        "Review": "4.5",
+        "Recommended": "92%"
+    },
+    {
+        "Brand": "Beansmith.s",
+        "Coffee count": "(12x)",
+        "Review": "4.6",
+        "Recommended": "95%"
+    },
+    {
+        "Brand": "Dark Woods Coffee",
+        "Coffee count": "(1x)",
+        "Review": "4.6",
+        "Recommended": "92%"
+    },
+    {
+        "Brand": "Main Lane Coffee Roasters",
+        "Coffee count": [],
+        "Review": "4.4",
+        "Recommended": "86%"
+    },
+    {
+        "Brand": "Kmen Coffee Roasters",
+        "Coffee count": "(13x)",
+        "Review": "4.3",
+        "Recommended": "86%"
+    },
+    {
+        "Brand": "Mima coffee roastery",
+        "Coffee count": [],
+        "Review": "5.0",
+        "Recommended": "100%"
+    },
+    {
+        "Brand": "Nordbeans",
+        "Coffee count": "(5x)",
+        "Review": "4.3",
+        "Recommended": "90%"
+    },
+    {
+        "Brand": "Good Beans",
+        "Coffee count": "(1x)",
+        "Review": "4.3",
+        "Recommended": "70%"
+    },
+    {
+        "Brand": "Concept Coffee Roasters",
+        "Coffee count": "(3x)",
+        "Review": "4.5",
+        "Recommended": "97%"
+    },
+    {
+        "Brand": "Morgon Coffee Roasters",
+        "Coffee count": "(5x)",
+        "Review": "4.4",
+        "Recommended": "99%"
+    },
+    {
+        "Brand": "19grams coffee",
+        "Coffee count": "(7x)",
+        "Review": "4.5",
+        "Recommended": "100%"
+    },
+    {
+        "Brand": "3FE",
+        "Coffee count": "(1x)",
+        "Review": "3.7",
+        "Recommended": "77%"
+    },
+    {
+        "Brand": "BeBerry Coffee",
+        "Coffee count": "(4x)",
+        "Review": "4.7",
+        "Recommended": "97%"
+    },
+    {
+        "Brand": "BirdSong Coffee",
+        "Coffee count": "(2x)",
+        "Review": "4.2",
+        "Recommended": "84%"
+    },
+    {
+        "Brand": "Caravan Coffee Roasters",
+        "Coffee count": "(2x)",
+        "Review": "4.0",
+        "Recommended": "69%"
+    },
+    {
+        "Brand": "Coffea Circulor",
+        "Coffee count": "(7x)",
+        "Review": "4.5",
+        "Recommended": "94%"
+    },
+    {
+        "Brand": "Colonna Coffee",
+        "Coffee count": [],
+        "Review": "4.3",
+        "Recommended": "88%"
+    },
+    {
+        "Brand": "Dos Mundos",
+        "Coffee count": "(10x)",
+        "Review": "4.3",
+        "Recommended": "89%"
+    },
+    {
+        "Brand": "Doubleshot",
+        "Coffee count": "(2x)",
+        "Review": "5.0",
+        "Recommended": "100%"
+    },
+    {
+        "Brand": "Fiftybeans",
+        "Coffee count": "(10x)",
+        "Review": "4.4",
+        "Recommended": "92%"
+    },
+    {
+        "Brand": "Friedhats Coffee",
+        "Coffee count": [],
+        "Review": "4.6",
+        "Recommended": "92%"
+    },
+    {
+        "Brand": "Goat Story",
+        "Coffee count": "(2x)",
+        "Review": "4.3",
+        "Recommended": "89%"
+    },
+    {
+        "Brand": "Mlsnacava",
+        "Coffee count": [],
+        "Review": "4.2",
+        "Recommended": "67%"
+    },
+    {
+        "Brand": "Pikola",
+        "Coffee count": [],
+        "Review": "4.7",
+        "Recommended": "95%"
+    },
+    {
+        "Brand": "Rebelbean",
+        "Coffee count": [],
+        "Review": "4.4",
+        "Recommended": "95%"
+    },
+    {
+        "Brand": "The Coffee Collective",
+        "Coffee count": [],
+        "Review": "4.7",
+        "Recommended": "97%"
+    },
+    {
+        "Brand": "Tim Wendelboe",
+        "Coffee count": [],
+        "Review": "4.6",
+        "Recommended": "100%"
+    }
+]
