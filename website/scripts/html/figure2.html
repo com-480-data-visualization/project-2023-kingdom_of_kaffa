@@ -1,8 +1,8 @@
 <div class="slide">
     <div class="columns is-vcentered ">
 
-        <div class="column is-two-thirds" style="padding-left: 30px;">
-            <div class="block">
+        <div class="column is-two-thirds">
+            <div class="block" style="padding-left: 20px;">
                 <select id="fig2-yaxis">
                     <option>Price</option>
                     <option>Rating</option>
@@ -24,8 +24,8 @@
             </div>
         </div>
 
-        <div class="column" style="display: inline-grid; justify-items: center;">
-            <div style="width:80%;" id="fig2_coffee_brand_info">
+        <div class="column" style="display: inline-grid; justify-items: left;">
+            <div style="width:90%;" id="fig2_coffee_brand_info">
                 <div id="fig2_before_circle" style="visibility: visible; position: relative;">
                     <h2 class="title is-2">Brews and Bucks</h2>
                     <p class="block">
@@ -50,98 +50,89 @@
 </div>
 
 <div id="fig2_after_circle" style="display: none;">
-    <div id="fig2_about_coffe_brand" class="side-panel">
-        <div class="block">
-            <div class="container-brand">  
-                <div class="column is-one-third">
-                    <figure class="image is-96x96">
-                        <img class="is-rounded" id="fig2_brand_image" src="">
+    <div class="block">
+        <div id="fig2_about_coffe_brand" class="side-panel">
+
+            <div style="padding-top: 10px;">
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <figure>
+                        <div style="position: relative;">
+                            <img src="" id="fig2_brand_country_image" class="imgFlag"
+                                style="width: 200px; height: auto;">
+                            <img id="fig2_brand_image" class="imgBorder" src=""
+                                style="width: 120px; height: auto; margin: 0 auto;">
+                        </div>
                     </figure>
-                </div>
 
-                <div class="column is-two-thirds ">
-                    <p class="title is-4" id="fig2_brand_name"><text></text></p>
-                    <p class="subtitle is-6">
-                        <p>
-                            <text id="fig2_brand_country_name"></text>
-                            <!-- <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                <img src="" id="fig2_brand_country_image">
-                            </figure> -->
-                        </p>
+                    <p class="title is-3" id="fig2_brand_name"><text></text></p>
 
-                        <p>
-                            <text>5.0/5.0</text>
-                            <!-- <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                                <img src="image/star3.png" id="fig2_brand_rating_image">
-                            </figure> -->
-                        </p>
-                    </p>
                 </div>
             </div>
-            <p>
-                We are Candycane coffee, boys who roast coffee as sweet as candy and offer additional services for cafes, restaurants and hotels, as well as coffee programs for offices and educational courses for baristas and coffee enthusiasts. 
-            </p>
+
+            <div class="side-panel2">
+                <div class="columns is-vcentered" style="padding-top: 10px;">
+                    <div class="column is-one-third" id="fig2_brand_coffee" style="text-align: center;">
+                        <text>23.32</text>
+                        <img src="image/dollar-symbol.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+
+                    <div class="column is-one-third" id="fig2_brand_rating" style="text-align: center;">
+                        <text>4.5/5.0</text>
+                        <img src="image/star.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+
+                    <div class="column is-one-third" id="fig2_brand_recommended" style="text-align: center;">
+                        <text>98%</text>
+                        <img src="image/love.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+                </div>
+
+
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <span style=" text-align: center; font-size: 17px;">We are Candycane coffee, boys who roast coffee as
+                        sweet as candy and offer additional services for cafes and educational courses for coffee
+                        enthusiasts.</span>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div id="fig2_about_coffee_product" class="side-panel">
-        <div class="block" style="justify-content: center;">
-            <div class="container-brand" style="justify-content: center;">  
-                <!-- <div class="column is-one-third">
-                    <figure class="image is-96x96">
-                        <img class="is-rounded" id="fig2_brand_image" src="image/candycane.png">
-                    </figure> -->
-                <!-- </div> -->
-
-                <!-- <div class="column is-two-thirds "> -->
-                    <p class="title is-4" id="fig2_coffee_name"><text>Candycane Coffee</text></p>
-                    <!-- <p class="subtitle is-6">
-                    <p>
-                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                        <img src="image/star3.png" id="fig2_origin_country_image">
-                    </figure>
-                    <text id="fig2_origin_country_name">Czech Republic</text>
-                    </p>
-                    </p> -->
-                <!-- </div> -->
-            </div>
-        </div>
-
-            <div class="columns is-vcentered">
-                <div class="column is-one-third" id="fig2_price" style="text-align: center;">
-                    <text>Rating</text>
-                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                        <img src="image/dollar-symbol.png">
-                    </figure>
-                </div>
-
-                <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
-                    <text>Rating</text>
-                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                        <img src="image/star3.png">
-                    </figure>
-                </div>
-
-                <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
-                    <text>Rating</text>
-                    <figure class="image is-24x24" style="display:inline-block;vertical-align:top;">
-                        <img src="image/love.png">
-                    </figure>
-                </div>
+    <div class="block">
+        <div id="fig2_about_coffee_product" class="panel">
+            <div class=" panel-heading"
+                style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <p class="title is-4" id="fig2_coffee_name">
+                    <img src="image/coffee.png" id="fig2_brand_country_image"
+                        style="display:inline-block; height: 24px; width:24px; vertical-align: middle;">
+                    <text></text>
+                </p>
+                <span class="subtitle is-6" id="fig2_coffee_origin"><text></text></span>
             </div>
 
-            <table class="table">
-                <tbody>
-                    <tr>
-                      <td>Origin</td>
-                      <td>Columbia</td>
-                    </tr>
-                    <tr>
-                        <td>Flavor</td>
-                        <td>Cookies</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="side-panel2">
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third" id="fig2_price" style="text-align: center;">
+                        <text></text>
+                        <img src="image/dollar-symbol.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+
+                    <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
+                        <text></text>
+                        <img src="image/star.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+
+                    <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
+                        <text></text>
+                        <img src="image/love.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -7,7 +7,9 @@ const toTitleCase = (phrase) => {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 };
-
+const toTitleCaseClean = (phrase) => {
+  return phrase.toLowerCase().replace(/ /g, "_").replace('.', "_").replace("'", "_")
+};
 const code_to_country = {
   'cz': "Czech Republic",
   'no': "Norway",
@@ -28,8 +30,9 @@ const colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273'
 
 class Figure2 {
 
-  constructor(data, innerHeight) {
+  constructor(data, brand_data, innerHeight) {
     this.plot_data = data
+    this.brand_data = brand_data
     this.original_data = data
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
@@ -42,17 +45,55 @@ class Figure2 {
       .attr("width", "100%")
       .attr("height", innerHeight)
 
+    this.addGlow("small_glow", 1)
+    this.addGlow("extra_glow", 5)
+    this.addGradient("small", "93%")
+    this.addGradient("extra", "80%")
+
+
     const margin = { top: 10, right: 20, bottom: 10, left: 20 };
     const svgViewbox = this.svg.node().getBoundingClientRect();
     this.width = svgViewbox.width - margin.left - margin.right;
     this.height = svgViewbox.height - margin.top - margin.bottom;
   }
 
-  hoverCircle = (data) => {
-    this.updateCoffeeInfo(data.target.__data__);
-    d3.select(data.this)
-      .style("stroke", "black")
-      .style("stroke-width", 10);
+
+  addGradient(level, radius) {
+    let brandGradients = this.svg.append("defs").selectAll("radialGradient")
+      .data(brands)
+      .enter().append("radialGradient")
+      //Create a unique id per "planet"
+      .attr("id", function (d) {return level + "_gradient-" + toTitleCaseClean(d); })
+
+    //Then the actual color almost halfway
+    brandGradients.append("stop")
+      .attr("offset", radius)
+      .attr("stop-color", (d) => {
+        return this.roasteryToColor(d);
+      });
+
+    //Finally a darker color at the outside
+    brandGradients.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", (d) => {
+        return d3.rgb(this.roasteryToColor(d)).darker(0.7);
+      });
+  }
+
+  addGlow(glow_id, glow) {
+    let defs = this.svg.append("defs");
+
+    //Filter for the outside glow
+    var filter = defs.append("filter")
+      .attr("id", glow_id);
+    filter.append("feGaussianBlur")
+      .attr("stdDeviation", glow)
+      .attr("result", "coloredBlur");
+    var feMerge = filter.append("feMerge");
+    feMerge.append("feMergeNode")
+      .attr("in", "coloredBlur");
+    feMerge.append("feMergeNode")
+      .attr("in", "SourceGraphic");
   }
 
   init() {
@@ -66,11 +107,13 @@ class Figure2 {
   setDropDownListeners() {
     $("#fig2-yaxis").on("change", event => {
       this.updateYaxis($(event.target).val());
+      this.updateXaxis(this.xaxis_value);
       this.setGraph();
     });
 
     $("#fig2-xaxis").on("change", event => {
       this.updateXaxis($(event.target).val());
+      this.updateYaxis(this.yaxis_value);
       this.setGraph();
     });
 
@@ -123,23 +166,37 @@ class Figure2 {
       .domain(brands)
       .range(colors)
   }
+  updateYDomain() {
+    const y_max = d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })
+    const y_min = d3.min(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })
+    let y_buf = y_max / this.circle_radius
+    return [-y_buf + y_min, y_max + y_buf];
+  }
+
+  updateXDomain() {
+    const x_max = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })
+    const x_min = d3.min(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) })
+    let x_buf = x_max / this.circle_radius
+    return [-1.5 * x_buf + x_min, x_max + x_buf * 1];
+  }
 
   updateXaxis(xaxis_value) {
     this.xaxis_value = xaxis_value
-    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) / this.circle_radius
-    this.x.domain([-1 * x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) + x_buf * 2])
-    this.svg.select("#xaxis").transition().duration(500).call(d3.axisBottom(this.x))
+    this.x.domain(this.updateXDomain())
+    this.svg.selectAll(".axis--x").transition().duration(500).call(d3.axisBottom(this.x))
   }
 
   updateYaxis(yaxis_value) {
     this.yaxis_value = yaxis_value
-    this.y.domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
-    this.svg.selectAll("#yaxis").transition().duration(500)
+
+
+    this.y.domain(this.updateYDomain())
+    this.svg.selectAll(".axis--y").transition().duration(500)
       .call(d3.axisRight(this.y)
         .tickSize(this.width))
       .call(g => g.select(".domain")
         .remove())
-      .call(g => g.selectAll(".tick:not(:first-of-type) line")
+      .call(g => g.selectAll(".tick line")
         .attr("stroke-opacity", 0.5)
         .attr("stroke-dasharray", "2,2"))
       .call(g => g.selectAll(".tick text")
@@ -148,24 +205,29 @@ class Figure2 {
   }
 
   static updateCoffeeInfo(hovered_circle) {
-    function updateBrand(){
-      document.getElementById('fig2_brand_name').querySelector("text").innerHTML = `<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'><i class='fa fa-circle'></i></span> ` + hovered_circle["Roastery"]
+    function updateBrand() {
+      document.getElementById('fig2_brand_name').querySelector("text").innerHTML = hovered_circle["Roastery"] //<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'>`<i class='fa fa-circle'></i></span> `
       document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
+      document.getElementById('fig2_brand_image').style.background = colors[brands.indexOf(hovered_circle["Roastery"])]
       let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
-      // document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
-      document.getElementById('fig2_brand_country_name').textContent = code_to_country[country_code]
+      document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
+      // const brand_data = this.brand_data.filter(d => { return hovered_circle["Roastery"].includes(d.Roastery) })
+      // console.log(brand_data)
+      // document.getElementById('fig2_brand_coffee').querySelector("text").textContent = brand_data["Coffee count"]
+      // document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"] + '/5.0'
+      // document.getElementById('fig2_recommended').querySelector("text").textContent = Math.round(parseFloat(hovered_circle["Recommended"])) + '%'
     }
 
-    function updateCoffee_product(){
+    function updateCoffeeProduct() {
       document.getElementById('fig2_coffee_name').querySelector("text").textContent = toTitleCase(hovered_circle["Item Name"].split('-')[0])
       document.getElementById('fig2_price').querySelector("text").textContent = hovered_circle["Price"]
       document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"] + '/5.0'
       document.getElementById('fig2_recommended').querySelector("text").textContent = Math.round(parseFloat(hovered_circle["Recommended"])) + '%'
-      document.getElementById('fig2_origin_country_name').textContent = hovered_circle["Coffee Origin"]
+      document.getElementById('fig2_coffee_origin').textContent = hovered_circle["Coffee Origin"]
     }
 
     updateBrand();
-    updateCoffee_product();
+    updateCoffeeProduct();
   }
 
   setMainPlot() {
@@ -175,22 +237,21 @@ class Figure2 {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    let x_buf = d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) / this.circle_radius
     this.x = d3.scaleLinear()
-      .domain([-1 * x_buf, d3.max(this.plot_data, d => { return parseFloat(d[this.xaxis_value]) }) + x_buf * 2])
+      .domain(this.updateXDomain())
       .range([0, this.width]);
 
     this.y = d3.scaleLinear()
-      .domain([0, d3.max(this.plot_data, d => { return parseFloat(d[this.yaxis_value]) })])
-      .range([this.height - this.circle_radius * 2, this.circle_radius]);
+      .domain(this.updateYDomain())
+      .range([this.height - this.circle_radius, this.circle_radius * 1.5]);
 
     this.svg.append("g")
-      .attr("id", "xaxis")
+      .attr("class", "axis axis--x")
       .attr("transform", `translate(${margin.left}, ${this.height})`)
       .call(d3.axisBottom(this.x));
 
     this.svg.append('g')
-      .attr("id", "yaxis")
+      .attr("class", "axis axis--y")
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(d3.axisRight(this.y)
         .tickSize(this.width))
@@ -205,12 +266,12 @@ class Figure2 {
 
     this.setGraph()
   }
- 
-  setGraph(){
-      this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
-      let is_about_set = this.is_about_set
-      // Remove all the circles from the plot
-      this.svg.selectAll("circle")
+
+  setGraph() {
+    this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
+    let is_about_set = this.is_about_set
+    // Remove all the circles from the plot
+    this.svg.selectAll("circle")
       .transition()
       .duration(500)
       .attr("r", 0)
@@ -227,36 +288,54 @@ class Figure2 {
           .attr("r", 0)
           .style("fill", d => this.roasteryToColor(d.Roastery))
           .style("opacity", "0.7")
+          .style("filter", "url(#small_glow)")
+          .style("fill", function (d) {
+            return "url(#small_gradient-" + toTitleCaseClean(d.Roastery) + ")"
+          })
           .attr("stroke", d => this.roasteryToColor(d.Roastery))
           .on("mouseover", function (data) {
-            if(!is_about_set){   // TODO: there shoulf be a better way todo this
+            if (!is_about_set) {   // TODO: there shoulf be a better way todo this
               is_about_set = true
               document.getElementById("fig2_coffee_brand_info").innerHTML = document.getElementById("fig2_after_circle").innerHTML
             }
             Figure2.updateCoffeeInfo(data.target.__data__)
+
             d3.select(this)
-            .attr("r", 35)
-            .style("opacity", "1")
+              .raise()
+              .attr("r", 40)
+              .style("opacity", "1")
+              .style("fill", function (d) {
+                return "url(#extra_gradient-" + toTitleCaseClean(d.Roastery) + ")";
+              })
           })
           .on("mouseout", function () {
             d3.select(this)
-            .attr("r", 25)
+              .attr("r", 25)
               .style("opacity", "0.7")
+              .style("filter", "url(#small_glow)")
+              .style("fill", function (d) {
+                return "url(#small_gradient-" + toTitleCaseClean(d.Roastery) + ")";
+              })
+
           })
           .transition()
           .duration(500)
           .ease(d3.easeBounceOut)
           .attr("r", 25)
       });
-      this.is_about_set = is_about_set
+    this.is_about_set = is_about_set
   }
 }
 
 
 $(document).ready(function () {
-  d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json").then(function (data) {
-    let fig2 = new Figure2(data, window.innerHeight * 0.8)
+  Promise.all([
+    d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json"),
+    d3.json('../dataset/kofio_dataset/kofio_brand_dataset.json')
+  ]).then(function ([data01, brand_data]) {
+    let fig2 = new Figure2(data01, brand_data, window.innerHeight * 0.8)
     fig2.init()
+
   })
 
 

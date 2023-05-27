@@ -24,6 +24,9 @@
     overflow: scroll;
 }
 
+.axis--y path {
+  stroke: none;
+}
 .side-panel {
   overflow: hidden;
   border-radius: 1rem;
@@ -31,7 +34,31 @@
   padding: 10px;
 }
 
-.container-brand  {
-  display: flex;
-  flex-direction: row;
+.side-panel2 {
+  overflow: hidden;
+  /* border-radius: 1rem; */
+  /* box-shadow: 0 0 10px #ccc; */
+  padding: 10px;
+}
+
+.imgBorder {
+    /* border: 1px solid #ebeced; */
+    width: 45%;
+    /* height: 40%; */
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 120px;
+    padding: 8px;
+    /* background: #fff; */
+}
+
+.imgFlag  {
+  position: absolute;
+  z-index: 10;
+  top: -8px;
+  left: 36%;
+  border-radius: 3px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  height: 15% !important;
+  width: 25% !important;
+  border: 1px solid #d3d3d3;
 }
