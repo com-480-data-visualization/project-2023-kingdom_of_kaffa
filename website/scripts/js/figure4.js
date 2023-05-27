@@ -48,7 +48,7 @@ const NAMES = [
     "Indonesia",
     "Fruity",
     "Chocolate",
-    "Neutral",
+    "Nutty",
     "Sweet",
     "Spicy",
     "Savory",
@@ -78,8 +78,8 @@ const PULLREQUESTMATRIX = [
     [3,2,1,3,3,3,3,3,3,3,0,2,2,2,2,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,3,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3]
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 ];
 
 function updateCoffeeInfo(data){
@@ -87,7 +87,7 @@ function updateCoffeeInfo(data){
   document.getElementById('fig4_coffee_title').innerHTML = `<h3>${data.name} Coffee</h3>`;
   document.getElementById('fig4_coffee_des').querySelector("text").innerHTML = data.description;
 
-  document.getElementById('flavor-title').innerHTML = `<h4>${data.name} Coffee may have the following flavors:</h4>`;
+  // document.getElementById('flavor-title').innerHTML = `<h4>${data.name} Coffee may have the following flavors:</h4>`;
   let flavors = "";
   data.flavor.forEach((f) => {
     flavors += `<div class="flavor-icon"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
@@ -101,8 +101,23 @@ function updateCoffeeInfo(data){
   document.getElementById('food-contain').innerHTML = foods;
 }
 
-function undateFlavorInfo(){
+function updateFlavorInfo(data){
+  console.log(data);
+  document.getElementById('fig4_flavor_title').innerHTML = `<h3>${data.name} Flavor</h3>`;
+  document.getElementById('fig4_flavor_des').querySelector("text").innerHTML = data.description;
 
+  let flavors = "";
+  console.log(data.varieties);
+  data.varieties.forEach((f) => {
+    flavors += `<div class="flavor-icon"><p>${f}</p></div>`;
+  });
+  document.getElementById('typical-flavor').innerHTML = flavors;
+
+  let foods = "";
+  Object.entries(data.food).forEach(([foodName, imgSrc]) => {
+    foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
+  });
+  document.getElementById('typical-food').innerHTML = foods;
 }
 
 $(document).ready(function () {
@@ -406,9 +421,11 @@ $(document).ready(function () {
     if (isClicked){
       let index = datum.index;
       if (index < 15){
-        console.log(index);
         updateCoffeeInfo(data[index.toString()]);
         document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
+      } else {
+        updateFlavorInfo(data[index.toString()]);
+        document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_flavor").innerHTML
       }
     }
     else {
