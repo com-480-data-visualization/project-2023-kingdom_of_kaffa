@@ -1,77 +1,36 @@
-const arrowLeft = document.querySelector(".arrow-left");
-const arrowRight = document.querySelector(".arrow-right");
-const foodItems = document.querySelectorAll(".food-item");
-
-let activeIndex = 0;
-
-arrowLeft.addEventListener("click", () => {
-  foodItems[activeIndex].classList.remove("active");
-  activeIndex = (activeIndex === 0) ? foodItems.length - 1 : activeIndex - 1;
-  foodItems[activeIndex].classList.add("active");
-});
-
-arrowRight.addEventListener("click", () => {
-  foodItems[activeIndex].classList.remove("active");
-  activeIndex = (activeIndex === foodItems.length - 1) ? 0 : activeIndex + 1;
-  foodItems[activeIndex].classList.add("active");
-});
-
-
-const r0 = 250; // inner radius
-const r1 = r0 * 1.03; // outer radius
-const fade = 0.2;
-const duration = 1000;
-
-var color = (i) => d3.interpolateRainbow(shuffled[i] / names.length);
-const arc = d3.arc().innerRadius(r0).outerRadius(r1);
-const ribbon = d3.ribbon().radius(r0);
+var colorScale = d3.scaleOrdinal()
+  .range(['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#7E8DDB', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b','#EB9ECF','#EF7774']);
+var color = (i) => colorScale(i);
 
 var svg, container, groupsContainer, groups, names, matrix, shuffled;
-
-function arcTween(a) {
-    const i = d3.interpolate(this._current, a);
-    this._current = i(1);
-    return (t) => arc(i(t));
-}
-
-function ribbonTween(a) {
-    const i = d3.interpolate(this._current, a);
-    this._current = i(1);
-    return (t) => ribbon(i(t));
-}
-
-function angleTween(a) {
-    const i = d3.interpolate(this._current, a);
-    this._current = i(1);
-    return (t) => angle(i(t));
-}
-
-function angle(a) {
-    return `rotate(${(a.angle * 180) / Math.PI - 90})
-                  translate(${r0 + 26})
-                  ${a.angle > Math.PI ? "rotate(180)" : ""}`;
-}
+var isClicked = false;
 
 function setNames(data) {
-    names = data;
-    shuffled = shuffleIndices(names.length);
+  names = data;
+  shuffled = shuffleIndices(names.length);
 }
 
-function chordKey(data) {
-    return data.source.index < data.target.index
-        ? data.source.index + "-" + data.target.index
-        : data.target.index + "-" + data.source.index;
-}
-
-function init(data) {
-    matrix = data;
+class Pairing {
+  constructor(data, matrix)  {
+    this.r0 = 230; // inner radius
+    this.r1 = r0 * 1.03; // outer radius
+    this.fade = 0.2;
+    this.duration = 1000;
+    this.data = data;
+    this.matrix = matrix;
+    this.arc = d3.arc().innerRadius(r0).outerRadius(r1);
+    this.ribbon = d3.ribbon().radius(r0-10);
+  }
+  
+  init() {
+    matrix = this.matrix;
     svg = d3
         .select("#pairing-viz")
         .append("svg")
         .attr("width", 800)
-        .attr("height", 900)
+        .attr("height", 800)
         .append("g")
-        .attr("transform", "translate(400,450)");
+        .attr("transform", "translate(400,400)");
 
     container = svg.append("g").attr("class", "container");
 
@@ -105,7 +64,8 @@ function init(data) {
     groups
         .on("mouseover", mouseover)
         .on("mousemove", groupMouseMove)
-        .on("mouseout", mouseout);
+        .on("mouseout", mouseout)
+        .on("click",this.clickHandler);
 
     groups
         .append("text")
@@ -150,11 +110,61 @@ function init(data) {
         .attrTween("d", ribbonTween);
 
     chords
+        .on("click", this.clickHandler)
         .on("mouseover", mouseover)
         .on("mousemove", chordMouseMove)
         .on("mouseout", mouseout);
 
     setTimeout(() => update(matrix), 0);
+  }
+
+  clickHandler(event, datum) {
+    isClicked = !isClicked;
+    if (isClicked){
+      let index = datum.index;
+      if (index < 15){
+        updateCoffeeInfo(this.data[index]);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+// var color = (i) => d3.interpolateRainbow(shuffled[i] / names.length);
+
+
+function arcTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => arc(i(t));
+}
+
+function ribbonTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => ribbon(i(t));
+}
+
+function angleTween(a) {
+    const i = d3.interpolate(this._current, a);
+    this._current = i(1);
+    return (t) => angle(i(t));
+}
+
+function angle(a) {
+    return `rotate(${(a.angle * 180) / Math.PI - 90})
+                  translate(${r0 + 26})
+                  ${a.angle > Math.PI ? "rotate(180)" : ""}`;
+}
+
+function chordKey(data) {
+    return data.source.index < data.target.index
+        ? data.source.index + "-" + data.target.index
+        : data.target.index + "-" + data.source.index;
 }
 
 function update(matrix) {
@@ -222,8 +232,10 @@ function update(matrix) {
 }
 
 function groupMouseMove(event, datum) {
-    groupFocus(datum.index);
-    groupTooltip(event, datum);
+    if (!isClicked){
+      groupFocus(datum.index);
+      groupTooltip(event, datum);
+    }
 }
 
 function groupFocus(index) {
@@ -267,11 +279,13 @@ function unfocus() {
 }
 
 function chordMouseMove(event, datum) {
-    var srcIdx = datum.source.index;
-    var tgtIdx = datum.target.index;
+    if (!isClicked){
+      var srcIdx = datum.source.index;
+      var tgtIdx = datum.target.index;
 
-    chordFocus(srcIdx, tgtIdx);
-    chordTooltip(srcIdx, tgtIdx, event);
+      chordFocus(srcIdx, tgtIdx);
+      chordTooltip(srcIdx, tgtIdx, event);
+    }
 }
 
 function chordTooltip(srcIdx, tgtIdx, event) {
@@ -303,12 +317,16 @@ var tooltip = d3
     .style("display", "inline");
 
 function mouseover() {
-    tooltip.style("display", "inline");
+    if (!isClicked){
+      tooltip.style("display", "inline");
+    }
 }
 
 function mouseout() {
-    tooltip.style("display", "none");
-    unfocus();
+    if (!isClicked){
+      tooltip.style("display", "none");
+      unfocus();
+    }
 }
 
 function shuffleIndices(num) {
@@ -323,21 +341,6 @@ function shuffleIndices(num) {
     }
 
     return arr;
-}
-
-function flatToMatrix(flat) {
-    var dim = Math.sqrt(flat.length);
-    var matrix = [];
-
-    for (var i = 0; i < dim; i++) {
-        matrix.push([]);
-    }
-
-    for (var i = 0; i < flat.length; i++) {
-        matrix[Math.floor(i / dim)].push(flat[i]);
-    }
-
-    return matrix;
 }
 
 const NAMES = [
@@ -369,9 +372,9 @@ const NAMES = [
 const PULLREQUESTMATRIX = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,3,0,11,0,0,0,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,13,0,38,0,0,0,13],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,22,0,30,0,0,17,4],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,7,0,9,0,0,3,2],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,37,12,0,42,0,0,6,3],
@@ -382,17 +385,42 @@ const PULLREQUESTMATRIX = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,0,4,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,6,0,0,1,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,4,0,10,0,0,2,3],
-    [1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [1,1,0,1,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,1,1,1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
-    [1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    [3,2,3,3,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [2,2,0,3,0,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,2,2,2,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0],
+    [3,2,1,3,3,3,3,3,3,3,0,2,2,2,2,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,3,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3]
 ];
 
+function updateCoffeeInfo(data){
+  document.getElementById('fig4_coffee_title').querySelector("text").innerHTML = <h3>data.name + " Coffee"</h3>;
+  document.getElementById('fig4_coffee_des').querySelector("text").innerHTML = data.description;
+
+  let flavors = "";
+  data.flavor.forEach((f) => {
+    flavors += `<div class="food-item active"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
+  });
+  document.getElementById('flavor-contain').innerHTML = flavors;
+
+  let foods = "";
+  Object.entries(data.food).forEach(([foodName, imgSrc]) => {
+    foods += `<div class="food-item active"><img src="${imgSrc}"><p>${foodName}</p></div>`;
+  });
+  document.getElementById('food-contain').innerHTML = foods;
+}
+
+function undateFlavorInfo(){
+
+}
+
 $(document).ready(function () {
-  setNames(NAMES);
-  init(PULLREQUESTMATRIX);
+  d3.json("../dataset/kofio_dataset/pairing.jsonl").then(function (data) {
+    setNames(NAMES);
+    console.log(5);
+    let fig4 = new Pairing(data, PULLREQUESTMATRIX);
+    fig4.init();
+  })
 });
