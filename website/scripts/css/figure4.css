@@ -82,7 +82,7 @@
 }
   
 .item-container div {
-    padding: 16px;
+    padding: 0 16px 0 16px;
     font-size: 0.7rem;
     text-rendering: optimizeLegibility;
     text-size-adjust: 90%;
