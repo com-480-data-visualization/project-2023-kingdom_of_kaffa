@@ -1,0 +1,3 @@
+{
+    "0": {"id": 0,"name": "Kenya","description": "Coffee from Kenya are known for their bright, bold flavour and wine-like acidity.","flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.jpg","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}}
+}
