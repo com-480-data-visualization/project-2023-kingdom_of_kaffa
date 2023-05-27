@@ -76,7 +76,6 @@
     justify-content: center;
     align-items: center;
     padding: 0 20px;
-    margin-top: 0px;
     margin-bottom: -20px;
     box-sizing: inherit;
     grid-gap: 0px;
@@ -101,10 +100,8 @@
   height:10px;
 }
 
-#typical-food-h4 {
-  font-weight:bold;
-  margin-top:20px;
-  margin-bottom: 20px;
+#food-title {
+  margin-bottom: 10px;
 }
 
 .flavor-icon {
@@ -166,7 +163,20 @@
   .panel label {
     vertical-align: text-top;
   }
-
+  
+  .tooltip {
+    white-space: pre;
+    position: absolute;
+    padding: 5px;
+    margin-top: -20px;
+    font: 1em sans-serif;
+    background: black;
+    pointer-events: none;
+    color: white;
+    border-radius: 2px;
+    opacity: 0.85;
+    z-index: 9999;
+  }
   
   input[type="range"] {
     -webkit-appearance: none;
