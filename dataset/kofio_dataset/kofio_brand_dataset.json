@@ -1,220 +1,155 @@
 [
     {
         "Brand": "The naughty dog",
-        "Coffee count": "(18x)",
-        "Review": "4.5",
-        "Recommended": "92%",
-        "About": "A small roaster that focuses on African coffees (mainly Ethiopia) and coffees from Central and South America."
+        "Brand Coffee count": "(18x)",
+        "Brand Review": "4.5",
+        "Brand Recommended": "92%",
+        "Brand About": "A small roaster that focuses on African coffees (mainly Ethiopia) and coffees from Central and South America."
     },
     {
         "Brand": "Candycane Coffee",
-        "Coffee count": "(18x)",
-        "Review": "4.4",
-        "Recommended": "93%",
-        "About": "We are Candycane coffee, boys who roast coffee as sweet as candy and offer additional services for cafes and educational courses for coffee enthusiasts. "
+        "Brand Coffee count": "(18x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "93%",
+        "Brand About": "We are Candycane coffee, boys who roast coffee as sweet as candy and offer additional services for cafes and educational courses for coffee enthusiasts. "
     },
     {
         "Brand": "DAK Coffee Roasters",
-        "Coffee count": "(13x)",
-        "Review": "4.7",
-        "Recommended": "95%"
+        "Brand Coffee count": "(13x)",
+        "Brand Review": "4.7",
+        "Brand Recommended": "95%",
+        "Brand About":"DAK Coffee roasters roastery lives by these three slogans: <b>ethically source - carefully selected - eco-friendly packaging </b>"
     },
     {
         "Brand": "HAYB Speciality Coffee",
-        "Coffee count": "(7x)",
-        "Review": "4.3",
-        "Recommended": "83%"
+        "Brand Coffee count": "(7x)",
+        "Brand Review": "4.3",
+        "Brand Recommended": "83%",
+        "Brand About": "HAYB is a roastery and a once-in-a-lifetime project in the minds of coffee lovers who simply ask: How Are You Brewing?"
     },
     {
         "Brand": "Father's Coffee Roastery",
-        "Coffee count": "(21x)",
-        "Review": "4.5",
-        "Recommended": "95%"
+        "Brand Coffee count": "(21x)",
+        "Brand Review": "4.5",
+        "Brand Recommended": "95%",
+        "Brand About":"The roastery focuses on every detail of its roasting and quality is its number one priority."
     },
     {
         "Brand": "Industra Coffee",
-        "Coffee count": "(7x)",
-        "Review": "4.4",
-        "Recommended": "91%"
+        "Brand Coffee count": "(7x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "91%",
+        "Brand About":"We serve coffee, we teach Brand about coffee and now we roast coffee!"
     },
     {
         "Brand": "The Barn",
-        "Coffee count": "(4x)",
-        "Review": "4.6",
-        "Recommended": "96%"
+        "Brand Coffee count": "(4x)",
+        "Brand Review": "4.6",
+        "Brand Recommended": "96%",
+        "Brand About":"No compromises, no 'fakes', just delicious coffee."
     },
     {
         "Brand": "Square Mile",
-        "Coffee count": "(7x)",
-        "Review": "4.4",
-        "Recommended": "92%"
+        "Brand Coffee count": "(7x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "92%",
+        "Brand About": "Making London famous coffee and getting special grains from non-traditional regions."
     },
     {
         "Brand": "Gardelli Coffee",
-        "Coffee count": "(12x)",
-        "Review": "4.5",
-        "Recommended": "91%"
+        "Brand Coffee count": "(12x)",
+        "Brand Review": "4.5",
+        "Brand Recommended": "91%",
+        "Brand About": "Coffee is truly our passion; it is indeed our life!"
     },
-    {
-        "Brand": "Diamond's Roastery",
-        "Coffee count": "(4x)",
-        "Review": "4.5",
-        "Recommended": "92%"
-    },
+
     {
         "Brand": "Beansmith.s",
-        "Coffee count": "(12x)",
-        "Review": "4.6",
-        "Recommended": "95%"
+        "Brand Coffee count": "(12x)",
+        "Brand Review": "4.6",
+        "Brand Recommended": "95%",
+        "Brand About": "Mountain grown, hand-picked, roasted in a smithy's village."
     },
     {
         "Brand": "Dark Woods Coffee",
-        "Coffee count": "(1x)",
-        "Review": "4.6",
-        "Recommended": "92%"
+        "Brand Coffee count": "(1x)",
+        "Brand Review": "4.6",
+        "Brand Recommended": "92%",
+        "Brand About": "We want the finest coffee to be enjoyable and accessible to everyone."
     },
     {
         "Brand": "Main Lane Coffee Roasters",
-        "Coffee count": [],
-        "Review": "4.4",
-        "Recommended": "86%"
+        "Brand Coffee count": "(12x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "86%",
+        "Brand About": "A small roastery in the middle of Berlin with a colorful packaging."
     },
-    {
-        "Brand": "Kmen Coffee Roasters",
-        "Coffee count": "(13x)",
-        "Review": "4.3",
-        "Recommended": "86%"
-    },
-    {
-        "Brand": "Mima coffee roastery",
-        "Coffee count": [],
-        "Review": "5.0",
-        "Recommended": "100%"
-    },
+
     {
         "Brand": "Nordbeans",
-        "Coffee count": "(5x)",
-        "Review": "4.3",
-        "Recommended": "90%"
+        "Brand Coffee count": "(5x)",
+        "Brand Review": "4.3",
+        "Brand Recommended": "90%",
+        "Brand About": "We know that coffee isn't just Brand about your daily caffeine intake."
     },
     {
         "Brand": "Good Beans",
-        "Coffee count": "(1x)",
-        "Review": "4.3",
-        "Recommended": "70%"
+        "Brand Coffee count": "(1x)",
+        "Brand Review": "4.3",
+        "Brand Recommended": "70%",
+        "Brand About": "Making ethically-sourced coffee more approachable."
     },
     {
         "Brand": "Concept Coffee Roasters",
-        "Coffee count": "(3x)",
-        "Review": "4.5",
-        "Recommended": "97%"
+        "Brand Coffee count": "(3x)",
+        "Brand Review": "4.5",
+        "Brand Recommended": "97%",
+        "Brand About": "We strictly roast only single origins and specialty grades - specialty coffee."
     },
     {
         "Brand": "Morgon Coffee Roasters",
-        "Coffee count": "(5x)",
-        "Review": "4.4",
-        "Recommended": "99%"
+        "Brand Coffee count": "(5x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "99%",
+        "Brand About":"by working closely with everyone involved, we can create a product that everyone will love."
     },
-    {
-        "Brand": "19grams coffee",
-        "Coffee count": "(7x)",
-        "Review": "4.5",
-        "Recommended": "100%"
-    },
-    {
-        "Brand": "3FE",
-        "Coffee count": "(1x)",
-        "Review": "3.7",
-        "Recommended": "77%"
-    },
+
     {
         "Brand": "BeBerry Coffee",
-        "Coffee count": "(4x)",
-        "Review": "4.7",
-        "Recommended": "97%"
+        "Brand Coffee count": "(4x)",
+        "Brand Review": "4.7",
+        "Brand Recommended": "97%",
+        "Brand About": "We roast our coffees so that their character stands out and their taste reflects all the efforts that have been invested in them."
     },
-    {
-        "Brand": "BirdSong Coffee",
-        "Coffee count": "(2x)",
-        "Review": "4.2",
-        "Recommended": "84%"
-    },
-    {
-        "Brand": "Caravan Coffee Roasters",
-        "Coffee count": "(2x)",
-        "Review": "4.0",
-        "Recommended": "69%"
-    },
+
     {
         "Brand": "Coffea Circulor",
-        "Coffee count": "(7x)",
-        "Review": "4.5",
-        "Recommended": "94%"
+        "Brand Coffee count": "(7x)",
+        "Brand Review": "4.5",
+        "Brand Recommended": "94%",
+        "Brand About":"Coffee for us is innovation, respect, biology, cultivation, payment for ecosystem services, production, processing, roasting, storing and brewing."
     },
-    {
-        "Brand": "Colonna Coffee",
-        "Coffee count": [],
-        "Review": "4.3",
-        "Recommended": "88%"
-    },
+
     {
         "Brand": "Dos Mundos",
-        "Coffee count": "(10x)",
-        "Review": "4.3",
-        "Recommended": "89%"
+        "Brand Coffee count": "(10x)",
+        "Brand Review": "4.3",
+        "Brand Recommended": "89%",
+        "Brand About":"In our roastery the world of green coffee meets the world of roasted coffee."
     },
     {
         "Brand": "Doubleshot",
-        "Coffee count": "(2x)",
-        "Review": "5.0",
-        "Recommended": "100%"
+        "Brand Coffee count": "(2x)",
+        "Brand Review": "5.0",
+        "Brand Recommended": "100%",
+        "Brand About":"We choose coffees that have an interesting taste profile, unmistakably reflect the terroir, variety, processing and philosophy of the farmer."
     },
     {
         "Brand": "Fiftybeans",
-        "Coffee count": "(10x)",
-        "Review": "4.4",
-        "Recommended": "92%"
-    },
-    {
-        "Brand": "Friedhats Coffee",
-        "Coffee count": [],
-        "Review": "4.6",
-        "Recommended": "92%"
-    },
-    {
-        "Brand": "Goat Story",
-        "Coffee count": "(2x)",
-        "Review": "4.3",
-        "Recommended": "89%"
-    },
-    {
-        "Brand": "Mlsnacava",
-        "Coffee count": [],
-        "Review": "4.2",
-        "Recommended": "67%"
-    },
-    {
-        "Brand": "Pikola",
-        "Coffee count": [],
-        "Review": "4.7",
-        "Recommended": "95%"
-    },
-    {
-        "Brand": "Rebelbean",
-        "Coffee count": [],
-        "Review": "4.4",
-        "Recommended": "95%"
-    },
-    {
-        "Brand": "The Coffee Collective",
-        "Coffee count": [],
-        "Review": "4.7",
-        "Recommended": "97%"
-    },
-    {
-        "Brand": "Tim Wendelboe",
-        "Coffee count": [],
-        "Review": "4.6",
-        "Recommended": "100%"
+        "Brand Coffee count": "(10x)",
+        "Brand Review": "4.4",
+        "Brand Recommended": "92%",
+        "Brand About":"We want coffee lovers to feel as comfortable as possible with Fiftybeans."
     }
+
 ]
