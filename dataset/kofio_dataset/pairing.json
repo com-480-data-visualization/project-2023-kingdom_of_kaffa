@@ -4,41 +4,55 @@
     "flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.png","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}, "food_flavor":["Fruity, Chocolate, Sweet"]},
 
     "1":{"name":"Ethiopia",
-    "description":"",
+    "description":"Ethiopian coffee is famous for its exquisite, single-origin coffee beans and for being the birthplace of this beloved brew. So superior is Ethiopian coffee beans that they have earned the title of greatest single-origin specialty coffee beans in the world.",
     "flavor":["Sweet","Fruity","Chocolate","Floral"],
-    "food":{"Berries":"image/pairing-food/berries.jpg",
-    "Doughuts":"image/pairing-food/doughuts.jpg",
-    "Milk Chocolate":"image/pairing-food/milk_chocolate.jpg"}
+    "food":{"Berries":"image/pairing-food/berries.png",
+    "Doughnuts":"image/pairing-food/doughnuts.png",
+    "Milk Chocolate":"image/pairing-food/milk_chocolate.png"}
     },
 
-    "2":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "2":{"name":"Uganda",
+    "description":"Expect to taste everything from savoury sun-dried tomato to florals and fresh citrus. The flavour profile of Uganda coffee has a smooth and pleasant taste with hints of berries and stone-fruit, a signature trademark of many African coffees.Uganda Coffee Beans have lower complexity and lighter body.",
+    "flavor":["Floral","Fruity"],
+    "food":{"Blueberries":"image/pairing-food/blueberries.png","Berries":"image/pairing-food/berries.png",
+    "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "3":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "3":{"name":"Yemen",
+    "description":"Yemeni coffee is earthy, aromatic, and complex, with dried fruit tones and notes of chocolate. Some describe the coffee as rustic or musky. It's often full-bodied (meaning it has a smooth quality and retains much of its flavor when diluted) and rich.",
+    "flavor":["Sweet","Fruity"],
+    "food":{"Blueberries":"image/pairing-food/blueberries.png",
+    "White Chocolate":"image/pairing-food/white_chocolate.png",
+    "Milk Chocolate":"image/pairing-food/milk_chocolate.png",
+    "Fruit Scones":"image/pairing-food/fruit_scones.png"}
     },
 
-    "4":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "4":{"name":"Tanzania",
+    "description":"Somewhat similar to Kenya coffee, Tanzania coffee reviews also exhibits a bright and vibrant, wine-y acidity, sometimes even sharp, and with a deep, rich, and strong taste. Typically with a medium to full body that is intense and creamy, a fine Tanzania coffee has tasting notes of a sweet berry-like, fruity flavor and sometimes notes of cedar.",
+    "flavor":["Sweet","Fruity","Floral"],
+    "food":{"Peaches, Plums, Apricots":"image/pairing-food/peaches.png",
+    "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "5":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "5":{"name":"Brazil",
+    "description":"Many experts agree that Brazilian coffee has a distinct flavor, specifically being low in acidity, smooth-bodied, and sweet. It often has hints of chocolate, caramel, or slightly nutty notes that shine through.",
+    "flavor":["Sweet","Fruity","Chocolate","Nutty","Floral"],
+    "food":{"Fruit Tart":"image/pairing-food/fruit_tart.png",
+    "Chocolate":"image/pairing-food/chocolate.png",
+    "Dark Chocolate":"image/pairing-food/dark_chocolate.png",
+    "Wheat Bread":"image/pairing-food/wheat_bread.png"}
     },
 
-    "6":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "6":{"name":"Costa Rica",
+    "description":"Costa Rica coffees have a clean, sweet and fruity taste with moderate acidity levels. Some of the typical flavour notes associated with Costa Rican coffee, are honey, chocolate, citrus, vanilla, grape and molasses. What you can expect, are vibrant and well-balanced fruit flavours with a clean sweet and light body.",
+    "flavor":["Sweet","Fruity","Chocolate","Nutty","Floral"],
+    "food":{"Fruit Tart":"image/pairing-food/fruit_tart.png",
+    "White Chocolate":"image/pairing-food/white_chocolate.png",
+    "Sweet Bread":"image/pairing-food/sweet_bread.png",
+    "Wheat Bread":"image/pairing-food/wheat_bread.png",
+    "Spicy Food":"image/pairing-food/spicy_food.png",
+    "Savory Breakfast":"image/pairing-food/breakfast.png",
+    "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
     "7":{"name":"",
