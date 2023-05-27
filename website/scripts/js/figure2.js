@@ -30,9 +30,9 @@ const colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273'
 
 class Figure2 {
 
-  constructor(data, brand_data, innerHeight) {
+  constructor(data, innerHeight) {
     this.plot_data = data
-    this.brand_data = brand_data
+    // this.brand_data = brand_data
     this.original_data = data
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
@@ -211,11 +211,11 @@ class Figure2 {
       document.getElementById('fig2_brand_image').style.background = colors[brands.indexOf(hovered_circle["Roastery"])]
       let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
       document.getElementById('fig2_brand_country_image').src = "image/flags/" + country_code + '.png'
-      // const brand_data = this.brand_data.filter(d => { return hovered_circle["Roastery"].includes(d.Roastery) })
-      // console.log(brand_data)
-      // document.getElementById('fig2_brand_coffee').querySelector("text").textContent = brand_data["Coffee count"]
-      // document.getElementById('fig2_rating').querySelector("text").textContent = hovered_circle["Rating"] + '/5.0'
-      // document.getElementById('fig2_recommended').querySelector("text").textContent = Math.round(parseFloat(hovered_circle["Recommended"])) + '%'
+      document.getElementById('fig2_brand_coffee').querySelector("text").textContent = hovered_circle["Brand Coffee count"]
+      document.getElementById('fig2_brand_rating').querySelector("text").textContent = hovered_circle["Brand Review"] + '/5.0'
+      document.getElementById('fig2_brand_recommended').querySelector("text").textContent = Math.round(parseFloat(hovered_circle["Brand Recommended"])) + '%'
+      document.getElementById('fig2_brand_about').textContent = hovered_circle["Brand About"]
+
     }
 
     function updateCoffeeProduct() {
@@ -330,10 +330,10 @@ class Figure2 {
 
 $(document).ready(function () {
   Promise.all([
-    d3.json("../dataset/kofio_dataset/price_rating_rec_clean.json"),
-    d3.json('../dataset/kofio_dataset/kofio_brand_dataset.json')
-  ]).then(function ([data01, brand_data]) {
-    let fig2 = new Figure2(data01, brand_data, window.innerHeight * 0.8)
+    d3.json("../dataset/kofio_dataset/brand_coffee_combined.json"),
+    // d3.json('../dataset/kofio_dataset/kofio_brand_dataset.json')
+  ]).then(function ([data01]) {
+    let fig2 = new Figure2(data01, window.innerHeight * 0.8)
     fig2.init()
 
   })
