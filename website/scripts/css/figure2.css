@@ -8,6 +8,12 @@
 #section_figure2 .title {
   font-family: "Darumadrop One", cursive;
 }
+.selectpicker-container .dropdown-menu {
+  max-height: 200px; /* Set a max height for the dropdown menu */
+  overflow: hidden; /* Hide default browser scrolling */
+  touch-action: pan-y; /* Enable touch action for vertical scrolling */
+  -webkit-overflow-scrolling: touch; /* Enable two-finger scrolling on iOS */
+}
 #fig2-brand-dropdown-content {
   max-height: 13em;
   overflow: auto;
