@@ -37,7 +37,7 @@ class Figure2 {
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
     this.selected_brands = []
-    this.circle_radius = 20
+    this.circle_radius = 25
     this.roasteryToColor = this.setRoasteryToColor()
     this.is_about_set = false
     this.svg = d3.select("#fig2-plot")
@@ -63,7 +63,7 @@ class Figure2 {
       .data(brands)
       .enter().append("radialGradient")
       //Create a unique id per "planet"
-      .attr("id", function (d) {return level + "_gradient-" + toTitleCaseClean(d); })
+      .attr("id", function (d) { return level + "_gradient-" + toTitleCaseClean(d); })
 
     //Then the actual color almost halfway
     brandGradients.append("stop")
@@ -204,7 +204,7 @@ class Figure2 {
         .attr("dy", -4))
   }
 
-  static updateCoffeeInfo(hovered_circle) {
+  updateCoffeeInfo(hovered_circle) {
     function updateBrand() {
       document.getElementById('fig2_brand_name').querySelector("text").innerHTML = hovered_circle["Roastery"] //<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'>`<i class='fa fa-circle'></i></span> `
       document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
@@ -267,9 +267,18 @@ class Figure2 {
     this.setGraph()
   }
 
+  setCircleEffects(nodes, opacity, circle_radius, glow, gradient) {
+
+    nodes.style("opacity", opacity)
+      .style("filter", `url(#${glow}_glow)`)
+      .style("fill", function (d) {
+        return `url(#${gradient}_gradient-` + toTitleCaseClean(d.Roastery) + ")";
+      })
+      .attr("r", circle_radius);
+  }
+
   setGraph() {
     this.plot_data = this.original_data.filter(d => { return this.selected_brands.includes(d.Roastery) })
-    let is_about_set = this.is_about_set
     // Remove all the circles from the plot
     this.svg.selectAll("circle")
       .transition()
@@ -278,52 +287,64 @@ class Figure2 {
       .remove()
       .end()
       .then(() => {
+        let onclick = false
+        let onclick_roastery = "";
         // Add new circles to the graph
-        this.svg.select("g")
+        let nodes = this.svg.select("g")
           .selectAll("circle")
           .data(this.plot_data)
           .join("circle")
           .attr("cx", d => this.x(d[this.xaxis_value]))
           .attr("cy", d => this.y(d[this.yaxis_value]))
           .attr("r", 0)
-          .style("fill", d => this.roasteryToColor(d.Roastery))
-          .style("opacity", "0.7")
-          .style("filter", "url(#small_glow)")
-          .style("fill", function (d) {
-            return "url(#small_gradient-" + toTitleCaseClean(d.Roastery) + ")"
-          })
-          .attr("stroke", d => this.roasteryToColor(d.Roastery))
-          .on("mouseover", function (data) {
-            if (!is_about_set) {   // TODO: there shoulf be a better way todo this
-              is_about_set = true
-              document.getElementById("fig2_coffee_brand_info").innerHTML = document.getElementById("fig2_after_circle").innerHTML
+
+        this.setCircleEffects(nodes, 0.7, 0, "small", "small")
+
+
+        nodes
+          .on("mouseover", (e) => {
+            if (!onclick || (onclick && e.target.__data__.Roastery === onclick_roastery)) {
+
+              if (!this.is_about_set) {   // TODO: there shoulf be a better way todo this
+                this.is_about_set = true
+                document.getElementById("fig2_coffee_brand_info").innerHTML = document.getElementById("fig2_after_circle").innerHTML
+              }
+              this.updateCoffeeInfo(e.target.__data__)
+              this.setCircleEffects(d3.select(e.currentTarget).raise(), 1, 40, "extra", "extra")
             }
-            Figure2.updateCoffeeInfo(data.target.__data__)
-
-            d3.select(this)
-              .raise()
-              .attr("r", 40)
-              .style("opacity", "1")
-              .style("fill", function (d) {
-                return "url(#extra_gradient-" + toTitleCaseClean(d.Roastery) + ")";
-              })
           })
-          .on("mouseout", function () {
-            d3.select(this)
-              .attr("r", 25)
-              .style("opacity", "0.7")
-              .style("filter", "url(#small_glow)")
-              .style("fill", function (d) {
-                return "url(#small_gradient-" + toTitleCaseClean(d.Roastery) + ")";
-              })
-
+          .on("mouseout", (e) => {
+            if (!onclick) {
+              this.setCircleEffects(d3.select(e.currentTarget), 0.7, 25, "small", "small")
+            }
+            else if (onclick && e.target.__data__.Roastery === onclick_roastery) {
+              this.setCircleEffects(d3.select(e.currentTarget), 1, 40, "small", "small")
+            }
           })
           .transition()
           .duration(500)
           .ease(d3.easeBounceOut)
-          .attr("r", 25)
+          .attr("r", 25);
+
+        this.svg.on("click", (e) => {
+          var target = e.target;
+
+          // Add effect for all productts from the same brand
+          if (target.tagName === "circle") {
+            this.setCircleEffects(nodes, 0.4, 25, "small", "small")
+            this.setCircleEffects(nodes.filter((n) => { return n.Roastery === target.__data__.Roastery })
+              .raise(), 1, 40, "extra", "small")
+            onclick = true;
+            onclick_roastery = target.__data__.Roastery;
+          }
+          // Remove effect if clicked on chart
+          else if (target.tagName === "svg") {
+            onclick = false;
+            onclick_roastery = ""
+            this.setCircleEffects(nodes, 0.7, 25, "small", "small")
+          }
+        })
       });
-    this.is_about_set = is_about_set
   }
 }
 
@@ -337,7 +358,6 @@ $(document).ready(function () {
     fig2.init()
 
   })
-
 
 })
 
