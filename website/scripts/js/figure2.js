@@ -46,7 +46,7 @@ class Figure2 {
       .attr("height", innerHeight)
 
     this.addGlow("small_glow", 1)
-    this.addGlow("extra_glow", 5)
+    this.addGlow("extra_glow", 3)
     this.addGradient("small", "93%")
     this.addGradient("extra", "80%")
 
@@ -317,8 +317,9 @@ class Figure2 {
             if (!onclick) {
               this.setCircleEffects(d3.select(e.currentTarget), 0.7, 25, "small", "small")
             }
+            // When clicked circles are highlighted
             else if (onclick && e.target.__data__.Roastery === onclick_roastery) {
-              this.setCircleEffects(d3.select(e.currentTarget), 1, 40, "small", "small")
+              this.setCircleEffects(d3.select(e.currentTarget), 1, 30, "extra", "small")
             }
           })
           .transition()
@@ -331,9 +332,10 @@ class Figure2 {
 
           // Add effect for all productts from the same brand
           if (target.tagName === "circle") {
-            this.setCircleEffects(nodes, 0.4, 25, "small", "small")
-            this.setCircleEffects(nodes.filter((n) => { return n.Roastery === target.__data__.Roastery })
-              .raise(), 1, 40, "extra", "small")
+            this.setCircleEffects(nodes, 0.2, 25, "small", "small")
+            this.setCircleEffects(
+              nodes.filter((n) => { return n.Roastery === target.__data__.Roastery }).raise(), 
+              1, 30, "extra", "small")
             onclick = true;
             onclick_roastery = target.__data__.Roastery;
           }
