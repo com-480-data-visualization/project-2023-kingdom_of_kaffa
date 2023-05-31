@@ -12,7 +12,8 @@
 }
   
 body {
-    background-color: var(--background-color);
+    background-color: #F2EFEB;
+    /* background-color: var(--background-color); */
     font-family: Poppins;
 }
 

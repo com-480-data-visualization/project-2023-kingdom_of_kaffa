@@ -1,11 +1,11 @@
 #section_figure4 {
+    background-color: #F2EFEB;
     font-family: 'Poppins', sans-serif;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
 #section_figure4 h2 {
@@ -13,13 +13,14 @@
     /* font-family: 'Abril Fatface', cursive; */
     font-family: "Darumadrop One", cursive;
     margin: 20px 0 20px 0;
+    text-align: center;
 }
 
 .description {
     margin: 10px 50px 0 50px;
 }
 
-.fig4-block {
+.fig4-info-table {
     height: 500px;
     width: 400px;
     border: 2px solid #5ac0f7;
@@ -50,16 +51,6 @@
 
 #coffee-food-pairing-info {
     margin-left: -30px;
-    height: 500px;
-    width: 400px;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-
-    overflow: hidden;
-    border-radius: 1.5rem;
-    box-shadow: 0 0 10px #ccc;
-    padding: 0px;
 }
 
 .info-description {

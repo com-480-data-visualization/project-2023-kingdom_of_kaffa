@@ -3,8 +3,11 @@ const r1 = r0 * 1.06; // outer radius
 const fade = 0.2;
 const duration = 1000;
 
-var colorScale = d3.scaleOrdinal()
-  .range(['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#7E8DDB', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b','#EB9ECF','#EF7774']);
+// var colorScale = d3.scaleOrdinal()
+//   .range(['#D76FAE', '#9F93ED', '#84FCAE','#DE8987','#7EEAF1', '#CEA6E5', '#F4B4C1', '#9CD1F3', '#EFCB99', '#A9EAEF', '#FBE38E','#ffb1e3', '#88ff88', '#E99CB9','#c490e4','#63e3c6', '#f7c97e', '#e1f78e', '#ff8b8b','#EB9ECF','#EF7774','#CEF2D0']);
+
+  var colorScale = d3.scaleOrdinal()
+  .range(['#EAD8C6','#C0AA9B','#F1C3C1', '#AD6D52', '#864C40', '#70342B', '#7F2730', '#592D22', '#B47C5F', '#CD693E', '#A04339', '#D99F98']);
 
 var color = (i) => colorScale(i);
 
@@ -293,7 +296,7 @@ $(document).ready(function () {
               d.angle = (d.startAngle + d.endAngle) / 2;
           })
           .style("opacity", function (d) {
-              return d.angle > 0 ? 1 : 0;
+              return d.angle > 0 ? 0.9 : 0;
           })
           .attr("dy", ".3em")
           .attr("text-anchor", function (d) {
@@ -335,7 +338,7 @@ $(document).ready(function () {
   function groupMouseMove(event, datum) {
       if (!isClicked){
         groupFocus(datum.index);
-        groupTooltip(event, datum);
+        // groupTooltip(event, datum);
       }
   }
   
@@ -356,28 +359,11 @@ $(document).ready(function () {
           return index == d.source.index || index == d.target.index ? 1 : fade;
       });
   }
-  
-  function groupTooltip(event, datum) {
-      console.log(datum.index);
-      var index = datum.index;
-      var name = names[index].split(" ")[0];
-      var total = 0;
-  
-      for (var i = 0; i < names.length; i++) {
-          total += matrix[i][index];
-      }
-  
-      var text = `${name} received ${datum.value} PR reviews and gave ${total}`;
-      console.log(text);
-      tooltip
-          .text(text)
-          .style("left", event.pageX - 34 + "px")
-          .style("top", event.pageY - 12 + "px");
-  }
+
   
   function unfocus() {
-      chords.style("opacity", 1);
-      groups.style("opacity", 1);
+      chords.style("opacity", 0.8);
+      groups.style("opacity", 0.9);
   }
   
   function chordMouseMove(event, datum) {
@@ -386,20 +372,8 @@ $(document).ready(function () {
         var tgtIdx = datum.target.index;
   
         chordFocus(srcIdx, tgtIdx);
-        chordTooltip(srcIdx, tgtIdx, event);
+        // chordTooltip(srcIdx, tgtIdx, event);
       }
-  }
-  
-  function chordTooltip(srcIdx, tgtIdx, event) {
-      var sourceName = names[srcIdx].split(" ")[0];
-      var targetName = names[tgtIdx].split(" ")[0];
-      var text1 = `${sourceName} reviewed ${matrix[tgtIdx][srcIdx]} of ${targetName}'s PRs`;
-      var text2 = `${targetName} reviewed ${matrix[srcIdx][tgtIdx]} of ${sourceName}'s PRs`;
-  
-      tooltip
-          .text(`${text1}\n${text2}`)
-          .style("left", event.pageX - 34 + "px")
-          .style("top", event.pageY - 12 + "px");
   }
   
   function chordFocus(srcIdx, tgtIdx) {
