@@ -21,15 +21,15 @@
 }
 
 .fig4-info-table {
-    height: 500px;
+    height: auto;
     width: 400px;
     border: 2px solid #5ac0f7;
     display: flex;
     text-align: center;
     flex-direction: column;
-
+    background-color: #F7F6F3;
     overflow: hidden;
-    border-radius: 1.5rem;
+    border-radius: 1.7rem;
     box-shadow: 0 0 10px #ccc;
     padding: 0px;
 }
@@ -47,6 +47,8 @@
 #coffee-food-pairing-info h4 {
   font-size:15px;
   margin-top:20px;
+  margin-bottom: 2px;
+  font-weight: bold;
 }
 
 #coffee-food-pairing-info {
@@ -62,12 +64,12 @@
 .item-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 71px));
+    grid-template-columns: repeat(auto-fill, minmax(50px, 80px));
     grid-template-rows: 60px;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
-    margin-bottom: -20px;
+    margin-bottom: 20px;
     box-sizing: inherit;
     grid-gap: 0px;
 }
@@ -117,18 +119,6 @@
   max-width: 60px;
   width: 80%;
   height: auto;
-}
-
-.circle {
-    fill: #fbbfe3;
-    stroke: #fff;
-    stroke-width: 2px;
-}
-
-.line {
-    stroke: #999;
-    stroke-opacity: 0.6;
-    stroke-width: 1.5px;
 }
 
 /* Test */

@@ -1,9 +1,9 @@
 {
-    "0": {"id": 0,"name": "Kenya",
+    "0": {"id": 0,"name": "Kenya","color":"#EAD8C6",
     "description": "Coffee from Kenya is of the 'Colombia mild' type, and is well known for its intense flavor, full body, and pleasant aroma with notes of cocoa and high grade coffee from Kenya is one of the most sought-after coffees in the world.",
     "flavor": ["Sweet","Fruity","Chocolate","Floral"],"food": {"Berries":"image/pairing-food/berries.png","Sweet Bread":"image/pairing-food/sweet_bread.png","Milk Chocolate":"image/pairing-food/milk_chocolate.png","Fruity Crepes":"image/pairing-food/fruit_crepes.png"}, "food_flavor":["Fruity, Chocolate, Sweet"]},
 
-    "1":{"name":"Ethiopia",
+    "1":{"name":"Ethiopia", "color":"#C0AA9B",
     "description":"Ethiopian coffee is famous for its exquisite, single-origin coffee beans and for being the birthplace of this beloved brew. So superior is Ethiopian coffee beans that they have earned the title of greatest single-origin specialty coffee beans in the world.",
     "flavor":["Sweet","Fruity","Chocolate","Floral"],
     "food":{"Berries":"image/pairing-food/berries.png",
@@ -11,14 +11,14 @@
     "Milk Chocolate":"image/pairing-food/milk_chocolate.png"}
     },
 
-    "2":{"name":"Uganda",
+    "2":{"name":"Uganda", "color":"#F1C3C1",
     "description":"Expect to taste everything from savoury sun-dried tomato to florals and fresh citrus. The flavour profile of Uganda coffee has a smooth and pleasant taste with hints of berries and stone-fruit, a signature trademark of many African coffees.Uganda Coffee Beans have lower complexity and lighter body.",
     "flavor":["Floral","Fruity"],
     "food":{"Blueberries":"image/pairing-food/blueberries.png","Berries":"image/pairing-food/berries.png",
     "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "3":{"name":"Yemen",
+    "3":{"name":"Yemen", "color":"#AD6D52",
     "description":"Yemeni coffee is earthy, aromatic, and complex, with dried fruit tones and notes of chocolate. Some describe the coffee as rustic or musky. It's often full-bodied (meaning it has a smooth quality and retains much of its flavor when diluted) and rich.",
     "flavor":["Sweet","Fruity"],
     "food":{"Blueberries":"image/pairing-food/blueberries.png",
@@ -27,14 +27,14 @@
     "Fruit Scones":"image/pairing-food/fruit_scones.png"}
     },
 
-    "4":{"name":"Tanzania",
+    "4":{"name":"Tanzania", "color":"#864C40",
     "description":"Somewhat similar to Kenya coffee, Tanzania coffee reviews also exhibits a bright and vibrant, wine-y acidity, sometimes even sharp, and with a deep, rich, and strong taste. Typically with a medium to full body that is intense and creamy, a fine Tanzania coffee has tasting notes of a sweet berry-like, fruity flavor and sometimes notes of cedar.",
     "flavor":["Sweet","Fruity","Floral"],
     "food":{"Peaches, Plums, Apricots":"image/pairing-food/peaches.png",
     "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "5":{"name":"Brazil",
+    "5":{"name":"Brazil", "color":"#70342B",
     "description":"Many experts agree that Brazilian coffee has a distinct flavor, specifically being low in acidity, smooth-bodied, and sweet. It often has hints of chocolate, caramel, or slightly nutty notes that shine through.",
     "flavor":["Sweet","Fruity","Chocolate","Nutty","Floral"],
     "food":{"Fruit Tart":"image/pairing-food/fruit_tart.png",
@@ -43,7 +43,7 @@
     "Wheat Bread":"image/pairing-food/wheat_bread.png"}
     },
 
-    "6":{"name":"Costa Rica",
+    "6":{"name":"Costa Rica","color": "#7F2730",
     "description":"Costa Rica coffees have a clean, sweet and fruity taste with moderate acidity levels. Some of the typical flavour notes associated with Costa Rican coffee, are honey, chocolate, citrus, vanilla, grape and molasses. What you can expect, are vibrant and well-balanced fruit flavours with a clean sweet and light body.",
     "flavor":["Sweet","Fruity","Chocolate","Nutty","Floral"],
     "food":{"Fruit Tart":"image/pairing-food/fruit_tart.png",
@@ -55,61 +55,65 @@
     "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "7":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "7":{"name":"Colombia", "color" : "#592D22",
+    "description":"While the exact flavors change based on where the beans grow, in general, Colombian coffee beans boast tasting notes of chocolate, nuts, herbs, fruit, and a citrusy acidity. They produce a mild and well-balanced cup of coffee with a medium, silky body, tropical notes, and fruity, spicy aroma.",
+    "flavor":["Sweet","Fruity","Chocolate","Nutty","Floral"],
+    "food":{"Chocolate":"image/pairing-food/chocolate.png",
+    "White Chocolate":"image/pairing-food/white_chocolate.png",
+    "Wheat Bread":"image/pairing-food/wheat_bread.png",
+    "Sweet Bread":"image/pairing-food/sweet_bread.png"}
     },
 
-    "8":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "8":{"name":"El Salvador", "color":"#B47C5F",
+    "description":"While every bean is a little different, El Salvador green coffee beans have mild and gentle flavor attributes. In most coffees, you'll be able to taste notes of nuts, chocolate, caramel, and fruit with a honey-like sweetness, balanced by a good body and mild acidity.",
+    "flavor":["Sweet","Fruity","Chocolate"],
+    "food":{"Chocolate":"image/pairing-food/chocolate.png",
+            "Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "9":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "9":{"name":"Guatemala", "color":"#CD693E",
+    "description":"Depending on the region, Guatemala's coffee taste can have floral and citrus aromas, with chocolate, sweet, fruity, wine or nutty flavours. This coffee is also known for its full and balanced body, as well as its bright, pleasant, persistent and intense acidity.",
+    "flavor":["sweet","fruity","chocolate","nutty"],
+    "food":{"Chocolate":"image/pairing-food/chocolate.png","Chocolate Cakes":"image/pairing-food/chocolate_cakes.png","Wheat Bread":"image/pairing-food/wheat_bread.png","Caramel Cakes":"image/pairing-food/caramel_cakes.png","Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "10":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "10":{"name":"Mexico", "color":"#A04339",
+    "description":"The better specialty-grade Mexican coffees are akin to a good white wine: dry with a delicate body, a gentle sweetness and fruitiness, and an acidic snap to finish off the experience.",
+    "flavor":["sweet", "fruity", "floral"],
+    "food":{"Chocolate":"image/pairing-food/chocolate.png"}
     },
 
-    "11":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "11":{"name":"Peru", "color": "#D99F98",
+    "description":"While each growing region imparts its own unique flavor notes, Peruvian coffee is smooth and mellow with mild acidity and light body. Its exciting flavor profile ranges from vanilla-nut sweetness to nutty, chocolatey notes and subtle tones of citrus.",
+    "flavor":["sweet","fruity","chocolate","nutty","floral"],
+    "food":{"Wheat Bread":"image/pairing-food/wheat_bread.png","Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "12":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "12":{"name":"Nicaragua", "color": "#EAD8C6",
+    "description":"With a medium to smooth body and a distinct but mild acidity, Nicaraguan coffees reviews indicate it provides rich yet subtle flavors, balanced sweetness, with a nutty bouquet that often exhibits notes of vanilla.",
+    "flavor":["sweet","fruity","chocolate"],
+    "food":{"Spicy Food":"image/pairing-food/spicy_food.png","Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "13":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "13":{"name":"Honduras", "color" : "#C0AA9B",
+    "description":"Honduran coffee is aromatic and fragrant with notes of vanilla or hazelnut. Its body is often described as medium and round, and its acidity is generally well-balanced.",
+    "flavor":["sweet","fruity","chocolate","nutty","floral"],
+    "food":{"Spicy Food":"image/pairing-food/spicy_food.png","Doughnuts":"image/pairing-food/doughnuts.png"}
     },
 
-    "14":{"name":"",
-    "description":"",
-    "flavor":[],
-    "food":{}
+    "14":{"name":"Indonesia", "color": "#F1C3C1",
+    "description":"Indonesian coffees tend to have a dark and bold flavor profile, with a prominent earthiness. The semi-wash process creates tasting notes ranging from earthy, mustiness, spice, wood, tobacco and leather. They often have a long-lasting finish that feels like unsweetened or dark cocoa.",
+    "flavor":["sweet","fruity","chocolate","nutty","floral"],
+    "food":{"Caramel Cakes":"image/pairing-food/caramel_cakes.png","Doughnuts":"image/pairing-food/doughnuts.png","Omelets":"image/pairing-food/omelets.png"}
     },
 
-    "15":{"id": 15, "name": "Fruity",
+    "15":{"id": 15, "name": "Fruity", "color": "#AD6D52",
     "description": "Fruity flavors are often used in coffee, food, beverages, and other products to provide a refreshing and enjoyable taste that is associated with the natural sweetness and tanginess of fruits.",
     "varieties": ["Strawberry","Apple","Orange","Pineapple","Mango","Raspberry","Cherry","Lemon"],
     "food": {"Most Berries":"image/pairing-food/berries.png","Bueberries":"image/pairing-food/blueberries.png","Peaches":"image/pairing-food/peaches.png","Fruit Tart":"image/pairing-food/fruit_tart.png"}
     },
 
-    "16":{"name":"Chocolate",
+    "16":{"name":"Chocolate", "color": "#864C40",
     "description": "Chocolate flavor refers to the taste and aroma characteristic of chocolate, which is derived from the cacao bean. Chocolate has a rich, sweet, and slightly bitter flavor profile that is highly popular and widely used in various food and beverage products.",
     "varieties": ["Dark Chocolate", "Milk Chocolate", "White Chocolate","Bittersweet Chocolate"],
     "food": {"Chocolate":"image/pairing-food/chocolate.png", 
@@ -119,23 +123,23 @@
             "Dark Chocolate":"image/pairing-food/dark_chocolate.png", 
             "Chocolate Crepes":"image/pairing-food/chocolate_crepes.png"}},
 
-    "17":{"name":"Wheaty",
+    "17":{"name":"Wheaty", "color": "#70342B",
     "description":"Wheaty flavor refers to the taste and aroma associated with wheat and wheat-based products. It is characterized by a distinct, slightly sweet, and nutty flavor profile and is commonly found in various foods and beverages that contain wheat or wheat derivatives.",
     "varieties": ["Wheat"],
     "food": {"Wheat Bread":"image/pairing-food/wheat_bread.png","Cereals":"image/pairing-food/cereals.png","Baked Goods":"image/pairing-food/baked_goods.png"}
     },
 
-    "18":{"name":"Sweet",
+    "18":{"name":"Sweet", "color": "#7F2730",
     "description":"Sweet flavor refers to the taste sensation that is associated with the perception of sugars or substances that elicit a similar taste. Sweetness is often described as pleasurable and can be found in a wide range of foods and beverages.",
     "varieties":["Sugar","Honey","Chocolate","Caramel"],
     "food":{"Sweet Bread":"image/pairing-food/sweet_bread.png", "Caramel Cakes":"image/pairing-food/caramel_cakes.png", "Doughnuts":"image/pairing-food/doughnuts.png","Cakes":"image/pairing-food/chocolate_cakes.png"}},
 
-    "19":{"name": "Spicy",
+    "19":{"name": "Spicy", "color": "#592D22",
     "description":"Spicy flavor refers to the sensation of heat or pungency that is typically associated with certain ingredients or spices that add a fiery or hot taste to food. It is a common flavor profile found in various cuisines around the world.",
     "varieties":["Fiery Heat", "Citrusy Spice","Sweet and Spicy"],
     "food":{"Chill Peppers":"image/pairing-food/chill_peppers.png", "Curry":"image/pairing-food/curry.png", "Spicy Food":"image/pairing-food/spicy_food.png"}},
 
-    "20":{"name": "Savory",
+    "20":{"name": "Savory", "color": "#B47C5F",
     "description":"Savory flavor, also known as umami, is a distinct taste sensation that is often described as savory, meaty, or brothy. It is one of the five basic tastes, alongside sweet, sour, bitter, and salty.",
     "varieties":["Meaty","Smoky","Umami","Mushroom"],
     "food":{"Savory Breakfast":"image/pairing-food/breakfast.png", "Omelets":"image/pairing-food/omelets.png", "Cheese":"image/pairing-food/cheese.png"}}

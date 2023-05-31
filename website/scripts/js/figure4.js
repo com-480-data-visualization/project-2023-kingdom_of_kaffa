@@ -2,16 +2,13 @@ const r0 = 210; // inner radius
 const r1 = r0 * 1.06; // outer radius
 const fade = 0.2;
 const duration = 1000;
-
-// var colorScale = d3.scaleOrdinal()
-//   .range(['#D76FAE', '#9F93ED', '#84FCAE','#DE8987','#7EEAF1', '#CEA6E5', '#F4B4C1', '#9CD1F3', '#EFCB99', '#A9EAEF', '#FBE38E','#ffb1e3', '#88ff88', '#E99CB9','#c490e4','#63e3c6', '#f7c97e', '#e1f78e', '#ff8b8b','#EB9ECF','#EF7774','#CEF2D0']);
+var chosen_idx = -1;
 
   var colorScale = d3.scaleOrdinal()
   .range(['#EAD8C6','#C0AA9B','#F1C3C1', '#AD6D52', '#864C40', '#70342B', '#7F2730', '#592D22', '#B47C5F', '#CD693E', '#A04339', '#D99F98']);
 
 var color = (i) => colorScale(i);
 
-// var color = (i) => d3.interpolateRainbow(shuffled[i] / names.length);
 const arc = d3.arc().innerRadius(r0).outerRadius(r1);
 const ribbon = d3.ribbon().radius(r0-15);
 
@@ -51,7 +48,7 @@ const NAMES = [
     "Indonesia",
     "Fruity",
     "Chocolate",
-    "Nutty",
+    "Wheaty",
     "Sweet",
     "Spicy",
     "Savory",
@@ -87,7 +84,9 @@ const PULLREQUESTMATRIX = [
 
 function updateCoffeeInfo(data){
   console.log(data);
-  document.getElementById('fig4_coffee_title').innerHTML = `<h3>${data.name} Coffee</h3>`;
+  d3.select(".fig4-info-table")
+    .style("border-color", data.color);
+  document.getElementById('fig4_coffee_title').innerHTML = `${data.name} Coffee`;
   document.getElementById('fig4_coffee_des').querySelector("text").innerHTML = data.description;
 
   // document.getElementById('flavor-title').innerHTML = `<h4>${data.name} Coffee may have the following flavors:</h4>`;
@@ -102,11 +101,14 @@ function updateCoffeeInfo(data){
     foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
   document.getElementById('food-contain').innerHTML = foods;
+
+  d3.select("#fig4_coffee_title")
+    .style("background-color", data.color);
 }
 
 function updateFlavorInfo(data){
   console.log(data);
-  document.getElementById('fig4_flavor_title').innerHTML = `<h3>${data.name} Flavor</h3>`;
+  document.getElementById('fig4_flavor_title').innerHTML = `${data.name} Flavor`;
   document.getElementById('fig4_flavor_des').querySelector("text").innerHTML = data.description;
 
   let flavors = "";
@@ -121,6 +123,11 @@ function updateFlavorInfo(data){
     foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
   document.getElementById('typical-food').innerHTML = foods;
+
+  d3.select("#fig4_flavor_title")
+    .style("background-color", data.color);
+  d3.selectAll(".fig4-info-table")
+    .style("border-color", data.color);
 }
 
 $(document).ready(function () {
@@ -241,7 +248,8 @@ $(document).ready(function () {
           .style("opacity", 0)
           .transition()
           .duration(duration)
-          .attrTween("transform", angleTween);
+          .attrTween("transform", angleTween)
+          .style("cursor", "pointer");;
   
       /*** CHORDS ***/
       chordsContainer = container.append("g").attr("class", "chordContainer");
@@ -336,6 +344,7 @@ $(document).ready(function () {
   }
   
   function groupMouseMove(event, datum) {
+      d3.select(this).style("cursor", "pointer");
       if (!isClicked){
         groupFocus(datum.index);
         // groupTooltip(event, datum);
@@ -366,7 +375,31 @@ $(document).ready(function () {
       groups.style("opacity", 0.9);
   }
   
+  function clearFocus() {
+    chords.style("opacity", 0.8);
+    groups.style("opacity", 0.9);
+    isClicked = false;
+    document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_refresh").innerHTML;
+  }
+
+  function groupClickHandler(event, datum) {
+    if (isClicked) {
+      clearFocus();
+    } else {
+      groupFocus(datum.index);
+    }
+  }
+
+  function chordClickHandler(event, datum) {
+    if (isClicked) {
+      clearFocus();
+    } else {
+      chordFocus(datum.source.index, datum.target.index);
+    }
+  }
+  
   function chordMouseMove(event, datum) {
+    d3.select(this).style("cursor", "pointer");
       if (!isClicked){
         var srcIdx = datum.source.index;
         var tgtIdx = datum.target.index;
