@@ -59,8 +59,8 @@ const NAMES = [
 const PULLREQUESTMATRIX = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,3,0,11,0,0,0,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,13,0,38,0,0,0,13],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,1],
-    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,2],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,3,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,1],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,22,0,30,0,0,17,4],
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,7,0,9,0,0,3,2],
@@ -368,7 +368,6 @@ $(document).ready(function () {
           return index == d.source.index || index == d.target.index ? 1 : fade;
       });
   }
-
   
   function unfocus() {
       chords.style("opacity", 0.8);
@@ -397,7 +396,7 @@ $(document).ready(function () {
       chordFocus(datum.source.index, datum.target.index);
     }
   }
-  
+
   function chordMouseMove(event, datum) {
     d3.select(this).style("cursor", "pointer");
       if (!isClicked){
