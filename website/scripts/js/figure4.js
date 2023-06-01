@@ -1,5 +1,5 @@
 const r0 = 210; // inner radius
-const r1 = r0 * 1.06; // outer radius
+const r1 = r0 * 1.07; // outer radius
 const fade = 0.2;
 const duration = 1000;
 var chosen_idx = -1;
