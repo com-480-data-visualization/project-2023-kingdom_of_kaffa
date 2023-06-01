@@ -9,11 +9,19 @@
 }
 
 #section_figure4 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
+  font-family: "Darumadrop One", cursive;
+  margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+#coffee-food-pairing-info h2 {
+  font-size: 2.5rem;
     /* font-family: 'Abril Fatface', cursive; */
     font-family: "Darumadrop One", cursive;
-    margin: 20px 0 20px 0;
-    text-align: center;
+    color: #592D22;
+    margin: 0px 10px 10px 0px;
+    text-align: left;
 }
 
 .description {
@@ -52,7 +60,7 @@
 }
 
 #coffee-food-pairing-info {
-    margin-left: -30px;
+    margin-left: -50px;
 }
 
 .info-description {

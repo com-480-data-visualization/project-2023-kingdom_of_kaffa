@@ -84,47 +84,46 @@ const PULLREQUESTMATRIX = [
 
 function updateCoffeeInfo(data){
   console.log(data);
-  d3.select(".fig4-info-table")
+  d3.selectAll(".fig4-info-table")
     .style("border-color", data.color);
-  document.getElementById('fig4_coffee_title').innerHTML = `${data.name} Coffee`;
-  document.getElementById('fig4_coffee_des').querySelector("text").innerHTML = data.description;
+  d3.selectAll('#fig4_coffee_title').text(data.name+" Coffee");
+  d3.selectAll('#fig4_coffee_des').text(data.description);
 
-  // document.getElementById('flavor-title').innerHTML = `<h4>${data.name} Coffee may have the following flavors:</h4>`;
   let flavors = "";
   data.flavor.forEach((f) => {
     flavors += `<div class="flavor-icon"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
   });
-  document.getElementById('flavor-contain').innerHTML = flavors;
+  d3.select('#flavor-contain').html(flavors);
 
   let foods = "";
   Object.entries(data.food).forEach(([foodName, imgSrc]) => {
     foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
-  document.getElementById('food-contain').innerHTML = foods;
+  d3.select('#food-contain').html(foods);
 
-  d3.select("#fig4_coffee_title")
+  d3.selectAll("#fig4_coffee_title")
     .style("background-color", data.color);
 }
 
 function updateFlavorInfo(data){
   console.log(data);
-  document.getElementById('fig4_flavor_title').innerHTML = `${data.name} Flavor`;
-  document.getElementById('fig4_flavor_des').querySelector("text").innerHTML = data.description;
+  d3.selectAll('#fig4_flavor_title').text(data.name+' Flavor');
+  d3.selectAll('#fig4_flavor_des').text(data.description);
 
   let flavors = "";
   console.log(data.varieties);
   data.varieties.forEach((f) => {
     flavors += `<div class="flavor-icon">${f}</div>`;
   });
-  document.getElementById('typical-flavor').innerHTML = flavors;
+  d3.selectAll('#typical-flavor').html(flavors);
 
   let foods = "";
   Object.entries(data.food).forEach(([foodName, imgSrc]) => {
     foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
-  document.getElementById('typical-food').innerHTML = foods;
+  d3.selectAll('#typical-food').html(foods);
 
-  d3.select("#fig4_flavor_title")
+  d3.selectAll("#fig4_flavor_title")
     .style("background-color", data.color);
   d3.selectAll(".fig4-info-table")
     .style("border-color", data.color);
@@ -225,7 +224,7 @@ $(document).ready(function () {
           .on("mouseover", mouseover)
           .on("mousemove", groupMouseMove)
           .on("mouseout", mouseout)
-          .on("click",clickHandler);
+          .on("click",groupClickHandler);
   
       groups
           .append("text")
@@ -271,7 +270,7 @@ $(document).ready(function () {
           .attrTween("d", ribbonTween);
   
       chords
-          .on("click", clickHandler)
+          .on("click", chordClickHandler)
           .on("mouseover", mouseover)
           .on("mousemove", chordMouseMove)
           .on("mouseout", mouseout);
@@ -382,10 +381,21 @@ $(document).ready(function () {
   }
 
   function groupClickHandler(event, datum) {
-    if (isClicked) {
+    if (isClicked && datum.index==chosen_idx) {
       clearFocus();
     } else {
-      groupFocus(datum.index);
+        isClicked = true;
+        chosen_idx = datum.index;
+        let index = datum.index;
+        if (index < 15){
+            updateCoffeeInfo(data[index.toString()]);
+            document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
+        } else {
+            updateFlavorInfo(data[index.toString()]);
+            document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_flavor").innerHTML
+        }
+        d3.select(this).style("cursor", "pointer");
+        groupFocus(datum.index);
     }
   }
 
