@@ -3,6 +3,7 @@ const r1 = r0 * 1.06; // outer radius
 const fade = 0.2;
 const duration = 1000;
 var chosen_idx = -1;
+var src_idx = -1, tgt_idx = -1;
 
   var colorScale = d3.scaleOrdinal()
   .range(['#EAD8C6','#C0AA9B','#F1C3C1', '#AD6D52', '#864C40', '#70342B', '#7F2730', '#592D22', '#B47C5F', '#CD693E', '#A04339', '#D99F98']);
@@ -346,7 +347,6 @@ $(document).ready(function () {
       d3.select(this).style("cursor", "pointer");
       if (!isClicked){
         groupFocus(datum.index);
-        // groupTooltip(event, datum);
       }
   }
   
@@ -386,23 +386,19 @@ $(document).ready(function () {
     } else {
         isClicked = true;
         chosen_idx = datum.index;
-        let index = datum.index;
-        if (index < 15){
-            updateCoffeeInfo(data[index.toString()]);
-            document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
-        } else {
-            updateFlavorInfo(data[index.toString()]);
-            document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_flavor").innerHTML
-        }
+        clickUpdataInfo(chosen_idx);
         d3.select(this).style("cursor", "pointer");
         groupFocus(datum.index);
     }
   }
 
   function chordClickHandler(event, datum) {
-    if (isClicked) {
+    if (isClicked && datum.source.index==src_idx && datum.target.index==tgt_idx) {
       clearFocus();
     } else {
+      src_idx = datum.source.index;
+      tgt_idx = datum.target.index;
+      clickUpdataInfo(src_idx);
       chordFocus(datum.source.index, datum.target.index);
     }
   }
@@ -414,7 +410,6 @@ $(document).ready(function () {
         var tgtIdx = datum.target.index;
   
         chordFocus(srcIdx, tgtIdx);
-        // chordTooltip(srcIdx, tgtIdx, event);
       }
   }
   
@@ -447,20 +442,13 @@ $(document).ready(function () {
       }
   }
   
-  function clickHandler(event, datum) {
-    isClicked = !isClicked;
-    if (isClicked){
-      let index = datum.index;
-      if (index < 15){
-        updateCoffeeInfo(data[index.toString()]);
-        document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
-      } else {
-        updateFlavorInfo(data[index.toString()]);
-        document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_flavor").innerHTML
-      }
-    }
-    else {
-      document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_refresh").innerHTML
+  function clickUpdataInfo(index) {
+    if (index < 15){
+    updateCoffeeInfo(data[index.toString()]);
+    document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_coffee").innerHTML
+    } else {
+    updateFlavorInfo(data[index.toString()]);
+    document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_after_click_flavor").innerHTML
     }
   }
 
