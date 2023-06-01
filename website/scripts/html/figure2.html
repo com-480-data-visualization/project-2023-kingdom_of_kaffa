@@ -1,5 +1,5 @@
 <div class="slide">
-    <div class="columns is-vcentered is-centered">
+    <div class="columns is-vcentered is-centered" style="margin: 5%;">
         <div class="column is-two-thirds">
             <div class="block" style="padding-left: 20px;">
                 <select id="fig2-yaxis">
@@ -25,22 +25,21 @@
         </div>
 
         <div class="column">
-            <div id="fig2_coffee_brand_info">
+            <div id="fig2_info_block">
                 <div id="fig2_before_circle" style="visibility: visible; position: relative;">
                     <h2 class="title is-2">Brews and Bucks</h2>
                     <p class="block">
                         Imagine savoring freshly roasted coffee before the whirlwind of the day begins. It is a
-                        captivating
-                        dream, isn't it? Let's transform this dream into a reality as we explore the realm of European
-                        roasteries. Dive into this world and find the perfect, affordable coffee for your delightful
-                        morning!
+                        captivating dream, isn't it? Let's transform this dream into a reality as we explore the realm of European
+                        roasteries. Dive into this world and find your perfect brand that will suply you with the freshest coffee beans on the delightful morning!
                     </p>
-                    <p class="block">
-                        Imagine savoring freshly roasted coffee before the whirlwind of the day begins. It is a
-                        captivating
-                        dream, isn't it? Let's transform this dream into a reality as we explore the realm of European
-                        roasteries. Dive into this world and find the perfect, affordable coffee for your delightful
-                        morning!
+                    <h4><i class="fa fa-info-circle" aria-hidden="true"></i> How to use</h4>
+          
+                    <p>
+                      Each circle on the graph represents a coffee product from different European roasteries.
+                      
+                      <strong>Hover over a circle</strong> to learn about coffee brand and selected product or 
+                      <strong>click on the circle</strong> to display all items from the same brand.
                     </p>
                 </div>
             </div>
@@ -50,33 +49,32 @@
 
 <div id="fig2_after_circle" style="display: none;">
     <div class="block">
-        <div id="fig2_about_coffe_brand" class="side-panel">
+        <div id="fig2_about_coffe_brand" class="fig2-info-brand-table">
             <figure>
                 <div style="position: relative;">
-                    <img src="" id="fig2_brand_country_image" class="imgFlag" style="width: 200px; height: auto;">
-                    <img id="fig2_brand_image" class="imgBorder" src=""
-                        style="width: 120px; height: auto; margin: 0 auto;">
+                    <img src="" id="fig2_brand_country_image" class="imgFlag">
+                    <img id="fig2_brand_image" class="fig_brand_img_border" src="">
                 </div>
             </figure>
 
             <p class="title is-3" id="fig2_brand_name"><text></text></p>
 
             <div class="rating-panel">
-                <div class="columns is-vcentered" style="padding-top:10px;">
+                <div class="columns is-vcentered">
                     <div class="column is-one-third" id="fig2_brand_coffee" style="text-align: center;">
-                        <text>23.32</text>
+                        <text></text>
                         <img src="image/coffee-beans-v2.png" class="image is-24x24"
                             style="display:inline-block;vertical-align:top;">
                     </div>
 
                     <div class="column is-one-third" id="fig2_brand_rating" style="text-align: center;">
-                        <text>4.5/5.0</text>
+                        <text></text>
                         <img src="image/star_v2.png" class="image is-24x24"
                             style="display:inline-block;vertical-align:top;">
                     </div>
 
                     <div class="column is-one-third" id="fig2_brand_recommended" style="text-align: center;">
-                        <text>98%</text>
+                        <text></text>
                         <img src="image/heart.png" class="image is-24x24"
                             style="display:inline-block;vertical-align:top;">
                     </div>
@@ -87,39 +85,39 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="block">
+        <div id="fig2_about_coffee_product" class="fig2-info-product-table">
+            <div class="fig2-info-heading">
+                <p class="title is-4" id="fig2_coffee_name">
+                    <img src="image/coffee.png" id="fig2_brand_country_image"
+                        style="display:inline-block; height: 24px; width:24px; vertical-align: middle;">
+                    <text></text>
+                </p>
+                <span class="subtitle is-6" id="fig2_coffee_origin"><text></text></span>
+            </div>
 
-        <div class="block">
-            <div id="fig2_about_coffee_product" class="panel">
-                <div class="panel-heading">
-                    <p class="title is-4" id="fig2_coffee_name">
-                        <img src="image/coffee.png" id="fig2_brand_country_image"
-                            style="display:inline-block; height: 24px; width:24px; vertical-align: middle;">
+            <div class="rating-panel">
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third" id="fig2_price" style="text-align: center;">
                         <text></text>
-                    </p>
-                    <span class="subtitle is-6" id="fig2_coffee_origin"><text></text></span>
-                </div>
+                        <img src="image/dollar-symbol-v2.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
 
-                <div class="rating-panel">
-                    <div class="columns is-vcentered">
-                        <div class="column is-one-third" id="fig2_price" style="text-align: center;">
-                            <text></text>
-                            <img src="image/dollar-symbol-v2.png" class="image is-24x24"
-                                style="display:inline-block;vertical-align:top;">
-                        </div>
+                    <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
+                        <text></text>
+                        <img src="image/star_v2.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
+                    </div>
 
-                        <div class="column is-one-third" id="fig2_rating" style="text-align: center;">
-                            <text></text>
-                            <img src="image/star_v2.png" class="image is-24x24"
-                                style="display:inline-block;vertical-align:top;">
-                        </div>
-
-                        <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
-                            <text></text>
-                            <img src="image/heart.png" class="image is-24x24"
-                                style="display:inline-block;vertical-align:top;">
-                        </div>
+                    <div class="column is-one-third" id="fig2_recommended" style="text-align: center;">
+                        <text></text>
+                        <img src="image/heart.png" class="image is-24x24"
+                            style="display:inline-block;vertical-align:top;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

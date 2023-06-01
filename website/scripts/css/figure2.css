@@ -1,66 +1,66 @@
 #section_figure2 {
     font-family: "Poppins", sans-serif;
     background-color: #F2EFEB !important;
-    /* width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
 }
-#section_figure2 h2 {
-    margin: 50px 0 20px 0;
-}
-#section_figure2 .title {
+
+#fig2_coffee_name{
   font-family: "Darumadrop One", cursive;
+  color: #F7F6F3;
 }
+
+#fig2_coffee_origin{
+  color: #F2EFEB;
+}
+
+#fig2_brand_name{
+  font-family: "Darumadrop One", cursive;
+  color: #592D22;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#fig2_before_circle h2 {
+  font-size: 2.5rem;
+  font-family: "Darumadrop One", cursive;
+  color: #592D22;
+  margin: 0px 10px 10px 0px;
+  text-align: left;
+}
+
 .selectpicker-container .dropdown-menu {
   max-height: 200px; /* Set a max height for the dropdown menu */
-  overflow: hidden; /* Hide default browser scrolling */
-  touch-action: pan-y; /* Enable touch action for vertical scrolling */
-  -webkit-overflow-scrolling: touch; /* Enable two-finger scrolling on iOS */
-}
-#fig2-brand-dropdown-content {
-  max-height: 13em;
-  overflow: auto;
-}
-.bubbles {
-  stroke-width: 2px;
-  stroke: white;
-}
-.bubbles:hover {
-  stroke: black;
-}
-#fig2-brands {
-    height: 400px;
-    overflow: scroll;
+  overflow: auto; /* Hide default browser scrolling */
+  /* touch-action: pan-y; /* Enable touch action for vertical scrolling */
+  /* -webkit-overflow-scrolling: touch; Enable two-finger scrolling on iOS */ */
 }
 
 .axis--y path {
   stroke: none;
 }
 
-.panel-heading{
+.fig2-info-heading{
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
   align-items: center; 
   text-align: center;
+  padding: 10px;
+  background-color: #b1816b;
 }
 
-
-.side-panel {
+.fig2-info-brand-table {
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
   overflow: hidden;
+  border: 1px solid #b1816b;
   border-radius: 1rem;
   box-shadow: 0 0 10px #ccc;
   padding-top: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-
+  padding-right: 6px;
+  padding-left: 6px;
+  padding-bottom: 5px;
 }
 
 .rating-panel{
@@ -68,21 +68,34 @@
   padding: 10px;
 }
 
-.imgBorder {
-    /* border: 1px solid #ebeced; */
-    width: 45%;
-    /* height: 40%; */
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 120px;
-    padding: 8px;
-    /* background: #fff; */
+.fig2-info-product-table {
+  /* height: auto; */
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border:1px solid #b1816b;
+  background-color: #F7F6F3;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #ccc;
+  padding: 0px;
+}
+
+.fig_brand_img_border {
+  height: auto; 
+  margin: 0 auto;
+  width: 130px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  padding: 8px;
 }
 
 .imgFlag  {
   position: absolute;
   z-index: 10;
   top: -8px;
-  left: 36%;
+  left: 37%;
   border-radius: 3px;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   height: 15% !important;

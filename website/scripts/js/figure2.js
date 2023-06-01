@@ -307,7 +307,7 @@ class Figure2 {
 
               if (!this.is_about_set) {   // TODO: there shoulf be a better way todo this
                 this.is_about_set = true
-                document.getElementById("fig2_coffee_brand_info").innerHTML = document.getElementById("fig2_after_circle").innerHTML
+                document.getElementById("fig2_info_block").innerHTML = document.getElementById("fig2_after_circle").innerHTML
               }
               this.updateCoffeeInfo(e.target.__data__)
               this.setCircleEffects(d3.select(e.currentTarget).raise(), 1, 40, "extra", "extra")
