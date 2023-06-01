@@ -5,7 +5,7 @@ const duration = 1000;
 var chosen_idx = -1;
 var src_idx = -1, tgt_idx = -1;
 
-  var colorScale = d3.scaleOrdinal()
+var colorScale = d3.scaleOrdinal()
   .range(['#EAD8C6','#C0AA9B','#F1C3C1', '#AD6D52', '#864C40', '#70342B', '#7F2730', '#592D22', '#B47C5F', '#CD693E', '#A04339', '#D99F98']);
 
 var color = (i) => colorScale(i);
@@ -15,6 +15,8 @@ const ribbon = d3.ribbon().radius(r0-15);
 
 var svg, container, groupsContainer, groups, names, matrix, shuffled;
 var isClicked = false;
+
+var groupClicked = false, chordClicked = false;
 
 function shuffleIndices(num) {
   var j, x, i;
@@ -377,14 +379,17 @@ $(document).ready(function () {
     chords.style("opacity", 0.8);
     groups.style("opacity", 0.9);
     isClicked = false;
+    groupClicked = false;
+    chordClicked = false;
     document.getElementById("coffee-food-pairing-info").innerHTML = document.getElementById("fig4_refresh").innerHTML;
   }
 
   function groupClickHandler(event, datum) {
-    if (isClicked && datum.index==chosen_idx) {
+    if (groupClicked && datum.index==chosen_idx) {
       clearFocus();
     } else {
         isClicked = true;
+        groupClicked = true;
         chosen_idx = datum.index;
         clickUpdataInfo(chosen_idx);
         d3.select(this).style("cursor", "pointer");
@@ -393,9 +398,11 @@ $(document).ready(function () {
   }
 
   function chordClickHandler(event, datum) {
-    if (isClicked && datum.source.index==src_idx && datum.target.index==tgt_idx) {
+    if (chordClicked && datum.source.index==src_idx && datum.target.index==tgt_idx) {
       clearFocus();
     } else {
+      chordClicked = true;
+      isClicked = true;
       src_idx = datum.source.index;
       tgt_idx = datum.target.index;
       clickUpdataInfo(src_idx);
