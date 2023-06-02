@@ -162,7 +162,7 @@ body {
 
 .initial {
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
     
 }
 

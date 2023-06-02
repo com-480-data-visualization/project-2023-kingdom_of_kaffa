@@ -134,6 +134,7 @@ function updateFlavorInfo(data){
 
 $(document).ready(function () {
   d3.json("../dataset/kofio_dataset/pairing.json").then(function (data) {
+
     function arcTween(a) {
       const i = d3.interpolate(this._current, a);
       this._current = i(1);
@@ -178,6 +179,19 @@ $(document).ready(function () {
           .attr("height", 800)
           .append("g")
           .attr("transform", "translate(400,400)");
+
+    svg.append("rect")
+        .attr("width", "100%")
+        .attr("height", "100%")
+        .attr("transform", "translate(-400,-400)")
+        .style("fill", "transparent")
+        .on("click", function(e) {
+            console.log(e);
+            if (e.target === this) {
+                clearFocus();
+            }
+        });
+      
 
       //Container for the gradients
       var defs = svg.append("defs");
@@ -224,7 +238,7 @@ $(document).ready(function () {
           .attrTween("d", arcTween);
   
       groups
-          .on("mouseover", mouseover)
+        //   .on("mouseover", mouseover)
           .on("mousemove", groupMouseMove)
           .on("mouseout", mouseout)
           .on("click",groupClickHandler);
@@ -274,7 +288,7 @@ $(document).ready(function () {
   
       chords
           .on("click", chordClickHandler)
-          .on("mouseover", mouseover)
+        //   .on("mouseover", mouseover)
           .on("mousemove", chordMouseMove)
           .on("mouseout", mouseout);
   
@@ -332,7 +346,7 @@ $(document).ready(function () {
       chordEnter.transition().duration(duration).attrTween("d", ribbonTween);
   
       chordEnter
-          .on("mouseover", mouseover)
+        //   .on("mouseover", mouseover)
           .on("mousemove", chordMouseMove)
           .on("mouseout", mouseout);
   
@@ -430,25 +444,16 @@ $(document).ready(function () {
       });
   }
   
-  var tooltip = d3
-      .select("body")
-      .append("div")
-      .attr("class", "tooltip")
-      .style("display", "inline-block");
-  
-  function mouseover() {
-      if (!isClicked){
-        tooltip.style("display", "inline-block");
-      }
-  }
-  
   function mouseout() {
       if (!isClicked){
-        tooltip.style("display", "none");
         unfocus();
       }
   }
   
+  function handleBackgroundClick() {
+    clearFocus()
+    }
+
   function clickUpdataInfo(index) {
     if (index < 15){
     updateCoffeeInfo(data[index.toString()]);
