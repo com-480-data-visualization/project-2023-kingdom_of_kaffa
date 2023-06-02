@@ -220,8 +220,27 @@ $(document).ready(function () {
                         }
                     })
                     .on("click", function (e, d) {
-                            console.log(d);
-                            console.log(d['Item Name']);
+                        let brand = d["Roastery"];
+                        brand = brand.replace(/ /g, "_") + "_thumb";
+                        d3.select("#fig3_brand_image")
+                            .attr("src", "image/brand-logo/" + brand + ".png");
+                        console.log(brand);
+                        console.log(d['Item Name']);
+
+                        d3.select("#fig3_item_image")
+                            .attr("src", "image/item-figs/" + d['Item Name'] + ".jpg");
+                        
+                        d3.select('#fig3-title h3').text(d['Item Name']);
+                        d3.select('#fig3-subtitle').text(d['Item Subname']);
+
+                        d3.select('#fig3-roastery').text(d['Roastery']);
+                        d3.select('#fig3-flavor').text(d['Flavour Profile']);
+                        d3.select('#fig3-type').text(d['Roast Type']);
+                        d3.select('#fig3-level').text(d['Roast Level']);
+
+                        document.getElementById('fig3_price').querySelector("text").textContent = d["Price"];
+                        document.getElementById('fig3_rating').querySelector("text").textContent = d["Rating"] + '/5.0';
+                        document.getElementById('fig3_recommended').querySelector("text").textContent = Math.round(parseFloat(d["Recommended"])) + '%';
                     });
 
                 elem_updated

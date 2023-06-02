@@ -134,3 +134,44 @@
     box-shadow: 0 0 10px #ccc;
     padding: 0px;
 }
+
+.product_img {
+    width: 70%;
+    margin-top: -10px;
+}
+
+.imgCom  {
+    position: absolute;
+    z-index: 10;
+    top: 160px;
+    left: 60%;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    height: 80px !important;
+    width: 80px !important;
+    border: 1px solid #d3d3d3;
+  }
+
+#fig3-title h3{
+    font-family:'Darumadrop One', cursive;
+    font-size: 30px;
+}
+
+.parameter_item {
+    font-family: "Avenir Next", "proxima", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+.content_item {
+    font-size:small;
+    vertical-align: middle;
+}
+
+#fig3-flavor {
+    width: 200px;
+    word-wrap: break-word;
+  white-space: normal;
+}
+
