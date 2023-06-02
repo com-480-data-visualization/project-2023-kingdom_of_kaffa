@@ -4,25 +4,46 @@
     href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Darumadrop+One&family=Libre+Baskerville&family=Playfair+Display&family=Poppins&display=swap"
     rel="stylesheet"
 />
-<div id="viz3-container">
-    <div id="viz3-figure">
-        <div>
-            <span class="fig3-button" id="fig3-show-all">Show All</span>
-            <span class="fig3-button" id="fig3-price">Price</span>
-            <span class="fig3-button" id="fig3-rating">Rating</span>
-            <span class="fig3-button" id="fig3-roast-type">Roast-Type</span>
-            <span class="fig3-button" id="fig3-roast-level">Roast-Level</span>
-        </div>
 
-        <div id="filtering-bubbles"></div>
+<div class="columns is-vcentered">
+    <div class="column is-one-third">
+        <div id="viz3-descrip">
+            <div id="fig3_item" class="fig3-info-table">
+                <div id="fig3-title">
+                    <h3>Colombia LA PRADERA</h3>
+                </div>
+                <div id="fig3-subtitle">
+                    filter
+                </div>
+                
+            </div>
+        </div>
     </div>
-    <div id="viz3-descrip">
-        <p class="default-info">
-            <h2>Choose your favorite coffee item</h2>
-            Each bubble represents a coffee item. You can choose your desired one by simply clicking on the legend to filter the unwanted ones!
-        </p>
-        <p class="dynamic-info">
-            <!-- This paragraph will be dynamically updated with desired data -->
-        </p>
+    <div class="columns is-two-thirds">
+        <div id="viz3-figure">
+            <div>
+                <span class="fig3-button" id="fig3-show-all">Show All</span>
+                <span class="fig3-button" id="fig3-price">Price</span>
+                <span class="fig3-button" id="fig3-rating">Rating</span>
+                <span class="fig3-button" id="fig3-roast-type">Roast-Type</span>
+                <span class="fig3-button" id="fig3-roast-level">Roast-Level</span>
+            </div>
+
+            <div id="filtering-bubbles"></div>
+        </div>
+    </div> 
+</div>
+
+<div id="fig3_after_click" style="display: none">
+    <div id="fig3_item" class="fig3-info-table">
+        
     </div>
+</div>
+
+<div id="fig3_refresh" style="display: none">
+    <p class="default-info">
+        <h2>Choose your <br>favorite coffee item</h2>
+        <h4><i class="fa fa-info-circle" aria-hidden="true"></i> How to use</h4>
+        Each bubble represents a coffee item. You can choose your desired one by simply clicking on the legend to filter the unwanted ones!
+    </p>
 </div>

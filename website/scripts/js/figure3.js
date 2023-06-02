@@ -220,29 +220,8 @@ $(document).ready(function () {
                         }
                     })
                     .on("click", function (e, d) {
-                        var defaultInfo = d3.select(
-                            "#viz3-descrip .default-info"
-                        );
-                        var dynamicInfo = d3.select(
-                            "#viz3-descrip .dynamic-info"
-                        );
-
-                        if (defaultInfo.style("display") !== "none") {
-                            // Hide the default content
-                            defaultInfo.style("display", "none");
-
-                            // Show the desired data
-                            dynamicInfo.text("Desired data");
-
-                            // Show the dynamic info container
-                            dynamicInfo.style("display", "block");
-                        } else {
-                            // Show the default content
-                            defaultInfo.style("display", "block");
-
-                            // Hide the dynamic info container
-                            dynamicInfo.style("display", "none");
-                        }
+                            console.log(d);
+                            console.log(d['Item Name']);
                     });
 
                 elem_updated

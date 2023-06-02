@@ -1,27 +1,27 @@
 #section_figure3 {
     font-family: "Poppins", sans-serif;
     background-color: #f2efeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #section_figure3 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Darumadrop One", cursive;
     margin: 0 0 20px 0;
 }
 
-#viz3-container {
-    display: flex;
-    flex-direction: row;
-}
-
 #viz3-figure {
+    margin-left: 120px;
     font-size: 1.5rem;
-    width: 60%;
     text-align: center;
 }
 
 #viz3-descrip {
-    width: 40%;
+    margin-left: 30px;
+    width: 100%;
 }
 
 .fig3-button {
@@ -120,4 +120,17 @@
     100% {
         background-position: 100% 50%;
     }
+}
+
+.fig3-info-table {
+    height: auto;
+    width: 400px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #F7F6F3;
+    overflow: hidden;
+    border-radius: 1.7rem;
+    box-shadow: 0 0 10px #ccc;
+    padding: 0px;
 }

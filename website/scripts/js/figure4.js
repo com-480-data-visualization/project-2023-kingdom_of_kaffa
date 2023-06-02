@@ -191,7 +191,6 @@ $(document).ready(function () {
                 clearFocus();
             }
         });
-      
 
       //Container for the gradients
       var defs = svg.append("defs");
