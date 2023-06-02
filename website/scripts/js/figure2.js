@@ -206,7 +206,7 @@ class Figure2 {
 
   updateCoffeeInfo(hovered_circle) {
     function updateBrand() {
-      document.getElementById('fig2_brand_name').querySelector("text").innerHTML = hovered_circle["Roastery"] //<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'>`<i class='fa fa-circle'></i></span> `
+      document.getElementById('fig2_brand_name').innerHTML = hovered_circle["Roastery"] //<span style='color:${colors[brands.indexOf(hovered_circle["Roastery"])]}'>`<i class='fa fa-circle'></i></span> `
       document.getElementById('fig2_brand_image').src = "image/brand-logo/" + hovered_circle["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
       document.getElementById('fig2_brand_image').style.background = colors[brands.indexOf(hovered_circle["Roastery"])]
       let country_code = brands_country[brands.indexOf(hovered_circle["Roastery"])];
