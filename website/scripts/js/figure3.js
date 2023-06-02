@@ -181,7 +181,9 @@ $(document).ready(function () {
                     .data(curData)
                     .enter()
                     .append("g")
-                    .style("aaa", (d)=>{console.log(d);})
+                    .style("aaa", (d) => {
+                        console.log(d);
+                    })
                     .attr("class", "circleContainer");
 
                 console.log(curData);
@@ -216,7 +218,33 @@ $(document).ready(function () {
                                 return "#fdc62f";
                             return "#5ac0f7";
                         }
+                    })
+                    .on("click", function (e, d) {
+                        var defaultInfo = d3.select(
+                            "#viz3-descrip .default-info"
+                        );
+                        var dynamicInfo = d3.select(
+                            "#viz3-descrip .dynamic-info"
+                        );
+
+                        if (defaultInfo.style("display") !== "none") {
+                            // Hide the default content
+                            defaultInfo.style("display", "none");
+
+                            // Show the desired data
+                            dynamicInfo.text("Desired data");
+
+                            // Show the dynamic info container
+                            dynamicInfo.style("display", "block");
+                        } else {
+                            // Show the default content
+                            defaultInfo.style("display", "block");
+
+                            // Hide the dynamic info container
+                            dynamicInfo.style("display", "none");
+                        }
                     });
+
                 elem_updated
                     .append("text")
                     .attr("text-anchor", "middle")
