@@ -4,10 +4,15 @@
   height: 100vh;
   display: grid;
   place-items: center;
+  background-image: url('../../image/cofdee_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #homepage .draw-box {
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 60%;
+  left: 50%;
   margin-top: 60px;
   width: 590px;
   height: 400px;
@@ -18,7 +23,7 @@
   margin-bottom: -100px;
   width: 0;
   color: #fff;
-  height: 40px;
+  height: 60px;
   font-size: 40px;
   white-space: nowrap;
   vertical-align: middle;

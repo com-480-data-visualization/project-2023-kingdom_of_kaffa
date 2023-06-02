@@ -105,13 +105,13 @@ class Figure2 {
 
   setDropDownListeners() {
     $("#fig2-yaxis").on("change", event => {
-      this.updateYaxis($(event.target).val());
+      this.updateYaxis($(event.target).val().split(" ")[0]);
       this.updateXaxis(this.xaxis_value);
       this.setGraph();
     });
 
     $("#fig2-xaxis").on("change", event => {
-      this.updateXaxis($(event.target).val());
+      this.updateXaxis($(event.target).val().split(" ")[0]);
       this.updateYaxis(this.yaxis_value);
       this.setGraph();
     });
