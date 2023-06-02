@@ -26,13 +26,13 @@ const brands = ['The naughty dog', 'Candycane Coffee', 'DAK Coffee Roasters', 'H
 
 const brands_country = ['cz', 'cz', 'nl', 'pl', 'cz', 'cz', 'de', 'gb', 'it', 'cz', 'gb', 'de', 'cz', 'nl', 'sk', 'se', 'cz', 'no', 'cz', 'cz', 'cz'];
 
-const colors = ['#fdc62f', '#ff8e8e', '#ea4242', '#5ac0f7', '#5ac0f7', '#3bb273', '#f27c07', '#6c80e8', '#956cff', '#ffabab', '#42e2ea', '#ea42ad', '#ffb1e3', '#88ff88', '#c490e4', '#b9b973', '#63e3c6', '#a5b9f5', '#f7c97e', '#e1f78e', '#ff8b8b'];
+// const colors = ['#fde2bf', '#ffc1c1', '#f3b6b6', '#b7d9f7', '#b1c4ff', '#b5e2c3', '#f9c7ae', '#c3d5ff', '#fbd6d6', '#b6e9f2', '#fca5cd', '#fca0d4', '#ffd2e9', '#d4ffd4', '#e5d4f0', '#dbecdb', '#a6ede5', '#d4e6ff', '#fde1b6', '#f2f1d7', '#ffc5c5'];
+const colors = ['#ffc477', '#ff8787', '#ff6f6f', '#83c9f7', '#80aaff', '#82dcb1', '#ff9c68', '#899dff', '#ffa8a8', '#85d9ee', '#fd88be', '#fd7fc4', '#ffbce7', '#a2ffa2', '#cfa6df', '#bcebc8', '#66e7d9', '#c8daff', '#ffca7e', '#e6f7a3', '#ff8e8e'];
 
 class Figure2 {
 
   constructor(data, innerHeight) {
     this.plot_data = data
-    // this.brand_data = brand_data
     this.original_data = data
     this.xaxis_value = "Rating"
     this.yaxis_value = "Price"
@@ -101,7 +101,6 @@ class Figure2 {
     this.setMainPlot()
     this.setBrands()
     this.setSelectors()
-    // this.setDropDownListeners()
   }
 
   setDropDownListeners() {
