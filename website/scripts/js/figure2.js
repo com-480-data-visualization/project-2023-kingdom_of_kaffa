@@ -338,6 +338,7 @@ class Figure2 {
               1, 30, "extra", "small")
             onclick = true;
             onclick_roastery = target.__data__.Roastery;
+            this.updateCoffeeInfo(target.__data__)
           }
           // Remove effect if clicked on chart
           else if (target.tagName === "svg") {
