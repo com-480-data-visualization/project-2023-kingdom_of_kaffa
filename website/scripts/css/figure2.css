@@ -34,6 +34,13 @@
   /* touch-action: pan-y; /* Enable touch action for vertical scrolling */
   /* -webkit-overflow-scrolling: touch; Enable two-finger scrolling on iOS */ */
 }
+.fig2-selector-axis{
+  font-size: 20px; 
+  display:table-cell;
+  vertical-align:middle; 
+  padding-right: 5px; 
+  padding-left: 10px;
+}
 
 .axis--y path {
   stroke: none;

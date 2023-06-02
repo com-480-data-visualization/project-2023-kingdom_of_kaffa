@@ -1,21 +1,22 @@
 <div class="slide">
     <div class="columns is-vcentered is-centered" style="margin: 5%;">
         <div class="column is-two-thirds">
-            <div class="block" style="padding-left: 20px;">
-                <span style="font-size: 25px; justify-content: center;">Y:</span>
+            <div class="block" style="display:table;">
+                <span class="fig2-selector-axis">y :</span>
                 <select id="fig2-yaxis">
                     <option>Price</option>
                     <option>Rating</option>
                     <option>Recommended</option>
                 </select>
 
-                <span style="font-size: 25px; padding-left:2px; justify-content: center;">X:</span>
-                <select id="fig2-xaxis">
+                <span class="fig2-selector-axis"> x :</span>
+                <select id="fig2-xaxis" style="padding-right: 20px;">
                     <option>Rating</option>
                     <option>Recommended</option>
                     <option>Price</option>
                 </select>
 
+                <span class="fig2-selector-axis"> </span> <!-- Empty to make space-->
                 <select id="fig2-brand" class="selectpicker" multiple data-size="7" data-actions-box="true"
                     data-live-search="true" virtualScroll="true">
                 </select>
@@ -62,7 +63,7 @@
             </figure>
 
             <text id="fig2_brand_name"></text>
- 
+
             <div class="rating-panel">
                 <div class="columns is-vcentered">
                     <div class="column is-one-third" id="fig2_brand_coffee" style="text-align: center;">
