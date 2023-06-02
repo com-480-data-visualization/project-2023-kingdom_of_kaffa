@@ -1,6 +1,6 @@
 #section_figure3 {
     font-family: "Poppins", sans-serif;
-    background-color: #F2EFEB;
+    background-color: #f2efeb;
 }
 
 #section_figure3 h2 {
@@ -26,7 +26,7 @@
 
 .fig3-button {
     display: inline-block;
-    background-color: #ffffff;
+    background-color: #f2efeb;
     padding: 1px 2px;
     margin: 5px;
     color: #333;
@@ -66,7 +66,7 @@
 }
 
 #fig3-show-all:hover {
-    color: #fff;
+    color: #f2efeb;
     background-color: #3e3b38;
 }
 
@@ -75,7 +75,7 @@
 }
 
 #fig3-price:hover {
-    color: #fff;
+    color: #f2efeb;
     background-color: #ea4242;
 }
 
@@ -84,7 +84,7 @@
 }
 
 #fig3-rating:hover {
-    color: #fff;
+    color: #f2efeb;
     background-color: #ff8e8e;
 }
 
@@ -93,7 +93,7 @@
 }
 
 #fig3-roast-type:hover {
-    color: #fff;
+    color: #f2efeb;
     background-color: #fdc62f;
 }
 
@@ -102,13 +102,13 @@
 }
 
 #fig3-roast-level:hover {
-    color: #fff;
+    color: #f2efeb;
     background-color: #5ac0f7;
 }
 
 .flicker-animation {
     background: linear-gradient(45deg, #bd3737, #e67474);
-    color: #fff !important;
+    color: #f2efeb !important;
     padding: 1px 15px 1px;
     animation: color-change 4s infinite alternate;
 }
