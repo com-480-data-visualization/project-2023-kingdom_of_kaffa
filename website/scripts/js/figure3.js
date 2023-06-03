@@ -69,7 +69,7 @@ $(document).ready(function () {
                     })
                     .style("cursor", "pointer")
                     .on("click", function (e, d) {
-                        color_filter(indicator, d.color);
+                        // color_filter(indicator, d.color);
                         impl_filter(indicator);
                     });
 
@@ -82,83 +82,83 @@ $(document).ready(function () {
                     });
             }
 
-            function color_filter(indicator, selectedColor) {
-                if (indicator === "fig3-show-all") {
-                    return;
-                } else if (indicator === "fig3-price") {
-                    curData = curData.filter(function (d) {
-                        if (selectedColor === "#ff8e8e" && d.Price <= 15)
-                            return true;
-                        else if (
-                            selectedColor === "#ea4242" &&
-                            d.Price <= 25 &&
-                            d.Price > 15
-                        )
-                            return true;
-                        else if (selectedColor === "#5ac0f7" && d.Price > 25)
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-rating") {
-                    curData = curData.filter(function (d) {
-                        if (selectedColor === "#ff8e8e" && d.Rating >= 4.5)
-                            return true;
-                        else if (
-                            selectedColor === "#ea4242" &&
-                            d.Rating >= 4 &&
-                            d.Rating < 4.5
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d.Rating >= 3.5 &&
-                            d.Rating < 4
-                        )
-                            return true;
-                        else if (selectedColor === "#5ac0f7" && d.Rating < 3.5)
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-roast-type") {
-                    curData = curData.filter(function (d) {
-                        if (
-                            selectedColor === "#ea4242" &&
-                            d["Roast Type"] === "Omni"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d["Roast Type"] === "Filter"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#0000ff" &&
-                            d["Roast Type"] === "Espresso"
-                        )
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-roast-level") {
-                    curData = curData.filter(function (d) {
-                        if (
-                            selectedColor === "#ffff00" &&
-                            d["Roast Level"] === "Omni"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d["Roast Level"] === "Light to Medium Light"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#5ac0f7" &&
-                            d["Roast Level"] === "Medium to medium dark"
-                        )
-                            return true;
-                        else return false;
-                    });
-                }
-            }
+            // function color_filter(indicator, selectedColor) {
+            //     if (indicator === "fig3-show-all") {
+            //         return;
+            //     } else if (indicator === "fig3-price") {
+            //         curData = curData.filter(function (d) {
+            //             if (selectedColor === "#ff8e8e" && d.Price <= 15)
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#ea4242" &&
+            //                 d.Price <= 25 &&
+            //                 d.Price > 15
+            //             )
+            //                 return true;
+            //             else if (selectedColor === "#5ac0f7" && d.Price > 25)
+            //                 return true;
+            //             else return false;
+            //         });
+            //     } else if (indicator === "fig3-rating") {
+            //         curData = curData.filter(function (d) {
+            //             if (selectedColor === "#ff8e8e" && d.Rating >= 4.5)
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#ea4242" &&
+            //                 d.Rating >= 4 &&
+            //                 d.Rating < 4.5
+            //             )
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#fdc62f" &&
+            //                 d.Rating >= 3.5 &&
+            //                 d.Rating < 4
+            //             )
+            //                 return true;
+            //             else if (selectedColor === "#5ac0f7" && d.Rating < 3.5)
+            //                 return true;
+            //             else return false;
+            //         });
+            //     } else if (indicator === "fig3-roast-type") {
+            //         curData = curData.filter(function (d) {
+            //             if (
+            //                 selectedColor === "#ea4242" &&
+            //                 d["Roast Type"] === "Omni"
+            //             )
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#fdc62f" &&
+            //                 d["Roast Type"] === "Filter"
+            //             )
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#0000ff" &&
+            //                 d["Roast Type"] === "Espresso"
+            //             )
+            //                 return true;
+            //             else return false;
+            //         });
+            //     } else if (indicator === "fig3-roast-level") {
+            //         curData = curData.filter(function (d) {
+            //             if (
+            //                 selectedColor === "#ffff00" &&
+            //                 d["Roast Level"] === "Omni"
+            //             )
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#fdc62f" &&
+            //                 d["Roast Level"] === "Light to Medium Light"
+            //             )
+            //                 return true;
+            //             else if (
+            //                 selectedColor === "#5ac0f7" &&
+            //                 d["Roast Level"] === "Medium to medium dark"
+            //             )
+            //                 return true;
+            //             else return false;
+            //         });
+            //     }
+            // }
 
             function impl_filter(indicator) {
                 // Remove existing elements except for the legend
