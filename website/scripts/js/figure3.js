@@ -165,7 +165,7 @@ $(document).ready(function () {
                 svg.selectAll(".circleContainer, circle, text").remove();
 
                 // Remove existing groups
-                svg.selectAll("g").remove();
+                // svg.selectAll("g").remove();
 
                 let radius = 30;
                 if (curData.length <= 10) {
@@ -329,6 +329,138 @@ $(document).ready(function () {
                 simulation.nodes(curData);
             }
 
+            function impl_filter_intial(indicator) {
+                // Remove existing elements except for the legend
+                svg.selectAll(".circleContainer, circle, text").remove();
+
+                // Remove existing groups
+                svg.selectAll("g").remove();
+
+                let radius = 30;
+                if (curData.length <= 10) {
+                    radius = 40;
+                }
+
+                curData = record;
+                createLegend("fig3-show-all");
+
+                let elem_updated = svg
+                    .selectAll("g")
+                    .data(curData)
+                    .enter()
+                    .append("g")
+                    .attr("class", "circleContainer");
+
+                elem_updated
+                    .data(curData)
+                    .append("circle")
+                    .style("cursor", "pointer")
+                    .attr("r", radius)
+                    .style("fill", "#5ac0f7")
+                    .on("click", function (e, d) {
+                        let brand = d["Roastery"];
+                        brand = brand.replace(/ /g, "_") + "_thumb";
+                        d3.selectAll("#fig3_brand_image").attr(
+                            "src",
+                            "image/brand-logo/" + brand + ".png"
+                        );
+                        d3.selectAll("#fig3_item_image").attr(
+                            "src",
+                            "image/item-figs/" + d["Item Name"] + ".jpg"
+                        );
+
+                        d3.selectAll("#fig3-title h3").text(d["Item Name"]);
+                        d3.selectAll("#fig3-subtitle").text(d["Item Subname"]);
+
+                        d3.selectAll("#fig3-roastery").text(d["Roastery"]);
+                        d3.selectAll("#fig3-flavor").text(d["Flavour Profile"]);
+                        d3.selectAll("#fig3-type").text(d["Roast Type"]);
+                        d3.selectAll("#fig3-level").text(d["Roast Level"]);
+
+                        d3.selectAll("#fig3_price")
+                            .select("text")
+                            .text(d["Price"]);
+                        d3.selectAll("#fig3_rating")
+                            .select("text")
+                            .text(d["Rating"] + "/5.0");
+                        d3.selectAll("#fig3_recommended")
+                            .select("text")
+                            .text(
+                                Math.round(parseFloat(d["Recommended"])) + "%"
+                            );
+
+                        document.getElementById("viz3-descrip").innerHTML =
+                            document.getElementById(
+                                "fig3_after_click"
+                            ).innerHTML;
+                    });
+
+                elem_updated
+                    .append("text")
+                    .attr("text-anchor", "middle")
+                    .style("font-size", "12px")
+                    .style("cursor", "pointer")
+                    .text((d) => {
+                        return d["Item Name"].substring(0, 3);
+                    })
+                    .on("click", function (e, d) {
+                        let brand = d["Roastery"];
+                        brand = brand.replace(/ /g, "_") + "_thumb";
+                        d3.selectAll("#fig3_brand_image").attr(
+                            "src",
+                            "image/brand-logo/" + brand + ".png"
+                        );
+                        d3.selectAll("#fig3_item_image").attr(
+                            "src",
+                            "image/item-figs/" + d["Item Name"] + ".jpg"
+                        );
+
+                        d3.selectAll("#fig3-title h3").text(d["Item Name"]);
+                        d3.selectAll("#fig3-subtitle").text(d["Item Subname"]);
+
+                        d3.selectAll("#fig3-roastery").text(d["Roastery"]);
+                        d3.selectAll("#fig3-flavor").text(d["Flavour Profile"]);
+                        d3.selectAll("#fig3-type").text(d["Roast Type"]);
+                        d3.selectAll("#fig3-level").text(d["Roast Level"]);
+
+                        d3.selectAll("#fig3_price")
+                            .select("text")
+                            .text(d["Price"]);
+                        d3.selectAll("#fig3_rating")
+                            .select("text")
+                            .text(d["Rating"] + "/5.0");
+                        d3.selectAll("#fig3_recommended")
+                            .select("text")
+                            .text(
+                                Math.round(parseFloat(d["Recommended"])) + "%"
+                            );
+
+                        document.getElementById("viz3-descrip").innerHTML =
+                            document.getElementById(
+                                "fig3_after_click"
+                            ).innerHTML;
+                    });
+
+                var simulation = d3
+                    .forceSimulation()
+                    .force("x", d3.forceX(width / 2).strength(0.1)) // Decrease the strength of the x-axis force
+                    .force("y", d3.forceY(height / 2).strength(0.1)) // Decrease the strength of the y-axis force
+                    .force(
+                        "collide",
+                        d3
+                            .forceCollide()
+                            .radius(radius + 0.5)
+                            .strength(0.7) // Adjust the strength of the collision force as needed
+                    )
+                    .on("tick", function () {
+                        elem_updated.attr("transform", function (d) {
+                            return "translate(" + d.x + "," + d.y + ")";
+                        });
+                    });
+
+                simulation.nodes(curData);
+            }
+
             // Function to toggle button animation
             function toggleButtonAnimation(button) {
                 // Remove animation class from all buttons
@@ -342,12 +474,12 @@ $(document).ready(function () {
             }
 
             // initialize the bubbles and add event listeners for the buttons
-            impl_filter("fig3-show-all");
+            impl_filter_intial();
             d3.select("#fig3-show-all").on("click", function () {
                 document.getElementById("viz3-descrip").innerHTML =
                     document.getElementById("fig3_refresh").innerHTML;
                 toggleButtonAnimation("#fig3-show-all");
-                impl_filter("fig3-show-all");
+                impl_filter_intial();
             });
             d3.select("#fig3-price").on("click", function () {
                 toggleButtonAnimation("#fig3-price");
