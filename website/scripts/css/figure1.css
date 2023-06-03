@@ -61,3 +61,35 @@ h2 {
   font-size: 2rem;
   font-family: "Darumadrop One", cursive;
 }
+
+#section_figure1 {
+  background-color: #F2EFEB;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
+
+#section_figure1 h2 {
+  font-size: 3rem;
+  font-family: "Darumadrop One", cursive;
+  margin: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+.fig1-info {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.fig1-vis {
+  width: 800px;
+  height: 570px;
+  margin-left: 30px;
+  margin-top: 20px;
+  overflow: hidden;
+  /* height: 800px; */
+  /* display: flex;
+  justify-content: center; */
+}
