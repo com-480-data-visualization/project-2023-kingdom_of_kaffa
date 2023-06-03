@@ -164,8 +164,9 @@ $(document).ready(function () {
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" + brand + ".png"
+                            "image/brand-logo/" + brand.toLowerCase() + ".png"
                         );
+                        console.log(brand.toLowerCase());
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
                             "image/item-figs/" + d["Item Name"] + ".jpg"
