@@ -96,13 +96,13 @@ function updateCoffeeInfo(data){
   data.flavor.forEach((f) => {
     flavors += `<div class="flavor-icon"><img src="image/pairing-icon/${f.toLowerCase()}.png"><p>${f}</p></div>`;
   });
-  d3.select('#flavor-contain').html(flavors);
+  d3.selectAll('#flavor-contain').html(flavors);
 
   let foods = "";
   Object.entries(data.food).forEach(([foodName, imgSrc]) => {
     foods += `<div class="food-icon"><img src="${imgSrc}"><p>${foodName}</p></div>`;
   });
-  d3.select('#food-contain').html(foods);
+  d3.selectAll('#food-contain').html(foods);
 
   d3.selectAll("#fig4_coffee_title")
     .style("background-color", data.color);
