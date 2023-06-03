@@ -196,7 +196,6 @@ $(document).ready(function () {
                             else if (d.Price <= 25) return "#ea4242";
                             else return "#5ac0f7";
                         } else if (indicator === "fig3-rating") {
-                            console.log(d.Rating);
                             if (d.Rating >= 4.5) return "#ff8e8e";
                             else if (d.Rating >= 4) return "#ea4242";
                             else if (d.Rating >= 3.5) return "#fdc62f";
