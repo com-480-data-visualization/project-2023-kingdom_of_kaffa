@@ -70,10 +70,9 @@
 }
 
 #section_figure1 h2 {
-  font-size: 2rem;
   font-family: "Darumadrop One", cursive;
   margin: 10px 0px 20px 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .fig1-info {
