@@ -165,14 +165,13 @@ $(document).ready(function () {
                 svg.selectAll(".circleContainer, circle, text").remove();
 
                 // Remove existing groups
-                // svg.selectAll("g").remove();
+                svg.selectAll("g").remove();
 
                 let radius = 30;
                 if (curData.length <= 10) {
                     radius = 40;
                 }
 
-                if (indicator === "fig3-show-all") curData = record;
                 createLegend(indicator);
 
                 console.log(curData);
@@ -181,12 +180,9 @@ $(document).ready(function () {
                     .data(curData)
                     .enter()
                     .append("g")
-                    .style("aaa", (d) => {
-                        console.log(d);
-                    })
                     .attr("class", "circleContainer");
 
-                console.log(curData);
+                console.log(elem_updated);
                 elem_updated
                     .data(curData)
                     .append("circle")
@@ -329,7 +325,7 @@ $(document).ready(function () {
                 simulation.nodes(curData);
             }
 
-            function impl_filter_intial(indicator) {
+            function impl_filter_intial() {
                 // Remove existing elements except for the legend
                 svg.selectAll(".circleContainer, circle, text").remove();
 
