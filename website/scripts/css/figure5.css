@@ -83,7 +83,7 @@
 .fig5_coffee_name {
   color: #592D22;
   text-align: center;
-  font-size: 4vw;
+  font-size: 40px;
 }
 
 .fig5_options {
@@ -276,7 +276,7 @@ div.whipped_cream {
 }
 
 #section_figure5 h1 {
-  font-size: 2rem;
+  font-size: 2.5vw;
   font-family: "Darumadrop One", cursive;
   margin-bottom: 5px;
   text-align: center;
