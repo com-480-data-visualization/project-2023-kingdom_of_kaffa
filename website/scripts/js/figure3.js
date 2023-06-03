@@ -212,6 +212,30 @@ $(document).ready(function () {
                         else return d["Roast Level"].substring(0, 3);
                     })
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
@@ -298,6 +322,30 @@ $(document).ready(function () {
                     .attr("r", radius)
                     .style("fill", "#5ac0f7")
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
@@ -344,6 +392,30 @@ $(document).ready(function () {
                         return d["Item Name"].substring(0, 3);
                     })
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
