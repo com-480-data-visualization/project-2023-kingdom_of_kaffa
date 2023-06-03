@@ -173,8 +173,12 @@ $(document).ready(function () {
                 // Remove existing groups
                 svg.selectAll("g").remove();
                 let radius = 30;
-                if (curData.length <= 10) {
+                if (curData.length <= 25) {
+                    radius = 35;
+                } else if (curData.length <= 15) {
                     radius = 40;
+                } else if (curData.length <= 5) {
+                    radius = 50;
                 }
 
                 createLegend(indicator);
