@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-  const coffee_name = document.querySelector(".coffee_name");
-  const coffee_filling = document.querySelector(".filling");
-  const buttons = document.querySelectorAll("button");
+  const coffee_name = document.querySelector(".fig5_coffee_name");
+  const coffee_filling = document.querySelector(".fig5_filling");
+  const buttons = document.querySelectorAll(".fig5-button");
   const americano = document.getElementById("americano");
 
   let current_element = null;

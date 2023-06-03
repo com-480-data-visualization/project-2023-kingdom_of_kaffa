@@ -57,9 +57,10 @@
     background: green no-repeat 12px 4px;
   }
 
-h2 {
+.fig1-info h2 {
   font-size: 2rem;
   font-family: "Darumadrop One", cursive;
+  color: #592D22;
 }
 
 #section_figure1 {
@@ -92,4 +93,15 @@ h2 {
   /* height: 800px; */
   /* display: flex;
   justify-content: center; */
+}
+
+#fig1-containter {
+  margin-top:20px;
+}
+
+.fig1-info h4 {
+  font-size:16px;
+  margin-top:20px;
+  margin-bottom: 2px;
+  font-weight: bold;
 }
