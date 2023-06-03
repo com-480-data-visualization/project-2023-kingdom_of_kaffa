@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: #d6b9a4;
+  --main-bg-color: #F2EFEB;
   --fig5_cup-color: #474747;
   --fig5_cup-width: 30vw;
   --fig5_cup-height: 24vw;
@@ -35,10 +35,11 @@
   width: 100vw;
   background: var(--main-bg-color);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin: auto;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .social {
@@ -52,7 +53,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* width: 70vw; */
+  width: 70vw;
 }
 
 .fig5_fig5_coffee_name {
@@ -63,6 +64,8 @@
 }
 
 .fig5_options {
+  position: absolute;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -271,4 +274,24 @@ div.whipped_cream {
 .outer-container {
   display: flex;
   flex-direction: row;
+}
+
+#fig5-coffee-cup-container {
+  margin-left: -200px;
+  margin-right: 200px;
+}
+
+#section_figure5 h2 {
+  font-size: 3rem;
+  font-family: "Darumadrop One", cursive;
+  color: #592D22;
+  margin: 10px 0px 20px 0px;
+  text-align: center;
+}
+
+#section_figure5 h1 {
+  font-size: 2rem;
+  font-family: "Darumadrop One", cursive;
+  margin-bottom: 5px;
+  text-align: center;
 }
