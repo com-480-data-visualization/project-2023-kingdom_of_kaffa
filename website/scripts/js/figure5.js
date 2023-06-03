@@ -6,7 +6,8 @@ $(document).ready(function () {
   const americano = document.getElementById("americano");
 
   let current_element = null;
-  console.log(buttons, americano)
+  console.log(buttons, americano);
+  console.log("buttons", buttons);
   const changeCoffeeType = (selected) => {
     if (current_element) {
       current_element.classList.remove("selected");
