@@ -69,7 +69,7 @@ h2 {
 }
 
 #section_figure1 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: "Darumadrop One", cursive;
   margin: 10px 0px 20px 0px;
   text-align: center;
@@ -78,17 +78,16 @@ h2 {
 .fig1-info {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 25vw;
   justify-content: center;
   margin-left: 50px;
   font-size: 1rem;
 }
 
 .fig1-vis {
-  width: 800px;
-  height: 570px;
+  width: 60vw;
+  height: 40vw;
   margin-left: 50px;
-  margin-top: 20px;
   overflow: hidden;
   /* height: 800px; */
   /* display: flex;

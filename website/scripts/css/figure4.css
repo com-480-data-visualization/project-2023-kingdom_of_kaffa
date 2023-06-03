@@ -30,7 +30,7 @@
 
 .fig4-info-table {
     height: auto;
-    width: 400px;
+    width: 28vw;
     border: 2px solid #5ac0f7;
     display: flex;
     text-align: center;
@@ -61,7 +61,7 @@
 
 #coffee-food-pairing-info {
     margin-left: -50px;
-    width: 450px;
+    width: 30vw;
 }
 
 .info-description {
