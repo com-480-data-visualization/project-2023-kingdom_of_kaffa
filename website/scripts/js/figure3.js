@@ -4,6 +4,7 @@ $(document).ready(function () {
         function (data) {
             const record = JSON.parse(JSON.stringify(data));
             var curData = data;
+
             let width = window.innerWidth * 0.58,
                 height = window.innerHeight * 0.85;
             var svg = d3
@@ -70,7 +71,7 @@ $(document).ready(function () {
                     })
                     .style("cursor", "pointer")
                     .on("click", function (e, d) {
-                        color_filter(indicator, d.color)
+                        color_filter(indicator, d.color);
                         impl_filter(indicator);
                     });
 
@@ -158,6 +159,10 @@ $(document).ready(function () {
                             return true;
                         else return false;
                     });
+                }
+                if (curData.length === 0) {
+                    curData = record;
+                    color_filter(indicator, selectedColor);
                 }
             }
 
@@ -317,7 +322,12 @@ $(document).ready(function () {
                             .attr("r", radius * 1.1);
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" + d["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + "_thumb.png"
+                            "image/brand-logo/" +
+                                d["Roastery"]
+                                    .toLowerCase()
+                                    .replace(/ /g, "_")
+                                    .replace(".", "_") +
+                                "_thumb.png"
                         );
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
@@ -383,6 +393,7 @@ $(document).ready(function () {
                 }
 
                 curData = record;
+                preData = record;
                 createLegend("fig3-show-all");
 
                 let elem_updated = svg
