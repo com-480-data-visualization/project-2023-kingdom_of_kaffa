@@ -16,31 +16,31 @@ $(document).ready(function () {
             function createLegend(indicator) {
                 var legendData = [];
                 if (indicator === "fig3-show-all") {
-                    legendData = [{ color: "#5ac0f7", label: "All Items" }];
+                    legendData = [{ color: "#C4937A", label: "All Items" }];
                 } else if (indicator === "fig3-price") {
                     legendData = [
-                        { color: "#ff8e8e", label: "<=15$" },
-                        { color: "#ea4242", label: "<=25$" },
-                        { color: "#5ac0f7", label: ">25$" },
+                        { color: "#EAD8C6", label: "<=15$" },
+                        { color: "#ff8e8e", label: "<=25$" },
+                        { color: "#ea4242", label: ">25$" },
                     ];
                 } else if (indicator === "fig3-rating") {
                     legendData = [
-                        { color: "#ff8e8e", label: ">=4.5❤" },
-                        { color: "#ea4242", label: ">=4❤" },
-                        { color: "#fdc62f", label: ">=3.5❤" },
-                        { color: "#5ac0f7", label: "<3.5❤" },
+                        { color: "#F1C3C1", label: ">=4.5❤" },
+                        { color: "#9C3F4A", label: ">=4❤" },
+                        { color: "#F2D076", label: ">=3.5❤" },
+                        { color: "#C0AA9B", label: "<3.5❤" },
                     ];
                 } else if (indicator === "fig3-roast-type") {
                     legendData = [
-                        { color: "#ea4242", label: "Omni" },
-                        { color: "#fdc62f", label: "Filter" },
-                        { color: "#0000ff", label: "Espresso" },
+                        { color: "#A6AD95", label: "Omni" },
+                        { color: "#F2D076", label: "Filter" },
+                        { color: "#7A8279", label: "Espresso" },
                     ];
                 } else {
                     legendData = [
-                        { color: "#ffff00", label: "Omni" },
+                        { color: "#B0836D", label: "Omni" },
                         { color: "#fdc62f", label: "Light to Medium Light" },
-                        { color: "#5ac0f7", label: "Medium to medium dark" },
+                        { color: "#865E54", label: "Medium to medium dark" },
                     ];
                 }
 
@@ -110,28 +110,28 @@ $(document).ready(function () {
                     .attr("r", radius)
                     .style("fill", (d) => {
                         if (indicator === "fig3-show-all") {
-                            return "#5ac0f7";
+                            return "#F2D076";
                         } else if (indicator === "fig3-price") {
-                            if (d.Price <= 15) return "#ff8e8e";
-                            else if (d.Price <= 25) return "#ea4242";
-                            else return "#5ac0f7";
+                            if (d.Price <= 15) return "#EAD8C6";
+                            else if (d.Price <= 25) return "#ff8e8e";
+                            else return "#ea4242";
                         } else if (indicator === "fig3-rating") {
-                            if (d.Rating >= 4.5) return "#ff8e8e";
-                            else if (d.Rating >= 4) return "#ea4242";
-                            else if (d.Rating >= 3.5) return "#fdc62f";
-                            else return "#5ac0f7";
+                            if (d.Rating >= 4.5) return "#F1C3C1";
+                            else if (d.Rating >= 4) return "#9C3F4A";
+                            else if (d.Rating >= 3.5) return "#F2D076";
+                            else return "#C0AA9B";
                         } else if (indicator === "fig3-roast-type") {
-                            if (d["Roast Type"] === "Omni") return "#ea4242";
+                            if (d["Roast Type"] === "Omni") return "#A6AD95";
                             else if (d["Roast Type"] === "Filter")
-                                return "#fdc62f";
-                            return "#0000ff";
+                                return "#F2D076";
+                            return "#7A8279";
                         } else if (indicator === "fig3-roast-level") {
-                            if (d["Roast Level"] === "Omni") return "#ffff00";
+                            if (d["Roast Level"] === "Omni") return "#B0836D";
                             else if (
                                 d["Roast Level"] === "Light to Medium Light"
                             )
                                 return "#fdc62f";
-                            return "#5ac0f7";
+                            return "#865E54";
                         }
                     })
                     .on("click", function (e, d) {
@@ -319,7 +319,7 @@ $(document).ready(function () {
                     .append("circle")
                     .style("cursor", "pointer")
                     .attr("r", radius)
-                    .style("fill", "#5ac0f7")
+                    .style("fill", "#C4937A")
                     .on("click", function (e, d) {
                         d3.selectAll("circle")
                             .transition()

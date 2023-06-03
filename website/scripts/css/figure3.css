@@ -71,39 +71,39 @@
 }
 
 #fig3-price {
-    color: #ea4242;
+    color: #9C3F4A;
 }
 
 #fig3-price:hover {
     color: #f2efeb;
-    background-color: #ea4242;
+    background-color: #9C3F4A;
 }
 
 #fig3-rating {
-    color: #ff8e8e;
+    color: #F2D076;
 }
 
 #fig3-rating:hover {
     color: #f2efeb;
-    background-color: #ff8e8e;
+    background-color: #F2D076;
 }
 
 #fig3-roast-type {
-    color: #fdc62f;
+    color: #C0AA9B;
 }
 
 #fig3-roast-type:hover {
     color: #f2efeb;
-    background-color: #fdc62f;
+    background-color: #C0AA9B;
 }
 
 #fig3-roast-level {
-    color: #5ac0f7;
+    color: #AD6D52;
 }
 
 #fig3-roast-level:hover {
     color: #f2efeb;
-    background-color: #5ac0f7;
+    background-color: #AD6D52;
 }
 
 .flicker-animation {
