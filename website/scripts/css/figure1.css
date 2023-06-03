@@ -86,8 +86,10 @@
 }
 
 .fig1-vis {
-  width: 60vw;
-  height: 39.5vw;
+  /* width: 60vw;
+  height: 39.5vw; */
+  width: 850px;
+  height: 570px;
   margin-left: 50px;
   overflow: hidden;
   /* height: 800px; */
