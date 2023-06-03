@@ -226,7 +226,6 @@ $(document).ready(function () {
                             "src",
                             "image/brand-logo/" + brand + ".png"
                         );
-
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
                             "image/item-figs/" + d["Item Name"] + ".jpg"
@@ -262,6 +261,7 @@ $(document).ready(function () {
                     .append("text")
                     .attr("text-anchor", "middle")
                     .style("font-size", "12px")
+                    .style("cursor", "pointer")
                     .text((d) => {
                         if (indicator === "fig3-show-all")
                             return d["Item Name"].substring(0, 3);
@@ -270,6 +270,43 @@ $(document).ready(function () {
                         else if (indicator === "fig3-roast-type")
                             return d["Roast Type"].substring(0, 3);
                         else return d["Roast Level"].substring(0, 3);
+                    })
+                    .on("click", function (e, d) {
+                        let brand = d["Roastery"];
+                        brand = brand.replace(/ /g, "_") + "_thumb";
+                        d3.selectAll("#fig3_brand_image").attr(
+                            "src",
+                            "image/brand-logo/" + brand + ".png"
+                        );
+                        d3.selectAll("#fig3_item_image").attr(
+                            "src",
+                            "image/item-figs/" + d["Item Name"] + ".jpg"
+                        );
+
+                        d3.selectAll("#fig3-title h3").text(d["Item Name"]);
+                        d3.selectAll("#fig3-subtitle").text(d["Item Subname"]);
+
+                        d3.selectAll("#fig3-roastery").text(d["Roastery"]);
+                        d3.selectAll("#fig3-flavor").text(d["Flavour Profile"]);
+                        d3.selectAll("#fig3-type").text(d["Roast Type"]);
+                        d3.selectAll("#fig3-level").text(d["Roast Level"]);
+
+                        d3.selectAll("#fig3_price")
+                            .select("text")
+                            .text(d["Price"]);
+                        d3.selectAll("#fig3_rating")
+                            .select("text")
+                            .text(d["Rating"] + "/5.0");
+                        d3.selectAll("#fig3_recommended")
+                            .select("text")
+                            .text(
+                                Math.round(parseFloat(d["Recommended"])) + "%"
+                            );
+
+                        document.getElementById("viz3-descrip").innerHTML =
+                            document.getElementById(
+                                "fig3_after_click"
+                            ).innerHTML;
                     });
 
                 var simulation = d3
