@@ -70,6 +70,7 @@ $(document).ready(function () {
                     })
                     .style("cursor", "pointer")
                     .on("click", function (e, d) {
+                        color_filter(indicator, d.color)
                         impl_filter(indicator);
                     });
 
@@ -82,13 +83,90 @@ $(document).ready(function () {
                     });
             }
 
+            function color_filter(indicator, selectedColor) {
+                if (indicator === "fig3-show-all") {
+                    return;
+                } else if (indicator === "fig3-price") {
+                    curData = curData.filter(function (d) {
+                        if (selectedColor === "#EAD8C6" && d.Price <= 15)
+                            return true;
+                        else if (
+                            selectedColor === "#ff8e8e" &&
+                            d.Price <= 25 &&
+                            d.Price > 15
+                        )
+                            return true;
+                        else if (selectedColor === "#ea4242" && d.Price > 25)
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-rating") {
+                    curData = curData.filter(function (d) {
+                        if (selectedColor === "#F1C3C1" && d.Rating >= 4.5)
+                            return true;
+                        else if (
+                            selectedColor === "#9C3F4A" &&
+                            d.Rating >= 4 &&
+                            d.Rating < 4.5
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#F2D076" &&
+                            d.Rating >= 3.5 &&
+                            d.Rating < 4
+                        )
+                            return true;
+                        else if (selectedColor === "#C0AA9B" && d.Rating < 3.5)
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-roast-type") {
+                    curData = curData.filter(function (d) {
+                        if (
+                            selectedColor === "#A6AD95" &&
+                            d["Roast Type"] === "Omni"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#F2D076" &&
+                            d["Roast Type"] === "Filter"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#7A8279" &&
+                            d["Roast Type"] === "Espresso"
+                        )
+                            return true;
+                        else return false;
+                    });
+                } else if (indicator === "fig3-roast-level") {
+                    curData = curData.filter(function (d) {
+                        if (
+                            selectedColor === "#B0836D" &&
+                            d["Roast Level"] === "Omni"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#fdc62f" &&
+                            d["Roast Level"] === "Light to Medium Light"
+                        )
+                            return true;
+                        else if (
+                            selectedColor === "#865E54" &&
+                            d["Roast Level"] === "Medium to medium dark"
+                        )
+                            return true;
+                        else return false;
+                    });
+                }
+            }
+
             function impl_filter(indicator) {
                 // Remove existing elements except for the legend
                 svg.selectAll(".circleContainer, circle, text").remove();
 
                 // Remove existing groups
                 svg.selectAll("g").remove();
-
                 let radius = 30;
                 if (curData.length <= 10) {
                     radius = 40;
@@ -97,7 +175,7 @@ $(document).ready(function () {
                 createLegend(indicator);
 
                 let elem_updated = svg
-                    .selectAll("g")
+                    .selectAll("g.circleContainer")
                     .data(curData)
                     .enter()
                     .append("g")
