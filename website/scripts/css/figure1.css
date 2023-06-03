@@ -78,7 +78,7 @@ h2 {
 .fig1-info {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 80%;
   justify-content: center;
   margin-left: 100px;
 }
