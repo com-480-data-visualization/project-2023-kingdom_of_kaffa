@@ -63,7 +63,10 @@
   }
   
   #section_figure5 .options {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* display: grid; */
     grid-gap: 1vh;
     grid-template-rows: repeat(10, 35px);
     grid-template-columns: 120px;
@@ -248,3 +251,8 @@
     --milk_foam-bottom: -100%;
     --chocolate-bottom: -100%;
   }  
+
+.outer-container {
+  display: flex;
+  flex-direction: row;
+}
