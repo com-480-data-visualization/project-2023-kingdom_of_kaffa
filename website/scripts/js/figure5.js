@@ -1,26 +1,31 @@
-const coffee_name = document.querySelector(".coffee_name");
-const coffee_filling = document.querySelector(".filling");
-const buttons = document.querySelectorAll("button");
-let current_element = null;
+$(document).ready(function () {
 
-const changeCoffeeType = (selected) => {
-  if (current_element) {
-    current_element.classList.remove("selected");
-    coffee_filling.classList.remove(current_element.id);
-  }
-  current_element = selected;
-  coffee_filling.classList.add(current_element.id);
-  current_element.classList.add("selected");
-  coffee_name.innerText = selected.innerText;
-};
+  const coffee_name = document.querySelector(".coffee_name");
+  const coffee_filling = document.querySelector(".filling");
+  const buttons = document.querySelectorAll("button");
+  const americano = document.getElementById("americano");
 
-const setActiveType = (element) => {
-  element.toggleClass("selected");
-};
+  let current_element = null;
+  console.log(buttons, americano)
+  const changeCoffeeType = (selected) => {
+    if (current_element) {
+      current_element.classList.remove("selected");
+      coffee_filling.classList.remove(current_element.id);
+    }
+    current_element = selected;
+    coffee_filling.classList.add(current_element.id);
+    current_element.classList.add("selected");
+    coffee_name.innerText = selected.innerText;
+  };
 
-[...buttons].forEach((button) => {
-  button.addEventListener("click", () => {
-    changeCoffeeType(button);
+  const setActiveType = (element) => {
+    element.toggleClass("selected");
+  };
+
+  [...buttons].forEach((button) => {
+    button.addEventListener("click", () => {
+      changeCoffeeType(button);
+    });
   });
-});
 
+})
