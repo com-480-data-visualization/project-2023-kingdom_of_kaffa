@@ -226,8 +226,6 @@ $(document).ready(function () {
                             "src",
                             "image/brand-logo/" + brand + ".png"
                         );
-                        console.log(brand);
-                        console.log(d["Item Name"]);
 
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
@@ -309,6 +307,8 @@ $(document).ready(function () {
             // initialize the bubbles and add event listeners for the buttons
             impl_filter("fig3-show-all");
             d3.select("#fig3-show-all").on("click", function () {
+                document.getElementById("viz3-descrip").innerHTML =
+                    document.getElementById("fig3_refresh").innerHTML;
                 toggleButtonAnimation("#fig3-show-all");
                 impl_filter("fig3-show-all");
             });
