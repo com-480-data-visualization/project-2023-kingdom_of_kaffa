@@ -60,104 +60,26 @@ $(document).ready(function () {
                     });
 
                 legendItems
-                    .append("circle")
-                    .attr("r", 10)
-                    .attr("cx", 10)
-                    .attr("cy", 10)
+                    .append("rect")
+                    .attr("width", 20)
+                    .attr("height", 20)
+                    .attr("x", 5)
+                    .attr("y", -1.5)
                     .style("fill", function (d) {
                         return d.color;
                     })
                     .style("cursor", "pointer")
                     .on("click", function (e, d) {
-                        color_filter(indicator, d.color);
                         impl_filter(indicator);
                     });
 
                 legendItems
                     .append("text")
-                    .attr("x", 28)
-                    .attr("y", 19)
+                    .attr("x", 26)
+                    .attr("y", 16)
                     .text(function (d) {
                         return d.label;
                     });
-            }
-
-            function color_filter(indicator, selectedColor) {
-                if (indicator === "fig3-show-all") {
-                    return;
-                } else if (indicator === "fig3-price") {
-                    curData = curData.filter(function (d) {
-                        if (selectedColor === "#ff8e8e" && d.Price <= 15)
-                            return true;
-                        else if (
-                            selectedColor === "#ea4242" &&
-                            d.Price <= 25 &&
-                            d.Price > 15
-                        )
-                            return true;
-                        else if (selectedColor === "#5ac0f7" && d.Price > 25)
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-rating") {
-                    curData = curData.filter(function (d) {
-                        if (selectedColor === "#ff8e8e" && d.Rating >= 4.5)
-                            return true;
-                        else if (
-                            selectedColor === "#ea4242" &&
-                            d.Rating >= 4 &&
-                            d.Rating < 4.5
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d.Rating >= 3.5 &&
-                            d.Rating < 4
-                        )
-                            return true;
-                        else if (selectedColor === "#5ac0f7" && d.Rating < 3.5)
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-roast-type") {
-                    curData = curData.filter(function (d) {
-                        if (
-                            selectedColor === "#ea4242" &&
-                            d["Roast Type"] === "Omni"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d["Roast Type"] === "Filter"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#0000ff" &&
-                            d["Roast Type"] === "Espresso"
-                        )
-                            return true;
-                        else return false;
-                    });
-                } else if (indicator === "fig3-roast-level") {
-                    curData = curData.filter(function (d) {
-                        if (
-                            selectedColor === "#ffff00" &&
-                            d["Roast Level"] === "Omni"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#fdc62f" &&
-                            d["Roast Level"] === "Light to Medium Light"
-                        )
-                            return true;
-                        else if (
-                            selectedColor === "#5ac0f7" &&
-                            d["Roast Level"] === "Medium to medium dark"
-                        )
-                            return true;
-                        else return false;
-                    });
-                }
             }
 
             function impl_filter(indicator) {
@@ -174,7 +96,6 @@ $(document).ready(function () {
 
                 createLegend(indicator);
 
-                console.log(curData);
                 let elem_updated = svg
                     .selectAll("g")
                     .data(curData)
@@ -182,7 +103,6 @@ $(document).ready(function () {
                     .append("g")
                     .attr("class", "circleContainer");
 
-                console.log(elem_updated);
                 elem_updated
                     .data(curData)
                     .append("circle")
@@ -215,6 +135,31 @@ $(document).ready(function () {
                         }
                     })
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
+
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
@@ -267,6 +212,30 @@ $(document).ready(function () {
                         else return d["Roast Level"].substring(0, 3);
                     })
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
@@ -353,6 +322,30 @@ $(document).ready(function () {
                     .attr("r", radius)
                     .style("fill", "#5ac0f7")
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
@@ -399,6 +392,30 @@ $(document).ready(function () {
                         return d["Item Name"].substring(0, 3);
                     })
                     .on("click", function (e, d) {
+                        d3.selectAll("circle")
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius)
+                            .attr("stroke-width", 0);
+
+                        // Increase the radius and stroke width of the clicked bubble for highlighting
+                        d3.select(this)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .attr("stroke-width", 2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.2)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.15)
+                            .transition()
+                            .duration(300)
+                            .attr("r", radius * 1.1);
                         let brand = d["Roastery"];
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(

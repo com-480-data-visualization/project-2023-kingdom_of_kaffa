@@ -128,7 +128,7 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    background-color: #F7F6F3;
+    background-color: #f7f6f3;
     overflow: hidden;
     border-radius: 1.7rem;
     box-shadow: 0 0 10px #ccc;
@@ -140,7 +140,7 @@
     margin-top: -10px;
 }
 
-.imgCom  {
+.imgCom {
     position: absolute;
     z-index: 10;
     top: 160px;
@@ -151,27 +151,27 @@
     height: 80px !important;
     width: 80px !important;
     border: 1px solid #d3d3d3;
-  }
+}
 
-#fig3-title h3{
-    font-family:'Darumadrop One', cursive;
+#fig3-title h3 {
+    font-family: "Darumadrop One", cursive;
     font-size: 30px;
 }
 
 .parameter_item {
-    font-family: "Avenir Next", "proxima", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Avenir Next", "proxima", "Helvetica Neue", Helvetica, Arial,
+        sans-serif;
     line-height: 24px;
     font-weight: 600;
 }
 
 .content_item {
-    font-size:small;
+    font-size: small;
     vertical-align: middle;
 }
 
 #fig3-flavor {
     width: 250px;
     word-wrap: break-word;
-  white-space: normal;
+    white-space: normal;
 }
-
