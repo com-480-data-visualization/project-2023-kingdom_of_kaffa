@@ -1,6 +1,6 @@
 :root {
-  --main-bg-color: #F2EFEB;
-  --fig5_cup-color: #474747;
+  --main-bg-color: #d6b9a4;
+  --fig5_cup-color: #432D23;
   --fig5_cup-width: 30vw;
   --fig5_cup-height: 24vw;
   --fig5_cup-handle-width: 5vw;
@@ -20,46 +20,69 @@
   --fig5_steamed_milk-bottom: 0;
   --fig5_milk_foam-bottom: 0;
   --fig5_chocolate-bottom: 0;
-  --fig5_coffee-color: #3c302f;
-  --fig5_water-color: #b1dce2;
-  --fig5_milk-color: #f0ebe5;
-  --fig5_liquor-color: #fc8626;
-  --whipped_cream-color: #fceecb;
-  --fig5_milk_foam-color: #fceecb;
-  --fig5_steamed_milk-color: #ffd7b3;
+  --fig5_coffee-color: #6D4931;
+  --fig5_water-color: #D3EFF3;
+  --fig5_milk-color: #F1E7DD;
+  --fig5_liquor-color: #B16940;
+  --whipped_cream-color: #F8F2EF;
+  --fig5_milk_foam-color: #E9D9CF;
+  --fig5_steamed_milk-color: #DABFA7;
   --fig5_chocolate-color: #391e09;
 }
 
 #section_figure5 {
-  height: 100vh;
-  width: 100vw;
-  background: var(--main-bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  background-color: #F2EFEB;
 }
 
-.social {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
+
 
 .fig5_container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 70vw;
 }
 
-.fig5_fig5_coffee_name {
-  color: #f1faee;
+.fig5_button {
+  box-sizing: border-box;
+  width: 70%;  
+  height: 3vw;
+  background: linear-gradient(to bottom right, #BD9481, #BD9481);
+  border: 0;
+  border-radius: 12px;
+  color: #F7F6F3;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
   text-align: center;
-  /*   width: 100%; */
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.fig5_button:not([disabled]):focus {
+  cursor: pointer;
+  border-width: 4px;
+  font-weight: bold;
+  background: #A06C54;
+  box-shadow: 0px 0px 10px #8a5a44;
+}
+
+.fig5_button:not([disabled]):hover {
+  cursor: pointer;
+  border-width: 4px;
+  box-shadow: 0px 0px 10px #8a5a44;
+}
+
+.fig5_coffee_name {
+  color: #592D22;
+  text-align: center;
   font-size: 4vw;
 }
 
@@ -69,86 +92,61 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* display: grid; */
   grid-gap: 1vh;
   grid-template-rows: repeat(10, 35px);
   grid-template-columns: 120px;
   justify-content: space-evenly;
+  align-items: left;
   box-sizing: border-box;
 }
 
-.fig5_options button {
-  user-select: none;
-  background: rgba(214, 217, 227, 0.6);
-  outline: none;
-  font-size: 1rem;
-  border: 2px solid #a67a60;
-  box-shadow: none;
-  color: #363636;
-  box-sizing: border-box;
-  border-radius: 1vh;
-}
-
-.fig5_options button:hover {
-  cursor: pointer;
-  border-width: 4px;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-.fig5_options .selected {
-  border-width: 4px;
-  background: rgba(255, 255, 255, 0.8);
-  box-sizing: border-box;
-}
 
 .fig5_cup {
   width: var(--fig5_cup-width);
-  height: var(--fig5_cup-height);
-  border-radius: 0 0 10vw 10vw;
+  height: var(--fig5_cup-height); 
   position: relative;
-  background-color: var(--fig5_cup-color);
   z-index: 10;
   box-sizing: border-box;
+  border: transparent;
+  border-radius: 10px 10px 10vw 10vw;
 }
 
 .fig5_cup::after {
   content: "";
   position: absolute;
   top: 10%;
-  left: calc(100% - 1vw);
-  width: var(--fig5_cup-handle-width);
-  height: var(--fig5_cup-handle-height);
-  border: var(--main-border);
-  border-radius: 50% 30%;
+  left: calc(100%);
+  height: 150px;
+  width: 80px;
+  border: 6px solid var(--fig5_cup-color);
+  border-radius: 0px 3vw 6vw 0px;
 }
 
 .fig5_plate {
   position: absolute;
-  top: calc(100% + 1vw);
-  left: calc((var(--fig5_cup-width) - var(--plate-width)) / 2);
+  top: calc(100% + 1.5vw);
+  left: calc((var(--fig5_cup-width) - var(--plate-width))/2);
   width: var(--plate-width);
   background: var(--fig5_cup-color);
-  height: var(--plate-height);
+  height: 2vh;
   border-radius: 1vw;
 }
 
 .fig5_filling {
   position: absolute;
-  left: calc(var(--fig5_cup-border-width) / 2);
-  bottom: calc(var(--fig5_cup-border-width) / 2);
-  width: var(--fig5_cup-inside-width);
-  height: var(--fig5_cup-inside-height);
+  width: 29vw;
+  height: 24vw; 
   overflow: hidden;
-  border-radius: 0 0 10vw 10vw;
+  border-radius: 10px 10px 10vw 10vw;
+  border: 7px solid var(--fig5_cup-color);
   background-color: var(--main-bg-color);
-  bottom: 1vw;
 }
 
 .fig5_filling div {
   position: absolute;
   width: 100%;
   transition: all 1s linear;
-  color: #817f75;
+  color: #F7F6F3;
   display: flex;
   align-items: flex-start;
   justify-content: center;
