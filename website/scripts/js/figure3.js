@@ -251,11 +251,10 @@ $(document).ready(function () {
                             .duration(300)
                             .attr("r", radius * 1.1);
 
-                        let brand = d["Roastery"];
-                        brand = brand.replace(/ /g, "_") + "_thumb";
+                        let brand = d["Roastery"].toLowerCase().replace(/ /g, "_").replace('.', "_") + '_thumb.png'
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" + brand.toLowerCase() + ".png"
+                            "image/brand-logo/" + brand
                         );
 
                         d3.selectAll("#fig3_item_image").attr(
