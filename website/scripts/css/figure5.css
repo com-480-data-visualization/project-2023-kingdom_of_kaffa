@@ -1,282 +1,286 @@
 :root {
-  --main-bg-color: #d6b9a4;
-  --fig5_cup-color: #432D23;
-  --fig5_cup-width: 30vw;
-  --fig5_cup-height: 24vw;
-  --fig5_cup-handle-width: 5vw;
-  --fig5_cup-handle-height: calc(2 * var(--fig5_cup-handle-width));
-  --fig5_cup-border-width: 2vw;
-  --fig5_cup-inside-width: calc(var(--fig5_cup-width) - var(--fig5_cup-border-width));
-  --fig5_cup-inside-height: calc(var(--fig5_cup-height) - var(--fig5_cup-border-width));
-  --border-width: 1vw;
-  --main-border: var(--border-width) solid var(--fig5_cup-color);
-  --plate-width: 25vw;
-  --plate-height: 2vw;
-  --fig5_coffee-bottom: 80%;
-  --fig5_water-bottom: 0;
-  --fig5_milk-bottom: 0;
-  --fig5_liquor-bottom: 0;
-  --whipped_cream-bottom: 0;
-  --fig5_steamed_milk-bottom: 0;
-  --fig5_milk_foam-bottom: 0;
-  --fig5_chocolate-bottom: 0;
-  --fig5_coffee-color: #6D4931;
-  --fig5_water-color: #D3EFF3;
-  --fig5_milk-color: #F1E7DD;
-  --fig5_liquor-color: #B16940;
-  --whipped_cream-color: #F8F2EF;
-  --fig5_milk_foam-color: #E9D9CF;
-  --fig5_steamed_milk-color: #DABFA7;
-  --fig5_chocolate-color: #391e09;
+    --main-bg-color: #d6b9a4;
+    --fig5_cup-color: #432d23;
+    --fig5_cup-width: 30vw;
+    --fig5_cup-height: 24vw;
+    --fig5_cup-handle-width: 5vw;
+    --fig5_cup-handle-height: calc(2 * var(--fig5_cup-handle-width));
+    --fig5_cup-border-width: 2vw;
+    --fig5_cup-inside-width: calc(
+        var(--fig5_cup-width) - var(--fig5_cup-border-width)
+    );
+    --fig5_cup-inside-height: calc(
+        var(--fig5_cup-height) - var(--fig5_cup-border-width)
+    );
+    --border-width: 1vw;
+    --main-border: var(--border-width) solid var(--fig5_cup-color);
+    --plate-width: 25vw;
+    --plate-height: 2vw;
+    --fig5_coffee-bottom: 80%;
+    --fig5_water-bottom: 0;
+    --fig5_milk-bottom: 0;
+    --fig5_liquor-bottom: 0;
+    --whipped_cream-bottom: 0;
+    --fig5_steamed_milk-bottom: 0;
+    --fig5_milk_foam-bottom: 0;
+    --fig5_chocolate-bottom: 0;
+    --fig5_coffee-color: #6d4931;
+    --fig5_water-color: #d3eff3;
+    --fig5_milk-color: #f1e7dd;
+    --fig5_liquor-color: #b16940;
+    --whipped_cream-color: #f8f2ef;
+    --fig5_milk_foam-color: #e9d9cf;
+    --fig5_steamed_milk-color: #dabfa7;
+    --fig5_chocolate-color: #391e09;
 }
 
 #section_figure5 {
-  background-color: #F2EFEB;
-  height: 100vh;
+    background-color: #f2efeb;
+    height: 100vh;
 }
 
 #section_figure5 h2 {
-  font-family: "Darumadrop One", cursive;
-  color: #592D22;
-  margin: 10px 0px 20px 0px;
-  text-align: center;
+    font-family: "Darumadrop One", cursive;
+    color: #592d22;
+    margin: 10px 0px 20px 0px;
+    text-align: center;
 }
 
 #section_figure5 h1 {
-  font-size: 2.5vw;
-  font-family: "Darumadrop One", cursive;
-  margin-bottom: 5px;
-  text-align: center;
+    font-size: 2.5vw;
+    font-family: "Darumadrop One", cursive;
+    margin-bottom: 5px;
+    text-align: center;
 }
 
 .fig5_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
 
 .fig5_button {
-  box-sizing: border-box;
-  width: 70%;
-  height: 3vw;
-  background: linear-gradient(to bottom right, #BD9481, #BD9481);
-  border: 0;
-  border-radius: 12px;
-  color: #F7F6F3;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 2.5;
-  outline: transparent;
-  padding: 0 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .2s ease-in-out;
-  touch-action: manipulation;
-  white-space: nowrap;
+    box-sizing: border-box;
+    width: 70%;
+    height: 3vw;
+    background: linear-gradient(to bottom right, #bd9481, #bd9481);
+    border: 0;
+    border-radius: 12px;
+    color: #f7f6f3;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+        sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow 0.2s ease-in-out;
+    touch-action: manipulation;
+    white-space: nowrap;
 }
 
 .fig5_button:not([disabled]):focus {
-  cursor: pointer;
-  border-width: 4px;
-  font-weight: bold;
-  background: #A06C54;
-  box-shadow: 0px 0px 10px #8a5a44;
+    cursor: pointer;
+    border-width: 4px;
+    font-weight: bold;
+    background: #a06c54;
+    box-shadow: 0px 0px 10px #8a5a44;
 }
 
 .fig5_button:not([disabled]):hover {
-  cursor: pointer;
-  border-width: 4px;
-  box-shadow: 0px 0px 10px #8a5a44;
+    cursor: pointer;
+    border-width: 4px;
+    box-shadow: 0px 0px 10px #8a5a44;
 }
 
 .fig5_coffee_name {
-  color: #592D22;
-  text-align: center;
-  font-size: 40px;
+    color: #592d22;
+    text-align: center;
+    font-size: 40px;
 }
 
 .fig5_options {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  grid-gap: 1vh;
-  grid-template-rows: repeat(10, 35px);
-  grid-template-columns: 120px;
-  justify-content: space-evenly;
-  align-items: left;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-gap: 1vh;
+    grid-template-rows: repeat(10, 35px);
+    grid-template-columns: 120px;
+    justify-content: space-evenly;
+    align-items: left;
+    box-sizing: border-box;
 }
 
-
 .fig5_cup {
-  width: var(--fig5_cup-width);
-  height: var(--fig5_cup-height);
-  position: relative;
-  z-index: 10;
-  box-sizing: border-box;
-  border: transparent;
-  border-radius: 10px 10px 10vw 10vw;
+    width: var(--fig5_cup-width);
+    height: var(--fig5_cup-height);
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 10px 10px 10vw 10vw;
 }
 
 .fig5_cup::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: calc(100%);
-  height: 150px;
-  width: 80px;
-  border: 6px solid var(--fig5_cup-color);
-  border-radius: 0px 3vw 6vw 0px;
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: calc(100%);
+    height: 150px;
+    width: 80px;
+    border: 6px solid var(--fig5_cup-color);
+    border-radius: 0px 3vw 6vw 0px;
 }
 
 .fig5_plate {
-  position: absolute;
-  top: calc(100% + 1.5vw);
-  left: calc((var(--fig5_cup-width) - var(--plate-width))/2);
-  width: var(--plate-width);
-  background: var(--fig5_cup-color);
-  height: 2vh;
-  border-radius: 1vw;
+    position: absolute;
+    top: calc(100% + 1.5vw);
+    left: calc((var(--fig5_cup-width) - var(--plate-width)) / 2);
+    width: var(--plate-width);
+    background: var(--fig5_cup-color);
+    height: 2vh;
+    border-radius: 1vw;
 }
 
 .fig5_filling {
-  position: absolute;
-  width: 29vw;
-  height: 24vw;
-  overflow: hidden;
-  border-radius: 10px 10px 10vw 10vw;
-  border: 7px solid var(--fig5_cup-color);
-  background-color: var(--main-bg-color);
+    position: absolute;
+    width: 29vw;
+    height: 24vw;
+    overflow: hidden;
+    border-radius: 10px 10px 10vw 10vw;
+    border: 7px solid var(--fig5_cup-color);
+    background-color: var(--main-bg-color);
 }
 
 .fig5_filling div {
-  position: absolute;
-  width: 100%;
-  transition: all 1s linear;
-  color: #F7F6F3;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 0;
-  overflow: hidden;
-  font-size: 3vw;
-  height: 100%;
-  bottom: -100%;
-  box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    transition: all 1s linear;
+    color: #f7f6f3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 0;
+    overflow: hidden;
+    font-size: 3vw;
+    height: 100%;
+    bottom: -100%;
+    box-sizing: border-box;
 }
 
 .fig5_filling.fig5_reset.fig5_americano {
-  --fig5_water-bottom: 0;
-  --fig5_coffee-bottom: -60%;
+    --fig5_water-bottom: 0;
+    --fig5_coffee-bottom: -60%;
 }
 
 .fig5_filling.fig5_reset.fig5_au_lait {
-  --fig5_coffee-bottom: -50%;
-  --fig5_milk-bottom: 0%;
+    --fig5_coffee-bottom: -50%;
+    --fig5_milk-bottom: 0%;
 }
 
 .fig5_filling.fig5_reset.fig5_capuccino {
-  --fig5_coffee-bottom: -65%;
-  --fig5_steamed_milk-bottom: -35%;
-  --fig5_milk_foam-bottom: 0;
+    --fig5_coffee-bottom: -65%;
+    --fig5_steamed_milk-bottom: -35%;
+    --fig5_milk_foam-bottom: 0;
 }
 
 .fig5_filling.fig5_reset.fig5_espresso {
-  --fig5_coffee-bottom: -60%;
+    --fig5_coffee-bottom: -60%;
 }
 
 .fig5_filling.fig5_reset.fig5_latte {
-  --fig5_coffee-bottom: -60%;
-  --fig5_steamed_milk-bottom: -20%;
-  --fig5_milk_foam-bottom: 0%;
+    --fig5_coffee-bottom: -60%;
+    --fig5_steamed_milk-bottom: -20%;
+    --fig5_milk_foam-bottom: 0%;
 }
 
 .fig5_filling.fig5_reset.fig5_corretto {
-  --fig5_coffee-bottom: -45%;
-  --fig5_liquor-bottom: -25%;
+    --fig5_coffee-bottom: -45%;
+    --fig5_liquor-bottom: -25%;
 }
 
 .fig5_filling.fig5_reset.fig5_lungo {
-  --fig5_water-bottom: 0;
-  --fig5_coffee-bottom: -50%;
+    --fig5_water-bottom: 0;
+    --fig5_coffee-bottom: -50%;
 }
 
 .fig5_filling.fig5_reset.fig5_macchiato {
-  --fig5_coffee-bottom: -70%;
-  --fig5_milk_foam-bottom: 0;
+    --fig5_coffee-bottom: -70%;
+    --fig5_milk_foam-bottom: 0;
 }
 
 .fig5_filling.fig5_reset.fig5_mocha {
-  --fig5_coffee-bottom: -60%;
-  --fig5_chocolate-bottom: -40%;
-  --fig5_steamed_milk-bottom: -20%;
-  --whipped_cream-bottom: 0%;
+    --fig5_coffee-bottom: -60%;
+    --fig5_chocolate-bottom: -40%;
+    --fig5_steamed_milk-bottom: -20%;
+    --whipped_cream-bottom: 0%;
 }
 
 .fig5_filling.fig5_reset.fig5_ristretto {
-  --fig5_coffee-bottom: -80%;
+    --fig5_coffee-bottom: -80%;
 }
 
 div.fig5_chocolate {
-  background: var(--fig5_chocolate-color);
-  bottom: var(--fig5_chocolate-bottom);
-  z-index: 6;
+    background: var(--fig5_chocolate-color);
+    bottom: var(--fig5_chocolate-bottom);
+    z-index: 6;
 }
 
 div.fig5_coffee {
-  background: var(--fig5_coffee-color);
-  bottom: var(--fig5_coffee-bottom);
-  line-height: 4vw;
-  z-index: 7;
+    background: var(--fig5_coffee-color);
+    bottom: var(--fig5_coffee-bottom);
+    line-height: 4vw;
+    z-index: 7;
 }
 
 div.fig5_liquor {
-  background: var(--fig5_liquor-color);
-  bottom: var(--fig5_liquor-bottom);
-  z-index: 4;
+    background: var(--fig5_liquor-color);
+    bottom: var(--fig5_liquor-bottom);
+    z-index: 4;
 }
 
 div.fig5_milk {
-  background: var(--fig5_milk-color);
-  bottom: var(--fig5_milk-bottom);
-  z-index: 2;
+    background: var(--fig5_milk-color);
+    bottom: var(--fig5_milk-bottom);
+    z-index: 2;
 }
 
 div.fig5_milk_foam {
-  background: var(--fig5_milk_foam-color);
-  bottom: var(--fig5_milk_foam-bottom);
-  z-index: 5;
+    background: var(--fig5_milk_foam-color);
+    bottom: var(--fig5_milk_foam-bottom);
+    z-index: 5;
 }
 
 div.fig5_steamed_milk {
-  background: var(--fig5_steamed_milk-color);
-  bottom: var(--fig5_steamed_milk-bottom);
-  z-index: 6;
+    background: var(--fig5_steamed_milk-color);
+    bottom: var(--fig5_steamed_milk-bottom);
+    z-index: 6;
 }
 
 div.fig5_water {
-  background: var(--fig5_water-color);
-  bottom: var(--fig5_water-bottom);
+    background: var(--fig5_water-color);
+    bottom: var(--fig5_water-bottom);
 }
 
 div.whipped_cream {
-  background: var(--whipped_cream-color);
-  bottom: var(--whipped_cream-bottom);
-  z-index: 4;
+    background: var(--whipped_cream-color);
+    bottom: var(--whipped_cream-bottom);
+    z-index: 4;
 }
 
 .fig5_filling.fig5_reset {
-  --fig5_coffee-bottom: -100%;
-  --fig5_water-bottom: -100%;
-  --fig5_milk-bottom: -100%;
-  --fig5_liquor-bottom: -100%;
-  --whipped_cream-bottom: -100%;
-  --fig5_steamed_milk-bottom: -100%;
-  --fig5_milk_foam-bottom: -100%;
-  --fig5_chocolate-bottom: -100%;
+    --fig5_coffee-bottom: -100%;
+    --fig5_water-bottom: -100%;
+    --fig5_milk-bottom: -100%;
+    --fig5_liquor-bottom: -100%;
+    --whipped_cream-bottom: -100%;
+    --fig5_steamed_milk-bottom: -100%;
+    --fig5_milk_foam-bottom: -100%;
+    --fig5_chocolate-bottom: -100%;
 }

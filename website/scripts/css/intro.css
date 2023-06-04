@@ -1,6 +1,6 @@
 #intropage {
     font-family: "Poppins", sans-serif;
-    background-color: #F2EFEB !important;
+    background-color: #f2efeb !important;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@
 
 #intropage h2 {
     font-family: "Darumadrop One", cursive;
-    color: #592D22;
+    color: #592d22;
     margin: 0 auto 20px;
     max-width: 70%;
 }
@@ -18,10 +18,10 @@
 #intropage img {
     display: block;
     margin: 0 auto;
-    width:60%;
+    width: 60%;
 }
 #intropage p {
-    color: #592D22;
+    color: #592d22;
     margin: 0 auto 20px;
     max-width: 70%;
 }

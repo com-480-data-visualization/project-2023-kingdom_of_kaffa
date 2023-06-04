@@ -1,6 +1,6 @@
 #section_figure4 {
-    background-color: #F2EFEB;
-    font-family: 'Poppins', sans-serif;
+    background-color: #f2efeb;
+    font-family: "Poppins", sans-serif;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -9,17 +9,17 @@
 }
 
 #section_figure4 h2 {
-  font-size: 3rem;
-  font-family: "Darumadrop One", cursive;
-  margin: 10px 0px 20px 0px;
+    font-size: 3rem;
+    font-family: "Darumadrop One", cursive;
+    margin: 10px 0px 20px 0px;
     text-align: center;
 }
 
 #coffee-food-pairing-info h2 {
-  font-size: 2.5rem;
+    font-size: 2.5rem;
     /* font-family: 'Abril Fatface', cursive; */
     font-family: "Darumadrop One", cursive;
-    color: #592D22;
+    color: #592d22;
     margin: 0px 10px 10px 0px;
     text-align: left;
 }
@@ -35,7 +35,7 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    background-color: #F7F6F3;
+    background-color: #f7f6f3;
     overflow: hidden;
     border-radius: 1.7rem;
     box-shadow: 0 0 10px #ccc;
@@ -43,20 +43,20 @@
 }
 
 #coffee-food-pairing-info h3 {
-  font-size: 35px;
-  font-family:'Darumadrop One', cursive;
-  color: #fff;
-  background-color: #5ac0f7;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
-  height:50px;
+    font-size: 35px;
+    font-family: "Darumadrop One", cursive;
+    color: #fff;
+    background-color: #5ac0f7;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 50px;
 }
 
 #coffee-food-pairing-info h4 {
-  font-size:16px;
-  margin-top:20px;
-  margin-bottom: 2px;
-  font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    font-weight: bold;
 }
 
 #coffee-food-pairing-info {
@@ -65,8 +65,8 @@
 }
 
 .info-description {
-    font-size:15px;
-    margin:10px 30px 0 30px;
+    font-size: 15px;
+    margin: 10px 30px 0 30px;
     text-align: center;
 }
 
@@ -82,7 +82,7 @@
     box-sizing: inherit;
     grid-gap: 0px;
 }
-  
+
 .item-container div {
     padding: 0 16px 0 16px;
     font-size: 0.7rem;
@@ -94,16 +94,16 @@
     box-sizing: inherit;
 }
 
-#typical-flavor .flavor-icon{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 12px;
-  height:10px;
+#typical-flavor .flavor-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    height: 10px;
 }
 
 #food-title {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .flavor-icon {
@@ -119,42 +119,42 @@
 }
 
 .food-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .food-icon img {
-  max-width: 60px;
-  width: 80%;
-  height: auto;
+    max-width: 60px;
+    width: 80%;
+    height: auto;
 }
 
 /* Test */
 .chordContainer path {
     fill-opacity: 0.7;
-  }
-  
-  .groupsContainer path {
+}
+
+.groupsContainer path {
     fill-opacity: 1;
     stroke-opacity: 1;
-  }
-  
-  .groupsContainer text {
+}
+
+.groupsContainer text {
     fill: #4c4c4c;
-  }
-  
-  .label {
+}
+
+.label {
     font-family: Roboto;
     font-size: 1em;
     cursor: default;
-  }
-  
-  .panel label {
+}
+
+.panel label {
     vertical-align: text-top;
-  }
-  
-  .tooltip {
+}
+
+.tooltip {
     white-space: pre;
     position: absolute;
     padding: 5px;
@@ -166,20 +166,20 @@
     border-radius: 2px;
     opacity: 0.85;
     z-index: 9999;
-  }
-  
-  input[type="range"] {
+}
+
+input[type="range"] {
     -webkit-appearance: none;
     width: 10em;
     margin-left: 12px;
     margin-right: 12px;
-  }
-  
-  input[type="range"]:focus {
+}
+
+input[type="range"]:focus {
     outline: none;
-  }
-  
-  input[type="range"]::-webkit-slider-runnable-track {
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 7.7px;
     cursor: pointer;
@@ -187,10 +187,11 @@
     background: #fafafa;
     border-radius: 1.3px;
     border: 0.4px solid #010101;
-  }
-  
-  input[type="range"]::-webkit-slider-thumb {
-    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0), 0px 0px 15px rgba(120, 0, 0, 0);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0),
+        0px 0px 15px rgba(120, 0, 0, 0);
     border: 0px solid #000000;
     height: 20px;
     width: 20px;
@@ -199,13 +200,13 @@
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -6.55px;
-  }
-  
-  input[type="range"]:focus::-webkit-slider-runnable-track {
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
     background: #fafafa;
-  }
-  
-  input[type="range"]::-moz-range-track {
+}
+
+input[type="range"]::-moz-range-track {
     width: 100%;
     height: 7.7px;
     cursor: pointer;
@@ -213,43 +214,45 @@
     background: #fafafa;
     border-radius: 1.3px;
     border: 0.4px solid #010101;
-  }
-  
-  input[type="range"]::-moz-range-thumb {
-    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0), 0px 0px 15px rgba(120, 0, 0, 0);
+}
+
+input[type="range"]::-moz-range-thumb {
+    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0),
+        0px 0px 15px rgba(120, 0, 0, 0);
     border: 0px solid #000000;
     height: 20px;
     width: 20px;
     border-radius: 33px;
     background: #ff6666;
     cursor: pointer;
-  }
-  
-  input[type="range"]::-ms-track {
+}
+
+input[type="range"]::-ms-track {
     width: 100%;
     height: 7.7px;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
     color: transparent;
-  }
-  
-  input[type="range"]::-ms-fill-lower {
+}
+
+input[type="range"]::-ms-fill-lower {
     background: #fafafa;
     border: 0.4px solid #010101;
     border-radius: 2.6px;
     box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
-  }
-  
-  input[type="range"]::-ms-fill-upper {
+}
+
+input[type="range"]::-ms-fill-upper {
     background: #fafafa;
     border: 0.4px solid #010101;
     border-radius: 2.6px;
     box-shadow: 0px 0px 1px #000000, 0px 0px 0px #0d0d0d;
-  }
-  
-  input[type="range"]::-ms-thumb {
-    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0), 0px 0px 15px rgba(120, 0, 0, 0);
+}
+
+input[type="range"]::-ms-thumb {
+    box-shadow: 15px 15px 15px rgba(94, 0, 0, 0),
+        0px 0px 15px rgba(120, 0, 0, 0);
     border: 0px solid #000000;
     height: 20px;
     width: 20px;
@@ -257,12 +260,12 @@
     background: #ff6666;
     cursor: pointer;
     height: 7.7px;
-  }
-  
-  input[type="range"]:focus::-ms-fill-lower {
+}
+
+input[type="range"]:focus::-ms-fill-lower {
     background: #fafafa;
-  }
-  
-  input[type="range"]:focus::-ms-fill-upper {
+}
+
+input[type="range"]:focus::-ms-fill-upper {
     background: #fafafa;
-  }
+}
