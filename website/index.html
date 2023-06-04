@@ -7,7 +7,7 @@
 
         <title>Coffee Kingdom</title>
         <meta name="description" content="Welcome to Data Visualization" />
-        <meta name="author" content="Coffee Kingdom" />
+        <meta name="author" content="Kingdom of Kaffa" />
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
             rel="stylesheet"
@@ -167,25 +167,11 @@
                             $section.removeClass("fade-in");
                         }
                     },
+
+                    afterResize: function() {
+                        location.reload();
+                    }
                 });
-
-                $("body").css("background-color", "#F2EFEB");
-                var controller = new ScrollMagic.Controller();
-
-                var scene1 = new ScrollMagic.Scene({
-                    triggerElement: "#section_figure2",
-                }).setClassToggle("#section_figure2", "fade-in");
-
-                var scene2 = new ScrollMagic.Scene({
-                    triggerElement: "#section_figure3",
-                }).setClassToggle("#section_figure3", "fade-in");
-
-                var scene3 = new ScrollMagic.Scene({
-                    triggerElement: "#section_figure4",
-                }).setClassToggle("#section_figure4", "fade-in");
-
-                // Add Scene to ScrollMagic Controller
-                controller.addScene([scene1, scene2, scene3]);
             });
         </script>
 
