@@ -108,6 +108,7 @@ body {
 }
 
 .arrows {
+    z-index: 1000;
     display: flex;
     justify-content: center;
     position: absolute;
