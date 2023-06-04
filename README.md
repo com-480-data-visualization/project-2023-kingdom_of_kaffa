@@ -1,4 +1,4 @@
-# <img src="milestones/images/milk-tea.png" />Coffee Kingdom 
+# <img src="milestones/images/milk-tea.png" width=20%/>Coffee Kingdom 
 
 Project of Data Visualization COM-480
 
