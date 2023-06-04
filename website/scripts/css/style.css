@@ -118,7 +118,6 @@ body {
 .arrows a {
     display: inline-block;
     font-size: 36px;
-    margin: 0 20px;
     opacity: 0.5;
     transition: opacity 0.3s ease-in-out;
 }
