@@ -22,7 +22,7 @@ Project of Data Visualization COM-480
 # Technical set
 You can clone this repository via:
 ```
-git clone https://github.com/com-480-data-visualization/com-480-project-onvagagner.git
+git clone https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa.git
 ```
 Open **./website/index.html** under the project folder, and you can run the website locally.
 
