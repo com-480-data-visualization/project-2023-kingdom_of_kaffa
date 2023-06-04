@@ -256,6 +256,14 @@ $(document).ready(function () {
                             "src",
                             "image/brand-logo/" + brand
                         );
+                        // document.getElementById("fig3_brand_image").src =
+                        //     "image/brand-logo/" +
+                        //         d["Roastery"]
+                        //         .toLowerCase()
+                        //         .replace(/ /g, "_")
+                        //         .replace(".", "_") +
+                        //     "_thumb.png";
+                        console.log(document.getElementById("fig3_brand_image").src);
 
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
@@ -442,7 +450,7 @@ $(document).ready(function () {
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" + brand + ".png"
+                            "image/brand-logo/" + brand.toLowerCase() + ".png"
                         );
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
@@ -512,7 +520,7 @@ $(document).ready(function () {
                         brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" + brand + ".png"
+                            "image/brand-logo/" + brand.toLowerCase() + ".png"
                         );
                         d3.selectAll("#fig3_item_image").attr(
                             "src",

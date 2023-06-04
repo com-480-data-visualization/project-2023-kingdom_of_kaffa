@@ -482,10 +482,6 @@ $(document).ready(function () {
             }
         }
 
-        function handleBackgroundClick() {
-            clearFocus();
-        }
-
         function clickUpdataInfo(index) {
             if (index < 15) {
                 updateCoffeeInfo(data[index.toString()]);
