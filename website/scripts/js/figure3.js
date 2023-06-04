@@ -13,7 +13,6 @@ $(document).ready(function () {
                 .attr("height", height)
                 .attr("width", width);
 
-
             // Function to create the legend
             function createLegend(indicator) {
                 var legendData = [];
@@ -159,7 +158,7 @@ $(document).ready(function () {
                             return true;
                         else if (
                             selectedColor === "#865E54" &&
-                            d["Roast Level"] === "Medium to Medium Dark"
+                            d["Roast Level"] === "Medium to medium dark"
                         )
                             return true;
                         else return false;
@@ -332,11 +331,11 @@ $(document).ready(function () {
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
                             "image/brand-logo/" +
-                            d["Roastery"]
-                                .toLowerCase()
-                                .replace(/ /g, "_")
-                                .replace(".", "_") +
-                            "_thumb.png"
+                                d["Roastery"]
+                                    .toLowerCase()
+                                    .replace(/ /g, "_")
+                                    .replace(".", "_") +
+                                "_thumb.png"
                         );
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
