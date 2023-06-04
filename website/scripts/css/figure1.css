@@ -32,8 +32,10 @@
 }
 
 .fig1-vis {
-    width: 60vw;
-    height: 39.5vw;
+    /* width: 60vw;
+    height: 39.5vw; */
+    width: 900px;
+    height: 580px;
     margin-left: 50px;
     overflow: hidden;
 }
@@ -43,7 +45,7 @@
 }
 
 .fig1-info h4 {
-    font-size: 16px;
+    font-size: 1.1rem;
     margin-top: 20px;
     margin-bottom: 2px;
     font-weight: bold;

@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     const heightPercentage = 65.5;
     const height = (width * heightPercentage) / 100;
-    element.style.height = height + "px";
+    // element.style.height = height + "px";
+
 
 });
