@@ -8,7 +8,7 @@ Project of Data Visualization COM-480
 | Yikai Zhang     | 366940 |
 | Kamila Babayeva | 342448 |
 
-[Milestone 1](milestones/milestone1.md) • [Milestone 2](milestones/milestone2.md) • [Milestone 3](Process Book.pdf)
+[Milestone 1](milestones/milestone1.md) • [Milestone 2](milestones/milestone2.md) • [Milestone 3](Process%20Book.pdf)
 
 `Side note: our name has evolved from Kingdom of Kaffa to Coffee Kingdom. We found our new name catchy and easier to pronounce.`
 
