@@ -48,65 +48,7 @@
     }
 }
 
-/* .cup{
-	width: 200px;
-	height: 150px;
-	border: 5px solid #fff;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	border-radius: 0 0 60px 60px;
-	background: url(https://i.postimg.cc/76GJvK5x/coffee.png);
-	background-repeat: repeat-x;
-	animation: fill 3s infinite;
+#homepage .container{
+  display: flex;
+  flex-direction: column;
 }
-
-@keyframes fill{
-	0%{
-		background-position: 0 140px;
-	}
-	20%{
-		background-position: -450px 100px;
-	}
-	40%{
-		background-position: -900px 50px;
-	}
-	80%{
-		background-position: -1350px -50px;
-	}
-	100%{
-		background-position: 0 140px;
-	}
-}
-
-.h{
-	height: 60px;
-	width: 20px;
-	border: 5px solid #fff;
-	position: relative;
-	left: 200px;
-	top: 20px;
-	border-radius: 0 20px 20px 0;
-} */
-
-/* #homepage .draw-box svg {
-  width: 93%;
-  margin-top: 10px;
-}
-#homepage .draw-box svg .stroke {
-  fill: none;
-  stroke: #e8e8e8;
-  stroke-width: 0.8;
-}
-#homepage .draw-box svg .coffeeColor {
-  fill: #b59440;
-}
-#homepage .draw-box svg .steamColor {
-  fill: #ddd;
-}
-#homepage .draw-box svg .ripple {
-  transform: translate3d(-30%, 100%, 0);
-} */
-
-/*# sourceMappingURL=home.css.map */

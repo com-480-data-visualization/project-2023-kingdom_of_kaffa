@@ -110,7 +110,8 @@ body {
 .arrows {
     display: flex;
     justify-content: center;
-    margin-top: 70vh;
+    position: absolute;
+    top: 35vh;
 }
 
 .arrows a {
