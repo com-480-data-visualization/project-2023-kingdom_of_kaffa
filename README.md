@@ -1,4 +1,6 @@
-# Coffee Kingdom (Project of Data Visualization COM-480)
+# <img src="milestones/images/milk-coffee.png" />Coffee Kingdom 
+
+Project of Data Visualization COM-480
 
 | Student's name  | SCIPER |
 | --------------- | ------ |
@@ -6,7 +8,7 @@
 | Yikai Zhang     | 366940 |
 | Kamila Babayeva | 342448 |
 
-[Milestone 1](milestones/milestone1.md) • [Milestone 2](milestones/milestone2.md) • [Milestone 3](milestones/)
+[Milestone 1](milestones/milestone1.md) • [Milestone 2](milestones/milestone2.md) • [Milestone 3](milestones/Process Book.pdf)
 
 `Side note: our name has evolved from Kingdom of Kaffa to Coffee Kingdom. We found our new name catchy and easier to pronounce.`
 
@@ -18,7 +20,7 @@
 - Visit our website at [Coffee Kingdom](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa)
 
 # Technical set
-You can clone this repository:
+You can clone this repository via:
 ```
 git clone https://github.com/com-480-data-visualization/com-480-project-onvagagner.git
 ```
