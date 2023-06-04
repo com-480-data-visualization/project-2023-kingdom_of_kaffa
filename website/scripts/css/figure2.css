@@ -1,117 +1,117 @@
 #section_figure2 {
-  font-family: "Poppins", sans-serif;
-  background-color: #F2EFEB !important;
-  height: 100vh;
+    font-family: "Poppins", sans-serif;
+    background-color: #f2efeb !important;
+    height: 100vh;
 }
 
 #fig2_coffee_name {
-  font-family: "Darumadrop One", cursive;
-  color: #F7F6F3;
+    font-family: "Darumadrop One", cursive;
+    color: #f7f6f3;
 }
 
 #fig2_coffee_origin {
-  color: #F2EFEB;
+    color: #f2efeb;
 }
 
 #fig2_brand_name {
-  font-family: "Darumadrop One", cursive;
-  color: #592D22;
-  font-size: 27px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    font-family: "Darumadrop One", cursive;
+    color: #592d22;
+    font-size: 27px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #fig2_before_circle h4 {
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 2px;
-  font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    font-weight: bold;
 }
 
 #fig2_before_circle h2 {
-  font-family: "Darumadrop One", cursive;
-  color: #592D22;
-  margin: 0px 10px 10px 0px;
-  text-align: left;
+    font-family: "Darumadrop One", cursive;
+    color: #592d22;
+    margin: 0px 10px 10px 0px;
+    text-align: left;
 }
 
 .selectpicker-container .dropdown-menu {
-  max-height: 200px;
-  overflow: auto;
+    max-height: 200px;
+    overflow: auto;
 }
 
 .fig2-selector-axis {
-  font-size: 20px;
-  display: table-cell;
-  vertical-align: middle;
-  padding-right: 5px;
-  padding-left: 10px;
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+    padding-left: 10px;
 }
 
 .axis--y path {
-  stroke: none;
+    stroke: none;
 }
 
 .fig2-info-heading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
-  background-color: #b1816b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #b1816b;
 }
 
 .fig2-info-brand-table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid #b1816b;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px #ccc;
-  padding-top: 20px;
-  padding-right: 6px;
-  padding-left: 6px;
-  padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #b1816b;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #ccc;
+    padding-top: 20px;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-bottom: 5px;
 }
 
 .rating-panel {
-  overflow: hidden;
-  padding: 10px;
+    overflow: hidden;
+    padding: 10px;
 }
 
 .fig2-info-product-table {
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid #b1816b;
-  background-color: #F7F6F3;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px #ccc;
-  padding: 0px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #b1816b;
+    background-color: #f7f6f3;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #ccc;
+    padding: 0px;
 }
 
 .fig_brand_img_border {
-  height: auto;
-  margin: 0 auto;
-  width: 130px;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
-  padding: 8px;
+    height: auto;
+    margin: 0 auto;
+    width: 130px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    padding: 8px;
 }
 
 .fig2-flag-img {
-  position: absolute;
-  z-index: 10;
-  top: -8px;
-  left: 37%;
-  border-radius: 3px;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
-  height: 15% !important;
-  width: 25% !important;
-  border: 1px solid #d3d3d3;
+    position: absolute;
+    z-index: 10;
+    top: -8px;
+    left: 37%;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+    height: 15% !important;
+    width: 25% !important;
+    border: 1px solid #d3d3d3;
 }

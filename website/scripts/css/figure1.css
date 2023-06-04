@@ -1,50 +1,50 @@
 .columns {
-  display: grid;
-  grid-template-columns: 20% 20%;
-  padding: auto;
+    display: grid;
+    grid-template-columns: 20% 20%;
+    padding: auto;
 }
 
 .fig1-info h2 {
-  font-size: 2rem;
-  font-family: "Darumadrop One", cursive;
-  color: #592D22;
+    font-size: 2rem;
+    font-family: "Darumadrop One", cursive;
+    color: #592d22;
 }
 
 #section_figure1 {
-  background-color: #F2EFEB;
-  font-family: 'Poppins', sans-serif;
-  height: 100vh;
+    background-color: #f2efeb;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
 }
 
 #section_figure1 h2 {
-  font-family: "Darumadrop One", cursive;
-  margin: 10px 0px 20px 0px;
-  text-align: left;
+    font-family: "Darumadrop One", cursive;
+    margin: 10px 0px 20px 0px;
+    text-align: left;
 }
 
 .fig1-info {
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-  justify-content: center;
-  margin-left: 50px;
-  font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    justify-content: center;
+    margin-left: 50px;
+    font-size: 1rem;
 }
 
 .fig1-vis {
-  width: 60vw;
-  height: 39.5vw;
-  margin-left: 50px;
-  overflow: hidden;
+    width: 60vw;
+    height: 39.5vw;
+    margin-left: 50px;
+    overflow: hidden;
 }
 
 #fig1-containter {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .fig1-info h4 {
-  font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 2px;
-  font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 2px;
+    font-weight: bold;
 }

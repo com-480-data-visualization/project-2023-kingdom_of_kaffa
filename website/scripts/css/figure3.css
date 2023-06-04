@@ -8,11 +8,11 @@
 }
 
 #fig3-descrip h4 {
-    font-size:16px;
-    margin-top:20px;
+    font-size: 16px;
+    margin-top: 20px;
     margin-bottom: 2px;
     font-weight: bold;
-  }
+}
 
 #fig3-figure {
     margin-left: 120px;
@@ -22,10 +22,9 @@
 #section_figure3 h2 {
     /* font-size: 2.5rem; */
     font-family: "Darumadrop One", cursive;
-    color: #592D22;
+    color: #592d22;
     margin: 0 0 20px 0;
 }
-
 
 #fig3-descrip {
     margin-left: 80px;
@@ -79,39 +78,39 @@
 }
 
 #fig3-price {
-    color: #9C3F4A;
+    color: #9c3f4a;
 }
 
 #fig3-price:hover {
     color: #f2efeb;
-    background-color: #9C3F4A;
+    background-color: #9c3f4a;
 }
 
 #fig3-rating {
-    color: #F2D076;
+    color: #f2d076;
 }
 
 #fig3-rating:hover {
     color: #f2efeb;
-    background-color: #F2D076;
+    background-color: #f2d076;
 }
 
 #fig3-roast-type {
-    color: #C0AA9B;
+    color: #c0aa9b;
 }
 
 #fig3-roast-type:hover {
     color: #f2efeb;
-    background-color: #C0AA9B;
+    background-color: #c0aa9b;
 }
 
 #fig3-roast-level {
-    color: #AD6D52;
+    color: #ad6d52;
 }
 
 #fig3-roast-level:hover {
     color: #f2efeb;
-    background-color: #AD6D52;
+    background-color: #ad6d52;
 }
 
 .flicker-animation {

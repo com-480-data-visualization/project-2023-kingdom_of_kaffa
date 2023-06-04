@@ -1,51 +1,51 @@
 #homepage {
-  background-color: #F2EFEB;
-  /* background-image: linear-gradient(to top, #f2efee, #e2d1c9, #d1b3a5, #be9881, #a87d5d); */
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  background-image: url('../../image/cofdee_background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-color: #f2efeb;
+    /* background-image: linear-gradient(to top, #f2efee, #e2d1c9, #d1b3a5, #be9881, #a87d5d); */
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: url("../../image/cofdee_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #homepage .draw-box {
-  overflow: hidden;
-  position: fixed;
-  top: 60%;
-  left: 50%;
-  margin-top: 60px;
-  width: 590px;
-  height: 400px;
+    overflow: hidden;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    margin-top: 60px;
+    width: 590px;
+    height: 400px;
 }
 #homepage .draw-box .typewriter-effect {
-  overflow: hidden;
-  animation: typingEffect 2.9s steps(30) forwards, blinkTextCursor 1s infinite;
-  margin-bottom: -100px;
-  width: 0;
-  color: #fff;
-  height: 60px;
-  font-size: 40px;
-  white-space: nowrap;
-  vertical-align: middle;
-  line-height: 0.9;
-  font-family: "Darumadrop One", cursive;
-  /* font-family: "Barlow Semi Condensed", sans-serif; */
+    overflow: hidden;
+    animation: typingEffect 2.9s steps(30) forwards, blinkTextCursor 1s infinite;
+    margin-bottom: -100px;
+    width: 0;
+    color: #fff;
+    height: 60px;
+    font-size: 40px;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 0.9;
+    font-family: "Darumadrop One", cursive;
+    /* font-family: "Barlow Semi Condensed", sans-serif; */
 }
 @keyframes typingEffect {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 @keyframes blinkTextCursor {
-  from {
-    border-right: 3px solid #f8f8f8;
-  }
-  to {
-    border-right: transparent;
-  }
+    from {
+        border-right: 3px solid #f8f8f8;
+    }
+    to {
+        border-right: transparent;
+    }
 }
 
 /* .cup{
