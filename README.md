@@ -24,7 +24,7 @@ You can clone this repository via:
 ```
 git clone https://github.com/com-480-data-visualization/project-2023-kingdom_of_kaffa.git
 ```
-Open **./website/index.html** under the project folder, and you can run the website locally.
+Open **./website/index.html** under the project folder with live server, and you can run the website locally.
 
 # Intended Usage
 Anyone who's interested in coffee or want to select some nice coffee items can use this website.
