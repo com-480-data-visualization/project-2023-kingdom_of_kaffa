@@ -7,13 +7,18 @@
     align-items: center;
 }
 
-#viz3-descrip h4 {
+#fig3-descrip h4 {
     font-size:16px;
     margin-top:20px;
     margin-bottom: 2px;
     font-weight: bold;
   }
 
+#fig3-figure {
+    margin-left: 120px;
+    font-size: 1.5rem;
+    text-align: center;
+}
 #section_figure3 h2 {
     /* font-size: 2.5rem; */
     font-family: "Darumadrop One", cursive;
@@ -21,13 +26,8 @@
     margin: 0 0 20px 0;
 }
 
-#viz3-figure {
-    margin-left: 120px;
-    font-size: 1.5rem;
-    text-align: center;
-}
 
-#viz3-descrip {
+#fig3-descrip {
     margin-left: 80px;
     width: 100%;
 }
