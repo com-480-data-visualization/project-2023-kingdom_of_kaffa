@@ -32,8 +32,22 @@
 
 #section_figure5 {
   background-color: #F2EFEB;
+  height: 100vh;
 }
 
+#section_figure5 h2 {
+  font-family: "Darumadrop One", cursive;
+  color: #592D22;
+  margin: 10px 0px 20px 0px;
+  text-align: center;
+}
+
+#section_figure5 h1 {
+  font-size: 2.5vw;
+  font-family: "Darumadrop One", cursive;
+  margin-bottom: 5px;
+  text-align: center;
+}
 
 .fig5_container {
   display: flex;
@@ -265,19 +279,4 @@ div.whipped_cream {
   --fig5_steamed_milk-bottom: -100%;
   --fig5_milk_foam-bottom: -100%;
   --fig5_chocolate-bottom: -100%;
-}
-
-#section_figure5 h2 {
-  font-size: 3rem;
-  font-family: "Darumadrop One", cursive;
-  color: #592D22;
-  margin: 10px 0px 20px 0px;
-  text-align: center;
-}
-
-#section_figure5 h1 {
-  font-size: 2.5vw;
-  font-family: "Darumadrop One", cursive;
-  margin-bottom: 5px;
-  text-align: center;
 }

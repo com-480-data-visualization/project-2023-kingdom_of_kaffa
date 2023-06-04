@@ -41,7 +41,7 @@ $(document).ready(function () {
                     legendData = [
                         { color: "#B0836D", label: "Omni" },
                         { color: "#fdc62f", label: "Light to Medium Light" },
-                        { color: "#865E54", label: "Medium to medium dark" },
+                        { color: "#865E54", label: "Medium to Medium Dark" },
                     ];
                 }
 
@@ -81,7 +81,11 @@ $(document).ready(function () {
                     .attr("y", 16)
                     .text(function (d) {
                         return d.label;
-                    });
+                    })
+                    .style("fill", function (d) {
+                        return "#333333";
+                    })
+                    .style("font-size", "20px");
             }
 
             function color_filter(indicator, selectedColor) {
@@ -253,7 +257,7 @@ $(document).ready(function () {
                             "src",
                             "image/brand-logo/" + brand.toLowerCase() + ".png"
                         );
-                        console.log(brand.toLowerCase());
+
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
                             "image/item-figs/" + d["Item Name"] + ".jpg"
@@ -279,7 +283,7 @@ $(document).ready(function () {
                                 Math.round(parseFloat(d["Recommended"])) + "%"
                             );
 
-                        document.getElementById("viz3-descrip").innerHTML =
+                        document.getElementById("fig3-descrip").innerHTML =
                             document.getElementById(
                                 "fig3_after_click"
                             ).innerHTML;
@@ -324,14 +328,11 @@ $(document).ready(function () {
                             .transition()
                             .duration(300)
                             .attr("r", radius * 1.1);
+                        let brand = d["Roastery"];
+                        brand = brand.replace(/ /g, "_") + "_thumb";
                         d3.selectAll("#fig3_brand_image").attr(
                             "src",
-                            "image/brand-logo/" +
-                                d["Roastery"]
-                                    .toLowerCase()
-                                    .replace(/ /g, "_")
-                                    .replace(".", "_") +
-                                "_thumb.png"
+                            "image/brand-logo/" + brand.toLowerCase() + ".png"
                         );
                         d3.selectAll("#fig3_item_image").attr(
                             "src",
@@ -358,7 +359,7 @@ $(document).ready(function () {
                                 Math.round(parseFloat(d["Recommended"])) + "%"
                             );
 
-                        document.getElementById("viz3-descrip").innerHTML =
+                        document.getElementById("fig3-descrip").innerHTML =
                             document.getElementById(
                                 "fig3_after_click"
                             ).innerHTML;
@@ -469,7 +470,7 @@ $(document).ready(function () {
                                 Math.round(parseFloat(d["Recommended"])) + "%"
                             );
 
-                        document.getElementById("viz3-descrip").innerHTML =
+                        document.getElementById("fig3-descrip").innerHTML =
                             document.getElementById(
                                 "fig3_after_click"
                             ).innerHTML;
@@ -539,7 +540,7 @@ $(document).ready(function () {
                                 Math.round(parseFloat(d["Recommended"])) + "%"
                             );
 
-                        document.getElementById("viz3-descrip").innerHTML =
+                        document.getElementById("fig3-descrip").innerHTML =
                             document.getElementById(
                                 "fig3_after_click"
                             ).innerHTML;
@@ -580,7 +581,7 @@ $(document).ready(function () {
             // initialize the bubbles and add event listeners for the buttons
             impl_filter_intial();
             d3.select("#fig3-show-all").on("click", function () {
-                document.getElementById("viz3-descrip").innerHTML =
+                document.getElementById("fig3-descrip").innerHTML =
                     document.getElementById("fig3_refresh").innerHTML;
                 toggleButtonAnimation("#fig3-show-all");
                 impl_filter_intial();
