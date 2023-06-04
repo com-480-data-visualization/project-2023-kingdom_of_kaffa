@@ -139,7 +139,7 @@ $(document).ready(function (){
 
     const width = element.offsetWidth;
 
-    const heightPercentage = 66.5;
+    const heightPercentage = 66;
     const height = (width * heightPercentage) / 100;
     console.log(height);
 
