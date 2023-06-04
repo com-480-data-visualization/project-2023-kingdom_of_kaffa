@@ -42,7 +42,7 @@ $(document).ready(function () {
                     legendData = [
                         { color: "#B0836D", label: "Omni" },
                         { color: "#fdc62f", label: "Light to Medium Light" },
-                        { color: "#865E54", label: "Medium to medium dark" },
+                        { color: "#865E54", label: "Medium to Medium Dark" },
                     ];
                 }
 
@@ -86,8 +86,7 @@ $(document).ready(function () {
                     .style("fill", function (d) {
                         return "#333333";
                     })
-                    .style("font-size", "20px")
-                    .style("font-family",'Roboto');
+                    .style("font-size", "20px");
             }
 
             function color_filter(indicator, selectedColor) {
@@ -160,7 +159,7 @@ $(document).ready(function () {
                             return true;
                         else if (
                             selectedColor === "#865E54" &&
-                            d["Roast Level"] === "Medium to medium dark"
+                            d["Roast Level"] === "Medium to Medium Dark"
                         )
                             return true;
                         else return false;
