@@ -18,7 +18,7 @@ Project of Data Visualization COM-480
 <img src="website/image/roadmap4.png" width=50%/>
 
 - The process book is available [here](Process%20Book.pdf)
-- The screencast of the website is available [here] (futurelink)
+- The screencast of the website is available [here] (https://youtu.be/cPO8JORIoBc)
 - Visit our website at [Coffee Kingdom](https://com-480-data-visualization.github.io/project-2023-kingdom_of_kaffa)
 
 # Technical set
