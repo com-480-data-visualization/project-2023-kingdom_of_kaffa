@@ -6,11 +6,4 @@ $(document).ready(function () {
     const height = (width * heightPercentage) / 100;
     element.style.height = height + "px";
 
-    var svgElement = document.querySelector('#viz');
-    svgElement.addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-    });
 });
